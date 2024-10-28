@@ -11,7 +11,7 @@
     :id="$id('accordion')"
     x-data="{
         multiple: @js($multiple),
-        selected: {!! $attributes->tryWireModelWithFallbackTo($value) !!},
+        selected: @wireOr($value, handlePersist: true),
         init() {
             this.selected ??= this.multiple ? [] : null;
         },

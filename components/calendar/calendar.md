@@ -3,7 +3,7 @@ A date picker component powered by Flatpickr that allows users to select a singl
 
 ## Example
 ```html
-<x-calendar mode="single" :inline="true" :value="['05-10-2022']" dateFormat="d-m-Y" />
+<x-calendar mode="single" :inline="true" value="05-10-2022" dateFormat="d-m-Y" />
 ```
 
 ## Example

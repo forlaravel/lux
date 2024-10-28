@@ -1,0 +1,68 @@
+@layer components {
+    .lux-button {
+        @apply cursor-pointer inline-flex gap-1.5 items-center justify-center whitespace-nowrap rounded-md font-medium ring-offset-background transition-colors;
+        @apply disabled:pointer-events-none disabled:opacity-50;
+        @apply active:scale-[0.97];
+        @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2;
+    }
+    
+    /** loading state */
+    .lux-button .spinner {
+        @apply hidden;
+    }
+    .lux-button.loading .spinner {
+        @apply block;
+    }
+    .lux-button.loading {
+        @apply text-transparent;
+    }
+    
+    /* Variants */
+    .lux-button--primary, .lux-button--primary svg {
+        @apply bg-primary text-primary-foreground hover:bg-primary/90;
+    }
+    
+    .lux-button--destructive, .lux-button--destructive svg {
+        @apply bg-destructive text-destructive-foreground hover:bg-destructive/90;
+    }
+    
+    .lux-button--outline {
+        @apply bg-background border border-input hover:bg-accent;
+    }
+    .lux-button--outline, .lux-button--outline svg {
+        @apply hover:text-accent-foreground;
+    }
+    
+    .lux-button--secondary, .lux-button--secondary svg {
+        @apply bg-secondary text-secondary-foreground hover:bg-secondary/80;
+    }
+    
+    .lux-button--ghost, .lux-button--ghost svg {
+        @apply hover:bg-accent hover:text-accent-foreground;
+    }
+    
+    .lux-button--link, .lux-button--link svg {
+        @apply underline-offset-4 hover:underline;
+    }
+    
+    /* Sizes */
+    .lux-button--sm {
+        @apply px-3 py-2 text-xs;
+    }
+    
+    .lux-button--md {
+        @apply px-4 py-2.5 text-sm;
+    }
+    
+    .lux-button--lg {
+        @apply px-6 py-3 text-lg;
+    }
+    
+    .lux-button--xl {
+        @apply px-8 py-4 text-2xl;
+    }
+    
+    .lux-button--icon {
+        @apply w-10 h-10;
+    }
+}

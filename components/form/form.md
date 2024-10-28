@@ -10,7 +10,7 @@ Create clear and functional forms using our component set. Integrate labels, des
 <x-form wire:submit="saveForm">
     <x-form.item name="username">
         <x-form.label>Username</x-form.label>
-        <x-input wire:model.live="username" x-form:control type="username" placeholder="Enter your username" />
+        <x-input persist wire:model.live="username" x-form:control placeholder="Enter your username" />
         <x-form.description>Enter your preferred username.</x-form.description>
         <x-form.message />
     </x-form.item>
@@ -27,13 +27,16 @@ Create clear and functional forms using our component set. Integrate labels, des
 php artisan lux:publish form
 ```
 
-## Example
 
+
+## Example
+### Form with classic post action
 ```html
- <x-form>
+ <x-form action="{{ route('form-demo') }}" method="POST">
+    @csrf
     <x-form.item>
         <x-form.label>Username</x-form.label>
-        <x-input x-form:control placeholder="shadcn"/>
+        <x-input persist required name="username" x-form:control placeholder="shadcn"/>
         <x-form.description>
             This is your public display name. It can be your real name or a
             pseudonym. You can only change this once every 30 days.
@@ -41,19 +44,37 @@ php artisan lux:publish form
         <x-form.message />
     </x-form.item>
 
-
     <x-form.item>
-        <x-form.label>Email</x-form.label>
-        <x-select x-form:control >
-            <option value="Select a verified email to display" disabled>
-                Select a verified email to display </option>
-            <option value="m@example.com">m@example.com</option>
-            <option value="m@google.com">m@google.com</option>
-            <option value="m@support.com">m@support.com</option>
+        <x-form.label>Languages</x-form.label>
+        <x-select 
+            required 
+            persist 
+            x-form:control 
+            name="languages" 
+            placeholder="Programming Languages" 
+            :searchable="true" 
+            :multiple="true" 
+            :value="['php', 'laravel']"
+        >
+            <x-select.trigger>
+                <x-select.value/>
+            </x-select.trigger>
+            <x-select.content teleport="body">
+                <x-select.label>Languages</x-select.label>
+                <x-select.item value="python">Python</x-select.item>
+                <x-select.item value="javascript">JavaScript</x-select.item>
+                <x-select.item value="ruby" disabled>Ruby</x-select.item>
+                <x-select.item value="php">PHP</x-select.item>
+                <x-select.separator/>
+                <x-select.label>Frameworks</x-select.label>
+                <x-select.item value="django">Django</x-select.item>
+                <x-select.item value="laravel">Laravel</x-select.item>
+                <x-select.item value="vue">Vue</x-select.item>
+                <x-select.item value="angular">Angular</x-select.item>
+            </x-select.content>
         </x-select>
         <x-form.description>
-            You can manage verified email addresses in your
-            <a class="font-medium underline underline-offset-4">email settings</a>.
+            Select the programming languages and frameworks you are familiar with.
         </x-form.description>
         <x-form.message />
     </x-form.item>
@@ -61,7 +82,8 @@ php artisan lux:publish form
     <x-form.item>
         <x-form.label>Bio</x-form.label>
         <x-textarea
-            wire:model="bio"
+            persist
+            name="bio"
             x-form:control
             placeholder="Tell us a little bit about yourself"
             class="resize-none"
@@ -73,34 +95,14 @@ php artisan lux:publish form
         <x-form.message />
     </x-form.item>
 
-    <div>
-        @foreach([] as $index => $url)
-        <x-form.item>
-            <x-form.label
-                @class([
-                "sr-only" => $index !== 0,
-                ])
-            >
-                URLs
-            </x-form.label>
-            <x-form.description @class([
-                "sr-only" => $index !== 0,
-                ])>
-                Add links to your website, blog, or social media profiles.
-            </x-form.description>
-            <x-input x-form:control value="{{ $url['value'] }}"/>
-            <x-form.message />
-        </x-form.item>
-        @endforeach
-        <x-button
-            variant="outline"
-            size="sm"
-            class="mt-2"
-            wire:click="append"
-        >
-            Add URL
-        </x-button>
-    </div>
+    <x-form.item>
+        <div class="flex gap-2.5 items-center">
+            <x-checkbox persist name="agreed" x-form:control />
+            <x-form.label>Accept terms and conditions</x-form.label>
+        </div>
+        <x-form.message />
+    </x-form.item>
+
     <x-button type="submit">Update profile</x-button>
 </x-form>
 ```

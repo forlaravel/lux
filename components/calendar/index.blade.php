@@ -10,8 +10,9 @@
 ])
 
 <div
+@mergeAttributes
     x-data="{
-        value: {!! $attributes->tryWireModelWithFallbackTo($value) !!},
+        value: @wireOr($value),
         init() {
             let options = {
                 mode: '{{ $mode }}',
@@ -20,20 +21,28 @@
                 allowInput: true,
                 inline: {{ $inline ? 'true' : 'false' }},
                 onChange: (date, dateString) => {
+                    @if($mode === 'single')
+                    this.value = dateString;
+                    @else
                     this.value = dateString.split(', ');
+                    @endif
                 },
                 ...@json($config),
             };
 
-            let picker = flatpickr(this.$refs.picker, options);
+            let $picker = this.$el.children[0];
+
+            let picker = flatpickr($picker, options);
 
             this.$watch('value', (newValue) => picker.setDate(newValue));
         },
     }"
-    {{ $attributes->class("max-w-sm w-full") }}
+    x-modalable="value"
+    class="max-w-sm w-full"
+@endMergeAttributes
 >
     <x-input 
-        :class="($inline ? 'hidden' : '')"
+        class="{{ $inline ? 'hidden' : '' }}"
         x-ref="picker"
         mask="{{ $mask }}"
         type="text"

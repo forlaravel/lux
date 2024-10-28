@@ -29,7 +29,7 @@ A vertically stacked set of interactive headings that each reveal a section of c
 
 ## Example
 ```html
-<x-accordion :multiple="true" :animated="false">
+<x-accordion persist="accordion" :multiple="true" :animated="false">
     <x-accordion.item>
         <x-accordion.trigger>What is the `multiple` property about?</x-accordion.trigger>
         <x-accordion.content>

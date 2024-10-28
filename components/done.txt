@@ -2,17 +2,41 @@
 - [x] Dark mode
 
 - [x] Button
+    - [x] Accessible / ARIA?
+    - [ ] wire:loading state?
 - [x] Form
 - [x] Input
-- [ ] Select
-- [ ] Checkbox
+    - [x] Accessible / ARIA?
+    - [x] Classic form submit
+    - [x] Livewire support
+    - [x] Label for support
+    - [x] Validation support
+    - [x] x-modelable
+    - [x] Persistable
+- [x] Select
+    - [x] Accessible / ARIA?
+    - [x] Classic form submit
+    - [x] Livewire support
+    - [x] Label for support
+    - [x] Validation support
+    - [x] x-modelable
+    - [x] Persistable
+- [x] Checkbox
+    - [x] Accessible / ARIA?
+    - [x] Classic form submit
+    - [x] Livewire support
+    - [x] Label for support
+    - [x] Validation support
+    - [x] x-modelable
+    - [x] Persistable
 - [x] Dialog
 - [ ] Popover
 - [ ] Tabs
-- [ ] Data Table
+- [ ] Data Table x
 - [ ] Dropdown Menu
 - [x] Calendar
-- [ ] Textarea
+- [x] Textarea
+    - [x] Persistable
 - [ ] Avatar
 - [x] Alert
 - [ ] Badge
@@ -25,7 +49,7 @@
 - [ ] Label
 - [ ] Code Block
 - [ ] Seperator
-- [ ] Carousel
-- [ ] Combobox
+- [ ] Carousel x
+- [ ] Combobox x
 - [ ] Command
 - [x] Aspect Ratio

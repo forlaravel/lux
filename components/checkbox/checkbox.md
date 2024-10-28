@@ -3,9 +3,9 @@ A component used to display a checkbox which can be toggled on and off, with sup
 
 ## Example
 ```html
-<div class="flex gap-2">
+<div class="flex gap-2.5 items-center">
     <x-checkbox id="checkbox" />
-    <x-label for="checkbox">Some checkbox</x-label>
+    <x-label for="checkbox">Accept terms and conditions</x-label>
 </div>
 ```
 
@@ -23,4 +23,7 @@ php artisan lux:publish checkbox
 | Prop      | Description                                      | Type      | Default |
 |-----------|--------------------------------------------------|-----------|---------|
 | `id`      | The id attribute for the checkbox button element | `string`  | `null`  |
-| `checked` | Determines whether the checkbox is checked       | `boolean` | `false` |
+| `value`   | Determines whether the checkbox is checked       | `boolean` | `false` |
+| `wire:model` | Model selected item to Livewire (takes precedence over `checked`). | `string` | `null` |
+| `name`    | The name attribute (on form submission) | `string`  | `null`  |
+| `value`   | The value attribute (on form submission) | `string`  | `null`  |

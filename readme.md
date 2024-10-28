@@ -4,6 +4,4 @@
 
 `composer require forlaravel/lux`
 
-`npm install @alpinejs/anchor @alpinejs/collapse @alpinejs/focus`
-
-npm install @alpinejs/mask
+`npm install @alpinejs/anchor @alpinejs/collapse @alpinejs/focus @alpinejs/persist @alpinejs/mask`

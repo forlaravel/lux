@@ -3,7 +3,8 @@ A versatile button component that supports multiple variants and sizes, suitable
 
 ## Example
 ```html
-<x-button>Default</x-button>
+<x-button class="bg-black">Default</x-button>
+<x-button variant="outline" class="spinner">Spinner</x-button>
 <x-button variant="outline">Outline</x-button>
 <x-button variant="destructive">Destructive</x-button>
 <x-button variant="secondary">Secondary</x-button>

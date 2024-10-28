@@ -1,69 +1,27 @@
 # Select
-A component used to create interactive dropdown menus. The dropdown can be customized and includes options for items, labels, separators, and triggers.
+The `x-select` component is a versatile and accessible dropdown element. It supports features 
+like searchability, multiple selections, and seamless integration with Livewire for dynamic
+ data binding and search capabilities.
+
 
 ## Example
 ```html
-
-<x-select :searchable="true">
+<x-select placeholder="Fruits & Vegetables" name="fav">
     <x-select.trigger>
         <x-select.value/>
     </x-select.trigger>
     <x-select.content>
-        <x-select.label>Select a framework</x-select.label>
-        <x-select.item value="next">Next.js</x-select.item>
-        <x-select.item value="sveltekit">Svelte</x-select.item>
-        <x-select.item value="nada" disabled>Nada</x-select.item>
-        <x-select.item value="astro">Astro</x-select.item>
-        <x-select.item value="nuxt">Nuxt.js</x-select.item>
-    </x-select.content>
-</x-select>
-<br>
-Test: {{ join(', ', $this->test) }}
-
-<x-select :searchable="true" wire:search.live="testSearch2" wire:model.live="testValue2" :clientSearch="false">
-    <x-select.trigger>
-        <x-select.value/>
-    </x-select.trigger>
-    <x-select.content>
-        <x-select.label>Select a name</x-select.label>
-        @foreach($this->listOfTestItems2 as $key => $item)
-            <x-select.item wire:key="{{ $key }}" value="{{ $key }}">{{ $item }}</x-select.item>
-        @endforeach
-    </x-select.content>
-</x-select>
-
-<x-select wire:model.live="test" :multiple="true" :searchable="true">
-    <x-select.trigger>
-        <x-select.value/>
-    </x-select.trigger>
-    <x-select.content>
-        <x-select.label>Select a name</x-select.label>
-        <x-select.item value="next">Next.js</x-select.item>
-        <x-select.item value="sveltekit">Svelte</x-select.item>
-        <x-select.item value="nada" disabled>Nada</x-select.item>
-        <x-select.item value="astro">Astro</x-select.item>
-        <x-select.item value="nuxt">Nuxt.js</x-select.item>
-    </x-select.content>
-</x-select>
-
-<br>
-Search: {{ $this->testSearch }}
-<div>
-Selected: {{ is_array($this->testValue) ? join(', ', $this->testValue) : $this->testValue }}
-</div>
-
-
-
-<!-- multiple without a values goes wrong still -->
-<x-select :searchable="true" :multiple="true" wire:search.live="testSearch" wire:model.live="testValue" :clientSearch="false">
-    <x-select.trigger>
-        <x-select.value/>
-    </x-select.trigger>
-    <x-select.content>
-        <x-select.label>Select a name</x-select.label>
-        @foreach($this->listOfTestItems as $key => $item)
-            <x-select.item wire:key="{{ $key }}" value="{{ $key }}">{{ $item }}</x-select.item>
-        @endforeach
+        <x-select.label>Fruits</x-select.label>
+        <x-select.item value="apple">Apple</x-select.item>
+        <x-select.item value="banana">Banana</x-select.item>
+        <x-select.item value="cherry">Cherry</x-select.item>
+        <x-select.item value="elderberry">Elderberry</x-select.item>
+        <x-select.item value="date" disabled>Date</x-select.item>
+        <x-select.separator/>
+        <x-select.label>Vegetables</x-select.label>
+        <x-select.item value="asparagus">Asparagus</x-select.item>
+        <x-select.item value="broccoli">Broccoli</x-select.item>
+        <x-select.item value="carrot">Carrot</x-select.item>
     </x-select.content>
 </x-select>
 ```
@@ -78,51 +36,105 @@ php artisan lux:publish select
 
 ## Components and Their Properties
 
-### x-select
+### \<x-select>
 
-| Prop        | Description                                  | Type     | Default       |
-|-------------|----------------------------------------------|----------|---------------|
-| `selected`  | Sets the initially selected value            | `mixed`  | `null`        |
+| Prop           | Description                                                                 | Type                | Default            |
+|----------------|-----------------------------------------------------------------------------|---------------------|--------------------|
+| `value`        | The selected item.                                                          | `string` or `array` | `null`             |
+| `wire:model`   | Model selected item to Livewire (takes precedence over `value`).            | `string` or `array` | `null`             |
+| `wire:search`  | Model search query to Livewire (use with `searchable` and `clientSearch`).  | `string`            | `''`               |
+| `tag`          | The tag to use for the component.                                           | `string`            | `div`              |
+| `multiple`     | Whether multiple items can be selected.                                     | `boolean`           | `false`            |
+| `searchable`   | Whether the dropdown is searchable.                                         | `boolean`           | `false`            |
+| `placeholder`  | The placeholder text.                                                       | `string`            | `Select an option` |
+| `clientSearch` | Whether to search on the client side.                                       | `boolean`           | `true`             |
 
-### x-select.trigger
+### \<x-content>
+| Prop           | Description                                                                 | Type                | Default            |
+|----------------|-----------------------------------------------------------------------------|---------------------|--------------------|
+| `teleport`     | Teleport dropdown to target. Does not work with dynamic Livewire data.      | `string` e.g `'body'`| `null`             |
 
-| Prop        | Description                                  | Type     | Default       |
-|-------------|----------------------------------------------|----------|---------------|
-| -           | No configurable properties                   | -        | -             |
+## Example
+### Multiple, searchable, teleported
+```html
+<x-select name="languages" placeholder="Programming Languages" :searchable="true" :multiple="true" :value="['php', 'laravel']">
+    <x-select.trigger>
+        <x-select.value/>
+    </x-select.trigger>
+    <x-select.content teleport="body">
+        <x-select.label>Languages</x-select.label>
+        <x-select.item value="python">Python</x-select.item>
+        <x-select.item value="javascript">JavaScript</x-select.item>
+        <x-select.item value="java">Java</x-select.item>
+        <x-select.item value="csharp">C#</x-select.item>
+        <x-select.item value="ruby" disabled>Ruby</x-select.item>
+        <x-select.item value="php">PHP</x-select.item>
+        <x-select.separator/>
+        <x-select.label>Frameworks</x-select.label>
+        <x-select.item value="django">Django</x-select.item>
+        <x-select.item value="react">React</x-select.item>
+        <x-select.item value="spring">Spring</x-select.item>
+        <x-select.item value="laravel">Laravel</x-select.item>
+        <x-select.item value="vue">Vue</x-select.item>
+        <x-select.item value="angular">Angular</x-select.item>
+    </x-select.content>
+</x-select>
+```
 
-### x-select.content
+## Example
+### Livewire search
+```html
+<x-label for="medicine">Medicine</x-label>
 
-| Prop        | Description                                  | Type     | Default       |
-|-------------|----------------------------------------------|----------|---------------|
-| -           | No configurable properties                   | -        | -             |
+<x-select class="mt-2" id="medicine" name="medicine" placeholder="Type to search.." :searchable="true" :clientSearch="false" wire:search.live="medSearch" wire:model.live="medValue">
+    <x-select.trigger>
+        <x-select.value/>
+    </x-select.trigger>
+    <x-select.content>
+        <x-select.label>Found {{ $this->foundMedicines->count() }} medicines</x-select.label>
+        @foreach($this->foundMedicines->take(6) as $key => $item)
+            <x-select.item wire:key="{{ $key }}" value="{{ $key }}">{{ $item }}</x-select.item>
+        @endforeach
+        <x-select.item class="{{ $this->foundMedicines->count() - 6 <= 0 ? 'hidden' : '' }}" wire:key="more" value="more" disabled>And {{ $this->foundMedicines->count() - 6 }} more...</x-select.item>
+    </x-select.content>
+</x-select>
 
-### x-select.group
+<!-- 
+class SomeComponent extends Livewire\Component
+{
+    public $medSearch = '';
+    public $medValue = '';
 
-| Prop        | Description                                  | Type     | Default       |
-|-------------|----------------------------------------------|----------|---------------|
-| -           | No configurable properties                   | -        | -             |
+    #[Computed(cache: true)]
+    public function randomMedicineList() {
+        return ....
+    }
 
-### x-select.item
+    #[Computed()]
+    public function foundMedicines()
+    {
+        return $this->randomMedicineList
+            ->when($this->medSearch, fn($list) => 
+                $list->filter(fn($item) => 
+                    str($item)->lower()->contains(str($this->medSearch)->lower())
+                )
+            );
+    }
+}
+-->
+```
 
-| Prop        | Description                                  | Type     | Default       |
-|-------------|----------------------------------------------|----------|---------------|
-| `value`     | The value representing this dropdown item    | `mixed`  | `null`        |
-| `disabled`  | Whether the item is disabled                 | `bool`   | `false`       |
-
-### x-select.label
-
-| Prop        | Description                                  | Type     | Default       |
-|-------------|----------------------------------------------|----------|---------------|
-| -           | No configurable properties                   | -        | -             |
-
-### x-select.separator
-
-| Prop        | Description                                  | Type     | Default       |
-|-------------|----------------------------------------------|----------|---------------|
-| -           | No configurable properties                   | -        | -             |
-
-### x-select.value
-
-| Prop        | Description                                  | Type     | Default       |
-|-------------|----------------------------------------------|----------|---------------|
-| `placeholder`| The placeholder text if no value is selected| `string` | `''`          |
+## Example
+### Native select
+```html
+<x-select.native name="languages" placeholder="Programming Languages">
+   <option value="Select a fruit" selected="" disabled="">
+        Select a fruit
+    </option>
+    <option value="apple">Apple</option>
+    <option value="banana">Banana</option>
+    <option value="blueberry">Blueberry</option>
+    <option value="grapes">Grapes</option>
+    <option value="pineapple">Pineapple</option>
+</x-select.native>
+```

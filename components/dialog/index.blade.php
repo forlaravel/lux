@@ -6,7 +6,7 @@
 <{{ $tag }} 
 @mergeAttributes
     x-data="{ 
-        open: {!! $attributes->tryWireModelWithFallbackTo($open) !!},
+        open: @wireOr($open, handlePersist: true),
         show() {
             this.open = true;
             $refs.dialog.showModal();
@@ -21,6 +21,7 @@
             }
         }
     }"
+    x-modelable="open"
 @endMergeAttributes
 >
     {{ $slot }}
