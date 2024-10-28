@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Lux\Console;
 
 use Illuminate\Console\Command;
+use Illuminate\Filesystem\Filesystem;
 
 use function Laravel\Prompts\info;
 use function Laravel\Prompts\warning;
@@ -12,16 +13,21 @@ use function Laravel\Prompts\confirm;
 use function Laravel\Prompts\multisearch;
 use function Lux\fs;
 use function Laravel\Prompts\note;
+use function Laravel\Prompts\select;
 
 class PublishCommand extends Command
 {
     protected $signature = 'lux:publish {components?*} {--link} {--all} {--reverse}';
     protected $description = 'Publish lux components.';
 
-    public function handle(): void
+    protected Filesystem $fs;
+
+    public function handle(Filesystem $fs): void
     {
+        $this->fs = $fs;
+
         $components = collect($this->argument('components'))->map(fn($x) => strtolower($x));
-        $allComponents = collect(fs()->directories(\Lux\LUX_DIR . '/components'))->map(fn($x) => basename($x));
+        $allComponents = collect($this->fs->directories(\Lux\LUX_DIR . '/components'))->map(fn($x) => basename($x));
 
         if ($this->option('all')) {
             $components = $allComponents;
@@ -31,8 +37,6 @@ class PublishCommand extends Command
         if ($components->isEmpty()) {
             $components = collect(multisearch('Search for components to publish:', fn($x) => $allComponents->filter(fn($y) => str_contains($y, $x))->values()->toArray()));
         }
-
-        $this->ensureLuxService();
 
         foreach ($components as $component) {
             $target = $this->publish($component);
@@ -58,75 +62,117 @@ class PublishCommand extends Command
         $subdir = config('lux.subdir', '');
         $componentsDirectory = $subdir ? 'components/' . $subdir : 'components';
 
-        fs()->ensureDirectoryExists(resource_path('views/' . $componentsDirectory));
+        $this->fs->ensureDirectoryExists(resource_path('views/' . $componentsDirectory));
 
         $sourceDirectory = \Lux\LUX_DIR .'/components/' . $component;
-        $sourceFile = $sourceDirectory . '.blade.php';
 
         $targetDirectory = resource_path('views/' . $componentsDirectory . '/' . $component);
-        $targetFile = $targetDirectory . '.blade.php';
 
-        if (fs()->isDirectory($sourceDirectory)) {
-            return $this->publishDirectory($component, $sourceDirectory, $targetDirectory);
-        }
-
-        if (fs()->isFile($sourceFile)) {
-            return $this->publishFile($component, $sourceFile, $targetFile);
+        if ($this->fs->isDirectory($sourceDirectory)) {
+            if ($this->option('link')) {
+                return $this->linkDirectory($component, $sourceDirectory, $targetDirectory);
+            } else {
+                return $this->publishDirectory($component, $sourceDirectory, $targetDirectory);
+            }
         }
 
         return null;
     }
 
-    protected function publishDirectory($component, $source, $target): null|string|bool
+    protected function linkDirectory($component, $source, $target): null|string|bool
     {
-        if (fs()->exists($target)) {
+        if ($this->fs->exists($target)) {
             warning("Directory already exists: {$target}");
 
-            if (! confirm('Do you want to overwrite it? The directory will be deleted.', default: false)) {
+            if (! $this->askBeforeOverwrite("Do you want to remove the directory and link it instead?")) {
                 return false;
+            }
+
+            if (is_link($target)) {
+                $this->fs->delete($target);
+            } else {
+                $this->fs->deleteDirectory($target);
             }
         }
 
-        fs()->deleteDirectory($target);
+        $this->fs->link($source, $target);
 
-        if ($this->option('link')) {
-            fs()->link($source, $target);
-        } else {
-            fs()->copyDirectory($source, $target);
+        return $target;
+    }
+
+    protected function publishDirectory($component, $source, $target): null|string|bool
+    {
+        // Check if target is a symlink
+        if (is_link($target)) {
+            warning("Directory is linked: {$target}");
+
+            if (! $this->askBeforeOverwrite("Do you want to unlink the directory?")) {
+                return false;
+            }
+
+            // Remove link
+            $this->fs->delete($target);
+        }
+        
+        $this->fs->ensureDirectoryExists($target);
+
+        $files = $this->fs->allFiles($source);
+
+        foreach ($files as $file) {
+            $relativePath = $file->getRelativePathname();
+            $targetPath = $target . '/' . $relativePath;
+
+            if ($this->fs->exists($targetPath)) {
+                if (! $this->askBeforeOverwrite("$relativePath allready exists. Do you want to overwrite?")) {
+                    continue;
+                }
+            }
+
+            $this->fs->copy($file->getPathname(), $targetPath);
         }
 
         return $target;
     }
 
-    protected function publishFile($component, $source, $target): null|string|bool
-    {
-        if (fs()->exists($target)) {
-            warning("File already exists: {$target}");
+    protected $rememberOverwrite = null;
 
-            if (! confirm('Do you want to overwrite it?', default: false)) {
-                return false;
-            }
+    protected function askBeforeOverwrite($message) {
+        if (is_bool($this->rememberOverwrite)) return $this->rememberOverwrite;
+
+        $answer = select($message, ['Yes', 'No', 'All', 'None'], 'Yes');
+
+        if ($answer === 'All') {
+            $this->rememberOverwrite = true;
+            return true;
         }
 
-        fs()->delete($target);
-
-        if ($this->option('link')) {
-            fs()->link($source, $target);
-        } else {
-            fs()->copy($source, $target);
+        if ($answer === 'None') {
+            $this->rememberOverwrite = false;
+            return false;
         }
 
-        return $target;
+        return $answer === 'Yes';
     }
 
-    protected function ensureLuxService()
+    protected function createLuxService()
     {
-        $sourceFile = \Lux\LUX_DIR .'/app/Services/LuxService.php';
-        $targetFile = app_path('Services/LuxService.php');
+        $sourceFile = \Lux\LUX_DIR .'/src/Lux.php';
+        $targetFile = app_path('Support/LuxService.php');
 
         // Make sure the directory exists
-        fs()->ensureDirectoryExists(app_path('Services'));
+        $this->fs->ensureDirectoryExists(app_path('Support'));
 
-        fs()->copy($sourceFile, $targetFile);
+        $this->fs->copy($sourceFile, $targetFile);
+
+        // Replace namespace in file contents
+        $contents = $this->fs->get($targetFile);
+        $contents = str_replace('namespace Lux;', 'namespace App\Support;', $contents);
+        $this->fs->put($targetFile, $contents);
+
+        note('Lux service created successfully.');
+        note('Add the following to your app service providers register method:');
+        note('    $this->app->singleton(App\Support\Lux::class, App\Support\Lux::class);');
+        note('    $this->app->alias(App\Support\Lux::class, \'lux\');');
+        note('    $this->mergeConfigFrom(app_path(\'config/lux.php\'), \'lux\');');
     }
 }
