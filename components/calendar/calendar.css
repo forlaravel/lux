@@ -70,6 +70,18 @@ span.flatpickr-weekday {
     color: white !important;
     border: none !important;
 }
+.flatpickr-day:hover:has(> span) {
+    background-color: transparent !important;
+    color:black !important;
+}
+.flatpickr-day:has(> span) {
+    background-color: transparent !important;
+    color:black !important;
+}
+.flatpickr-day.selected:has(> span) {
+    background-color: transparent !important;
+    color:black !important;
+}
 .flatpickr-monthDropdown-months, .flatpickr-current-month input.cur-year {
     font-size: .875rem !important;
     line-height: 1.25rem !important;
