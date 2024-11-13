@@ -1,4 +1,4 @@
-@inject('lux', 'App\Services\LuxService')
+@inject('lux', 'lux')
 
 <div 
 {{ $attributes->class(["topbar flex justify-between items-center cursor-move border-b p-5 py-3 select-none"]) }}
