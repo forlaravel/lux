@@ -16,7 +16,14 @@
             $refs.dialog.close();
         },
         closeOnOutsideClick(event) {
-            if(event.target === this.$refs.dialog) {
+            const rect = this.$refs.dialog.getBoundingClientRect();
+            const isOutside = 
+                event.clientX < rect.left ||
+                event.clientX > rect.right ||
+                event.clientY < rect.top ||
+                event.clientY > rect.bottom;
+            
+            if(isOutside) {
                 this.close();
             }
         }

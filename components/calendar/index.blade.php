@@ -9,11 +9,13 @@
     'config' => [],
 ])
 
+@inject('lux', 'lux')
+
 <div
 @mergeAttributes
     x-data="{
         value: @wireOr($value),
-        init() {
+        init() {    
             let options = {
                 mode: '{{ $mode }}',
                 dateFormat: '{{ $dateFormat }}',
@@ -27,21 +29,31 @@
                     this.value = dateString.split(', ');
                     @endif
                 },
-                ...@json($config),
+                ...@js($config),
             };
 
-            let $picker = this.$el.children[0];
+            if (options.appendTo) {
+                options.appendTo = document.querySelector(options.appendTo);
+            }
 
+            let $picker = this.$el.children[0];
             let picker = flatpickr($picker, options);
 
             this.$watch('value', (newValue) => picker.setDate(newValue));
+
+            // Prevents closing modals etc when clicking on the calendar
+            [...document.getElementsByClassName('flatpickr-calendar')].forEach($el => {
+                $el.addEventListener('click', e => e.stopPropagation());
+            });
         },
     }"
     x-modalable="value"
     class="max-w-sm w-full"
+    wire:ignore
 @endMergeAttributes
 >
-    <x-input 
+    <x-dynamic-component 
+        :component="$lux->componentPath('input')" 
         class="{{ $inline ? 'hidden' : '' }}"
         x-ref="picker"
         mask="{{ $mask }}"
