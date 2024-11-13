@@ -7,11 +7,10 @@ namespace Lux\Console;
 use Illuminate\Console\Command;
 use Illuminate\Filesystem\Filesystem;
 
+use function Laravel\Prompts\confirm;
 use function Laravel\Prompts\info;
 use function Laravel\Prompts\warning;
-use function Laravel\Prompts\confirm;
 use function Laravel\Prompts\multisearch;
-use function Lux\fs;
 use function Laravel\Prompts\note;
 use function Laravel\Prompts\select;
 
@@ -25,6 +24,10 @@ class PublishCommand extends Command
     public function handle(Filesystem $fs): void
     {
         $this->fs = $fs;
+
+        if ($this->option('reverse') && !confirm('Reverse option will override files in the ./vendor/forlaravel/lux directory. You probably don\'t want to do this. Are you sure you want to continue?')) {
+            return;
+        }
 
         $components = collect($this->argument('components'))->map(fn($x) => strtolower($x));
         $allComponents = collect($this->fs->directories(\Lux\LUX_DIR . '/components'))->map(fn($x) => basename($x));
@@ -59,6 +62,7 @@ class PublishCommand extends Command
 
     protected function publish(string $component): null|string|bool
     {
+        $reverse = $this->option('reverse');
         $subdir = config('lux.subdir', '');
         $componentsDirectory = $subdir ? 'components/' . $subdir : 'components';
 
@@ -72,7 +76,11 @@ class PublishCommand extends Command
             if ($this->option('link')) {
                 return $this->linkDirectory($component, $sourceDirectory, $targetDirectory);
             } else {
-                return $this->publishDirectory($component, $sourceDirectory, $targetDirectory);
+                if ($reverse) {
+                    return $this->publishDirectory($component, $targetDirectory, $sourceDirectory);
+                } else {
+                    return $this->publishDirectory($component, $sourceDirectory, $targetDirectory);
+                }
             }
         }
 
