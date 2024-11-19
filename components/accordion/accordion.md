@@ -57,10 +57,14 @@ php artisan lux:publish accordion
 
 ## Properties
 
-### \<x-accordion>
+### accordion
+<div class="overflow-x-auto" markdown="block">
+
 | Prop | Description | Type | Default |
 | --- | --- | --- | --- |
 | `wire:model` | The selected accordion-item via livewire (takes precedence over `value`). | `string` | `null`
 | `value` | The selected accordion-item. | `string` | `null`
 | `multiple` | Whether multiple accordion items can be open at the same time. | `bool` | `false`
 | `animated` | Whether the accordion items should be animated. | `bool` | `true`
+
+</div>

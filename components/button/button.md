@@ -3,22 +3,26 @@ A versatile button component that supports multiple variants and sizes, suitable
 
 ## Example
 ```html
-<x-button class="bg-black">Default</x-button>
-<x-button variant="outline" class="spinner">Spinner</x-button>
-<x-button variant="outline">Outline</x-button>
-<x-button variant="destructive">Destructive</x-button>
-<x-button variant="secondary">Secondary</x-button>
-<x-button variant="ghost">Ghost</x-button>
-<x-button variant="link">Link</x-button>
+<div class="flex gap-2 flex-col items-start" x-data="{ clicked: false }">
+    <x-button>Default</x-button>
+    <x-button variant="outline" class="loading">Spinner</x-button>
+    <x-button variant="outline">Outline</x-button>
+    <x-button variant="destructive" x-on:click="clicked = !clicked" x-bind:class="{ 'loading': clicked }">Destructive (click me!)</x-button>
+    <x-button variant="secondary">Secondary</x-button>
+    <x-button variant="ghost">Ghost</x-button>
+    <x-button variant="link" x-on:click="clicked = !clicked" x-bind:class="{ 'loading': clicked }">Link</x-button>
+</div>
 ```
 
 ## Example
 ### Sizes
 ```html
-<x-button size="sm">Link</x-button>
-<x-button size="md">Link</x-button>
-<x-button size="lg">Link</x-button>
-<x-button size="xl">Link</x-button>
+<div class="flex gap-2 flex-col items-start">
+    <x-button size="sm">Link</x-button>
+    <x-button size="md">Link</x-button>
+    <x-button size="lg">Link</x-button>
+    <x-button size="xl">Link</x-button>
+</div>
 ```
 ## Example
 ### Icon button

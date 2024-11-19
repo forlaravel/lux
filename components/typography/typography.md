@@ -22,7 +22,7 @@ php artisan lux:publish typography
 
 ## Properties
 
-### x-typography
+### typography
 | Prop      | Description                                    | Type     | Default   |
 |-----------|------------------------------------------------|----------|-----------|
 | `variant` | Determines the typography style, can be `h1`, `h2`, `h3`, `body`, `caption`, etc. | `string` | `body`    |

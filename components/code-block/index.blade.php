@@ -1,6 +1,7 @@
 @props([
     'language' => '',
     'normalizeIndentation' => true,
+    'copy' => false,
 ])
 
 @php
@@ -32,10 +33,14 @@
     $code = $normalizeIndentation ? trim($normalizeIndentationFunc($slot)) : $slot;
 @endphp
 
-<div {{ $attributes->merge(['class' => "relative bg-zinc-950 dark:bg-zinc-900 text-white rounded-md p-4 overflow-hidden"]) }} x-data="{ code: @js($code), copied: false }">
-    <x-button variant="ghost" x-on:click="navigator.clipboard.writeText(code); copied = true; setTimeout(() => copied = false, 2000);" class="absolute top-2 right-2 text-xs px-2 py-1 rounded">
-        <span x-show="!copied"> <svg class="w-4 h-4" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 3h-2.25a1 1 0 0 0-1-1h-7.5a1 1 0 0 0-1 1H5c-1.103 0-2 .897-2 2v15c0 1.103.897 2 2 2h14c1.103 0 2-.897 2-2V5c0-1.103-.897-2-2-2zm0 17H5V5h2v2h10V5h2v15z"/></svg> </span>
-        <span x-show="copied" x-cloak> <svg class="w-4 h-4" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg></span>
-    </x-button>
-    <pre class="overflow-x-auto"><code class="language-{{ $language }} relative rounded px-[0.3rem] py-[0.2rem] font-mono text-sm">{!! htmlentities($code) !!}</code></pre>
+@inject('lux', 'lux')
+
+<div {{ $attributes->merge(['class' => "relative bg-accent text-accent-foreground rounded-md overflow-hidden"]) }}>
+    @if($copy)
+    <x-dynamic-component :component="$lux->componentPath('code-block.copy')" :text="$code" class="absolute top-3 right-3 z-10" variant="outline" />
+    @endif
+
+    <pre class="overflow-x-auto"><code class="language-{{ $language }} relative rounded px-[0.3rem] py-[0.2rem] font-mono text-[0.8rem] leading-[1rem]">{!! htmlentities($code) !!}</code></pre>
 </div>
+
+

@@ -54,7 +54,7 @@ php artisan lux:publish command
 
 ## Properties
 
-### x-command-dialog
+### command-dialog
 This is the main wrapper for the command dialog.
 
 | Prop        | Description                        | Type   | Default |
@@ -64,7 +64,7 @@ This is the main wrapper for the command dialog.
 | `@keydown.down` | Handles down arrow key navigation | `event`  | N/A     |
 | `x-trap` | Keeps focus within the dialog | `string` | N/A |
 
-### x-command-input
+### command-input
 An input field within the dialog.
 
 | Prop       | Description                         | Type     | Default |
@@ -73,42 +73,42 @@ An input field within the dialog.
 | `x-ref`    | Alpine.js reference to the element | `string` | `input` |
 | `x-model`  | Two-way data binding for input value | `string` | `search` |
 
-### x-command-group
+### command-group
 A wrapper to group items within the list.
 
 | Prop      | Description     | Type     | Default |
 |-----------|-----------------|----------|---------|
 | `heading` | Heading for the group | `string` | N/A  |
 
-### x-command-item
+### command-item
 An individual command item.
 
 | Prop       | Description                  | Type      | Default |
 |------------|------------------------------|-----------|---------|
 | `disabled` | Whether the item is disabled | `boolean` | `false` |
 
-### x-command-list
+### command-list
 A container for command items, with scroll capabilities.
 
 | Prop        | Description            | Type     | Default |
 |-------------|------------------------|----------|---------|
 | `x-ref`     | Alpine.js reference to the element | `string` | `list` |
 
-### x-command-separator
+### command-separator
 A separator line to divide different sections.
 
 | Prop | Description | Type   | Default |
 |------|-------------|--------|---------|
 | `x-data` | Initializes Alpine.js | `string` | N/A |
 
-### x-command-shortcut
+### command-shortcut
 Displays keyboard shortcuts.
 
 | Prop | Description                     | Type     | Default |
 |------|---------------------------------|----------|---------|
 | `class` | Tailwind CSS classes for styling | `string` | 'ml-auto text-xs tracking-widest text-muted-foreground' |
 
-### x-command-empty
+### command-empty
 Displays when no results are found.
 
 | Prop | Description | Type   | Default |

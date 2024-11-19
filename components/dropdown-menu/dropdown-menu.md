@@ -106,56 +106,56 @@ module.exports = {
 
 ## Components
 
-### x-dropdown
+### dropdown
 The container for the dropdown component.
 
-### x-dropdown.trigger
+### dropdown.trigger
 Represents the clickable element to open/close the dropdown.
 
-### x-dropdown.content
+### dropdown.content
 The container that holds the dropdown items.
 
-### x-dropdown.group
+### dropdown.group
 A container to group related dropdown items.
 
-### x-dropdown.item
+### dropdown.item
 A standard clickable item inside the dropdown.
 
-### x-dropdown.checkbox-item
+### dropdown.checkbox-item
 An item with a checkbox inside the dropdown.
 
-### x-dropdown.radio-group
+### dropdown.radio-group
 A container to group radio button items.
 
-### x-dropdown.radio-item
+### dropdown.radio-item
 A radio button item inside the dropdown.
 
-### x-dropdown.label
+### dropdown.label
 Label to categorize items in the dropdown.
 
-### x-dropdown.separator
+### dropdown.separator
 A visual separator to divide groups of dropdown items.
 
-### x-dropdown.shortcut
+### dropdown.shortcut
 An element to display keyboard shortcuts or additional information.
 
-### x-dropdown.sub
+### dropdown.sub
 A container for a sub-dropdown.
 
-### x-dropdown.sub-trigger
+### dropdown.sub-trigger
 An item that triggers the opening of a sub-dropdown.
 
-### x-dropdown.sub-content
+### dropdown.sub-content
 The content of a sub-dropdown.
 
 ## Properties
 
-### x-dropdown.checkbox-item
+### dropdown.checkbox-item
 | Prop      | Description              | Type      | Default |
 |-----------|--------------------------|-----------|---------|
 | `checked` | Determines if checked    | `boolean` | `false` |
 
-### x-dropdown.radio-item
+### dropdown.radio-item
 | Prop      | Description              | Type      | Default |
 |-----------|--------------------------|-----------|---------|
 | `name`    | Name for radio grouping  | `string`  | `null`  |

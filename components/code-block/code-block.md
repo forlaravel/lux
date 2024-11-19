@@ -20,7 +20,7 @@ php artisan lux:publish code-block
 
 ## Properties
 
-### x-code-block
+### code-block
 | Prop                   | Description                                      | Type      | Default |
 |------------------------|--------------------------------------------------|-----------|---------|
 | `language`             | Specifies the language for syntax highlighting.  | `string`  | `''`    |

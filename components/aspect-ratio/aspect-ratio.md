@@ -24,7 +24,7 @@ php artisan lux:publish aspect-ratio
 
 ## Properties
 
-### x-aspect-ratio
+### aspect-ratio
 | Prop    | Description                                             | Type     | Default |
 |---------|---------------------------------------------------------|----------|---------|
 | `ratio` | Determines the width-to-height ratio of the component   | `string` | `1/1`   |

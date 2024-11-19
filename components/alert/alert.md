@@ -30,7 +30,7 @@ php artisan lux:publish alert
 
 ## Properties
 
-### \<x-alert>
+### alert
 | Prop      | Description                                     | Type     | Default   |
 |-----------|-------------------------------------------------|----------|-----------|
 | `variant` | Determines the styling of the alert component, can be one of `default` `destructive`  | `string` | `default` |

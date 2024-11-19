@@ -76,21 +76,21 @@ php artisan lux:publish tabs
 
 ## Components
 
-### x-tabs
+### tabs
 | Prop            | Description                                                   | Type     | Default   |
 |-----------------|---------------------------------------------------------------|----------|-----------|
 | `value` | The value of the tab to be active by default.                  | `string` | `null`    |
 | `variant`       | Determines the styling of the tab component, can be `switch` or `underline` | `string` | `switch`  |
 
-### x-tabs.list
+### tabs.list
 Defines the container for the tab triggers. The styling of this container can change based on the `variant` prop of `x-tabs`.
 
-### x-tabs.trigger
+### tabs.trigger
 | Prop    | Description                                              | Type     |
 |---------|----------------------------------------------------------|----------|
 | `value` | The value associated with this tab. It should be unique. | `string` |
 
-### x-tabs.content
+### tabs.content
 | Prop    | Description                                              | Type     |
 |---------|----------------------------------------------------------|----------|
 | `value` | The value associated with this content section. It should match the value of a `x-tabs.trigger`. | `string` |

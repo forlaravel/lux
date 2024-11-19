@@ -56,32 +56,32 @@ php artisan lux:publish card
 
 ## Properties
 
-### x-card
+### card
 | Prop | Description | Type | Default |
 | --- | --- | --- | --- |
 | `class` | Additional Tailwind CSS classes for customizing the card container. | `string` | `rounded-lg border bg-card text-card-foreground shadow-sm` |
 
-### x-card.header
+### card.header
 | Prop | Description | Type | Default |
 | --- | --- | --- | --- |
 | `class` | Additional Tailwind CSS classes for customizing the card header. | `string` | `flex flex-col space-y-1.5 p-6` |
 
-### x-card.title
+### card.title
 | Prop | Description | Type | Default |
 | --- | --- | --- | --- |
 | `class` | Additional Tailwind CSS classes for customizing the card title. | `string` | `text-2xl font-semibold leading-none tracking-tight` |
 
-### x-card.description
+### card.description
 | Prop | Description | Type | Default |
 | --- | --- | --- | --- |
 | `class` | Additional Tailwind CSS classes for customizing the card description. | `string` | `text-sm text-muted-foreground` |
 
-### x-card.content
+### card.content
 | Prop | Description | Type | Default |
 | --- | --- | --- | --- |
 | `class` | Additional Tailwind CSS classes for customizing the card content area. | `string` | `p-6` |
 
-### x-card.footer
+### card.footer
 | Prop | Description | Type | Default |
 | --- | --- | --- | --- |
 | `class` | Additional Tailwind CSS classes for customizing the card footer. | `string` | `flex items-center p-6 pt-0` |

@@ -74,7 +74,7 @@ php artisan lux:publish data-table
 
 ## Properties
 
-### x-data-table.actions
+### data-table.actions
 | Prop      | Description                                                                 | Type     | Default |
 |-----------|-----------------------------------------------------------------------------|----------|---------|
 | `filter`  | Two-way bound property to filter the data table based on user input.        | `string` | `''`    |

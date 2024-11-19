@@ -16,7 +16,7 @@ php artisan lux:publish icons
 
 ## Properties
 
-### x-icons
+### icons
 | Prop          | Description                                                                    | Type     | Default   |
 |---------------|--------------------------------------------------------------------------------|----------|-----------|
 | `class`       | Applies CSS classes to the SVG element for styling purposes.                   | `string` | `''`      |

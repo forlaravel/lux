@@ -59,7 +59,7 @@ window.flatpickr = flatpickr;
 
 ## Properties
 
-### \<x-calendar>
+### calendar
 | Prop | Description | Type | Default |
 | --- | --- | --- | --- |
 | `wire:model` | The selected accordion-item via livewire (takes precedence over `value`). | `array` | `null`

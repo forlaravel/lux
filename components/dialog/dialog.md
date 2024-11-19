@@ -80,38 +80,38 @@ php artisan lux:publish dialog
 
 ## Properties
 
-### <x-dialog>
+### dialog
 | Prop            | Description                                                  | Type      | Default |
 |-----------------|--------------------------------------------------------------|-----------|---------|
 | `tag`           | The HTML tag to use for the dialog container element.        | `string`  | `div`   |
 | `open`          | Determines if the dialog is open on initial render.          | `boolean` | `false` |
 
-### <x-dialog.header>
+### dialog.header
 | Prop            | Description                                                  | Type      | Default |
 |-----------------|--------------------------------------------------------------|-----------|---------|
 | `tag`           | The HTML tag to use for the header container element.        | `string`  | `div`   |
 
-### <x-dialog.title>
+### dialog.title
 | Prop   | Description                                        | Type     | Default |
 |--------|----------------------------------------------------|----------|---------|
 | `tag`  | The HTML tag to use for the title element.         | `string` | `h2`    |
 
-### <x-dialog.description>
+### dialog.description
 | Prop   | Description                                        | Type     | Default |
 |--------|----------------------------------------------------|----------|---------|
 | `tag`  | The HTML tag to use for the description element.   | `string` | `p`     |
 
-### <x-dialog.footer>
+### dialog.footer
 | Prop   | Description                                        | Type     | Default |
 |--------|----------------------------------------------------|----------|---------|
 | `tag`  | The HTML tag to use for the footer container.      | `string` | `div`   |
 
-### <x-dialog.close>
+### dialog.close
 | Prop   | Description                                        | Type     | Default |
 |--------|----------------------------------------------------|----------|---------|
 | `tag`  | The HTML tag to use for the close button element.  | `string` | `button` |
 
-### <x-dialog.trigger>
+### dialog.trigger
 | Prop   | Description                                        | Type     | Default |
 |--------|----------------------------------------------------|----------|---------|
 | `tag`  | The HTML tag to use for the trigger element.       | `string` | `button` |

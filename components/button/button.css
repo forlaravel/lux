@@ -1,48 +1,63 @@
 @layer components {
     .lux-button {
-        @apply cursor-pointer inline-flex gap-1.5 items-center justify-center whitespace-nowrap rounded-md font-medium ring-offset-background transition-colors;
+        @apply cursor-pointer relative inline-flex gap-1.5 items-center justify-center whitespace-nowrap rounded-md font-medium ring-offset-background text-foreground;
         @apply disabled:pointer-events-none disabled:opacity-50;
         @apply active:scale-[0.97];
         @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2;
+        transition: transform 50ms ease-out, color 300ms ease-in-out;
     }
+    
     
     /** loading state */
     .lux-button .spinner {
-        @apply hidden;
+        @apply opacity-0;
+        transition: opacity 300ms ease-in-out;
     }
     .lux-button.loading .spinner {
-        @apply block;
+        @apply opacity-100;
     }
     .lux-button.loading {
-        @apply text-transparent;
+        @apply !text-transparent;
+    }
+    .lux-button.loading .spinner {
+        @apply text-foreground;
     }
     
     /* Variants */
-    .lux-button--primary, .lux-button--primary svg {
+    .lux-button--primary {
         @apply bg-primary text-primary-foreground hover:bg-primary/90;
+        svg { @apply text-primary-foreground;}
     }
     
-    .lux-button--destructive, .lux-button--destructive svg {
+    .lux-button--destructive {
         @apply bg-destructive text-destructive-foreground hover:bg-destructive/90;
+        @apply focus-visible:ring-destructive;
+        svg { @apply text-destructive-foreground;}
     }
     
     .lux-button--outline {
         @apply bg-background border border-input hover:bg-accent;
+        @apply focus-visible:ring-border;
     }
     .lux-button--outline, .lux-button--outline svg {
         @apply hover:text-accent-foreground;
     }
     
-    .lux-button--secondary, .lux-button--secondary svg {
+    .lux-button--secondary {
         @apply bg-secondary text-secondary-foreground hover:bg-secondary/80;
+        @apply focus-visible:ring-secondary;
+        svg { @apply text-secondary-foreground;}
     }
     
-    .lux-button--ghost, .lux-button--ghost svg {
+    .lux-button--ghost {
         @apply hover:bg-accent hover:text-accent-foreground;
+        @apply focus-visible:ring-accent;
+        svg { @apply text-accent-foreground;}
     }
     
     .lux-button--link, .lux-button--link svg {
         @apply underline-offset-4 hover:underline;
+        @apply focus-visible:ring-accent;
     }
     
     /* Sizes */
@@ -63,6 +78,6 @@
     }
     
     .lux-button--icon {
-        @apply w-10 h-10;
+        @apply p-2;
     }
 }

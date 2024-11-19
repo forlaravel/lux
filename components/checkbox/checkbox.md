@@ -19,7 +19,7 @@ php artisan lux:publish checkbox
 
 ## Properties
 
-### x-checkbox
+### checkbox
 | Prop      | Description                                      | Type      | Default |
 |-----------|--------------------------------------------------|-----------|---------|
 | `id`      | The id attribute for the checkbox button element | `string`  | `null`  |

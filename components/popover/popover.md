@@ -53,13 +53,13 @@ php artisan lux:publish popover
 
 ## Properties
 
-### x-popover
+### popover
 The main component that encapsulates the entire popover structure.
 
-### x-popover.trigger
+### popover.trigger
 The component responsible for toggling the visibility of the popover content.
 
-### x-popover.content
+### popover.content
 The component that holds the content of the popover menu. This part is shown or hidden based on the state controlled by the trigger.
 
 No unique props are required for these sub-components as they rely on AlpineJS for functionality and TailwindCSS for styling.

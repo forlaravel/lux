@@ -20,7 +20,7 @@ php artisan lux:publish textarea
 
 ## Properties
 
-### x-textarea
+### textarea
 | Prop      | Description                            | Type     | Default   |
 |-----------|----------------------------------------|----------|-----------|
 | `type`    | Determines the type of the textarea input. | `string` | `text`    |

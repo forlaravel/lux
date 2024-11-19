@@ -20,7 +20,7 @@ php artisan lux:publish badge
 
 ## Properties
 
-### x-badge
+### badge
 | Prop | Description | Type | Default |
 | --- | --- | --- | --- |
 | `variant` | Determines the styling of the badge. Can be one of `default`, `secondary`, `destructive`, `outline`. | `string` | `default` |

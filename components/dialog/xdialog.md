@@ -60,12 +60,12 @@ php artisan lux:publish dialog
 
 ## Properties
 
-### x-dialog.trigger
+### dialog.trigger
 | Prop      | Description                                    | Type     | Default   |
 |-----------|------------------------------------------------|----------|-----------|
 | `variant` | Determines the styling of the trigger button, can be one of `default`, `outline` | `string` | `outline` |
 
-### x-dialog.close
+### dialog.close
 | Prop      | Description                                    | Type     | Default   |
 |-----------|------------------------------------------------|----------|-----------|
 | `variant` | Determines the styling of the close button, can be one of `default`, `outline` | `string` | `outline` |

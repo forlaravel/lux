@@ -66,7 +66,7 @@ php artisan lux:publish input
 
 ## Properties
 
-### \<x-input>
+### input
 | Prop | Description | Type | Default |
 | --- | --- | --- | --- |
 | `mask` | The mask pattern to apply to the input. See https://alpinejs.dev/plugins/mask | `string` | `null` |

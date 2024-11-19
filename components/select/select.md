@@ -36,7 +36,7 @@ php artisan lux:publish select
 
 ## Components and Their Properties
 
-### \<x-select>
+### select
 
 | Prop           | Description                                                                 | Type                | Default            |
 |----------------|-----------------------------------------------------------------------------|---------------------|--------------------|
@@ -49,7 +49,7 @@ php artisan lux:publish select
 | `placeholder`  | The placeholder text.                                                       | `string`            | `Select an option` |
 | `clientSearch` | Whether to search on the client side.                                       | `boolean`           | `true`             |
 
-### \<x-content>
+### content
 | Prop           | Description                                                                 | Type                | Default            |
 |----------------|-----------------------------------------------------------------------------|---------------------|--------------------|
 | `teleport`     | Teleport dropdown to target. Does not work with dynamic Livewire data.      | `string` e.g `'body'`| `null`             |

@@ -12,7 +12,6 @@
 @inject('lux', 'lux')
 
 <div
-@mergeAttributes
     x-data="{
         value: @wireOr($value),
         init() {    
@@ -48,9 +47,8 @@
         },
     }"
     x-modalable="value"
-    class="max-w-sm w-full"
     wire:ignore
-@endMergeAttributes
+    {{ $attributes->only('class')->class('max-w-sm w-full') }}
 >
     <x-dynamic-component 
         :component="$lux->componentPath('input')" 
@@ -60,6 +58,6 @@
         type="text"
         name="{{ $name }}"
         placeholder="{{ $placeholder }}"
-        {{ $attributes->except('class') }}
+        :attributes="$attributes->whereDoesntStartWith('wire:model')"
     />
 </div>

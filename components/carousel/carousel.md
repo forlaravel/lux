@@ -41,21 +41,21 @@ php artisan lux:publish carousel
 
 ## Properties
 
-### x-carousel
+### carousel
 | Prop        | Description                                        | Type     | Default       |
 |-------------|----------------------------------------------------|----------|---------------|
 | `orientation` | Determines the direction of sliding; can be `horizontal` or `vertical` | `string` | `horizontal` |
 | `opts`      | Additional options for customization               | `object` | `{}`          |
 
-### x-carousel.content
+### carousel.content
 | Prop        | Description                                        | Type     | Default       |
 |-------------|----------------------------------------------------|----------|---------------|
 | `orientation` | Determines the direction of sliding; can be `horizontal` or `vertical` | `string` | `horizontal` |
 
-### x-carousel.item
+### carousel.item
 | Prop        | Description                                        | Type     | Default       |
 |-------------|----------------------------------------------------|----------|---------------|
 | `orientation` | Determines the direction of sliding; can be `horizontal` or `vertical` | `string` | `horizontal` |
 
-### x-carousel.previous & x-carousel.next
+### carousel.previous & x-carousel.next
 No additional props. These provide navigation control to move to the previous and next slides, respectively.

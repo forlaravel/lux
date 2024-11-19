@@ -36,41 +36,41 @@ php artisan lux:publish breadcrumb
 
 ## Properties
 
-### x-breadcrumb
+### breadcrumb
 | Prop | Description | Type | Default |
 | --- | --- | --- | --- |
 | `aria-label` | Describes the purpose of the breadcrumb navigation. | `string` | `"breadcrumb"` |
 
-### x-breadcrumb.list
+### breadcrumb.list
 | Prop | Description | Type | Default |
 | --- | --- | --- | --- |
 | `class` | Additional Tailwind CSS classes for styling the breadcrumb list. | `string` | `flex flex-wrap items-center gap-1.5 break-words text-sm text-muted-foreground sm:gap-2.5` |
 
-### x-breadcrumb.item
+### breadcrumb.item
 | Prop | Description | Type | Default |
 | --- | --- | --- | --- |
 | `class` | Additional Tailwind CSS classes for styling the breadcrumb item. | `string` | `inline-flex items-center gap-1.5` |
 
-### x-breadcrumb.link
+### breadcrumb.link
 | Prop | Description | Type | Default |
 | --- | --- | --- | --- |
 | `href` | URL to navigate when the breadcrumb link is clicked. | `string` | `null` |
 | `class` | Additional Tailwind CSS classes for styling the breadcrumb link. | `string` | `transition-colors hover:text-foreground` |
 
-### x-breadcrumb.page
+### breadcrumb.page
 | Prop | Description | Type | Default |
 | --- | --- | --- | --- |
 | `aria-current` | Indicates the current page in the breadcrumb navigation. | `string` | `"page"` |
 | `class` | Additional Tailwind CSS classes for styling the current page in the breadcrumb. | `string` | `font-normal text-foreground` |
 
-### x-breadcrumb.separator
+### breadcrumb.separator
 | Prop | Description | Type | Default |
 | --- | --- | --- | --- |
 | `role` | Defines the separator's role in the breadcrumb navigation. | `string` | `"presentation"` |
 | `aria-hidden` | Hides the separator from screen readers. | `boolean` | `true` |
 | `class` | Additional Tailwind CSS classes for styling the separator. | `string` | `flex h-5 w-5 items-center justify-center` |
 
-### x-breadcrumb.ellipsis
+### breadcrumb.ellipsis
 | Prop | Description | Type | Default |
 | --- | --- | --- | --- |
 | `class` | Additional Tailwind CSS classes for styling the ellipsis icon. | `string` | `lucide lucide-ellipsis h-4 w-4` |

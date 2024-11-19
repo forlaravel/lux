@@ -31,7 +31,7 @@ php artisan lux:publish separator
 
 ## Properties
 
-### x-separator
+### separator
 | Prop         | Description                                                         | Type     | Default       |
 |--------------|---------------------------------------------------------------------|----------|---------------|
 | `orientation`| Determines the orientation of the separator, can be either `horizontal` or `vertical`  | `string` | `horizontal`  |
