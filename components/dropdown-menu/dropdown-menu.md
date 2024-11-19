@@ -1,4 +1,4 @@
-# Dropdown
+# Dropdown Menu
 A dropdown component that provides a flexible and customizable UI element. It supports various items like checkbox, radio buttons, and standard clickable items.
 
 ## Example
