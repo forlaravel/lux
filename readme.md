@@ -4,7 +4,7 @@ Lux is a versatile package inspired by <a href="https://ui.shadcn.com/" target="
 Whether you're building a simple website or a complex web application, Lux aims to simplify your workflow and enhance your productivity.
 
 # Website
-See Lux in action: https://lux.forlaravel.com
+See Lux in action: https://forlaravel.com/lux
 
 ## Features
 - **Laravel Blade Components**: Lux offers a collection of Laravel Blade components that you can easily integrate into your project to create dynamic and interactive user interfaces.
