@@ -46,7 +46,11 @@ function handleRoot(el, Alpine, extraConfig) {
                     observeContent: null,
 
                     ready: false,
-                    init() {
+
+                    isEmpty: true,
+                    selectedLabels: [],
+
+                    async init() {
                         new ResizeObserver(() => {
                             this.dropdownWidth = this.$refs.trigger?.offsetWidth
                         }).observe(this.$refs.trigger)
@@ -66,8 +70,17 @@ function handleRoot(el, Alpine, extraConfig) {
                             }, 500);
                         });
 
-                        Alpine.nextTick(() => {
+                        this.$watch('selected', async (value) => {
+                            this.selectedLabels = await this.setSelectedLabels()
+                            
+                            this.isEmpty = await this.setIsEmpty()
+                        });
+
+                        
+                        Alpine.nextTick(async () => {
                             this.ready = true
+                            this.selectedLabels = await this.setSelectedLabels()
+                            this.isEmpty = await this.setIsEmpty()
                         })
                     },
                     temporaralilyObserverContent(callback, ms) {
@@ -101,7 +114,7 @@ function handleRoot(el, Alpine, extraConfig) {
 
                         let result = this.multiple ? [] : null;
 
-                        if (!this.ready || (await this.isEmpty())) return result;
+                        if (!this.ready || (await this.setIsEmpty())) return result;
 
                         if (this.multiple) {
                             result = this.selected.map(value => this.labelValueCache.find(item => item.value === value))
@@ -111,12 +124,12 @@ function handleRoot(el, Alpine, extraConfig) {
 
                         return result;
                     },
-                    async selectedLabels() {
+                    async setSelectedLabels() {
                         return await this.getDisplay()
                     },
-                    async isEmpty() {
+                    async setIsEmpty() {
                         await this.$nextTick()
-
+                 
                         return (!this.isValid(null)) && 
                             ((!this.multiple && !this.selected) || (this.multiple && !this.selected.length))
                     },

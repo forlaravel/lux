@@ -14,21 +14,22 @@
     @mergeAttributes
         class="flex gap-1.5 flex-wrap self-start"
         :class="{
-            'text-muted-foreground': (await isEmpty()),
-            'text-text': !(await isEmpty()),
+            'text-muted-foreground': isEmpty,
+            'text-text': !isEmpty,
         }"
     @endMergeAttributes
     >
-        <template x-if="multiple && !(await isEmpty())">
-            <template x-for="item in (await selectedLabels())" :key="item.value">
+        {{-- <span x-text="isEmpty"></span> --}}
+        <template x-if="multiple && !isEmpty">
+            <template x-for="item in selectedLabels" :key="item.value">
                 <span x-text="item.label" class="bg-accent text-accent-foreground py-1 px-2.5 rounded text-xs"></span>
             </template>
         </template>
-        <template x-if="!multiple && !(await isEmpty()) && !inputText.length && (await selectedLabels())">
-            <span x-text="(await selectedLabels()).label || '{{ $placeholder ?? '' }}'" class="truncate"></span>
+        <template x-if="!multiple && !isEmpty && !inputText.length && selectedLabels">
+            <span x-text="selectedLabels.label || '{{ $placeholder ?? '' }}'" class="truncate"></span>
         </template>
         @if(!$searchable)
-        <template x-if="(await isEmpty())">
+        <template x-if="isEmpty">
             <span x-text="'{{ $placeholder ?? '' }}'" class="truncate"></span>
         </template>
         @endif
@@ -40,7 +41,7 @@
         @focus="hasInputFocus = true"
         @blur="hasInputFocus = false; close()"
         @keydown.backspace="inputText.length === 0 ? reset() : null"
-        :placeholder="(await isEmpty()) ? '{{ $placeholder }}' : null"
+        :placeholder="(isEmpty) ? '{{ $placeholder }}' : null"
         x-model="inputText"
         {{ $attributes }} 
         />
