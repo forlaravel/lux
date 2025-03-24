@@ -48,7 +48,7 @@
     }"
     x-modalable="value"
     wire:ignore
-    {{ $attributes->only('class')->class('max-w-sm w-full') }}
+    {{ $attributes->only('class')->class('w-full') }}
 >
     <x-dynamic-component 
         :component="$lux->componentPath('input')" 

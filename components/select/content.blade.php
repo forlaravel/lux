@@ -12,6 +12,7 @@
         @mergeAttributes
         x-select:content
         x-ref="content"
+        x-cloak
         class="absolute p-1 top-0 left-0 z-50 max-h-72 min-w-[8rem] rounded-md border bg-popover 
             overflow-x-hidden
             overflow-y-auto text-popover-foreground shadow-md 
