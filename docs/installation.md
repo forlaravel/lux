@@ -4,12 +4,15 @@ To get started with Lux, you can install it via Composer by running the followin
 ```bash
 composer require forlaravel/lux
 ```
-## Node
-You can install the required Alpine.js plugins by running the following command:
+## Node Dependencies
+You can install the required Alpine.js plugins and Tailwind CSS v4 by running the following command:
 
 ```bash
 npm install @alpinejs/anchor @alpinejs/collapse @alpinejs/focus @alpinejs/persist @alpinejs/mask
+npm install @tailwindcss/vite
 ```
+
+Note: Lux is designed to work with Tailwind CSS v4. Make sure you have `@tailwindcss/vite` installed for optimal performance.
 
 
 ## Publishing Components
@@ -56,12 +59,15 @@ export default defineConfig(...)
 ```
 This wil create a lux.css file in your resources/css folder that you can import in your app.css file.
 
-Add to the of your app.css file:
+Add to the top of your app.css file:
 ```css
+@import "tailwindcss";
 @import './lux.css';
 
 ...rest of the css file
 ```
+
+Note: In Tailwind CSS v4, you import Tailwind using `@import "tailwindcss"` instead of the traditional `@tailwind` directives.
 
 
 ## Configuration

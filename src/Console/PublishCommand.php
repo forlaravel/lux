@@ -30,7 +30,7 @@ class PublishCommand extends Command
         }
 
         $components = collect($this->argument('components'))->map(fn($x) => strtolower($x));
-        $allComponents = collect($this->fs->directories(\Lux\LUX_DIR . '/components'))->map(fn($x) => basename($x));
+        $allComponents = $this->discoverAllComponents();
 
         if ($this->option('all')) {
             $components = $allComponents;
@@ -57,6 +57,32 @@ class PublishCommand extends Command
 
                 note("Components {$component} published successfully.");
             }
+        }
+    }
+
+    protected function discoverAllComponents(): \Illuminate\Support\Collection
+    {
+        $components = collect();
+        $baseComponentsDir = \Lux\LUX_DIR . '/components';
+        
+        // Recursively find all components with index.blade.php files
+        $this->findComponentsRecursively($baseComponentsDir, '', $components);
+            
+        return $components->unique()->sort()->values();
+    }
+    
+    protected function findComponentsRecursively(string $directory, string $relativePath, \Illuminate\Support\Collection $components): void
+    {
+        // Check if current directory has an index.blade.php file
+        if ($this->fs->exists($directory)) {
+            $components->push($relativePath ?: basename($directory));
+        }
+        
+        // Recursively check subdirectories
+        foreach ($this->fs->directories($directory) as $subDirectory) {
+            $subDirectoryName = basename($subDirectory);
+            $newRelativePath = $relativePath ? $relativePath . '/' . $subDirectoryName : $subDirectoryName;
+            $this->findComponentsRecursively($subDirectory, $newRelativePath, $components);
         }
     }
 
@@ -103,6 +129,7 @@ class PublishCommand extends Command
             }
         }
 
+        $this->fs->ensureDirectoryExists(dirname($target));
         $this->fs->link($source, $target);
 
         return $target;

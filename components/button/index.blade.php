@@ -1,7 +1,7 @@
 @props([
     'tag' => 'button',
     'variant' => 'primary',
-    'size' => 'md',
+    'size' => 'md'
 ])
 
 <{{ $tag }} {{ $attributes->class([
