@@ -8,7 +8,7 @@
 @endif
     <{{ $tag }} 
         @mergeAttributes
-        x-trap.inert="open"
+        x-trap="open"
         x-show="open"
         x-ref="content"
         x-anchor.bottom-start="$refs.trigger"
@@ -21,7 +21,7 @@
             data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 w-80
         "
         role="dialog"
-        aria-modal="true"
+        aria-modal="false"
         @endMergeAttributes>
         {{ $slot }}
     </{{ $tag }}>
