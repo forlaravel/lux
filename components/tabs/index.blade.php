@@ -5,7 +5,8 @@
 
 <div
 @mergeAttributes
-    {{ $attributes->class(['lux-tabs']) }}
+    data-lux="tabs"
+    data-variant="{{ $variant }}"
     x-data="{
         activeTab: @wireOr($value, handlePersist: true),
         init() {

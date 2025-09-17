@@ -100,6 +100,7 @@ php artisan lux:publish tabs
 |-----------------|---------------------------------------------------------------|----------|-----------|
 | `value` | The value of the tab to be active by default.                  | `string` | `null`    |
 | `variant`       | Determines the styling of the tab component, can be `switch` or `underline` | `string` | `switch`  |
+| `persist`       | If set, the active tab will be saved in local storage with this key, allowing the tab state to persist across page reloads. | `string` | `null`    |
 
 ### tabs.list
 Defines the container for the tab triggers. The styling of this container can change based on the `variant` prop of `x-tabs`.

@@ -50,8 +50,8 @@
     wire:ignore
     {{ $attributes->only('class')->class('w-full') }}
 >
-    <x-dynamic-component 
-        :component="$lux->componentPath('input')" 
+    <x-lux
+        component="input"
         class="{{ $inline ? 'hidden' : '' }}"
         x-ref="picker"
         mask="{{ $mask }}"

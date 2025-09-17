@@ -7,6 +7,7 @@ namespace Lux;
 
 use Lux\Lux;
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\Blade;
 
 /**
  * @package Lux
@@ -23,6 +24,10 @@ class LuxServiceProvider extends ServiceProvider
         if ($this->app->runningInConsole()) {
             $this->bootForConsole();
         }
+
+        $this->loadViewsFrom(__DIR__.'/../global', 'lux');
+
+        Blade::component('lux::lux', 'lux');
 
         app('lux')->boot($this);
     }

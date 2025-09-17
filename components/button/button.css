@@ -1,5 +1,5 @@
 @layer components {
-    .lux-button {
+    [data-lux="button"] {
         @apply cursor-pointer relative inline-flex gap-1.5 items-center justify-center whitespace-nowrap rounded-md font-medium ring-offset-background text-foreground;
         @apply disabled:pointer-events-none disabled:opacity-50;
         @apply active:scale-[0.97];
@@ -8,75 +8,75 @@
     }
     
     /** loading state */
-    .lux-button .lux-spinner {
+    [data-lux="button"] [data-lux="spinner"] {
         @apply opacity-0;
         transition: opacity 300ms ease-in-out;
     }
-    .lux-button[data-loading="true"] .lux-spinner {
+    [data-lux="button"][data-loading="true"] [data-lux="spinner"] {
         @apply opacity-100;
     }
-    .lux-button[data-loading="true"] {
+    [data-lux="button"][data-loading="true"] {
         @apply !text-transparent;
     }
-    .lux-button[data-loading="true"] .lux-spinner {
+    [data-lux="button"][data-loading="true"] [data-lux="spinner"] {
         @apply text-foreground;
     }
     
     /* Variants */
-    .lux-button[data-variant='primary'] {
+    [data-lux="button"][data-variant='primary'] {
         @apply bg-primary text-primary-foreground hover:bg-primary/90;
         svg { @apply text-primary-foreground;}
     }
     
-    .lux-button[data-variant='destructive'] {
+    [data-lux="button"][data-variant='destructive'] {
         @apply bg-destructive text-destructive-foreground hover:bg-destructive/90;
         @apply focus-visible:ring-destructive;
         svg { @apply text-destructive-foreground;}
     }
     
-    .lux-button[data-variant='outline'] {
+    [data-lux="button"][data-variant='outline'] {
         @apply bg-background border border-input hover:bg-accent;
         @apply focus-visible:ring-border;
     }
-    .lux-button[data-variant='outline'], .lux-button[data-variant='outline'] svg {
+    [data-lux="button"][data-variant='outline'], [data-lux="button"][data-variant='outline'] svg {
         @apply hover:text-accent-foreground;
     }
     
-    .lux-button[data-variant='secondary'] {
+    [data-lux="button"][data-variant='secondary'] {
         @apply bg-secondary text-secondary-foreground hover:bg-secondary/80;
         @apply focus-visible:ring-secondary;
         svg { @apply text-secondary-foreground;}
     }
     
-    .lux-button[data-variant='ghost'] {
+    [data-lux="button"][data-variant='ghost'] {
         @apply hover:bg-accent hover:text-accent-foreground;
         @apply focus-visible:ring-accent;
         svg { @apply text-accent-foreground;}
     }
     
-    .lux-button[data-variant='link'], .lux-button[data-variant='link'] svg {
+    [data-lux="button"][data-variant='link'], [data-lux="button"][data-variant='link'] svg {
         @apply underline-offset-4 hover:underline;
         @apply focus-visible:ring-accent;
     }
     
     /* Sizes */
-    .lux-button[data-size='sm'] {
+    [data-lux="button"][data-size='sm'] {
         @apply px-3 py-2 text-xs;
     }
     
-    .lux-button[data-size='md'] {
+    [data-lux="button"][data-size='md'] {
         @apply px-4 py-2.5 text-sm;
     }
     
-    .lux-button[data-size='lg'] {
+    [data-lux="button"][data-size='lg'] {
         @apply px-6 py-3 text-lg;
     }
     
-    .lux-button[data-size='xl'] {
+    [data-lux="button"][data-size='xl'] {
         @apply px-8 py-4 text-2xl;
     }
     
-    .lux-button[data-size='icon'] {
+    [data-lux="button"][data-size='icon'] {
         @apply p-2;
     }
 }
