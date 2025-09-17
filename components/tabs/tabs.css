@@ -1,0 +1,67 @@
+@layer components {
+    /* Base container */
+    .lux-tabs {
+        @apply relative;
+    }
+
+    /* Tab list container */
+    .lux-tabs__list {
+        @apply inline-flex items-center;
+    }
+
+    /* Tab list variants */
+    .lux-tabs__list--switch {
+        @apply h-10 justify-center rounded-md bg-muted p-1 text-muted-foreground;
+    }
+
+    .lux-tabs__list--underline {
+        @apply h-9 w-full justify-start text-muted-foreground border-b bg-transparent p-0;
+    }
+
+    .lux-tabs__list--simple {
+        @apply h-9 w-full justify-start text-muted-foreground border-b bg-transparent p-0;
+    }
+
+    /* Tab trigger button base */
+    .lux-tabs__trigger {
+        @apply inline-flex items-center justify-center whitespace-nowrap font-medium ring-offset-background transition-all;
+        @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2;
+        @apply disabled:pointer-events-none disabled:opacity-50;
+    }
+
+    /* Tab trigger variants */
+    .lux-tabs__trigger--switch {
+        @apply rounded-sm px-3 py-1.5 text-sm;
+    }
+
+    .lux-tabs__trigger--switch.active {
+        @apply bg-background text-foreground shadow-sm;
+    }
+
+    .lux-tabs__trigger--switch:not(.active) {
+        @apply text-muted-foreground;
+    }
+
+    .lux-tabs__trigger--underline {
+        @apply relative h-9 rounded-none border-2 border-transparent bg-transparent px-4 pb-3 pt-3.5 text-sm font-semibold text-muted-foreground shadow-none transition-none;
+        @apply focus-visible:border-t-primary focus-visible:border-x-primary focus-visible:rounded-t-md;
+    }
+
+    .lux-tabs__trigger--underline.active {
+        @apply border-b-primary text-foreground;
+    }
+
+    .lux-tabs__trigger--simple {
+        @apply relative h-9 rounded-none bg-transparent px-4 py-2 text-sm font-medium text-muted-foreground shadow-none transition-colors;
+    }
+
+    .lux-tabs__trigger--simple.active {
+        @apply text-foreground;
+    }
+
+    /* Tab content */
+    .lux-tabs__content {
+        @apply mt-2 ring-offset-background;
+        @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2;
+    }
+}

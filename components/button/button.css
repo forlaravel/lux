@@ -7,77 +7,76 @@
         transition: transform 50ms ease-out, color 300ms ease-in-out;
     }
     
-    
     /** loading state */
-    .lux-button .spinner {
+    .lux-button .lux-spinner {
         @apply opacity-0;
         transition: opacity 300ms ease-in-out;
     }
-    .lux-button.loading .spinner {
+    .lux-button[data-loading="true"] .lux-spinner {
         @apply opacity-100;
     }
-    .lux-button.loading {
+    .lux-button[data-loading="true"] {
         @apply !text-transparent;
     }
-    .lux-button.loading .spinner {
+    .lux-button[data-loading="true"] .lux-spinner {
         @apply text-foreground;
     }
     
     /* Variants */
-    .lux-button--primary {
+    .lux-button[data-variant='primary'] {
         @apply bg-primary text-primary-foreground hover:bg-primary/90;
         svg { @apply text-primary-foreground;}
     }
     
-    .lux-button--destructive {
+    .lux-button[data-variant='destructive'] {
         @apply bg-destructive text-destructive-foreground hover:bg-destructive/90;
         @apply focus-visible:ring-destructive;
         svg { @apply text-destructive-foreground;}
     }
     
-    .lux-button--outline {
+    .lux-button[data-variant='outline'] {
         @apply bg-background border border-input hover:bg-accent;
         @apply focus-visible:ring-border;
     }
-    .lux-button--outline, .lux-button--outline svg {
+    .lux-button[data-variant='outline'], .lux-button[data-variant='outline'] svg {
         @apply hover:text-accent-foreground;
     }
     
-    .lux-button--secondary {
+    .lux-button[data-variant='secondary'] {
         @apply bg-secondary text-secondary-foreground hover:bg-secondary/80;
         @apply focus-visible:ring-secondary;
         svg { @apply text-secondary-foreground;}
     }
     
-    .lux-button--ghost {
+    .lux-button[data-variant='ghost'] {
         @apply hover:bg-accent hover:text-accent-foreground;
         @apply focus-visible:ring-accent;
         svg { @apply text-accent-foreground;}
     }
     
-    .lux-button--link, .lux-button--link svg {
+    .lux-button[data-variant='link'], .lux-button[data-variant='link'] svg {
         @apply underline-offset-4 hover:underline;
         @apply focus-visible:ring-accent;
     }
     
     /* Sizes */
-    .lux-button--sm {
+    .lux-button[data-size='sm'] {
         @apply px-3 py-2 text-xs;
     }
     
-    .lux-button--md {
+    .lux-button[data-size='md'] {
         @apply px-4 py-2.5 text-sm;
     }
     
-    .lux-button--lg {
+    .lux-button[data-size='lg'] {
         @apply px-6 py-3 text-lg;
     }
     
-    .lux-button--xl {
+    .lux-button[data-size='xl'] {
         @apply px-8 py-4 text-2xl;
     }
     
-    .lux-button--icon {
+    .lux-button[data-size='icon'] {
         @apply p-2;
     }
 }

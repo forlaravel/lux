@@ -23,7 +23,26 @@ A component used to create tabbed navigation interfaces, allowing users to switc
 
 <br>
 
-<x-tabs variant="switch" persist="yessir">
+<x-tabs variant="switch" persist="tabs1">
+    <x-tabs.list>
+        <x-tabs.trigger value="tab1">Tab 1</x-tabs.trigger>
+        <x-tabs.trigger value="tab2">Tab 2</x-tabs.trigger>
+    </x-tabs.list>
+
+    <x-tabs.content value="tab1">
+        <x-card>
+            <x-card.content>Content for Tab 1</x-card.content>
+        </x-card>
+    </x-tabs.content>
+    <x-tabs.content value="tab2">
+        <x-card>
+            <x-card.content>Content for Tab 2</x-card.content>
+        </x-card>
+    </x-tabs.content>
+</x-tabs>
+<br>
+
+<x-tabs variant="simple" persist="tabs2">
     <x-tabs.list>
         <x-tabs.trigger value="tab1">Tab 1</x-tabs.trigger>
         <x-tabs.trigger value="tab2">Tab 2</x-tabs.trigger>

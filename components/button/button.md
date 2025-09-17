@@ -5,12 +5,12 @@ A versatile button component that supports multiple variants and sizes, suitable
 ```html
 <div class="flex gap-2 flex-col items-start" x-data="{ clicked: false }">
     <x-button>Default</x-button>
-    <x-button variant="outline" class="loading">Spinner</x-button>
+    <x-button variant="outline" :loading="true">Spinner</x-button>
     <x-button variant="outline">Outline</x-button>
-    <x-button variant="destructive" x-on:click="clicked = !clicked" x-bind:class="{ 'loading': clicked }">Destructive (click me!)</x-button>
+    <x-button variant="destructive" x-on:click="clicked = !clicked" x-bind:data-loading="clicked">Destructive (click me!)</x-button>
     <x-button variant="secondary">Secondary</x-button>
     <x-button variant="ghost">Ghost</x-button>
-    <x-button variant="link" x-on:click="clicked = !clicked" x-bind:class="{ 'loading': clicked }">Link</x-button>
+    <x-button variant="link" x-on:click="clicked = !clicked" x-bind:data-loading="clicked">Link</x-button>
 </div>
 ```
 
@@ -71,5 +71,6 @@ php artisan lux:publish button
 |----------|-----------------------------------------------------------------------------|-----------|-----------|
 | `variant`| Determines the styling of the button, can be `default`, `destructive`, `outline`, `secondary`, `ghost`, `link` | `string`  | `default` |
 | `size`   | Specifies the size of the button, can be `sm`, `md`, `lg`, `xl`, `icon`     | `string`  | `md`      |
+| `loading`| If true, shows a loading spinner and disables the button                     | `boolean` | `false`   |
 | `tag`    | Specifies the HTML tag to be used for the button                            | `string`  | `button`  |
 

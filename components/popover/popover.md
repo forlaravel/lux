@@ -1,7 +1,7 @@
 # Popover
 A component used to display a popover menu in your application. It includes a main content area that can be shown or hidden, and a trigger to control its visibility.
 
-## Examples
+## Example
 
 ### Basic Usage
 ```html

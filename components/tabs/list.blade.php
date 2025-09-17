@@ -2,11 +2,15 @@
     'variant' => 'switch',
 ])
 
-<div 
+<div
+@mergeAttributes
     {{ $attributes->class([
-        'inline-flex h-10 items-center justify-center rounded-md bg-muted p-1 text-muted-foreground' => $variant == 'switch',
-        'inline-flex h-9 items-center w-full justify-start text-muted-foreground border-b bg-transparent p-0' => $variant == 'underline',
+        'lux-tabs__list',
+        'lux-tabs__list--switch' => $variant === 'switch',
+        'lux-tabs__list--underline' => $variant === 'underline',
+        'lux-tabs__list--simple' => $variant === 'simple',
     ]) }}
+@endMergeAttributes
 >
     {{ $slot }}
 </div>
