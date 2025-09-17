@@ -8,9 +8,19 @@
     [data-lux="dialog.content"] {
         @apply fixed left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%];
         @apply w-full max-w-lg border bg-background p-6 shadow-lg sm:rounded-lg text-foreground;
-        @apply transition-[translate,opacity,scale,overlay,display] [transition-behavior:allow-discrete];
+
+        /* Fade in/out animations */
+        @apply opacity-0 scale-95;
+        @apply transition-[opacity,scale,overlay,display] duration-300 ease-out [transition-behavior:allow-discrete];
+        @apply open:opacity-100 open:scale-100;
+
+        /* Starting style for smooth entrance */
+        @apply [@starting-style]:open:opacity-0 [@starting-style]:open:scale-95;
+
+        /* Backdrop animations */
+        @apply backdrop:[transition-behavior:allow-discrete] backdrop:bg-black/80;
+        @apply backdrop:opacity-0 backdrop:transition-[opacity,display,overlay] backdrop:duration-300;
         @apply open:backdrop:opacity-100 [@starting-style]:open:backdrop:opacity-0;
-        @apply backdrop:[transition-behavior:allow-discrete] backdrop:bg-black/80 backdrop:duration-300 backdrop:opacity-0 backdrop:transition-[opacity,display,overlay];
     }
 
     /* Dialog trigger */
