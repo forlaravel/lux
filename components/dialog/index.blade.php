@@ -3,9 +3,10 @@
     'open' => false,
 ])
 
-<{{ $tag }} 
+<{{ $tag }}
 @mergeAttributes
-    x-data="{ 
+    data-lux="dialog"
+    x-data="{
         open: @wireOr($open, handlePersist: true),
         show() {
             this.open = true;
@@ -17,12 +18,12 @@
         },
         closeOnOutsideClick(event) {
             const rect = this.$refs.dialog.getBoundingClientRect();
-            const isOutside = 
+            const isOutside =
                 event.clientX < rect.left ||
                 event.clientX > rect.right ||
                 event.clientY < rect.top ||
                 event.clientY > rect.bottom;
-            
+
             if(isOutside) {
                 this.close();
             }

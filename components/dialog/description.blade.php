@@ -2,6 +2,9 @@
     'tag' => 'p',
 ])
 
-<{{ $tag }} @mergeAttributes class="text-sm text-muted-foreground" @endMergeAttributes>
+<{{ $tag }}
+@mergeAttributes
+    data-lux="dialog.description"
+@endMergeAttributes>
     {{ $slot }}
 </{{ $tag }}>

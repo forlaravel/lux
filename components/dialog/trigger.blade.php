@@ -2,9 +2,9 @@
     'tag' => 'button',
 ])
 
-<{{ $tag }} 
+<{{ $tag }}
 @mergeAttributes
-    class="group focus-visible:outline-none"
+    data-lux="dialog.trigger"
     @click.stop="show()"
 @endMergeAttributes>
     {{ $slot }}

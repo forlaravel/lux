@@ -1,0 +1,47 @@
+@layer components {
+    /* Base container */
+    [data-lux="dialog"] {
+        @apply relative;
+    }
+
+    /* Dialog content (the modal itself) */
+    [data-lux="dialog.content"] {
+        @apply fixed left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%];
+        @apply w-full max-w-lg border bg-background p-6 shadow-lg sm:rounded-lg text-foreground;
+        @apply transition-[translate,opacity,scale,overlay,display] [transition-behavior:allow-discrete];
+        @apply open:backdrop:opacity-100 [@starting-style]:open:backdrop:opacity-0;
+        @apply backdrop:[transition-behavior:allow-discrete] backdrop:bg-black/80 backdrop:duration-300 backdrop:opacity-0 backdrop:transition-[opacity,display,overlay];
+    }
+
+    /* Dialog trigger */
+    [data-lux="dialog.trigger"] {
+        @apply focus-visible:outline-none;
+    }
+
+    /* Dialog close button */
+    [data-lux="dialog.cross"] {
+        @apply absolute right-4 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity;
+        @apply hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2;
+        @apply disabled:pointer-events-none;
+    }
+
+    /* Dialog header */
+    [data-lux="dialog.header"] {
+        @apply flex flex-col space-y-1.5 text-center sm:text-left mb-4;
+    }
+
+    /* Dialog title */
+    [data-lux="dialog.title"] {
+        @apply text-lg font-semibold leading-none tracking-tight;
+    }
+
+    /* Dialog description */
+    [data-lux="dialog.description"] {
+        @apply text-sm text-muted-foreground;
+    }
+
+    /* Dialog footer */
+    [data-lux="dialog.footer"] {
+        @apply flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2 mt-4;
+    }
+}
