@@ -14,9 +14,11 @@ Welcome to the fantastical world of the Dialog component! This little buddy is h
         <x-dialog.header>
             <x-dialog.title>Notice</x-dialog.title>
         </x-dialog.header>
-        <x-dialog.description>
-            Ensure you save your changes before leaving!
-        </x-dialog.description>
+        <x-dialog.body>
+            <x-dialog.description>
+                Ensure you save your changes before leaving!
+            </x-dialog.description>
+        </x-dialog.body>
 
         <x-dialog.footer>
             <x-dialog.close>
@@ -37,119 +39,121 @@ Welcome to the fantastical world of the Dialog component! This little buddy is h
             <x-dialog.title>Notice</x-dialog.title>
         </x-dialog.header>
 
-        <x-accordion>
-            <x-accordion.item>
-                <x-accordion.trigger>Is it accessible?</x-accordion.trigger>
-                <x-accordion.content>
-                    Yes. It adheres to the WAI-ARIA design pattern.
-                </x-accordion.content>
-            </x-accordion.item>
+        <x-dialog.body>
+            <x-accordion>
+                <x-accordion.item>
+                    <x-accordion.trigger>Is it accessible?</x-accordion.trigger>
+                    <x-accordion.content>
+                        Yes. It adheres to the WAI-ARIA design pattern.
+                    </x-accordion.content>
+                </x-accordion.item>
 
-            <x-accordion.item>
-                <x-accordion.trigger>Is it styled?</x-accordion.trigger>
-                <x-accordion.content>
-                    Yes. It comes with default styles that match the other components' aesthetic.
-                </x-accordion.content>
-            </x-accordion.item>
-            <x-accordion.item>
-                <x-accordion.trigger>Is it accessible?</x-accordion.trigger>
-                <x-accordion.content>
-                    Yes. It adheres to the WAI-ARIA design pattern.
-                </x-accordion.content>
-            </x-accordion.item>
+                <x-accordion.item>
+                    <x-accordion.trigger>Is it styled?</x-accordion.trigger>
+                    <x-accordion.content>
+                        Yes. It comes with default styles that match the other components' aesthetic.
+                    </x-accordion.content>
+                </x-accordion.item>
+                <x-accordion.item>
+                    <x-accordion.trigger>Is it accessible?</x-accordion.trigger>
+                    <x-accordion.content>
+                        Yes. It adheres to the WAI-ARIA design pattern.
+                    </x-accordion.content>
+                </x-accordion.item>
 
-            <x-accordion.item>
-                <x-accordion.trigger>Is it styled?</x-accordion.trigger>
-                <x-accordion.content>
-                    Yes. It comes with default styles that match the other components' aesthetic.
-                </x-accordion.content>
-            </x-accordion.item>
-            <x-accordion.item>
-                <x-accordion.trigger>Is it accessible?</x-accordion.trigger>
-                <x-accordion.content>
-                    Yes. It adheres to the WAI-ARIA design pattern.
-                </x-accordion.content>
-            </x-accordion.item>
+                <x-accordion.item>
+                    <x-accordion.trigger>Is it styled?</x-accordion.trigger>
+                    <x-accordion.content>
+                        Yes. It comes with default styles that match the other components' aesthetic.
+                    </x-accordion.content>
+                </x-accordion.item>
+                <x-accordion.item>
+                    <x-accordion.trigger>Is it accessible?</x-accordion.trigger>
+                    <x-accordion.content>
+                        Yes. It adheres to the WAI-ARIA design pattern.
+                    </x-accordion.content>
+                </x-accordion.item>
 
-            <x-accordion.item>
-                <x-accordion.trigger>Is it styled?</x-accordion.trigger>
-                <x-accordion.content>
-                    Yes. It comes with default styles that match the other components' aesthetic.
-                </x-accordion.content>
-            </x-accordion.item>
-            <x-accordion.item>
-                <x-accordion.trigger>Is it accessible?</x-accordion.trigger>
-                <x-accordion.content>
-                    Yes. It adheres to the WAI-ARIA design pattern.
-                </x-accordion.content>
-            </x-accordion.item>
+                <x-accordion.item>
+                    <x-accordion.trigger>Is it styled?</x-accordion.trigger>
+                    <x-accordion.content>
+                        Yes. It comes with default styles that match the other components' aesthetic.
+                    </x-accordion.content>
+                </x-accordion.item>
+                <x-accordion.item>
+                    <x-accordion.trigger>Is it accessible?</x-accordion.trigger>
+                    <x-accordion.content>
+                        Yes. It adheres to the WAI-ARIA design pattern.
+                    </x-accordion.content>
+                </x-accordion.item>
 
-            <x-accordion.item>
-                <x-accordion.trigger>Is it styled?</x-accordion.trigger>
-                <x-accordion.content>
-                    Yes. It comes with default styles that match the other components' aesthetic.
-                </x-accordion.content>
-            </x-accordion.item>
-            <x-accordion.item>
-                <x-accordion.trigger>Is it accessible?</x-accordion.trigger>
-                <x-accordion.content>
-                    Yes. It adheres to the WAI-ARIA design pattern.
-                </x-accordion.content>
-            </x-accordion.item>
+                <x-accordion.item>
+                    <x-accordion.trigger>Is it styled?</x-accordion.trigger>
+                    <x-accordion.content>
+                        Yes. It comes with default styles that match the other components' aesthetic.
+                    </x-accordion.content>
+                </x-accordion.item>
+                <x-accordion.item>
+                    <x-accordion.trigger>Is it accessible?</x-accordion.trigger>
+                    <x-accordion.content>
+                        Yes. It adheres to the WAI-ARIA design pattern.
+                    </x-accordion.content>
+                </x-accordion.item>
 
-            <x-accordion.item>
-                <x-accordion.trigger>Is it styled?</x-accordion.trigger>
-                <x-accordion.content>
-                    Yes. It comes with default styles that match the other components' aesthetic.
-                </x-accordion.content>
-            </x-accordion.item>
-            <x-accordion.item>
-                <x-accordion.trigger>Is it accessible?</x-accordion.trigger>
-                <x-accordion.content>
-                    Yes. It adheres to the WAI-ARIA design pattern.
-                </x-accordion.content>
-            </x-accordion.item>
+                <x-accordion.item>
+                    <x-accordion.trigger>Is it styled?</x-accordion.trigger>
+                    <x-accordion.content>
+                        Yes. It comes with default styles that match the other components' aesthetic.
+                    </x-accordion.content>
+                </x-accordion.item>
+                <x-accordion.item>
+                    <x-accordion.trigger>Is it accessible?</x-accordion.trigger>
+                    <x-accordion.content>
+                        Yes. It adheres to the WAI-ARIA design pattern.
+                    </x-accordion.content>
+                </x-accordion.item>
 
-            <x-accordion.item>
-                <x-accordion.trigger>Is it styled?</x-accordion.trigger>
-                <x-accordion.content>
-                    Yes. It comes with default styles that match the other components' aesthetic.
-                </x-accordion.content>
-            </x-accordion.item>
-            <x-accordion.item>
-                <x-accordion.trigger>Is it accessible?</x-accordion.trigger>
-                <x-accordion.content>
-                    Yes. It adheres to the WAI-ARIA design pattern.
-                </x-accordion.content>
-            </x-accordion.item>
+                <x-accordion.item>
+                    <x-accordion.trigger>Is it styled?</x-accordion.trigger>
+                    <x-accordion.content>
+                        Yes. It comes with default styles that match the other components' aesthetic.
+                    </x-accordion.content>
+                </x-accordion.item>
+                <x-accordion.item>
+                    <x-accordion.trigger>Is it accessible?</x-accordion.trigger>
+                    <x-accordion.content>
+                        Yes. It adheres to the WAI-ARIA design pattern.
+                    </x-accordion.content>
+                </x-accordion.item>
 
-            <x-accordion.item>
-                <x-accordion.trigger>Is it styled?</x-accordion.trigger>
-                <x-accordion.content>
-                    Yes. It comes with default styles that match the other components' aesthetic.
-                </x-accordion.content>
-            </x-accordion.item>
-            <x-accordion.item>
-                <x-accordion.trigger>Is it accessible?</x-accordion.trigger>
-                <x-accordion.content>
-                    Yes. It adheres to the WAI-ARIA design pattern.
-                </x-accordion.content>
-            </x-accordion.item>
+                <x-accordion.item>
+                    <x-accordion.trigger>Is it styled?</x-accordion.trigger>
+                    <x-accordion.content>
+                        Yes. It comes with default styles that match the other components' aesthetic.
+                    </x-accordion.content>
+                </x-accordion.item>
+                <x-accordion.item>
+                    <x-accordion.trigger>Is it accessible?</x-accordion.trigger>
+                    <x-accordion.content>
+                        Yes. It adheres to the WAI-ARIA design pattern.
+                    </x-accordion.content>
+                </x-accordion.item>
 
-            <x-accordion.item>
-                <x-accordion.trigger>Is it styled?</x-accordion.trigger>
-                <x-accordion.content>
-                    Yes. It comes with default styles that match the other components' aesthetic.
-                </x-accordion.content>
-            </x-accordion.item>
+                <x-accordion.item>
+                    <x-accordion.trigger>Is it styled?</x-accordion.trigger>
+                    <x-accordion.content>
+                        Yes. It comes with default styles that match the other components' aesthetic.
+                    </x-accordion.content>
+                </x-accordion.item>
 
-            <x-accordion.item>
-                <x-accordion.trigger>Is it animated?</x-accordion.trigger>
-                <x-accordion.content>
-                    Yes. It's animated by default, but you can disable it if you prefer.
-                </x-accordion.content>
-            </x-accordion.item>
-        </x-accordion>
+                <x-accordion.item>
+                    <x-accordion.trigger>Is it animated?</x-accordion.trigger>
+                    <x-accordion.content>
+                        Yes. It's animated by default, but you can disable it if you prefer.
+                    </x-accordion.content>
+                </x-accordion.item>
+            </x-accordion>
+        </x-dialog.body>
 
         <x-dialog.footer>
             <x-dialog.close>

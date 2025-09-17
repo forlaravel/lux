@@ -4,7 +4,7 @@
 
 <{{ $tag }}
 @mergeAttributes
-    data-lux="dialog.description"
+    data-lux="dialog.body"
 @endMergeAttributes>
     {{ $slot }}
 </{{ $tag }}>

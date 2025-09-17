@@ -45,11 +45,6 @@
         @apply text-lg font-semibold leading-none tracking-tight;
     }
 
-    /* Dialog description */
-    [data-lux="dialog.description"] {
-        @apply text-sm text-muted-foreground;
-    }
-
     /* Dialog footer */
     [data-lux="dialog.footer"] {
         @apply flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2 mt-4;
