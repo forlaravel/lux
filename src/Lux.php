@@ -16,8 +16,16 @@ class Lux
     
     public function boot(ServiceProvider $provider)
     {
+        $this->bootTagStack();
         $this->bootBladeDirectives();
         $this->bootComponentAttributeBagMacros();
+    }
+
+    public function bootTagStack()
+    {
+        app()->singleton('lux.tag_stack', function () {
+            return collect();
+        });
     }
 
     public function bootBladeDirectives()
@@ -38,8 +46,52 @@ class Lux
 
             // parse the $expression
             $result = "<?php echo app('lux')->wireOr(\$__data['attributes'], $expression)$handlePersist ?>";
-      
+
             return $result;
+        });
+
+        Blade::directive('tag', function ($expression) {
+            $expression = trim($expression, '()\'\"');
+            return "<?php
+                \$__tagName = isset(\$tag) ? \$tag : '$expression';
+                \$__tagStack = app('lux.tag_stack');
+                \$__tagStack->push(['name' => \$__tagName, 'attributes' => []]);
+                ob_start();
+            ?>";
+        });
+
+        Blade::directive('content', function () {
+            return "<?php
+                \$__tagStack = app('lux.tag_stack');
+                \$__currentTag = \$__tagStack->last();
+                \$__attributesBuffer = ob_get_clean();
+
+                // Parse attributes from buffer
+                \$__parsedAttributes = app('lux')->parseTagAttributes(\$__attributesBuffer);
+
+                // Merge with existing attributes if available
+                if (isset(\$attributes)) {
+                    \$__mergedAttributes = \$attributes->mergeTailwindAware(\$__parsedAttributes);
+                } else {
+                    \$__mergedAttributes = new \Illuminate\View\ComponentAttributeBag(\$__parsedAttributes);
+                }
+
+                // Render opening tag with proper spacing
+                \$__attributesString = (string) \$__mergedAttributes;
+                if (\$__attributesString !== '') {
+                    echo '<' . \$__currentTag['name'] . ' ' . \$__attributesString . '>';
+                } else {
+                    echo '<' . \$__currentTag['name'] . '>';
+                }
+            ?>";
+        });
+
+        Blade::directive('endTag', function () {
+            return "<?php
+                \$__tagStack = app('lux.tag_stack');
+                \$__currentTag = \$__tagStack->pop();
+                echo '</' . \$__currentTag['name'] . '>';
+            ?>";
         });
     }
 
@@ -102,6 +154,35 @@ class Lux
             }
             
             return null;
+        });
+    }
+
+    public function parseTagAttributes($buffer)
+    {
+        $buffer = trim($buffer);
+
+        // Cache the parsed attributes
+        return cache()->rememberForever('tag-attributes-' . md5($buffer), function () use ($buffer) {
+            $buffer = html_entity_decode($buffer);
+
+            $attributes = [];
+
+            // Enhanced regex to handle various attribute formats
+            preg_match_all('/([:a-zA-Z0-9-@\.]+)(?:=(?:"([^"]*)"|\'([^\']*)\'|([^\s>]+)))?/s', $buffer, $matches, PREG_SET_ORDER);
+
+            foreach ($matches as $match) {
+                $key = $match[1];
+                $value = $match[2] ?? $match[3] ?? $match[4] ?? true;
+
+                // Handle class merging specially
+                if ($key === 'class' && isset($attributes['class'])) {
+                    $attributes['class'] .= ' ' . $value;
+                } else {
+                    $attributes[$key] = $value;
+                }
+            }
+
+            return $attributes;
         });
     }
 

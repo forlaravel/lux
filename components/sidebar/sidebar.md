@@ -3,7 +3,7 @@ A simple and flexible sidebar navigation component with collapsible functionalit
 
 ## Example
 ```html
-<x-sidebar.provider class="min-h-[500px]">
+<x-sidebar.provider class="min-h-[500px]" :fixed="false">
     <x-sidebar>
         <x-sidebar.header>
             <h2 class="text-lg font-semibold">My App</h2>

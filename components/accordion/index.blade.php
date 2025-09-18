@@ -5,8 +5,7 @@
     'animated' => true,
 ])
 
-<{{ $tag }} 
-@mergeAttributes
+@tag($tag)
     x-id="['accordion']"
     :id="$id('accordion')"
     x-data="{
@@ -27,7 +26,6 @@
             return this.multiple ? this.selected.includes(id) : this.selected === id;
         }
     }"
-@endMergeAttributes
->
+@content
     {{ $slot }}
-</{{ $tag}}>
+@endTag

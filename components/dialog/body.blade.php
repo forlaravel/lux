@@ -2,9 +2,8 @@
     'tag' => 'div',
 ])
 
-<{{ $tag }}
-@mergeAttributes
+@tag('div')
     data-lux="dialog.body"
-@endMergeAttributes>
+@content
     {{ $slot }}
-</{{ $tag }}>
+@endTag
