@@ -7,20 +7,30 @@
 
 @open($tag)
     data-lux="sidebar.provider"
-    data-open="{{ $open ? 'true' : 'false' }}"
-    data-fixed="{{ $fixed ? 'true' : 'false' }}"
+    x-bind:data-open="sidebarOpen ? 'true' : 'false'"
+    x-bind:data-fixed="sidebarFixed ? 'true' : 'false'"
     x-data="{
-        sidebarOpen: @js($open),
+        sidebarOpen: @wireOr($open, handlePersist: true),
         sidebarFixed: @js($fixed),
         sidebarSide: @js($side),
         init() {
             if (this.sidebarFixed) {
-                this.updateBodyClasses();
+                // Set initial classes without transition
+                document.body.classList.add('sidebar-fixed');
+                if (this.sidebarOpen) {
+                    document.body.classList.add(`sidebar-open-${this.sidebarSide}`);
+                } else {
+                    document.body.classList.add(`sidebar-closed-${this.sidebarSide}`);
+                }
+                // Add transition class after a frame to prevent initial animation
+                requestAnimationFrame(() => {
+                    document.body.classList.add('sidebar-transition');
+                });
             }
         },
         toggleSidebar() {
             this.sidebarOpen = !this.sidebarOpen;
-            this.$el.setAttribute('data-open', this.sidebarOpen ? 'true' : 'false');
+           
             if (this.sidebarFixed) {
                 this.updateBodyClasses();
             }

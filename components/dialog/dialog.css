@@ -24,6 +24,8 @@
     }
 
     [data-lux="dialog.body"] {
+        @apply overflow-y-auto;
+        max-height: calc(100dvh - 16rem);
     }
 
     /* Dialog trigger */

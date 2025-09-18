@@ -37,15 +37,17 @@ class Lux
             $handlePersist = $persist ? '->handlePersist()' : '';
 
             // parse the $expression
+            // <?php echo app('lux')->wireOr($__data['attributes'], $open)->handlePersist()
             $result = "<?php echo app('lux')->wireOr(\$__data['attributes'], $expression)$handlePersist ?>";
 
             return $result;
         });
 
         Blade::directive('open', function ($expression) {
-            $expression = trim($expression, '()\'\"');
+            $expression = trim($expression, '()');
+
             return "<?php
-                \$__tagName = isset(\$tag) ? \$tag : '$expression';
+                \$__tagName = $expression;
                 \$__tagStack = app('lux.tag_stack');
                 \$__tagStack->push(['name' => \$__tagName, 'attributes' => []]);
                 ob_start();
@@ -160,6 +162,7 @@ class Lux
 
     public function wireOr(ComponentAttributeBag $attributes, $fallback = null, $tag = 'wire:model')
     {
+
         return new class ($attributes, $fallback, $tag) {
             public $string = '';
             
@@ -170,6 +173,7 @@ class Lux
             public function handleWireModel()
             {
                 $wireModel = $this->attributes->getWithModifiers($this->tag);
+
         
                 if ($wireModel) {
                     $this->string = "\$wire.entangle('$wireModel->value')";
