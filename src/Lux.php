@@ -30,14 +30,6 @@ class Lux
 
     public function bootBladeDirectives()
     {
-        Blade::directive('mergeAttributes', function ($expression) {
-            return "<?php echo \$attributes->mergeAttributesStart(); ?>";
-        });
-
-        Blade::directive('endMergeAttributes', function ($expression) {
-            return "<?php echo \$attributes->mergeAttributesEnd(); ?>";
-        });
-
         Blade::directive('wireOr', function ($expression) {
             $persist = preg_match('/handlePersist\s*:\s*true/', $expression);
             $expression = preg_replace('/,\s*handlePersist.*/', '', $expression);
@@ -105,26 +97,6 @@ class Lux
             $mergedAttributes['class'] = $tw->merge($mergedAttributes->get('class'));
 
             return $mergedAttributes;
-        });
-        ComponentAttributeBag::macro('mergeAttributesStart', function () {
-            ob_start();
-            return $this;
-        });
-        ComponentAttributeBag::macro('mergeAttributesEnd', function () {
-            $buffer = ob_get_clean();
-
-            return cache()->rememberForever('tailwind-aware-attributes-' . md5($buffer), function () use ($buffer) {
-                $buffer = html_entity_decode($buffer);
-
-                $attributes = [];
-                preg_match_all('/([:a-zA-Z0-9-@\.]+)(?:="([^"]*)")?/', $buffer, $matches);
-
-                foreach ($matches[1] as $index => $key) {
-                    $attributes[$key] = $matches[2][$index];
-                }
-
-                return (string) $this->mergeTailwindAware($attributes);
-            });
         });
         ComponentAttributeBag::macro('getWithModifiers', function ($tag) {
             $tags = $this->whereStartsWith($tag)->getAttributes();
