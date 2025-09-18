@@ -5,7 +5,7 @@
     'value' => null,
 ])
 
-@tag($tag)
+@open($tag)
     type="{{ $type }}"
     autocomplete="off"
     x-data="{
@@ -26,4 +26,4 @@
         focus:border-input
     "
 @content
-@endTag
+@close

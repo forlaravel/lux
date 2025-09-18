@@ -3,7 +3,7 @@
     'variant' => '',
 ])
 
-@tag($tag)
+@open($tag)
     role="alert"
     {{ $attributes->class([
         "text-left relative w-full rounded-lg border p-4",
@@ -14,4 +14,4 @@
     ]) }}
 @content
     {{ $slot }}
-@endTag
+@close

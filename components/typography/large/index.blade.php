@@ -2,6 +2,6 @@
     'tag' => 'div',
 ])
 
-@tag($tag) class="text-lg font-semibold" @content
+@open($tag) class="text-lg font-semibold" @content
     {{ $slot }}
-@endTag
+@close

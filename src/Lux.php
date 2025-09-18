@@ -42,7 +42,7 @@ class Lux
             return $result;
         });
 
-        Blade::directive('tag', function ($expression) {
+        Blade::directive('open', function ($expression) {
             $expression = trim($expression, '()\'\"');
             return "<?php
                 \$__tagName = isset(\$tag) ? \$tag : '$expression';
@@ -78,7 +78,7 @@ class Lux
             ?>";
         });
 
-        Blade::directive('endTag', function () {
+        Blade::directive('close', function () {
             return "<?php
                 \$__tagStack = app('lux.tag_stack');
                 \$__currentTag = \$__tagStack->pop();

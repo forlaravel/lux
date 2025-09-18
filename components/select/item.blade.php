@@ -6,7 +6,7 @@
     'tag' => 'button',
 ])
 
-@tag($tag)
+@open($tag)
     class="relative flex w-full cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm outline-none
         focus:bg-accent focus:text-accent-foreground
         hover:bg-accent hover:text-accent-foreground
@@ -27,4 +27,4 @@
 @content
     <svg xmlns="http://www.w3.org/2000/svg" x-show="isSelected(@js($value))" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="absolute left-2 h-4 w-4"><path d="M20 6 9 17l-5-5"></path></svg>
     {{ $slot }}
-@endTag
+@close

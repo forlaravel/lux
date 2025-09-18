@@ -6,7 +6,7 @@
 @if($teleport)
 <template x-teleport="{{ $teleport }}">
 @endif
-    @tag($tag)
+    @open($tag)
         x-trap="open"
         x-show="open"
         x-ref="content"
@@ -23,7 +23,7 @@
         aria-modal="false"
     @content
         {{ $slot }}
-    @endTag
+    @close
 @if($teleport)
 </template>
 @endif

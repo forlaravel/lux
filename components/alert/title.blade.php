@@ -2,8 +2,8 @@
     'tag' => 'h5',
 ])
 
-@tag($tag)
+@open($tag)
 class="mb-1 font-medium leading-none tracking-tight"
 @content
     {{ $slot }}
-@endTag
+@close

@@ -2,9 +2,9 @@
     'tag' => 'button',
 ])
 
-@tag($tag)
+@open($tag)
     data-lux="dialog.close"
     @click="close()"
 @content
     {{ $slot }}
-@endTag
+@close

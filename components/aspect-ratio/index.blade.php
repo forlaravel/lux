@@ -3,9 +3,9 @@
     'ratio'
 ])
 
-@tag($tag)
+@open($tag)
     style="aspect-ratio: {{ $ratio }};"
     class="relative overflow-hidden"
 @content
     {{ $slot }}
-@endTag
+@close

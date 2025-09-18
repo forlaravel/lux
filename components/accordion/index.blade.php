@@ -5,7 +5,7 @@
     'animated' => true,
 ])
 
-@tag($tag)
+@open($tag)
     x-id="['accordion']"
     :id="$id('accordion')"
     x-data="{
@@ -28,4 +28,4 @@
     }"
 @content
     {{ $slot }}
-@endTag
+@close

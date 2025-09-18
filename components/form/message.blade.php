@@ -6,10 +6,10 @@
 ])
 
 @error($name)
-    @tag($tag)
+    @open($tag)
         x-form:message.assertive
         class="text-[0.8rem] font-medium text-destructive"
     @content
         {{ $message }}
-    @endTag
+    @close
 @enderror

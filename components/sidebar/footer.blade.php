@@ -2,8 +2,8 @@
     'tag' => 'div',
 ])
 
-@tag($tag)
+@open($tag)
     data-lux="sidebar.footer"
 @content
     {{ $slot }}
-@endTag
+@close

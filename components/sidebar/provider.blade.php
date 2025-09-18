@@ -5,7 +5,7 @@
     'side' => 'left',
 ])
 
-@tag($tag)
+@open($tag)
     data-lux="sidebar.provider"
     data-open="{{ $open ? 'true' : 'false' }}"
     data-fixed="{{ $fixed ? 'true' : 'false' }}"
@@ -40,4 +40,4 @@
     @toggle-sidebar.window="toggleSidebar()"
 @content
     {{ $slot }}
-@endTag
+@close

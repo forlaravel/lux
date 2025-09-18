@@ -2,7 +2,7 @@
     'tag' => 'div'
 ])
 
-@tag($tag)
+@open($tag)
     x-id="['accordion-item', 'accordion-trigger', 'accordion-content']"
     :id="$id('accordion-item')"
     :aria-labelledby="$id('accordion-trigger')"
@@ -10,4 +10,4 @@
     role="region"
 @content
     {{ $slot }}
-@endTag
+@close

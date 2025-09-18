@@ -6,9 +6,9 @@
     'variant' => 'switch',
 ])
 
-@tag($tag)
+@open($tag)
     data-lux="tabs.list"
     data-variant="{{ $variant }}"
 @content
     {{ $slot }}
-@endTag
+@close

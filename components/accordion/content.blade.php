@@ -6,7 +6,7 @@
     'animated' => true
 ])
 
-@tag($tag)
+@open($tag)
     :id="$id('accordion-content')"
     :aria-labelledby="$id('accordion-trigger')"
     x-show="isSelected($id('accordion-item'))"
@@ -20,4 +20,4 @@
     <div {{ $attributes->merge(['class' => 'pb-4 pt-0']) }}>
         {{ $slot }}
     </div>
-@endTag
+@close

@@ -3,7 +3,7 @@
     'open' => false,
 ])
 
-@tag($tag)
+@open($tag)
     data-lux="dialog"
     x-data="{
         open: @wireOr($open, handlePersist: true),
@@ -31,4 +31,4 @@
     x-modelable="open"
 @content
     {{ $slot }}
-@endTag
+@close

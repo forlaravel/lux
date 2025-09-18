@@ -6,7 +6,7 @@
     'variant' => 'switch',
 ])
 
-@tag($tag)
+@open($tag)
     data-lux="tabs.trigger"
     data-variant="{{ $variant }}"
     data-value="{{ $value }}"
@@ -14,4 +14,4 @@
     x-on:click="activeTab = '{{ $value }}'"
 @content
     {{ $slot }}
-@endTag
+@close

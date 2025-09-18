@@ -2,8 +2,8 @@
     'tag' => 'div',
 ])
 
-@tag($tag)
+@open($tag)
     data-lux="dialog.header"
 @content
     {{ $slot }}
-@endTag
+@close

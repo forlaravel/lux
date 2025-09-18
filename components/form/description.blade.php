@@ -1,9 +1,9 @@
 @props([
     'tag' => 'p',
 ])
-@tag($tag)
+@open($tag)
 x-form:description
 class="text-[0.8rem] text-muted-foreground"
 @content
     {{ $slot }}
-@endTag
+@close

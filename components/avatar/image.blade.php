@@ -2,7 +2,7 @@
     'tag' => 'img',
 ])
 
-@tag($tag)
+@open($tag)
     class="aspect-square h-full w-full"
 @content
-@endTag
+@close

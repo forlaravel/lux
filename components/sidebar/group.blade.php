@@ -3,11 +3,11 @@
     'title' => null,
 ])
 
-@tag($tag)
+@open($tag)
     data-lux="sidebar.group"
 @content
     @if($title)
         <div data-lux="sidebar.group-title">{{ $title }}</div>
     @endif
     {{ $slot }}
-@endTag
+@close

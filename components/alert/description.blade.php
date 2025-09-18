@@ -2,8 +2,8 @@
     'tag' => 'div',
 ])
 
-@tag($tag)
+@open($tag)
 class="text-sm [&_p]:leading-relaxed"
 @content
     {{ $slot }}
-@endTag
+@close

@@ -13,7 +13,7 @@
 @if($searchable)
 <div x-ref="input" {{ $attributes->class(["flex w-full self-start flex-wrap", "gap-1.5" => $multiple]) }}>
 @endif
-    @tag($tag)
+    @open($tag)
     wire:ignore
         class="flex gap-1.5 flex-wrap self-start"
         :class="{
@@ -35,7 +35,7 @@
             <span x-text="'{{ $placeholder ?? '' }}'" class="truncate"></span>
         </template>
         @endif
-    @endTag
+    @close
 @if($searchable)
     <input 
         wire:ignore

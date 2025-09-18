@@ -3,7 +3,7 @@
     'showCloseButton' => true,
 ])
 
-@tag($tag)
+@open($tag)
     data-lux="dialog.content"
     x-ref="dialog"
     x-trap.noscroll="open"
@@ -20,4 +20,4 @@
             <span class="sr-only">Close</span>
         </button>
     @endif
-@endTag
+@close

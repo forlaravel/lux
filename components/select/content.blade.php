@@ -8,7 +8,7 @@
 @if($teleport)
 <template x-teleport="{{ $teleport }}">
 @endif
-    @tag($tag)
+    @open($tag)
         x-select:content
         x-ref="content"
         x-cloak
@@ -18,7 +18,7 @@
             data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2  data-[side=right]:slide-in-from-left-2  data-[side=top]:slide-in-from-bottom-2"
     @content
         {{ $slot }}
-    @endTag
+    @close
 @if($teleport)
 </template>
 @endif
