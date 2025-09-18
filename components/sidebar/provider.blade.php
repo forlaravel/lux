@@ -9,6 +9,7 @@
     data-lux="sidebar.provider"
     x-bind:data-open="sidebarOpen ? 'true' : 'false'"
     x-bind:data-fixed="sidebarFixed ? 'true' : 'false'"
+    x-cloak
     x-data="{
         sidebarOpen: @wireOr($open, handlePersist: true),
         sidebarFixed: @js($fixed),
@@ -27,6 +28,10 @@
                     document.body.classList.add('sidebar-transition');
                 });
             }
+            // Mark as initialized after a frame to enable transitions
+            requestAnimationFrame(() => {
+                this.$el.setAttribute('data-initialized', 'true');
+            });
         },
         toggleSidebar() {
             this.sidebarOpen = !this.sidebarOpen;

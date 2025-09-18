@@ -7,6 +7,10 @@
     /* Sidebar container */
     [data-lux="sidebar"] {
         @apply relative flex w-64 flex-col bg-sidebar border-r;
+    }
+
+    /* Add transition only when initialized */
+    [data-lux="sidebar.provider"][data-initialized="true"] [data-lux="sidebar"] {
         @apply transition-all duration-300 ease-in-out;
     }
 
