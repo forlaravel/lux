@@ -1,10 +1,10 @@
 @props([
+    'tag' => 'div',
     'value' => null,
     'variant' => 'switch',
 ])
 
-<div
-@mergeAttributes
+@tag($tag)
     data-lux="tabs"
     data-variant="{{ $variant }}"
     x-data="{
@@ -15,7 +15,6 @@
             }
         },
     }"
-@endMergeAttributes
->
+@content
     {{ $slot }}
-</div>
+@endTag

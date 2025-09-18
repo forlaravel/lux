@@ -3,8 +3,7 @@
     'open' => false,
 ])
 
-<{{ $tag }}
-@mergeAttributes
+@tag($tag)
     data-lux="dialog"
     x-data="{
         open: @wireOr($open, handlePersist: true),
@@ -30,7 +29,6 @@
         }
     }"
     x-modelable="open"
-@endMergeAttributes
->
+@content
     {{ $slot }}
-</{{ $tag}}>
+@endTag

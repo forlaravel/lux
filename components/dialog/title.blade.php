@@ -2,9 +2,8 @@
     'tag' => 'h2',
 ])
 
-<{{ $tag }}
-@mergeAttributes
+@tag($tag)
     data-lux="dialog.title"
-@endMergeAttributes>
+@content
     {{ $slot }}
-</{{ $tag }}>
+@endTag

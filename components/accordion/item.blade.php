@@ -2,14 +2,12 @@
     'tag' => 'div'
 ])
 
-<{{ $tag}}  
-@mergeAttributes
+@tag($tag)
     x-id="['accordion-item', 'accordion-trigger', 'accordion-content']"
     :id="$id('accordion-item')"
     :aria-labelledby="$id('accordion-trigger')"
-    class="border-b" 
+    class="border-b"
     role="region"
-@endMergeAttributes
->
+@content
     {{ $slot }}
-</{{ $tag}} >
+@endTag

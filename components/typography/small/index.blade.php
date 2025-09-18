@@ -1,3 +1,7 @@
-<small @mergeAttributes class="text-sm font-medium leading-none" @endMergeAttributes>
+@props([
+    'tag' => 'small',
+])
+
+@tag($tag) class="text-sm font-medium leading-none" @content
     {{ $slot }}
-</small>
+@endTag

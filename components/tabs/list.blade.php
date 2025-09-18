@@ -1,12 +1,14 @@
+@props([
+    'tag' => 'div',
+])
+
 @aware([
     'variant' => 'switch',
 ])
 
-<div
-@mergeAttributes
+@tag($tag)
     data-lux="tabs.list"
     data-variant="{{ $variant }}"
-@endMergeAttributes
->
+@content
     {{ $slot }}
-</div>
+@endTag

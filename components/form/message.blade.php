@@ -6,12 +6,10 @@
 ])
 
 @error($name)
-    <{{ $tag }}
-        @mergeAttributes
+    @tag($tag)
         x-form:message.assertive
         class="text-[0.8rem] font-medium text-destructive"
-        @endMergeAttributes
-    >
+    @content
         {{ $message }}
-    </{{ $tag }}>
+    @endTag
 @enderror

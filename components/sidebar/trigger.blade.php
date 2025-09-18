@@ -1,10 +1,10 @@
-@props([])
+@props([
+    'tag' => 'button',
+])
 
-<button
-@mergeAttributes
+@tag($tag)
     data-lux="sidebar.trigger"
     @click="$dispatch('toggle-sidebar')"
-@endMergeAttributes
->
+@content
     {{ $slot }}
-</button>
+@endTag

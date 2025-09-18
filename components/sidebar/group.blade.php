@@ -1,14 +1,13 @@
 @props([
+    'tag' => 'div',
     'title' => null,
 ])
 
-<div
-@mergeAttributes
+@tag($tag)
     data-lux="sidebar.group"
-@endMergeAttributes
->
+@content
     @if($title)
         <div data-lux="sidebar.group-title">{{ $title }}</div>
     @endif
     {{ $slot }}
-</div>
+@endTag

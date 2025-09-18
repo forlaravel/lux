@@ -1,3 +1,7 @@
-<div @mergeAttributes class="text-lg font-semibold" @endMergeAttributes>
+@props([
+    'tag' => 'div',
+])
+
+@tag($tag) class="text-lg font-semibold" @content
     {{ $slot }}
-</div>
+@endTag

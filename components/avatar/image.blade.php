@@ -1,5 +1,8 @@
-<img
-@mergeAttributes
+@props([
+    'tag' => 'img',
+])
+
+@tag($tag)
     class="aspect-square h-full w-full"
-@endMergeAttributes
- />
+@content
+@endTag

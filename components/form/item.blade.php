@@ -2,12 +2,10 @@
     'name' => '',
     'tag' => 'div',
 ])
-<{{ $tag }}
-@mergeAttributes
+@tag($tag)
     x-form:item
     @error($name) error="true" @enderror
     class="space-y-2"
-@endMergeAttributes
->
+@content
     {{ $slot }}
-</{{ $tag }}>
+@endTag

@@ -82,8 +82,8 @@ class IconCommand extends Command
         // Match the opening <svg tag with all its attributes
         $pattern = '/(<svg)(\s*)([^>]*)(>)/s';
 
-        $replacement = '$1' . PHP_EOL . '@mergeAttributes' . PHP_EOL . '$3' . PHP_EOL . '@endMergeAttributes' . PHP_EOL . '$4';
+        $replacement = '@tag(\'svg\')' . PHP_EOL . '    $3' . PHP_EOL . '@content' . PHP_EOL;
 
-        return preg_replace($pattern, $replacement, $svg, 1);
+        return str_replace("</svg>", PHP_EOL."@endTag", preg_replace($pattern, $replacement, $svg, 1));
     }
 }

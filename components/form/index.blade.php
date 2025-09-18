@@ -1,12 +1,10 @@
 @props([
     'tag' => 'form',
 ])
-<{{ $tag }}
-@mergeAttributes
+@tag($tag)
     x-data
     x-form
     class="space-y-8"
-@endMergeAttributes
->
+@content
     {{ $slot }}
-</{{ $tag }}>
+@endTag

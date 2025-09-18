@@ -2,9 +2,8 @@
     'tag' => 'h5',
 ])
 
-<{{$tag}} 
-@mergeAttributes 
+@tag($tag)
 class="mb-1 font-medium leading-none tracking-tight"
-@endMergeAttributes>
+@content
     {{ $slot }}
-</{{$tag}}>
+@endTag

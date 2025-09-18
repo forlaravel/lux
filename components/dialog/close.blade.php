@@ -2,10 +2,9 @@
     'tag' => 'button',
 ])
 
-<{{ $tag }}
-@mergeAttributes
+@tag($tag)
     data-lux="dialog.close"
     @click="close()"
-@endMergeAttributes>
+@content
     {{ $slot }}
-</{{ $tag }}>
+@endTag

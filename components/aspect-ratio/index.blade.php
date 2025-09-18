@@ -1,10 +1,11 @@
-@props(['ratio'])
+@props([
+    'tag' => 'div',
+    'ratio'
+])
 
-<div
-@mergeAttributes
+@tag($tag)
     style="aspect-ratio: {{ $ratio }};"
     class="relative overflow-hidden"
-@endMergeAttributes
->
+@content
     {{ $slot }}
-</div>
+@endTag

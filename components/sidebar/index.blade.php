@@ -1,4 +1,5 @@
 @props([
+    'tag' => 'aside',
     'side' => 'left',
 ])
 
@@ -6,13 +7,11 @@
     'fixed' => true,
 ])
 
-<aside
-@mergeAttributes
+@tag($tag)
     data-lux="sidebar"
     data-side="{{ $side }}"
     data-fixed="{{ $fixed ? 'true' : 'false' }}"
     :data-open="sidebarOpen ? 'true' : 'false'"
-@endMergeAttributes
->
+@content
     {{ $slot }}
-</aside>
+@endTag

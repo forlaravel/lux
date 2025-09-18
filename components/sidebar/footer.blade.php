@@ -1,9 +1,9 @@
-@props([])
+@props([
+    'tag' => 'div',
+])
 
-<div
-@mergeAttributes
+@tag($tag)
     data-lux="sidebar.footer"
-@endMergeAttributes
->
+@content
     {{ $slot }}
-</div>
+@endTag

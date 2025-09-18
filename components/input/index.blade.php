@@ -1,11 +1,11 @@
 @props([
+    'tag' => 'input',
     'type' => 'text',
     'mask' => null,
     'value' => null,
 ])
 
-<input
-@mergeAttributes
+@tag($tag)
     type="{{ $type }}"
     autocomplete="off"
     x-data="{
@@ -25,5 +25,5 @@
         disabled:cursor-not-allowed disabled:text-muted-foreground
         focus:border-input
     "
-@endMergeAttributes
-/>
+@content
+@endTag

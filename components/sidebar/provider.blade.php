@@ -1,11 +1,11 @@
 @props([
+    'tag' => 'div',
     'open' => true,
     'fixed' => true,
     'side' => 'left',
 ])
 
-<div
-@mergeAttributes
+@tag($tag)
     data-lux="sidebar.provider"
     data-open="{{ $open ? 'true' : 'false' }}"
     data-fixed="{{ $fixed ? 'true' : 'false' }}"
@@ -38,7 +38,6 @@
         }
     }"
     @toggle-sidebar.window="toggleSidebar()"
-@endMergeAttributes
->
+@content
     {{ $slot }}
-</div>
+@endTag

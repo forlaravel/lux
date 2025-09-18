@@ -3,13 +3,12 @@
     'showCloseButton' => true,
 ])
 
-<{{ $tag }}
-@mergeAttributes
+@tag($tag)
     data-lux="dialog.content"
     x-ref="dialog"
     x-trap.noscroll="open"
     @click="closeOnOutsideClick"
-@endMergeAttributes>
+@content
     {{ $slot }}
 
     @if($showCloseButton)
@@ -21,4 +20,4 @@
             <span class="sr-only">Close</span>
         </button>
     @endif
-</{{ $tag }}>
+@endTag

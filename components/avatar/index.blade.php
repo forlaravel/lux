@@ -1,7 +1,9 @@
-<div 
-@mergeAttributes
+@props([
+    'tag' => 'div',
+])
+
+@tag($tag)
 class="relative flex h-10 w-10 shrink-0 overflow-hidden rounded-full"
-@endMergeAttributes
->
+@content
     {{ $slot }}
-</div>
+@endTag

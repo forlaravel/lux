@@ -1,12 +1,13 @@
-@props(['value'])
+@props([
+    'tag' => 'div',
+    'value'
+])
 
-<div
-@mergeAttributes
+@tag($tag)
     data-lux="tabs.content"
     data-tab="{{ $value }}"
     x-show="activeTab === '{{ $value }}'"
     x-cloak
-@endMergeAttributes
->
+@content
     {{ $slot }}
-</div>
+@endTag

@@ -2,10 +2,8 @@
     'tag' => 'div',
 ])
 
-<{{ $tag }} 
-@mergeAttributes 
+@tag($tag)
 class="text-sm [&_p]:leading-relaxed"
-@endMergeAttributes
->
+@content
     {{ $slot }}
-</{{ $tag }}>
+@endTag

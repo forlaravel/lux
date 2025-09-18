@@ -1,3 +1,7 @@
-<p @mergeAttributes class="text-sm text-muted-foreground" @endMergeAttributes>
+@props([
+    'tag' => 'p',
+])
+
+@tag($tag) class="text-sm text-muted-foreground" @content
     {{ $slot }}
-</p>
+@endTag

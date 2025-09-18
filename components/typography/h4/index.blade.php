@@ -1,3 +1,7 @@
-<h4 @mergeAttributes class="scroll-m-20 text-xl font-semibold tracking-tight" @endMergeAttributes>
+@props([
+    'tag' => 'h4',
+])
+
+@tag($tag) class="scroll-m-20 text-xl font-semibold tracking-tight" @content
     {{ $slot }}
-</h4>
+@endTag

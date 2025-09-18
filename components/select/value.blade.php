@@ -1,5 +1,9 @@
 {{-- Copyright (c) 2024 forlaravel.com, see LICENSE.md for details. --}}
 
+@props([
+    'tag' => 'span',
+])
+
 @aware([
     'searchable' => false,
     'multiple' => false,
@@ -9,16 +13,14 @@
 @if($searchable)
 <div x-ref="input" {{ $attributes->class(["flex w-full self-start flex-wrap", "gap-1.5" => $multiple]) }}>
 @endif
-    <span 
+    @tag($tag)
     wire:ignore
-    @mergeAttributes
         class="flex gap-1.5 flex-wrap self-start"
         :class="{
             'text-muted-foreground': isEmpty,
             'text-text': !isEmpty,
         }"
-    @endMergeAttributes
-    >
+    @content
         {{-- <span x-text="isEmpty"></span> --}}
         <template x-if="multiple && !isEmpty">
             <template x-for="item in selectedLabels" :key="item.value">
@@ -33,7 +35,7 @@
             <span x-text="'{{ $placeholder ?? '' }}'" class="truncate"></span>
         </template>
         @endif
-    </span>
+    @endTag
 @if($searchable)
     <input 
         wire:ignore
