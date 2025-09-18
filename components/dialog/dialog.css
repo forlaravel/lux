@@ -23,6 +23,9 @@
         @apply open:backdrop:opacity-100 [@starting-style]:open:backdrop:opacity-0;
     }
 
+    [data-lux="dialog.body"] {
+    }
+
     /* Dialog trigger */
     [data-lux="dialog.trigger"] {
         @apply focus-visible:outline-none;

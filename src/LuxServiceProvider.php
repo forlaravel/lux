@@ -61,6 +61,7 @@ class LuxServiceProvider extends ServiceProvider
 
         $this->commands([
             Console\PublishCommand::class,
+            Console\IconCommand::class,
         ]);
     }
 }

@@ -15,9 +15,7 @@ Welcome to the fantastical world of the Dialog component! This little buddy is h
             <x-dialog.title>Notice</x-dialog.title>
         </x-dialog.header>
         <x-dialog.body>
-            <x-dialog.description>
-                Ensure you save your changes before leaving!
-            </x-dialog.description>
+            Ensure you save your changes before leaving!
         </x-dialog.body>
 
         <x-dialog.footer>

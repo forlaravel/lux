@@ -1,5 +1,5 @@
 @props([
-    'tag' => 'p',
+    'tag' => 'div',
 ])
 
 <{{ $tag }}
