@@ -4,9 +4,12 @@
         @apply relative flex min-h-screen w-full overflow-hidden;
     }
 
-    /* Sidebar container */
+    /* Sidebar container - Mobile first approach */
     [data-lux="sidebar"] {
-        @apply relative flex w-64 flex-col bg-sidebar border-r;
+        /* Mobile: wider sidebar, fixed positioning for overlay */
+        @apply fixed inset-y-0 z-40 flex w-64 flex-col bg-sidebar border-r;
+        /* Desktop: normal width, relative positioning */
+        @apply md:relative md:w-64 md:z-auto;
     }
 
     /* Add transition only when initialized */
@@ -16,7 +19,7 @@
 
     /* Inner content wrapper that maintains width */
     [data-lux="sidebar"] > * {
-        @apply w-64;
+        @apply w-64 md:w-64;
     }
 
     /* Fixed positioning mode */
@@ -34,20 +37,29 @@
 
     /* Position variants */
     [data-lux="sidebar"][data-side="left"] {
-        @apply order-first;
+        @apply left-0 order-first;
     }
 
     [data-lux="sidebar"][data-side="right"] {
-        @apply order-last border-r-0 border-l;
+        @apply right-0 order-last border-r-0 border-l;
     }
 
-    /* Open/closed states */
+    /* Mobile: Non-fixed mode behaves like fixed (overlay) */
+    [data-lux="sidebar"]:not([data-fixed="true"]) {
+        @apply md:absolute md:inset-y-0;
+    }
+
+    /* Open/closed states for non-fixed mode on desktop */
     [data-lux="sidebar"][data-open="false"]:not([data-fixed="true"]) {
-        @apply w-0 overflow-hidden border-r-0;
+        @apply -translate-x-full md:translate-x-0 md:w-0 md:overflow-hidden md:border-r-0;
+    }
+
+    [data-lux="sidebar"][data-side="right"][data-open="false"]:not([data-fixed="true"]) {
+        @apply translate-x-full md:translate-x-0;
     }
 
     [data-lux="sidebar"][data-open="true"]:not([data-fixed="true"]) {
-        @apply w-64;
+        @apply translate-x-0 md:w-64;
     }
 
     /* Fixed mode open/closed states */
@@ -102,55 +114,10 @@
         @apply flex-1 min-w-0;
     }
 
-    /* Mobile: Absolute positioning for overlay (non-fixed mode) */
-    @screen max-md {
-        [data-lux="sidebar"]:not([data-fixed="true"]) {
-            @apply absolute inset-y-0 z-40 shadow-lg;
-        }
-
-        [data-lux="sidebar"]:not([data-fixed="true"])[data-side="left"] {
-            @apply left-0;
-        }
-
-        [data-lux="sidebar"]:not([data-fixed="true"])[data-side="right"] {
-            @apply right-0;
-        }
-
-        [data-lux="sidebar"]:not([data-fixed="true"])[data-side="left"][data-open="false"] {
-            @apply -translate-x-full;
-        }
-
-        [data-lux="sidebar"]:not([data-fixed="true"])[data-side="right"][data-open="false"] {
-            @apply translate-x-full;
-        }
-
-        [data-lux="sidebar"]:not([data-fixed="true"])[data-open="true"] {
-            @apply translate-x-0 w-64;
-        }
-
-        /* Fixed mode on mobile behaves like desktop but with overlay */
-        [data-lux="sidebar"][data-fixed="true"] {
-            @apply shadow-lg;
-        }
-
-        /* Backdrop overlay on mobile */
-        [data-lux="sidebar.provider"][data-open="true"]::before {
-            content: "";
-            @apply fixed inset-0 z-20 bg-black/50 md:hidden;
-        }
-    }
-
-    /* Common menu item styles (for use in sidebar content) */
-    [data-lux="sidebar"] a,
-    [data-lux="sidebar"] button:not([data-lux="sidebar.trigger"]) {
-        @apply flex w-full items-center rounded-md px-3 py-2 text-sm;
-        @apply hover:bg-accent hover:text-accent-foreground;
-        @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring;
-    }
-
-    [data-lux="sidebar"] a[data-active="true"],
-    [data-lux="sidebar"] button[data-active="true"] {
-        @apply bg-accent text-accent-foreground font-medium;
+    /* Backdrop overlay - only visible on mobile */
+    [data-lux="sidebar.provider"][data-open="true"]::before {
+        content: "";
+        @apply fixed inset-0 z-20 bg-black/50 md:hidden;
     }
 }
 
@@ -159,8 +126,9 @@ body.sidebar-transition {
     @apply transition-all duration-300 ease-in-out;
 }
 
+/* Body padding only on desktop - mobile gets no padding */
 body.sidebar-fixed.sidebar-open-left {
-    @apply pl-64;
+    @apply pl-0 md:pl-64;
 }
 
 body.sidebar-fixed.sidebar-closed-left {
@@ -168,7 +136,7 @@ body.sidebar-fixed.sidebar-closed-left {
 }
 
 body.sidebar-fixed.sidebar-open-right {
-    @apply pr-64;
+    @apply pr-0 md:pr-64;
 }
 
 body.sidebar-fixed.sidebar-closed-right {
