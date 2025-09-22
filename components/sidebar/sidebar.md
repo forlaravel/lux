@@ -3,7 +3,7 @@ A simple and flexible sidebar navigation component with collapsible functionalit
 
 ## Example
 ```html
-<x-sidebar.provider class="min-h-[500px]" :fixed="false">
+<x-sidebar.provider class="min-h-[500px]" :fixed="false" persist="sidebar">
     <x-sidebar>
         <x-sidebar.header>
             <h2 class="text-lg font-semibold">My App</h2>
@@ -75,20 +75,29 @@ php artisan lux:publish sidebar
 ### sidebar.provider
 | Prop | Description | Type | Default |
 |------|-------------|------|---------|
+| `tag` | HTML tag for the provider wrapper | `string` | `div` |
 | `open` | Initial open state of the sidebar | `boolean` | `true` |
+| `fixed` | Whether the sidebar uses fixed positioning | `boolean` | `true` |
+| `side` | Position of the sidebar: `left`, `right` | `string` | `left` |
 
 ### sidebar
 | Prop | Description | Type | Default |
 |------|-------------|------|---------|
+| `tag` | HTML tag for the sidebar element | `string` | `aside` |
 | `side` | Position of the sidebar: `left`, `right` | `string` | `left` |
 
 ### sidebar.group
 | Prop | Description | Type | Default |
 |------|-------------|------|---------|
+| `tag` | HTML tag for the group wrapper | `string` | `div` |
 | `title` | Optional title for the group | `string` | `null` |
+
+### sidebar.trigger
+| Prop | Description | Type | Default |
+|------|-------------|------|---------|
+| `tag` | HTML tag for the trigger element | `string` | `button` |
 
 ### Other Components
 - `x-sidebar.header` - Sticky header section at the top of the sidebar
 - `x-sidebar.content` - Scrollable main content area
 - `x-sidebar.footer` - Sticky footer section at the bottom of the sidebar
-- `x-sidebar.trigger` - Button to toggle the sidebar open/closed

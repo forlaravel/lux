@@ -4,77 +4,82 @@
         @apply relative flex min-h-screen w-full overflow-hidden;
     }
 
-    /* Sidebar container - Mobile first approach */
-    [data-lux="sidebar"] {
-        /* Mobile: wider sidebar, fixed positioning for overlay */
-        @apply fixed inset-y-0 z-40 flex w-64 flex-col bg-sidebar border-r;
-        /* Desktop: normal width, relative positioning */
-        @apply md:relative md:w-64 md:z-auto;
-    }
-
-    /* Add transition only when initialized */
-    [data-lux="sidebar.provider"][data-initialized="true"] [data-lux="sidebar"] {
+    /* ===== NON-FIXED MODE ===== */
+    /* Sidebar container - placed within a container, no special mobile version */
+    [data-lux="sidebar"][data-fixed="false"] {
+        @apply relative flex flex-col bg-sidebar border-r;
         @apply transition-all duration-300 ease-in-out;
     }
 
-    /* Inner content wrapper that maintains width */
-    [data-lux="sidebar"] > * {
-        @apply w-64 md:w-64;
+    /* Non-fixed: Open state - full width */
+    [data-lux="sidebar"][data-open="true"][data-fixed="false"] {
+        @apply w-64 opacity-100;
     }
 
-    /* Fixed positioning mode */
+    /* Non-fixed: Closed state - zero width to give space to content */
+    [data-lux="sidebar"][data-open="false"][data-fixed="false"] {
+        @apply w-0 overflow-hidden border-r-0 opacity-0;
+    }
+
+    /* Inner content wrapper maintains consistent width */
+    [data-lux="sidebar"][data-fixed="false"] > * {
+        @apply w-64;
+    }
+
+    /* Position variants for non-fixed */
+    [data-lux="sidebar"][data-fixed="false"][data-side="left"] {
+        @apply order-first;
+    }
+
+    [data-lux="sidebar"][data-fixed="false"][data-side="right"] {
+        @apply order-last border-r-0 border-l;
+    }
+
+    /* Non-fixed right side closed state */
+    [data-lux="sidebar"][data-side="right"][data-open="false"][data-fixed="false"] {
+        @apply border-l-0;
+    }
+
+    /* ===== FIXED MODE ===== */
+    /* Fixed sidebar - positioned fixed, overlays content */
     [data-lux="sidebar"][data-fixed="true"] {
-        @apply fixed inset-y-0 z-30;
+        @apply fixed inset-y-0 z-40 flex flex-col bg-sidebar border-r;
+        @apply transition-transform duration-300 ease-in-out;
     }
 
+    /* Fixed: Side positioning */
     [data-lux="sidebar"][data-fixed="true"][data-side="left"] {
         @apply left-0;
     }
 
     [data-lux="sidebar"][data-fixed="true"][data-side="right"] {
-        @apply right-0;
+        @apply right-0 border-r-0 border-l;
     }
 
-    /* Position variants */
-    [data-lux="sidebar"][data-side="left"] {
-        @apply left-0 order-first;
+    /* Fixed: Open state - translate to visible */
+    [data-lux="sidebar"][data-fixed="true"][data-open="true"] {
+        @apply translate-x-0 w-64;
     }
 
-    [data-lux="sidebar"][data-side="right"] {
-        @apply right-0 order-last border-r-0 border-l;
-    }
-
-    /* Mobile: Non-fixed mode behaves like fixed (overlay) */
-    [data-lux="sidebar"]:not([data-fixed="true"]) {
-        @apply md:absolute md:inset-y-0;
-    }
-
-    /* Open/closed states for non-fixed mode on desktop */
-    [data-lux="sidebar"][data-open="false"]:not([data-fixed="true"]) {
-        @apply -translate-x-full md:translate-x-0 md:w-0 md:overflow-hidden md:border-r-0;
-    }
-
-    [data-lux="sidebar"][data-side="right"][data-open="false"]:not([data-fixed="true"]) {
-        @apply translate-x-full md:translate-x-0;
-    }
-
-    [data-lux="sidebar"][data-open="true"]:not([data-fixed="true"]) {
-        @apply translate-x-0 md:w-64;
-    }
-
-    /* Fixed mode open/closed states */
+    /* Fixed: Closed state - translate off-screen */
     [data-lux="sidebar"][data-fixed="true"][data-open="false"] {
+        @apply w-64;
+    }
+
+    [data-lux="sidebar"][data-fixed="true"][data-open="false"][data-side="left"] {
         @apply -translate-x-full;
     }
 
-    [data-lux="sidebar"][data-fixed="true"][data-side="right"][data-open="false"] {
+    [data-lux="sidebar"][data-fixed="true"][data-open="false"][data-side="right"] {
         @apply translate-x-full;
     }
 
-    [data-lux="sidebar"][data-fixed="true"][data-open="true"] {
-        @apply translate-x-0;
+    /* Inner content wrapper for fixed mode */
+    [data-lux="sidebar"][data-fixed="true"] > * {
+        @apply w-64;
     }
 
+    /* ===== SIDEBAR COMPONENTS ===== */
     /* Header */
     [data-lux="sidebar.header"] {
         @apply flex flex-col gap-2 p-4;
@@ -97,7 +102,7 @@
 
     /* Group */
     [data-lux="sidebar.group"] {
-        @apply space-y-2;
+        @apply flex flex-col gap-1;
     }
 
     [data-lux="sidebar.group"] + [data-lux="sidebar.group"] {
@@ -109,36 +114,32 @@
         @apply mb-2 px-2 text-xs font-semibold uppercase tracking-wider text-muted-foreground;
     }
 
-    /* Main content area (when sidebar is present) */
+    /* Main content area (when sidebar is in non-fixed mode) */
     [data-lux="sidebar.provider"] > *:not([data-lux="sidebar"]) {
         @apply flex-1 min-w-0;
     }
 
-    /* Backdrop overlay - only visible on mobile */
-    [data-lux="sidebar.provider"][data-open="true"]::before {
+    /* ===== MOBILE BACKDROP (FIXED MODE ONLY) ===== */
+    /* Backdrop overlay - only for fixed mode on mobile */
+    [data-lux="sidebar.provider"][data-fixed="true"][data-open="true"]::before {
         content: "";
-        @apply fixed inset-0 z-20 bg-black/50 md:hidden;
+        @apply fixed inset-0 z-30 bg-black/50 md:hidden;
     }
 }
 
-/* Body classes for fixed sidebar mode */
+/* ===== BODY OFFSETS FOR FIXED MODE ===== */
+/* Body classes for fixed sidebar mode - adds margin to offset content */
 body.sidebar-transition {
     @apply transition-all duration-300 ease-in-out;
 }
 
-/* Body padding only on desktop - mobile gets no padding */
-body.sidebar-fixed.sidebar-open-left {
-    @apply pl-0 md:pl-64;
+/* Fixed left sidebar open - add left margin on desktop only */
+body.sidebar-open-left {
+    @apply ml-0 md:ml-64;
 }
 
-body.sidebar-fixed.sidebar-closed-left {
-    @apply pl-0;
-}
 
-body.sidebar-fixed.sidebar-open-right {
-    @apply pr-0 md:pr-64;
-}
-
-body.sidebar-fixed.sidebar-closed-right {
-    @apply pr-0;
+/* Fixed right sidebar open - add right margin on desktop only */
+body.sidebar-open-right {
+    @apply mr-0 md:mr-64;
 }
