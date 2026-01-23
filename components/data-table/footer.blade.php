@@ -1,4 +1,4 @@
-<div class="flex items-center justify-end space-x-2 py-4">
+<div class="lux-data-table-footer flex items-center justify-end space-x-2 py-4">
     <div class="flex-1 text-sm text-muted-foreground">
         {{ count($selectedRows) }} of {{ $totalRows }} row(s) selected.
     </div>

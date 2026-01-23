@@ -5,7 +5,7 @@
 <{{ $tag }}
     x-data
     x-form
-    {{ $attributes->mergeTailwind(['class' => 'space-y-8']) }}
+    {{ $attributes->mergeTailwind(['class' => 'lux-form space-y-8']) }}
 >
     {{ $slot }}
 </{{ $tag }}>

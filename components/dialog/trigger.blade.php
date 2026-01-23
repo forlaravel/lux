@@ -3,7 +3,7 @@
 ])
 
 <{{ $tag }}
-    {{ $attributes->mergeTailwind(['class' => 'focus-visible:outline-none']) }}
+    {{ $attributes->mergeTailwind(['class' => 'lux-dialog-trigger focus-visible:outline-none']) }}
     @click.stop="show()"
 >
     {{ $slot }}

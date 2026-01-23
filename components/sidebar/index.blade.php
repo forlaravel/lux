@@ -26,7 +26,7 @@
 @endphp
 
 <{{ $tag }}
-    {{ $attributes->mergeTailwind(['class' => $baseClasses]) }}
+    {{ $attributes->mergeTailwind(['class' => "lux-sidebar $baseClasses"]) }}
     data-lux="sidebar"
     x-bind:class="{
         @if($fixed)

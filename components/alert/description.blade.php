@@ -3,7 +3,7 @@
 ])
 
 <{{ $tag }}
-    {{ $attributes->mergeTailwind(['class' => 'text-sm [&_p]:leading-relaxed']) }}
+    {{ $attributes->mergeTailwind(['class' => 'lux-alert-description text-sm [&_p]:leading-relaxed']) }}
 >
     {{ $slot }}
 </{{ $tag }}>

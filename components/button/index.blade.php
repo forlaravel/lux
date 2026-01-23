@@ -32,7 +32,7 @@
     $classes = implode(' ', array_filter([$baseClasses, $variantClasses, $sizeClasses, $loadingClasses]));
 @endphp
 
-<{{ $tag }} {{ $attributes->mergeTailwind(['class' => $classes]) }}>
+<{{ $tag }} {{ $attributes->mergeTailwind(['class' => "lux-button $classes"]) }}>
     {{ $slot }}
     @if($loading)
     <span class="animate-spin absolute text-foreground">

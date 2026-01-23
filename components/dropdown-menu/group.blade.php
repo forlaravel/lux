@@ -1,3 +1,3 @@
-<div {{ $attributes->mergeTailwind(['class' => '']) }}>
+<div {{ $attributes->mergeTailwind(['class' => 'lux-dropdown-menu-group']) }}>
     {{ $slot }}
 </div>

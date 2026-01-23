@@ -2,6 +2,6 @@
     'tag' => 'div',
 ])
 
-<{{ $tag }} {{ $attributes->mergeTailwind(['class' => 'flex flex-col space-y-1.5 text-center sm:text-left mb-4']) }}>
+<{{ $tag }} {{ $attributes->mergeTailwind(['class' => 'lux-dialog-header flex flex-col space-y-1.5 text-center sm:text-left mb-4']) }}>
     {{ $slot }}
 </{{ $tag }}>

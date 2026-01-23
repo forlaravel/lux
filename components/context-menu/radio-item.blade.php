@@ -3,7 +3,7 @@
 <div 
     role="menuitemradio"
     tabindex="0"
-    {{ $attributes->mergeTailwind(['class' => 'relative flex items-center rounded-sm py-1.5 pl-8 pr-2 text-sm focus:bg-accent focus:text-accent-foreground cursor-default select-none']) }}
+    {{ $attributes->mergeTailwind(['class' => 'lux-context-menu-radio-item relative flex items-center rounded-sm py-1.5 pl-8 pr-2 text-sm focus:bg-accent focus:text-accent-foreground cursor-default select-none']) }}
     @click="$dispatch('change', {name: '{{ $name }}', value: '{{ $value }}'})"
     @mouseover="$el.focus()"
     @mouseleave="$el.blur()"

@@ -3,5 +3,5 @@
 ])
 
 <{{ $tag }}
-    {{ $attributes->mergeTailwind(['class' => 'aspect-square h-full w-full']) }}
+    {{ $attributes->mergeTailwind(['class' => 'lux-avatar-image aspect-square h-full w-full']) }}
 />

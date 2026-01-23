@@ -4,7 +4,7 @@
 ])
 
 <{{ $tag }}
-    {{ $attributes->mergeTailwind(['class' => 'fixed left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] w-full max-w-lg border bg-background p-6 shadow-lg sm:rounded-lg text-foreground opacity-0 scale-95 transition-[opacity,scale,overlay,display] duration-300 ease-out [transition-behavior:allow-discrete] open:opacity-100 open:scale-100 [@starting-style]:open:opacity-0 [@starting-style]:open:scale-95 backdrop:[transition-behavior:allow-discrete] backdrop:bg-black/80 backdrop:opacity-0 backdrop:transition-[opacity,display,overlay] backdrop:duration-300 open:backdrop:opacity-100 [@starting-style]:open:backdrop:opacity-0']) }}
+    {{ $attributes->mergeTailwind(['class' => 'lux-dialog-content fixed left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] w-full max-w-lg border bg-background p-6 shadow-lg sm:rounded-lg text-foreground opacity-0 scale-95 transition-[opacity,scale,overlay,display] duration-300 ease-out [transition-behavior:allow-discrete] open:opacity-100 open:scale-100 [@starting-style]:open:opacity-0 [@starting-style]:open:scale-95 backdrop:[transition-behavior:allow-discrete] backdrop:bg-black/80 backdrop:opacity-0 backdrop:transition-[opacity,display,overlay] backdrop:duration-300 open:backdrop:opacity-100 [@starting-style]:open:backdrop:opacity-0']) }}
     x-ref="dialog"
     x-trap.noscroll="open"
     @click="closeOnOutsideClick"

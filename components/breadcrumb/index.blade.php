@@ -1,3 +1,3 @@
-<nav aria-label="breadcrumb" {{ $attributes }}>
+<nav aria-label="breadcrumb" {{ $attributes->mergeTailwind(['class' => 'lux-breadcrumb']) }}>
     {{ $slot }}
 </nav>

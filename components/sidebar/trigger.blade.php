@@ -3,7 +3,7 @@
 ])
 
 <{{ $tag }}
-    {{ $attributes }}
+    {{ $attributes->mergeTailwind(['class' => 'lux-sidebar-trigger']) }}
     data-lux="sidebar.trigger"
     @click="$dispatch('toggle-sidebar')"
 >

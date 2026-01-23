@@ -4,7 +4,7 @@
 ])
 
 <{{ $tag }}
-    {{ $attributes->mergeTailwind(['class' => 'relative']) }}
+    {{ $attributes->mergeTailwind(['class' => 'lux-dialog relative']) }}
     x-data="{
         open: @wireOr($open, handlePersist: true),
         show() {

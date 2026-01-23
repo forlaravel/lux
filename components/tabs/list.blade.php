@@ -16,7 +16,7 @@ $variantClasses = match ($variant) {
 @endphp
 
 <{{ $tag }}
-    {{ $attributes->mergeTailwind(['class' => 'inline-flex items-center ' . $variantClasses]) }}
+    {{ $attributes->mergeTailwind(['class' => 'lux-tabs-list inline-flex items-center ' . $variantClasses]) }}
 >
     {{ $slot }}
 </{{ $tag }}>

@@ -5,7 +5,7 @@
 <x-lux
 component="button"
 x-data="{ copied: false }"
-:attributes="$attributes"
+:attributes="$attributes->merge(['class' => 'lux-code-block-copy'])"
 variant="outline"
 size="icon"
 :data-copy-text="$text"

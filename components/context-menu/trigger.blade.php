@@ -1,6 +1,6 @@
 <div 
     x-ref="trigger" 
     @contextmenu.prevent="onContextMenu" 
-    {{ $attributes->mergeTailwind(['class' => 'cursor-pointer']) }}>
+    {{ $attributes->mergeTailwind(['class' => 'lux-context-menu-trigger cursor-pointer']) }}>
     {{ $slot }}
 </div>

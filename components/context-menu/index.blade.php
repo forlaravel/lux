@@ -9,6 +9,6 @@
         }
     }" 
     @keydown.escape.window="open = false" 
-    {{ $attributes }}>
+    {{ $attributes->mergeTailwind(['class' => 'lux-context-menu']) }}>
     {{ $slot }}
 </div>

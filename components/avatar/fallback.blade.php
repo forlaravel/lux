@@ -3,7 +3,7 @@
 ])
 
 <{{ $tag }}
-    {{ $attributes->mergeTailwind(['class' => 'flex h-full w-full items-center justify-center rounded-full bg-accent text-accent-foreground']) }}
+    {{ $attributes->mergeTailwind(['class' => 'lux-avatar-fallback flex h-full w-full items-center justify-center rounded-full bg-accent text-accent-foreground']) }}
 >
     {{ $slot }}
 </{{ $tag }}>

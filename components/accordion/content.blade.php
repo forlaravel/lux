@@ -14,7 +14,7 @@
     @if($animated)
     x-collapse
     @endif
-    class="overflow-hidden text-sm"
+    class="lux-accordion-content overflow-hidden text-sm"
     role="region"
 >
     <div {{ $attributes->mergeTailwind(['class' => 'pb-4 pt-0']) }}>

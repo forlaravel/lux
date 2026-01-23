@@ -7,7 +7,7 @@
 ])
 
 <{{ $tag }}
-    class="relative flex w-full cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm outline-none
+    class="lux-select-item relative flex w-full cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm outline-none
         focus:bg-accent focus:text-accent-foreground
         hover:bg-accent hover:text-accent-foreground
         data-[cursor=true]:bg-accent data-[cursor=true]:text-accent-foreground

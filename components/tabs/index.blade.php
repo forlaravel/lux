@@ -5,7 +5,7 @@
 ])
 
 <{{ $tag }}
-    {{ $attributes->mergeTailwind(['class' => 'relative']) }}
+    {{ $attributes->mergeTailwind(['class' => 'lux-tabs relative']) }}
     x-data="{
         activeTab: @wireOr($value, handlePersist: true),
         init() {

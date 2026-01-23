@@ -19,7 +19,7 @@ $variantClasses = match ($variant) {
 @endphp
 
 <{{ $tag }}
-    {{ $attributes->mergeTailwind(['class' => $baseClasses . ' ' . $variantClasses]) }}
+    {{ $attributes->mergeTailwind(['class' => 'lux-tabs-trigger ' . $baseClasses . ' ' . $variantClasses]) }}
     data-tab="{{ $value }}"
     x-on:click="activeTab = '{{ $value }}'"
     @if($variant === 'switch')

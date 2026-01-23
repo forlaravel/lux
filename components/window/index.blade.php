@@ -4,7 +4,7 @@
 
 <div 
 {{ $attributes->whereDoesntStartWith(['wire:model'])->class([
-    'bg-white flex flex-col gap-4 rounded-2xl shadow-xl border z-10 fixed'
+    'lux-window bg-white flex flex-col gap-4 rounded-2xl shadow-xl border z-10 fixed'
 ]) }}
 x-window="{
     show: @wireOr($show),

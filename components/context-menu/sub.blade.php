@@ -3,6 +3,6 @@
     @keydown.right.prevent="openSub = true;"
     @mouseenter="openSub = true"
     @mouseleave="openSub = false"
-    {{ $attributes }}>
+    {{ $attributes->mergeTailwind(['class' => 'lux-context-menu-sub']) }}>
     {{ $slot }}
 </div>

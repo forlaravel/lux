@@ -1,7 +1,7 @@
 @inject('lux', 'lux')
 
 <div 
-{{ $attributes->classTailwind(["topbar flex justify-between items-center cursor-move border-b p-5 py-3 select-none"]) }}
+{{ $attributes->classTailwind(["lux-window-title topbar flex justify-between items-center cursor-move border-b p-5 py-3 select-none"]) }}
 >
     {{ $slot }}
     <x-dynamic-component :component="$lux->componentPath('button')" variant="ghost" x-on:click="close()" size="icon">

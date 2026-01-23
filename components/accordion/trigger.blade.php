@@ -8,7 +8,7 @@
 
 <{{ $tag }}
     {{ $attributes->classTailwind([
-        "flex w-full flex-1 items-center justify-between py-4 font-medium hover:underline",
+        "lux-accordion-trigger flex w-full flex-1 items-center justify-between py-4 font-medium hover:underline",
         'focus-visible:underline focus-visible:outline-none',
     ]) }}
     :aria-expanded="selected == $id('accordion-item')"

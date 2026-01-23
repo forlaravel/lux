@@ -48,7 +48,7 @@
     }"
     x-modalable="value"
     wire:ignore
-    {{ $attributes->only('class')->class('w-full') }}
+    {{ $attributes->only('class')->class('lux-calendar w-full') }}
 >
     <x-lux
         component="input"

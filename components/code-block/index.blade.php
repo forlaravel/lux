@@ -35,7 +35,7 @@
 
 @inject('lux', 'lux')
 
-<div {{ $attributes->mergeTailwind(['class' => "relative bg-accent text-accent-foreground rounded-md overflow-hidden"]) }}>
+<div {{ $attributes->mergeTailwind(['class' => "lux-code-block relative bg-accent text-accent-foreground rounded-md overflow-hidden"]) }}>
     @if($copy)
     <x-dynamic-component :component="$lux->componentPath('code-block.copy')" :text="$code" class="absolute top-3 right-3 z-10" variant="outline" />
     @endif

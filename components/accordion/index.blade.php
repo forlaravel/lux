@@ -26,7 +26,7 @@
             return this.multiple ? this.selected.includes(id) : this.selected === id;
         }
     }"
-    {{ $attributes }}
+    {{ $attributes->mergeTailwind(['class' => 'lux-accordion']) }}
 >
     {{ $slot }}
 </{{ $tag }}>
