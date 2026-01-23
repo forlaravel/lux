@@ -5,8 +5,8 @@
     'side' => 'left',
 ])
 
-@open($tag)
-    data-lux="sidebar.provider"
+<{{ $tag }}
+    {{ $attributes->mergeTailwind(['class' => 'relative flex min-h-screen w-full overflow-hidden']) }}
     x-cloak
     x-data="{
         sidebarOpen: @wireOr($open, handlePersist: true),
@@ -15,57 +15,67 @@
         init() {
             this.updateBodyClasses();
 
-            // Mark as initialized after a frame to enable transitions
             requestAnimationFrame(() => {
                 this.$el.setAttribute('data-initialized', 'true');
             });
-            
-            // Add click event listener for backdrop
+
             this.$el.addEventListener('click', (event) => this.handleBackdropClick(event));
         },
         toggleSidebar() {
             this.sidebarOpen = !this.sidebarOpen;
-           
+
             if (this.sidebarFixed) {
                 this.updateBodyClasses();
             }
         },
         closeSidebar() {
             this.sidebarOpen = false;
-            
+
             if (this.sidebarFixed) {
                 this.updateBodyClasses();
             }
         },
         handleBackdropClick(event) {
-            // Check if click is on the backdrop (::before pseudo element area)
             const sidebar = this.$el.querySelector('[data-lux=\'sidebar\']');
             const trigger = event.target.closest('[data-lux=\'sidebar.trigger\']');
-            
-            // Don't close if clicking on trigger button or inside sidebar
+
             if (!trigger && sidebar && !sidebar.contains(event.target) && window.innerWidth < 768) {
                 this.closeSidebar();
             }
         },
         updateBodyClasses() {
             if (this.sidebarFixed) {
-                // Set initial classes without transition
+                document.body.classList.add('transition-all', 'duration-300', 'ease-in-out');
                 if (this.sidebarOpen) {
-                    document.body.classList.add(`sidebar-open-${this.sidebarSide}`);
+                    if (this.sidebarSide === 'left') {
+                        document.body.classList.add('md:ml-64');
+                        document.body.classList.remove('md:mr-64');
+                    } else {
+                        document.body.classList.add('md:mr-64');
+                        document.body.classList.remove('md:ml-64');
+                    }
                 } else {
-                    document.body.classList.remove(`sidebar-open-${this.sidebarSide}`);
+                    document.body.classList.remove('md:ml-64', 'md:mr-64');
                 }
-
-                // Add transition class after a frame to prevent initial animation
-                requestAnimationFrame(() => {
-                    document.body.classList.add('sidebar-transition');
-                });
             }
         }
     }"
     x-bind:data-open="sidebarOpen ? 'true' : 'false'"
     x-bind:data-fixed="sidebarFixed ? 'true' : 'false'"
     @toggle-sidebar.window="toggleSidebar()"
-@content
+>
+    {{-- Mobile backdrop for fixed mode --}}
+    <div
+        x-show="sidebarFixed && sidebarOpen"
+        x-transition:enter="transition-opacity duration-300"
+        x-transition:enter-start="opacity-0"
+        x-transition:enter-end="opacity-100"
+        x-transition:leave="transition-opacity duration-300"
+        x-transition:leave-start="opacity-100"
+        x-transition:leave-end="opacity-0"
+        class="fixed inset-0 z-30 bg-black/50 md:hidden"
+        @click="closeSidebar()"
+    ></div>
+
     {{ $slot }}
-@close
+</{{ $tag }}>

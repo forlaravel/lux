@@ -12,6 +12,6 @@ $variantClasses = match($variant) {
 };
 @endphp
 
-<div {{ $attributes->merge(['class' => "$baseClasses $variantClasses"]) }}>
+<div {{ $attributes->mergeTailwind(['class' => "$baseClasses $variantClasses"]) }}>
     {{ $slot }}
 </div>

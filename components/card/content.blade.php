@@ -1,3 +1,3 @@
-<div {{ $attributes->merge(['class' => 'p-6 ']) }}>
+<div {{ $attributes->mergeTailwind(['class' => 'p-6 ']) }}>
     {{ $slot }}
 </div>

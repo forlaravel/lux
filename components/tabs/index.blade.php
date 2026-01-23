@@ -4,9 +4,8 @@
     'variant' => 'switch',
 ])
 
-@open($tag)
-    data-lux="tabs"
-    data-variant="{{ $variant }}"
+<{{ $tag }}
+    {{ $attributes->mergeTailwind(['class' => 'relative']) }}
     x-data="{
         activeTab: @wireOr($value, handlePersist: true),
         init() {
@@ -15,6 +14,6 @@
             }
         },
     }"
-@content
+>
     {{ $slot }}
-@close
+</{{ $tag }}>

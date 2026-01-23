@@ -1,5 +1,5 @@
 <div
-    {{ $attributes->merge(['class' => 'relative']) }} 
+    {{ $attributes->mergeTailwind(['class' => 'relative']) }} 
     x-data="{ openSub: false }" 
     @keydown.right.prevent="openSub = true; $nextTick(() => $refs['sub-content'].querySelector('button')?.focus());" 
     @keydown.left.prevent="openSub = false; $nextTick(() => $refs['sub-trigger'].focus());"

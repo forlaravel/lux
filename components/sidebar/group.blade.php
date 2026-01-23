@@ -3,11 +3,9 @@
     'title' => null,
 ])
 
-@open($tag)
-    data-lux="sidebar.group"
-@content
+<{{ $tag }} {{ $attributes->mergeTailwind(['class' => 'flex flex-col gap-1 [&+&]:mt-6']) }}>
     @if($title)
-        <div data-lux="sidebar.group-title">{{ $title }}</div>
+        <div class="mb-2 px-2 text-xs font-semibold uppercase tracking-wider text-muted-foreground">{{ $title }}</div>
     @endif
     {{ $slot }}
-@close
+</{{ $tag }}>

@@ -2,9 +2,9 @@
     'tag' => 'button',
 ])
 
-@open($tag)
-    data-lux="dialog.trigger"
+<{{ $tag }}
+    {{ $attributes->mergeTailwind(['class' => 'focus-visible:outline-none']) }}
     @click.stop="show()"
-@content
+>
     {{ $slot }}
-@close
+</{{ $tag }}>

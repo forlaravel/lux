@@ -2,8 +2,6 @@
     'tag' => 'div',
 ])
 
-@open('div')
-    data-lux="dialog.body"
-@content
+<div {{ $attributes->mergeTailwind(['class' => 'overflow-y-auto max-h-[calc(100dvh-16rem)]']) }}>
     {{ $slot }}
-@close
+</div>

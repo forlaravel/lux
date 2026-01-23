@@ -3,7 +3,7 @@
 <div 
     role="menuitemcheckbox"
     tabindex="0"
-    {{ $attributes->merge(['class' => 'relative flex items-center rounded-sm py-1.5 pl-8 pr-2 text-sm focus:bg-accent focus:text-accent-foreground cursor-default select-none']) }}
+    {{ $attributes->mergeTailwind(['class' => 'relative flex items-center rounded-sm py-1.5 pl-8 pr-2 text-sm focus:bg-accent focus:text-accent-foreground cursor-default select-none']) }}
     @click="open = false"
     x-data="{ checked: @entangle('checked') }"
     @mouseover="$el.focus()"

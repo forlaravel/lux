@@ -2,8 +2,8 @@
     'tag' => 'div',
 ])
 
-@open($tag)
-class="text-sm [&_p]:leading-relaxed"
-@content
+<{{ $tag }}
+    {{ $attributes->mergeTailwind(['class' => 'text-sm [&_p]:leading-relaxed']) }}
+>
     {{ $slot }}
-@close
+</{{ $tag }}>

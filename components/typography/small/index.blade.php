@@ -2,6 +2,6 @@
     'tag' => 'small',
 ])
 
-@open($tag) class="text-sm font-medium leading-none" @content
+<{{ $tag }} {{ $attributes->mergeTailwind(['class' => 'text-sm font-medium leading-none']) }}>
     {{ $slot }}
-@close
+</{{ $tag }}>

@@ -42,55 +42,10 @@ class Lux
 
             return $result;
         });
-
-        Blade::directive('open', function ($expression) {
-            $expression = trim($expression, '()');
-
-            return "<?php
-                \$__tagName = $expression;
-                \$__tagStack = app('lux.tag_stack');
-                \$__tagStack->push(['name' => \$__tagName, 'attributes' => []]);
-                ob_start();
-            ?>";
-        });
-
-        Blade::directive('content', function () {
-            return "<?php
-                \$__tagStack = app('lux.tag_stack');
-                \$__currentTag = \$__tagStack->last();
-                \$__attributesBuffer = ob_get_clean();
-
-                // Parse attributes from buffer
-                \$__parsedAttributes = app('lux')->parseTagAttributes(\$__attributesBuffer);
-
-                // Merge with existing attributes if available
-                if (isset(\$attributes)) {
-                    \$__mergedAttributes = \$attributes->mergeTailwindAware(\$__parsedAttributes);
-                } else {
-                    \$__mergedAttributes = new \Illuminate\View\ComponentAttributeBag(\$__parsedAttributes);
-                }
-
-                // Render opening tag with proper spacing
-                \$__attributesString = (string) \$__mergedAttributes;
-                if (\$__attributesString !== '') {
-                    echo '<' . \$__currentTag['name'] . ' ' . \$__attributesString . '>';
-                } else {
-                    echo '<' . \$__currentTag['name'] . '>';
-                }
-            ?>";
-        });
-
-        Blade::directive('close', function () {
-            return "<?php
-                \$__tagStack = app('lux.tag_stack');
-                \$__currentTag = \$__tagStack->pop();
-                echo '</' . \$__currentTag['name'] . '>';
-            ?>";
-        });
     }
 
     public function bootComponentAttributeBagMacros() {
-        ComponentAttributeBag::macro('mergeTailwindAware', function (...$args) {
+        ComponentAttributeBag::macro('mergeTailwind', function (...$args) {
             $tw = TailwindMerge::factory()
                 ->withCache(app('cache')->store())
                 ->make();
@@ -100,6 +55,17 @@ class Lux
 
             return $mergedAttributes;
         });
+        ComponentAttributeBag::macro('classTailwind', function ($class) {
+            $tw = TailwindMerge::factory()
+                ->withCache(app('cache')->store())
+                ->make();
+
+            $mergedAttributes = $this->class($class);
+            $mergedAttributes['class'] = $tw->merge($mergedAttributes->get('class'));
+
+            return $mergedAttributes;
+        });
+        
         ComponentAttributeBag::macro('getWithModifiers', function ($tag) {
             $tags = $this->whereStartsWith($tag)->getAttributes();
             $firstKey = array_key_first($tags);

@@ -2,9 +2,10 @@
     'tag' => 'button',
 ])
 
-@open($tag)
+<{{ $tag }}
+    {{ $attributes }}
     data-lux="sidebar.trigger"
     @click="$dispatch('toggle-sidebar')"
-@content
+>
     {{ $slot }}
-@close
+</{{ $tag }}>

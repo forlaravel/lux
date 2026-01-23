@@ -3,8 +3,8 @@
     'open' => false,
 ])
 
-@open($tag)
-    data-lux="dialog"
+<{{ $tag }}
+    {{ $attributes->mergeTailwind(['class' => 'relative']) }}
     x-data="{
         open: @wireOr($open, handlePersist: true),
         show() {
@@ -29,6 +29,6 @@
         }
     }"
     x-modelable="open"
-@content
+>
     {{ $slot }}
-@close
+</{{ $tag }}>

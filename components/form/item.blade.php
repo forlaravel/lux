@@ -2,10 +2,11 @@
     'name' => '',
     'tag' => 'div',
 ])
-@open($tag)
+
+<{{ $tag }}
     x-form:item
     @error($name) error="true" @enderror
-    class="space-y-2"
-@content
+    {{ $attributes->mergeTailwind(['class' => 'space-y-2']) }}
+>
     {{ $slot }}
-@close
+</{{ $tag }}>

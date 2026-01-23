@@ -1,3 +1,3 @@
-<a {{ $attributes->merge(['class' => 'transition-colors hover:text-foreground']) }}>
+<a {{ $attributes->mergeTailwind(['class' => 'transition-colors hover:text-foreground']) }}>
     {{ $slot }}
 </a>

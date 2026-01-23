@@ -2,8 +2,6 @@
     'tag' => 'h2',
 ])
 
-@open($tag)
-    data-lux="dialog.title"
-@content
+<{{ $tag }} {{ $attributes->mergeTailwind(['class' => 'text-lg font-semibold leading-none tracking-tight']) }}>
     {{ $slot }}
-@close
+</{{ $tag }}>

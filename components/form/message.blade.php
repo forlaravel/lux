@@ -6,10 +6,10 @@
 ])
 
 @error($name)
-    @open($tag)
+    <{{ $tag }}
         x-form:message.assertive
-        class="text-[0.8rem] font-medium text-destructive"
-    @content
+        {{ $attributes->mergeTailwind(['class' => 'text-[0.8rem] font-medium text-destructive']) }}
+    >
         {{ $message }}
-    @close
+    </{{ $tag }}>
 @enderror

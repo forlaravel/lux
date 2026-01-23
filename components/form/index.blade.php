@@ -1,10 +1,11 @@
 @props([
     'tag' => 'form',
 ])
-@open($tag)
+
+<{{ $tag }}
     x-data
     x-form
-    class="space-y-8"
-@content
+    {{ $attributes->mergeTailwind(['class' => 'space-y-8']) }}
+>
     {{ $slot }}
-@close
+</{{ $tag }}>

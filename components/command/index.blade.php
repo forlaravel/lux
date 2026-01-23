@@ -16,7 +16,7 @@
     @keydown.up.prevent="$focus.wrap().previous()"
     @keydown.down.prevent="$focus.wrap().next()"
     x-trap="selected()"
-    {{ $attributes->merge(['class' => 'flex h-full w-full flex-col overflow-hidden rounded-md bg-popover text-popover-foreground']) }}
+    {{ $attributes->mergeTailwind(['class' => 'flex h-full w-full flex-col overflow-hidden rounded-md bg-popover text-popover-foreground']) }}
     >
     {{ $slot }}
 </div>

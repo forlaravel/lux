@@ -2,6 +2,6 @@
     'tag' => 'div',
 ])
 
-@open($tag) class="text-lg font-semibold" @content
+<{{ $tag }} {{ $attributes->mergeTailwind(['class' => 'text-lg font-semibold']) }}>
     {{ $slot }}
-@close
+</{{ $tag }}>

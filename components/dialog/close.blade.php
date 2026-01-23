@@ -2,9 +2,9 @@
     'tag' => 'button',
 ])
 
-@open($tag)
-    data-lux="dialog.close"
+<{{ $tag }}
+    {{ $attributes }}
     @click="close()"
-@content
+>
     {{ $slot }}
-@close
+</{{ $tag }}>

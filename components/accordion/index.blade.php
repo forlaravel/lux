@@ -5,7 +5,7 @@
     'animated' => true,
 ])
 
-@open($tag)
+<{{ $tag }}
     x-id="['accordion']"
     :id="$id('accordion')"
     x-data="{
@@ -26,6 +26,7 @@
             return this.multiple ? this.selected.includes(id) : this.selected === id;
         }
     }"
-@content
+    {{ $attributes }}
+>
     {{ $slot }}
-@close
+</{{ $tag }}>

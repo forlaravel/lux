@@ -2,6 +2,6 @@
     'tag' => 'p',
 ])
 
-@open($tag) class="text-sm text-muted-foreground" @content
+<{{ $tag }} {{ $attributes->mergeTailwind(['class' => 'text-sm text-muted-foreground']) }}>
     {{ $slot }}
-@close
+</{{ $tag }}>

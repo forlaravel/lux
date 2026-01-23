@@ -1,3 +1,3 @@
-<p {{ $attributes->merge(['class' => 'text-sm text-muted-foreground']) }}>
+<p {{ $attributes->mergeTailwind(['class' => 'text-sm text-muted-foreground']) }}>
     {{ $slot }}
 </p>

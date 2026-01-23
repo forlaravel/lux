@@ -3,9 +3,9 @@
     'ratio'
 ])
 
-@open($tag)
+<{{ $tag }}
     style="aspect-ratio: {{ $ratio }};"
-    class="relative overflow-hidden"
-@content
+    {{ $attributes->mergeTailwind(['class' => 'relative overflow-hidden']) }}
+>
     {{ $slot }}
-@close
+</{{ $tag }}>

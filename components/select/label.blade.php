@@ -4,8 +4,8 @@
     'tag' => 'span',
 ])
 
-@open($tag)
-class="block py-1.5 pl-8 pr-2 text-sm font-semibold"
-@content
+<{{ $tag }}
+    {{ $attributes->mergeTailwind(['class' => 'block py-1.5 pl-8 pr-2 text-sm font-semibold']) }}
+>
     {{ $slot }}
-@close
+</{{ $tag }}>

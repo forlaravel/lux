@@ -1,6 +1,6 @@
 <template x-teleport="body" >
 <div 
-    {{ $attributes->merge(['class' => 'absolute z-50 z-50 min-w-[8rem] rounded-md border bg-popover p-1 text-popover-foreground shadow-md 
+    {{ $attributes->mergeTailwind(['class' => 'absolute z-50 z-50 min-w-[8rem] rounded-md border bg-popover p-1 text-popover-foreground shadow-md 
     data-[state=open]:animate-in 
     data-[state=closed]:animate-out 
     data-[state=closed]:fade-out-0 

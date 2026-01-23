@@ -2,7 +2,6 @@
     'tag' => 'img',
 ])
 
-@open($tag)
-    class="aspect-square h-full w-full"
-@content
-@close
+<{{ $tag }}
+    {{ $attributes->mergeTailwind(['class' => 'aspect-square h-full w-full']) }}
+/>

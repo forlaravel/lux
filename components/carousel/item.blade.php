@@ -1,7 +1,7 @@
 @props([
     'orientation' => 'horizontal',
 ])
-<div {{ $attributes->merge([
+<div {{ $attributes->mergeTailwind([
     'class' => 'flex flex-col justify-center items-center' . ($orientation === 'vertical' ? ' h-48' : ' h-full')
 ])}}>
     {{ $slot }}
