@@ -5,12 +5,12 @@ A versatile button component that supports multiple variants and sizes, suitable
 ```html
 <div class="flex gap-2 flex-col items-start" x-data="{ clicked: false }">
     <x-button>Default</x-button>
-    <x-button variant="outline" :loading="true">Spinner</x-button>
+    <x-button variant="outline" class="lux-button-loading">Spinner</x-button>
     <x-button variant="outline">Outline</x-button>
-    <x-button variant="destructive" x-on:click="clicked = !clicked" x-bind:data-loading="clicked">Destructive (click me!)</x-button>
+    <x-button variant="destructive" @click="clicked = !clicked" ::class="{ 'lux-button-loading': clicked }">Destructive (click me!)</x-button>
     <x-button variant="secondary">Secondary</x-button>
     <x-button variant="ghost">Ghost</x-button>
-    <x-button variant="link" x-on:click="clicked = !clicked" x-bind:data-loading="clicked">Link</x-button>
+    <x-button variant="link">Link</x-button>
 </div>
 ```
 
@@ -18,10 +18,10 @@ A versatile button component that supports multiple variants and sizes, suitable
 ### Sizes
 ```html
 <div class="flex gap-2 flex-col items-start">
-    <x-button size="sm">Link</x-button>
-    <x-button size="md">Link</x-button>
-    <x-button size="lg">Link</x-button>
-    <x-button size="xl">Link</x-button>
+    <x-button size="sm">Size sm</x-button>
+    <x-button size="md">Size md</x-button>
+    <x-button size="lg">Size lg</x-button>
+    <x-button size="xl">Size xl</x-button>
 </div>
 ```
 ## Example

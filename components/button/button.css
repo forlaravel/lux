@@ -1,180 +1,63 @@
 @layer components {
   /* === DEFAULT === */
   .lux-button {
-    @apply cursor-pointer inline-flex items-center justify-center whitespace-nowrap;
+    --_c: var(--color-foreground);
+    @apply !cursor-pointer relative inline-flex items-center justify-center whitespace-nowrap;
     @apply rounded-lg border border-transparent bg-clip-padding text-sm font-medium;
     @apply disabled:pointer-events-none disabled:opacity-50;
     @apply active:scale-[0.97];
     @apply focus-visible:outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px];
-    @apply [transition:transform_50ms_ease-out,color_300ms_ease-in-out];
+    @apply [transition:transform_50ms_ease-out,color_200ms_ease-in-out];
+  }
+  .lux-button::after {
+    content: '';
+    @apply absolute inset-0 m-auto size-[1.2em] rounded-full;
+    border: 2px solid var(--_c);
+    border-top-color: transparent;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 200ms ease-in-out;
   }
 
   .lux-button-variant-primary {
+    --_c: var(--color-primary-foreground);
     @apply bg-primary text-primary-foreground hover:bg-primary/80;
   }
   .lux-button-variant-outline {
     @apply border-border bg-background hover:bg-muted hover:text-foreground dark:bg-input/30 dark:border-input dark:hover:bg-input/50;
   }
   .lux-button-variant-secondary {
+    --_c: var(--color-secondary-foreground);
     @apply bg-secondary text-secondary-foreground hover:bg-secondary/80;
   }
   .lux-button-variant-ghost {
     @apply hover:bg-muted hover:text-foreground dark:hover:bg-muted/50;
   }
   .lux-button-variant-destructive {
+    --_c: var(--color-destructive);
     @apply bg-destructive/10 hover:bg-destructive/20 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 dark:bg-destructive/20 text-destructive;
   }
   .lux-button-variant-link {
+    --_c: var(--color-primary);
     @apply text-primary underline-offset-4 hover:underline;
   }
 
-  .lux-button-size-sm { @apply h-7 gap-1 px-2.5 text-sm; }
-  .lux-button-size-md { @apply h-8 gap-1.5 px-2.5; }
-  .lux-button-size-lg { @apply h-9 gap-1.5 px-2.5; }
-  .lux-button-size-xl { @apply h-10 gap-2 px-4; }
+  .lux-button-size-sm { @apply h-7 gap-1 px-2.5 text-xs; }
+  .lux-button-size-md { @apply h-9 gap-1.5 px-3 text-sm; }
+  .lux-button-size-lg { @apply h-11 gap-1.5 px-4 text-lg; }
+  .lux-button-size-xl { @apply h-13 gap-2 px-5 text-xl; }
   .lux-button-size-icon { @apply size-8; }
 
-  .lux-button-loading { @apply relative !text-transparent; }
-  .lux-button-spinner { @apply animate-spin absolute text-foreground; }
+  .lux-button-loading {
+    color: transparent !important;
+  }
+  .lux-button-loading::after {
+    opacity: 1;
+    animation: lux-spin 0.6s linear infinite;
+  }
 
-  /* === NOVA === */
-  .style-nova .lux-button {
-    @apply rounded-lg border border-transparent bg-clip-padding text-sm font-medium;
-    @apply focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px];
+  @keyframes lux-spin {
+    to { transform: rotate(360deg); }
   }
-  .style-nova .lux-button-variant-primary {
-    @apply bg-primary text-primary-foreground hover:bg-primary/80;
-  }
-  .style-nova .lux-button-variant-outline {
-    @apply border-border bg-background hover:bg-muted hover:text-foreground dark:bg-input/30 dark:border-input dark:hover:bg-input/50;
-  }
-  .style-nova .lux-button-variant-secondary {
-    @apply bg-secondary text-secondary-foreground hover:bg-secondary/80;
-  }
-  .style-nova .lux-button-variant-ghost {
-    @apply hover:bg-muted hover:text-foreground dark:hover:bg-muted/50;
-  }
-  .style-nova .lux-button-variant-destructive {
-    @apply bg-destructive/10 hover:bg-destructive/20 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 dark:bg-destructive/20 text-destructive;
-  }
-  .style-nova .lux-button-variant-link {
-    @apply text-primary underline-offset-4 hover:underline;
-  }
-  .style-nova .lux-button-size-sm { @apply h-7 gap-1 px-2.5 text-sm; }
-  .style-nova .lux-button-size-md { @apply h-8 gap-1.5 px-2.5; }
-  .style-nova .lux-button-size-lg { @apply h-9 gap-1.5 px-2.5; }
-  .style-nova .lux-button-size-xl { @apply h-10 gap-2 px-4; }
-  .style-nova .lux-button-size-icon { @apply size-8; }
 
-  /* === VEGA === */
-  .style-vega .lux-button {
-    @apply rounded-md border border-transparent bg-clip-padding text-sm font-medium;
-    @apply focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px];
-  }
-  .style-vega .lux-button-variant-primary {
-    @apply bg-primary text-primary-foreground hover:bg-primary/80;
-  }
-  .style-vega .lux-button-variant-outline {
-    @apply border-border bg-background hover:bg-muted hover:text-foreground shadow-xs dark:bg-input/30 dark:border-input dark:hover:bg-input/50;
-  }
-  .style-vega .lux-button-variant-secondary {
-    @apply bg-secondary text-secondary-foreground hover:bg-secondary/80;
-  }
-  .style-vega .lux-button-variant-ghost {
-    @apply hover:bg-muted hover:text-foreground dark:hover:bg-muted/50;
-  }
-  .style-vega .lux-button-variant-destructive {
-    @apply bg-destructive/10 hover:bg-destructive/20 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 dark:bg-destructive/20 text-destructive;
-  }
-  .style-vega .lux-button-variant-link {
-    @apply text-primary underline-offset-4 hover:underline;
-  }
-  .style-vega .lux-button-size-sm { @apply h-8 gap-1 px-2.5; }
-  .style-vega .lux-button-size-md { @apply h-9 gap-1.5 px-2.5; }
-  .style-vega .lux-button-size-lg { @apply h-10 gap-1.5 px-2.5; }
-  .style-vega .lux-button-size-icon { @apply size-9; }
-
-  /* === MAIA === */
-  .style-maia .lux-button {
-    @apply rounded-4xl border border-transparent bg-clip-padding text-sm font-medium;
-    @apply focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px];
-  }
-  .style-maia .lux-button-variant-primary {
-    @apply bg-primary text-primary-foreground hover:bg-primary/80;
-  }
-  .style-maia .lux-button-variant-outline {
-    @apply border-border bg-input/30 hover:bg-input/50 hover:text-foreground;
-  }
-  .style-maia .lux-button-variant-secondary {
-    @apply bg-secondary text-secondary-foreground hover:bg-secondary/80;
-  }
-  .style-maia .lux-button-variant-ghost {
-    @apply hover:bg-muted hover:text-foreground dark:hover:bg-muted/50;
-  }
-  .style-maia .lux-button-variant-destructive {
-    @apply bg-destructive/10 hover:bg-destructive/20 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 dark:bg-destructive/20 text-destructive;
-  }
-  .style-maia .lux-button-variant-link {
-    @apply text-primary underline-offset-4 hover:underline;
-  }
-  .style-maia .lux-button-size-sm { @apply h-8 gap-1 px-3; }
-  .style-maia .lux-button-size-md { @apply h-9 gap-1.5 px-3; }
-  .style-maia .lux-button-size-lg { @apply h-10 gap-1.5 px-4; }
-  .style-maia .lux-button-size-icon { @apply size-9; }
-
-  /* === LYRA === */
-  .style-lyra .lux-button {
-    @apply rounded-none border border-transparent bg-clip-padding text-xs font-medium;
-    @apply focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-1;
-  }
-  .style-lyra .lux-button-variant-primary {
-    @apply bg-primary text-primary-foreground hover:bg-primary/80;
-  }
-  .style-lyra .lux-button-variant-outline {
-    @apply border-border bg-background hover:bg-muted hover:text-foreground dark:bg-input/30 dark:border-input dark:hover:bg-input/50;
-  }
-  .style-lyra .lux-button-variant-secondary {
-    @apply bg-secondary text-secondary-foreground hover:bg-secondary/80;
-  }
-  .style-lyra .lux-button-variant-ghost {
-    @apply hover:bg-muted hover:text-foreground dark:hover:bg-muted/50;
-  }
-  .style-lyra .lux-button-variant-destructive {
-    @apply bg-destructive/10 hover:bg-destructive/20 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 dark:bg-destructive/20 text-destructive;
-  }
-  .style-lyra .lux-button-variant-link {
-    @apply text-primary underline-offset-4 hover:underline;
-  }
-  .style-lyra .lux-button-size-sm { @apply h-7 gap-1 px-2.5; }
-  .style-lyra .lux-button-size-md { @apply h-8 gap-1.5 px-2.5; }
-  .style-lyra .lux-button-size-lg { @apply h-9 gap-1.5 px-2.5; }
-  .style-lyra .lux-button-size-icon { @apply size-8; }
-
-  /* === MIRA === */
-  .style-mira .lux-button {
-    @apply rounded-md border border-transparent bg-clip-padding text-xs font-medium;
-    @apply focus-visible:border-ring focus-visible:ring-ring/30 focus-visible:ring-[2px];
-  }
-  .style-mira .lux-button-variant-primary {
-    @apply bg-primary text-primary-foreground hover:bg-primary/80;
-  }
-  .style-mira .lux-button-variant-outline {
-    @apply border-border bg-background hover:bg-muted hover:text-foreground dark:bg-input/30 dark:border-input dark:hover:bg-input/50;
-  }
-  .style-mira .lux-button-variant-secondary {
-    @apply bg-secondary text-secondary-foreground hover:bg-secondary/80;
-  }
-  .style-mira .lux-button-variant-ghost {
-    @apply hover:bg-muted hover:text-foreground dark:hover:bg-muted/50;
-  }
-  .style-mira .lux-button-variant-destructive {
-    @apply bg-destructive/10 hover:bg-destructive/20 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 dark:bg-destructive/20 text-destructive;
-  }
-  .style-mira .lux-button-variant-link {
-    @apply text-primary underline-offset-4 hover:underline;
-  }
-  .style-mira .lux-button-size-sm { @apply h-6 gap-1 px-2; }
-  .style-mira .lux-button-size-md { @apply h-7 gap-1 px-2; }
-  .style-mira .lux-button-size-lg { @apply h-8 gap-1 px-2.5; }
-  .style-mira .lux-button-size-icon { @apply size-7; }
 }
