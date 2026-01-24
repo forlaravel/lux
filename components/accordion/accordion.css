@@ -19,58 +19,5 @@
     @apply pb-4 pt-0;
   }
 
-  /* === NOVA === */
-  .style-nova .lux-accordion-item {
-    @apply not-last:border-b;
-  }
-  .style-nova .lux-accordion-trigger {
-    @apply rounded-lg py-2.5 text-sm font-medium hover:underline;
-  }
-  .style-nova .lux-accordion-content {
-    @apply text-sm;
-  }
-
-  /* === VEGA === */
-  .style-vega .lux-accordion-item {
-    @apply not-last:border-b;
-  }
-  .style-vega .lux-accordion-trigger {
-    @apply rounded-lg py-3 text-sm font-medium hover:underline;
-  }
-  .style-vega .lux-accordion-content {
-    @apply text-sm;
-  }
-
-  /* === MAIA === */
-  .style-maia .lux-accordion-item {
-    @apply not-last:border-b;
-  }
-  .style-maia .lux-accordion-trigger {
-    @apply rounded-xl py-3 text-sm font-medium hover:underline;
-  }
-  .style-maia .lux-accordion-content {
-    @apply text-sm;
-  }
-
-  /* === LYRA === */
-  .style-lyra .lux-accordion-item {
-    @apply not-last:border-b;
-  }
-  .style-lyra .lux-accordion-trigger {
-    @apply rounded-none py-2.5 text-xs font-medium hover:underline;
-  }
-  .style-lyra .lux-accordion-content {
-    @apply text-xs;
-  }
-
-  /* === MIRA === */
-  .style-mira .lux-accordion-item {
-    @apply not-last:border-b;
-  }
-  .style-mira .lux-accordion-trigger {
-    @apply rounded-lg p-2 text-xs font-medium hover:underline;
-  }
-  .style-mira .lux-accordion-content {
-    @apply text-xs;
-  }
 }
+

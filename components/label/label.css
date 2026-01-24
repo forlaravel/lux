@@ -4,28 +4,5 @@
     @apply text-sm font-medium leading-none;
   }
 
-  /* === NOVA === */
-  .style-nova .lux-label {
-    @apply text-sm font-medium leading-none;
-  }
-
-  /* === VEGA === */
-  .style-vega .lux-label {
-    @apply text-sm font-medium leading-none;
-  }
-
-  /* === MAIA === */
-  .style-maia .lux-label {
-    @apply text-sm font-medium leading-none;
-  }
-
-  /* === LYRA === */
-  .style-lyra .lux-label {
-    @apply text-xs font-medium leading-none;
-  }
-
-  /* === MIRA === */
-  .style-mira .lux-label {
-    @apply text-xs font-medium leading-none;
-  }
 }
+

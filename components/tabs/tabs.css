@@ -15,58 +15,5 @@
     @apply mt-2 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring;
   }
 
-  /* === NOVA === */
-  .style-nova .lux-tabs-list {
-    @apply rounded-lg p-[3px];
-  }
-  .style-nova .lux-tabs-trigger {
-    @apply gap-1.5 rounded-md border border-transparent px-1.5 py-0.5 text-sm font-medium;
-  }
-  .style-nova .lux-tabs-content {
-    @apply text-sm;
-  }
-
-  /* === VEGA === */
-  .style-vega .lux-tabs-list {
-    @apply rounded-lg p-[3px];
-  }
-  .style-vega .lux-tabs-trigger {
-    @apply gap-1.5 rounded-md border border-transparent px-2 py-1 text-sm font-medium;
-  }
-  .style-vega .lux-tabs-content {
-    @apply text-sm;
-  }
-
-  /* === MAIA === */
-  .style-maia .lux-tabs-list {
-    @apply rounded-4xl p-[3px];
-  }
-  .style-maia .lux-tabs-trigger {
-    @apply gap-1.5 rounded-xl border border-transparent px-2 py-1 text-sm font-medium;
-  }
-  .style-maia .lux-tabs-content {
-    @apply text-sm;
-  }
-
-  /* === LYRA === */
-  .style-lyra .lux-tabs-list {
-    @apply rounded-none p-[3px];
-  }
-  .style-lyra .lux-tabs-trigger {
-    @apply gap-1.5 rounded-none border border-transparent px-1.5 py-0.5 text-xs font-medium;
-  }
-  .style-lyra .lux-tabs-content {
-    @apply text-xs;
-  }
-
-  /* === MIRA === */
-  .style-mira .lux-tabs-list {
-    @apply rounded-lg p-[3px];
-  }
-  .style-mira .lux-tabs-trigger {
-    @apply gap-1.5 rounded-md border border-transparent px-1.5 py-0.5 text-xs font-medium;
-  }
-  .style-mira .lux-tabs-content {
-    @apply text-xs;
-  }
 }
+

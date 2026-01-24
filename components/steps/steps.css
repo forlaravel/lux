@@ -14,57 +14,5 @@
     @apply pl-10;
   }
 
-  /* === NOVA === */
-  .style-nova .lux-steps {
-    @apply border-border/60;
-  }
-  .style-nova .lux-steps-item-title {
-    @apply text-sm;
-    @apply before:rounded-lg before:bg-muted/80 before:border-background;
-  }
-
-  /* === VEGA === */
-  .style-vega .lux-steps {
-    @apply border-border/60;
-  }
-  .style-vega .lux-steps-item-title {
-    @apply text-sm;
-    @apply before:rounded-md before:bg-muted/80 before:border-background;
-  }
-
-  /* === MAIA === */
-  .style-maia .lux-steps {
-    @apply ml-5 border-border/50;
-  }
-  .style-maia .lux-steps-item-title {
-    @apply pl-12 mt-10 text-sm font-semibold;
-    @apply before:rounded-xl before:border-4 before:border-background before:bg-muted/60;
-  }
-  .style-maia .lux-steps-item-content {
-    @apply pl-12;
-  }
-
-  /* === LYRA === */
-  .style-lyra .lux-steps {
-    @apply ml-4 border-l-2 border-border;
-  }
-  .style-lyra .lux-steps-item-title {
-    @apply pl-10 mt-8 text-xs font-semibold;
-    @apply before:rounded-none before:border-2 before:border-border before:bg-muted;
-  }
-  .style-lyra .lux-steps-item-content {
-    @apply pl-10;
-  }
-
-  /* === MIRA === */
-  .style-mira .lux-steps {
-    @apply mb-8 ml-3 border-border;
-  }
-  .style-mira .lux-steps-item-title {
-    @apply pl-8 mt-4 text-xs font-semibold;
-    @apply before:h-7 before:w-7 before:rounded-md before:border-2 before:border-background before:bg-muted before:text-xs;
-  }
-  .style-mira .lux-steps-item-content {
-    @apply pl-8 text-xs;
-  }
 }
+

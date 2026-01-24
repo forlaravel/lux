@@ -4,28 +4,5 @@
     @apply relative overflow-hidden;
   }
 
-  /* === NOVA === */
-  .style-nova .lux-aspect-ratio {
-    @apply rounded-lg;
-  }
-
-  /* === VEGA === */
-  .style-vega .lux-aspect-ratio {
-    @apply rounded-md;
-  }
-
-  /* === MAIA === */
-  .style-maia .lux-aspect-ratio {
-    @apply rounded-3xl;
-  }
-
-  /* === LYRA === */
-  .style-lyra .lux-aspect-ratio {
-    @apply rounded-none;
-  }
-
-  /* === MIRA === */
-  .style-mira .lux-aspect-ratio {
-    @apply rounded-sm;
-  }
 }
+

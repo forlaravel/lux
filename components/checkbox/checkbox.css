@@ -12,28 +12,5 @@
     @apply flex items-center justify-center text-current;
   }
 
-  /* === NOVA === */
-  .style-nova .lux-checkbox {
-    @apply border-input dark:bg-input/30 data-[checked=true]:bg-primary data-[checked=true]:text-primary-foreground data-[checked=true]:border-primary focus-visible:border-ring focus-visible:ring-ring/50 size-4 rounded-[4px] border focus-visible:ring-[3px];
-  }
-
-  /* === VEGA === */
-  .style-vega .lux-checkbox {
-    @apply border-input dark:bg-input/30 data-[checked=true]:bg-primary data-[checked=true]:text-primary-foreground data-[checked=true]:border-primary focus-visible:border-ring focus-visible:ring-ring/50 size-4 rounded-[4px] border shadow-xs focus-visible:ring-[3px];
-  }
-
-  /* === MAIA === */
-  .style-maia .lux-checkbox {
-    @apply border-input dark:bg-input/30 data-[checked=true]:bg-primary data-[checked=true]:text-primary-foreground data-[checked=true]:border-primary focus-visible:border-ring focus-visible:ring-ring/50 size-4 rounded-[6px] border focus-visible:ring-[3px];
-  }
-
-  /* === LYRA === */
-  .style-lyra .lux-checkbox {
-    @apply border-input dark:bg-input/30 data-[checked=true]:bg-primary data-[checked=true]:text-primary-foreground data-[checked=true]:border-primary focus-visible:border-ring focus-visible:ring-ring/50 size-4 rounded-none border focus-visible:ring-1;
-  }
-
-  /* === MIRA === */
-  .style-mira .lux-checkbox {
-    @apply border-input dark:bg-input/30 data-[checked=true]:bg-primary data-[checked=true]:text-primary-foreground data-[checked=true]:border-primary focus-visible:border-ring focus-visible:ring-ring/30 size-4 rounded-[4px] border focus-visible:ring-[2px];
-  }
 }
+
