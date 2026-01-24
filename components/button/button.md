@@ -69,8 +69,7 @@ php artisan lux:publish button
 ## Properties
 | Prop     | Description                                                                 | Type      | Default   |
 |----------|-----------------------------------------------------------------------------|-----------|-----------|
-| `variant`| Determines the styling of the button, can be `default`, `destructive`, `outline`, `secondary`, `ghost`, `link` | `string`  | `default` |
+| `variant`| Determines the styling of the button, can be `primary`, `destructive`, `outline`, `secondary`, `ghost`, `link` | `string`  | `primary` |
 | `size`   | Specifies the size of the button, can be `sm`, `md`, `lg`, `xl`, `icon`     | `string`  | `md`      |
-| `loading`| If true, shows a loading spinner and disables the button                     | `boolean` | `false`   |
 | `tag`    | Specifies the HTML tag to be used for the button                            | `string`  | `button`  |
 

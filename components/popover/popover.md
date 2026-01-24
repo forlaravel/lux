@@ -54,12 +54,16 @@ php artisan lux:publish popover
 ## Properties
 
 ### popover
-The main component that encapsulates the entire popover structure.
+| Prop        | Description                                        | Type      | Default |
+|-------------|----------------------------------------------------|-----------|---------|
+| `teleport`  | A CSS selector to teleport the popover to          | `string`  | -       |
+| `open`      | Whether the popover is open by default             | `boolean` | `false` |
 
 ### popover.trigger
-The component responsible for toggling the visibility of the popover content.
+The component responsible for toggling the visibility of the popover content. No additional props.
 
 ### popover.content
-The component that holds the content of the popover menu. This part is shown or hidden based on the state controlled by the trigger.
-
-No unique props are required for these sub-components as they rely on AlpineJS for functionality and TailwindCSS for styling.
+| Prop        | Description                                        | Type      | Default |
+|-------------|----------------------------------------------------|-----------|---------|
+| `tag`       | The HTML tag to use for the content container      | `string`  | `div`   |
+| `teleport`  | A CSS selector to teleport the content to          | `boolean\|string` | `false` |

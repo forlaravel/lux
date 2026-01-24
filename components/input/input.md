@@ -69,4 +69,7 @@ php artisan lux:publish input
 ### input
 | Prop | Description | Type | Default |
 | --- | --- | --- | --- |
+| `tag` | The HTML tag to render | `string` | `input` |
+| `type` | The type attribute for the input | `string` | `text` |
 | `mask` | The mask pattern to apply to the input. See https://alpinejs.dev/plugins/mask | `string` | `null` |
+| `value` | The value attribute for the input | `string` | `null` |

@@ -25,3 +25,4 @@ php artisan lux:publish code-block
 |------------------------|--------------------------------------------------|-----------|---------|
 | `language`             | Specifies the language for syntax highlighting.  | `string`  | `''`    |
 | `normalizeIndentation` | Normalizes the indentation of the code block.    | `boolean` | `true`  |
+| `copy`                 | Whether to show a copy-to-clipboard button       | `boolean` | `false` |

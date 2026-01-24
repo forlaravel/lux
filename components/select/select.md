@@ -44,6 +44,7 @@ php artisan lux:publish select
 | `wire:model`   | Model selected item to Livewire (takes precedence over `value`).            | `string` or `array` | `null`             |
 | `wire:search`  | Model search query to Livewire (use with `searchable` and `clientSearch`).  | `string`            | `''`               |
 | `tag`          | The tag to use for the component.                                           | `string`            | `div`              |
+| `name`         | The name attribute for form submission                                      | `string`            | `null`             |
 | `multiple`     | Whether multiple items can be selected.                                     | `boolean`           | `false`            |
 | `searchable`   | Whether the dropdown is searchable.                                         | `boolean`           | `false`            |
 | `placeholder`  | The placeholder text.                                                       | `string`            | `Select an option` |

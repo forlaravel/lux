@@ -24,4 +24,3 @@ php artisan lux:publish badge
 | Prop | Description | Type | Default |
 | --- | --- | --- | --- |
 | `variant` | Determines the styling of the badge. Can be one of `default`, `secondary`, `destructive`, `outline`. | `string` | `default` |
-| `class` | Additional Tailwind CSS classes to customize the appearance of the badge. | `string` | `""` |

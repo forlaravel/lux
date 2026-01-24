@@ -97,10 +97,16 @@ php artisan lux:publish dialog
 |--------|----------------------------------------------------|----------|---------|
 | `tag`  | The HTML tag to use for the title element.         | `string` | `h2`    |
 
-### dialog.description
+### dialog.body
 | Prop   | Description                                        | Type     | Default |
 |--------|----------------------------------------------------|----------|---------|
-| `tag`  | The HTML tag to use for the description element.   | `string` | `p`     |
+| `tag`  | The HTML tag to use for the body container element. | `string` | `div`   |
+
+### dialog.content
+| Prop              | Description                                        | Type      | Default  |
+|-------------------|----------------------------------------------------|-----------|----------|
+| `tag`             | The HTML tag to use for the content element.       | `string`  | `dialog` |
+| `showCloseButton` | Whether to show the close button                   | `boolean` | `true`   |
 
 ### dialog.footer
 | Prop   | Description                                        | Type     | Default |

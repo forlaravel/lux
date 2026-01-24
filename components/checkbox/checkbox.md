@@ -23,7 +23,7 @@ php artisan lux:publish checkbox
 | Prop      | Description                                      | Type      | Default |
 |-----------|--------------------------------------------------|-----------|---------|
 | `id`      | The id attribute for the checkbox button element | `string`  | `null`  |
-| `value`   | Determines whether the checkbox is checked       | `boolean` | `false` |
+| `checked` | Whether the checkbox is initially checked        | `boolean` | `false` |
 | `wire:model` | Model selected item to Livewire (takes precedence over `checked`). | `string` | `null` |
 | `name`    | The name attribute (on form submission) | `string`  | `null`  |
-| `value`   | The value attribute (on form submission) | `string`  | `null`  |
+| `value`   | The value attribute for form submission  | `string`  | `null`  |

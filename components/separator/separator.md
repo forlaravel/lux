@@ -35,4 +35,4 @@ php artisan lux:publish separator
 | Prop         | Description                                                         | Type     | Default       |
 |--------------|---------------------------------------------------------------------|----------|---------------|
 | `orientation`| Determines the orientation of the separator, can be either `horizontal` or `vertical`  | `string` | `horizontal`  |
-| `class`      | Additional CSS classes to apply                                     | `string` | `''`          |
+| `tag`        | The HTML tag to render                                              | `string` | `div`         |

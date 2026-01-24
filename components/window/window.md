@@ -20,3 +20,10 @@ The `x-window` component is a simple window component that can be used to displa
 ```bash
 php artisan lux:publish window
 ```
+
+## Properties
+
+### window
+| Prop   | Description                  | Type      | Default |
+|--------|------------------------------|-----------|---------|
+| `show` | Whether the window is visible | `boolean` | `false` |

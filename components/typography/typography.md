@@ -1,15 +1,23 @@
 # Typography
-A component to manage and style text elements in your application, making your content visually appealing and readable with various stylings.
+A set of sub-components for styling text elements in your application, providing consistent and readable typographic hierarchy.
 
 ## Example
 ```html
-<x-typography variant="h1">
-    Welcome to Our Website
-</x-typography>
-
-<x-typography variant="body">
-    Enjoy a seamless and delightful experience as you navigate through our platform. Stay informed with our latest updates and insights.
-</x-typography>
+<x-typography.h1>Heading 1</x-typography.h1>
+<x-typography.h2>Heading 2</x-typography.h2>
+<x-typography.h3>Heading 3</x-typography.h3>
+<x-typography.h4>Heading 4</x-typography.h4>
+<x-typography.p>Paragraph text here.</x-typography.p>
+<x-typography.lead>Lead text for introductions.</x-typography.lead>
+<x-typography.large>Large emphasis text.</x-typography.large>
+<x-typography.small>Small print text.</x-typography.small>
+<x-typography.muted>Muted helper text.</x-typography.muted>
+<x-typography.blockquote>A notable quotation.</x-typography.blockquote>
+<x-typography.inline-code>code()</x-typography.inline-code>
+<x-typography.list>
+    <li>Item one</li>
+    <li>Item two</li>
+</x-typography.list>
 ```
 
 ## Installation
@@ -22,7 +30,64 @@ php artisan lux:publish typography
 
 ## Properties
 
-### typography
-| Prop      | Description                                    | Type     | Default   |
-|-----------|------------------------------------------------|----------|-----------|
-| `variant` | Determines the typography style, can be `h1`, `h2`, `h3`, `body`, `caption`, etc. | `string` | `body`    |
+Each sub-component accepts a `tag` prop that allows you to override the rendered HTML element.
+
+### typography.h1
+| Prop  | Description                        | Type     | Default |
+|-------|------------------------------------|----------|---------|
+| `tag` | The HTML element to render         | `string` | `h1`    |
+
+### typography.h2
+| Prop  | Description                        | Type     | Default |
+|-------|------------------------------------|----------|---------|
+| `tag` | The HTML element to render         | `string` | `h2`    |
+
+### typography.h3
+| Prop  | Description                        | Type     | Default |
+|-------|------------------------------------|----------|---------|
+| `tag` | The HTML element to render         | `string` | `h3`    |
+
+### typography.h4
+| Prop  | Description                        | Type     | Default |
+|-------|------------------------------------|----------|---------|
+| `tag` | The HTML element to render         | `string` | `h4`    |
+
+### typography.p
+| Prop  | Description                        | Type     | Default |
+|-------|------------------------------------|----------|---------|
+| `tag` | The HTML element to render         | `string` | `p`     |
+
+### typography.lead
+| Prop  | Description                        | Type     | Default |
+|-------|------------------------------------|----------|---------|
+| `tag` | The HTML element to render         | `string` | `p`     |
+
+### typography.large
+| Prop  | Description                        | Type     | Default |
+|-------|------------------------------------|----------|---------|
+| `tag` | The HTML element to render         | `string` | `div`   |
+
+### typography.small
+| Prop  | Description                        | Type     | Default |
+|-------|------------------------------------|----------|---------|
+| `tag` | The HTML element to render         | `string` | `small` |
+
+### typography.muted
+| Prop  | Description                        | Type     | Default |
+|-------|------------------------------------|----------|---------|
+| `tag` | The HTML element to render         | `string` | `p`     |
+
+### typography.blockquote
+| Prop  | Description                        | Type     | Default       |
+|-------|------------------------------------|----------|---------------|
+| `tag` | The HTML element to render         | `string` | `blockquote`  |
+
+### typography.inline-code
+| Prop  | Description                        | Type     | Default |
+|-------|------------------------------------|----------|---------|
+| `tag` | The HTML element to render         | `string` | `code`  |
+
+### typography.list
+| Prop  | Description                        | Type     | Default |
+|-------|------------------------------------|----------|---------|
+| `tag` | The HTML element to render         | `string` | `ul`    |

@@ -5,6 +5,7 @@
     @apply placeholder:text-muted-foreground;
     @apply disabled:cursor-not-allowed disabled:opacity-50;
     @apply focus-visible:outline-none;
+    @apply transition-[box-shadow,border-color] duration-200;
   }
 
 }

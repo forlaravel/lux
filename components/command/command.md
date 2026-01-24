@@ -53,63 +53,12 @@ php artisan lux:publish command
 
 ## Properties
 
-### command-dialog
-This is the main wrapper for the command dialog.
+### command.item
+| Prop | Description | Type | Default |
+| --- | --- | --- | --- |
+| `disabled` | Whether the command item is disabled | `boolean` | `false` |
 
-| Prop        | Description                        | Type   | Default |
-|-------------|------------------------------------|--------|---------|
-| `x-data`    | Initializes Alpine.js reactive data | `string` | N/A     |
-| `@keydown.up` | Handles up arrow key navigation | `event`  | N/A     |
-| `@keydown.down` | Handles down arrow key navigation | `event`  | N/A     |
-| `x-trap` | Keeps focus within the dialog | `string` | N/A |
-
-### command-input
-An input field within the dialog.
-
-| Prop       | Description                         | Type     | Default |
-|------------|-------------------------------------|----------|---------|
-| `placeholder` | Placeholder text for the input | `string` | N/A |
-| `x-ref`    | Alpine.js reference to the element | `string` | `input` |
-| `x-model`  | Two-way data binding for input value | `string` | `search` |
-
-### command-group
-A wrapper to group items within the list.
-
-| Prop      | Description     | Type     | Default |
-|-----------|-----------------|----------|---------|
-| `heading` | Heading for the group | `string` | N/A  |
-
-### command-item
-An individual command item.
-
-| Prop       | Description                  | Type      | Default |
-|------------|------------------------------|-----------|---------|
-| `disabled` | Whether the item is disabled | `boolean` | `false` |
-
-### command-list
-A container for command items, with scroll capabilities.
-
-| Prop        | Description            | Type     | Default |
-|-------------|------------------------|----------|---------|
-| `x-ref`     | Alpine.js reference to the element | `string` | `list` |
-
-### command-separator
-A separator line to divide different sections.
-
-| Prop | Description | Type   | Default |
-|------|-------------|--------|---------|
-| `x-data` | Initializes Alpine.js | `string` | N/A |
-
-### command-shortcut
-Displays keyboard shortcuts.
-
-| Prop | Description                     | Type     | Default |
-|------|---------------------------------|----------|---------|
-| `class` | Tailwind CSS classes for styling | `string` | 'ml-auto text-xs tracking-widest text-muted-foreground' |
-
-### command-empty
-Displays when no results are found.
-
-| Prop | Description | Type   | Default |
-|------|-------------|--------|---------|
-| `x-if` | Conditional rendering with Alpine.js | `string` | `resultCount === 0` |
+### command.group
+| Prop | Description | Type | Default |
+| --- | --- | --- | --- |
+| `heading` | The heading text for the command group | `string` | `""` |

@@ -52,36 +52,5 @@ A versatile container component used for grouping related content, such as forms
 php artisan lux:publish card
 ```
 
-2. Ensure your Tailwind CSS configuration includes necessary utility classes for borders, padding, spacing, and shadows.
-
 ## Properties
-
-### card
-| Prop | Description | Type | Default |
-| --- | --- | --- | --- |
-| `class` | Additional Tailwind CSS classes for customizing the card container. | `string` | `rounded-lg border bg-card text-card-foreground shadow-sm` |
-
-### card.header
-| Prop | Description | Type | Default |
-| --- | --- | --- | --- |
-| `class` | Additional Tailwind CSS classes for customizing the card header. | `string` | `flex flex-col space-y-1.5 p-6` |
-
-### card.title
-| Prop | Description | Type | Default |
-| --- | --- | --- | --- |
-| `class` | Additional Tailwind CSS classes for customizing the card title. | `string` | `text-2xl font-semibold leading-none tracking-tight` |
-
-### card.description
-| Prop | Description | Type | Default |
-| --- | --- | --- | --- |
-| `class` | Additional Tailwind CSS classes for customizing the card description. | `string` | `text-sm text-muted-foreground` |
-
-### card.content
-| Prop | Description | Type | Default |
-| --- | --- | --- | --- |
-| `class` | Additional Tailwind CSS classes for customizing the card content area. | `string` | `p-6` |
-
-### card.footer
-| Prop | Description | Type | Default |
-| --- | --- | --- | --- |
-| `class` | Additional Tailwind CSS classes for customizing the card footer. | `string` | `flex items-center p-6 pt-0` |
+This component and its sub-components do not define custom blade properties. Use standard HTML attributes via the component tag.

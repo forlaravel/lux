@@ -62,11 +62,12 @@ window.flatpickr = flatpickr;
 ### calendar
 | Prop | Description | Type | Default |
 | --- | --- | --- | --- |
-| `wire:model` | The selected accordion-item via livewire (takes precedence over `value`). | `array` | `null`
-| `value` | The selected accordion-item. | `array` | `[]`
+| `wire:model` | The selected date(s) via livewire (takes precedence over `value`). | `array` | `null`
+| `value` | The selected date(s). | `array` | `[]`
 | `inline` | Display the calendar inline or as a dropdown | `boolean` | `false` |
-| `mode` | Selection mode (`single`, `multiple`, `range`) | `string` | `multiple` |
+| `mode` | Selection mode (`single`, `multiple`, `range`) | `string` | `single` |
 | `dateFormat` | Date format string | `string` | `d-m-Y` |
+| `mask` | Input mask pattern | `string` | `""` |
 | `name` | Input name attribute | `string` | `null` |
 | `placeholder` | Placeholder text for the input field | `string` | `Select a date` |
 | `config` | Additional Flatpickr configuration options | `array` | `[]` |

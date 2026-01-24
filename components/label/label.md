@@ -14,3 +14,11 @@ A component used to display labels for form elements, with support for custom cl
 ```bash
 php artisan lux:publish label
 ```
+
+## Properties
+
+### label
+| Prop      | Description                            | Type     | Default |
+|-----------|----------------------------------------|----------|---------|
+| `tag`     | The HTML tag to render                 | `string` | `label` |
+| `for`     | The for attribute linking to a form element | `string` | `null`  |

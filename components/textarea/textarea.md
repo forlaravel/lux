@@ -23,4 +23,5 @@ php artisan lux:publish textarea
 ### textarea
 | Prop      | Description                            | Type     | Default   |
 |-----------|----------------------------------------|----------|-----------|
+| `tag`     | The HTML tag to render                 | `string` | `textarea` |
 | `type`    | Determines the type of the textarea input. | `string` | `text`    |
