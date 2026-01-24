@@ -5,7 +5,7 @@
 
 <{{ $tag }}
     style="aspect-ratio: {{ $ratio }};"
-    {{ $attributes->mergeTailwind(['class' => 'lux-aspect-ratio relative overflow-hidden']) }}
+    {{ $attributes->mergeTailwind(['class' => 'lux-aspect-ratio']) }}
 >
     {{ $slot }}
 </{{ $tag }}>

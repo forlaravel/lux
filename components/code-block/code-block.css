@@ -1,0 +1,31 @@
+@layer components {
+  /* === DEFAULT === */
+  .lux-code-block {
+    @apply relative rounded-lg overflow-hidden;
+  }
+
+  /* === NOVA === */
+  .style-nova .lux-code-block {
+    @apply relative rounded-lg overflow-hidden;
+  }
+
+  /* === VEGA === */
+  .style-vega .lux-code-block {
+    @apply relative rounded-lg overflow-hidden;
+  }
+
+  /* === MAIA === */
+  .style-maia .lux-code-block {
+    @apply relative rounded-2xl overflow-hidden;
+  }
+
+  /* === LYRA === */
+  .style-lyra .lux-code-block {
+    @apply relative rounded-none overflow-hidden;
+  }
+
+  /* === MIRA === */
+  .style-mira .lux-code-block {
+    @apply relative rounded-lg overflow-hidden;
+  }
+}

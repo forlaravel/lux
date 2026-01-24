@@ -2,6 +2,6 @@
     'tag' => 'p',
 ])
 
-<{{ $tag }} {{ $attributes->mergeTailwind(['class' => 'lux-lead text-xl text-muted-foreground']) }}>
+<{{ $tag }} {{ $attributes->mergeTailwind(['class' => 'lux-lead']) }}>
     {{ $slot }}
 </{{ $tag }}>

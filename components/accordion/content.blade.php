@@ -14,10 +14,10 @@
     @if($animated)
     x-collapse
     @endif
-    class="lux-accordion-content overflow-hidden text-sm"
+    class="lux-accordion-content"
     role="region"
 >
-    <div {{ $attributes->mergeTailwind(['class' => 'pb-4 pt-0']) }}>
+    <div {{ $attributes->mergeTailwind(['class' => 'lux-accordion-content-inner']) }}>
         {{ $slot }}
     </div>
 </{{ $tag }}>

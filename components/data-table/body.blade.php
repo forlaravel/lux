@@ -1,3 +1,3 @@
-<tbody class="lux-data-table-body divide-y divide-gray-200">
+<tbody class="lux-data-table-body">
     {{ $slot }}
 </tbody>

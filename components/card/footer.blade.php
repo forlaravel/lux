@@ -1,3 +1,3 @@
-<div {{ $attributes->mergeTailwind(['class' => 'lux-card-footer flex items-center p-6 pt-0']) }}>
+<div {{ $attributes->mergeTailwind(['class' => 'lux-card-footer']) }}>
     {{ $slot }}
 </div>

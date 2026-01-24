@@ -1,5 +1,5 @@
-<thead class="lux-data-table-header border-b">
-    <tr class="border-b transition-colors hover:bg-muted/50">
+<thead class="lux-data-table-header">
+    <tr class="lux-data-table-header-row">
         {{ $slot }}
     </tr>
 </thead>

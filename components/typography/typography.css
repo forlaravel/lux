@@ -1,0 +1,229 @@
+@layer components {
+  /* === DEFAULT === */
+  .lux-h1 {
+    @apply scroll-m-20 text-4xl font-bold tracking-tight;
+  }
+  .lux-h2 {
+    @apply scroll-m-20 text-3xl font-semibold tracking-tight;
+  }
+  .lux-h3 {
+    @apply scroll-m-20 text-2xl font-semibold tracking-tight;
+  }
+  .lux-h4 {
+    @apply scroll-m-20 text-xl font-semibold tracking-tight;
+  }
+  .lux-p {
+    @apply leading-7;
+  }
+  .lux-lead {
+    @apply text-xl text-muted-foreground;
+  }
+  .lux-large {
+    @apply text-lg font-semibold;
+  }
+  .lux-small {
+    @apply text-sm font-medium leading-none;
+  }
+  .lux-muted {
+    @apply text-sm text-muted-foreground;
+  }
+  .lux-blockquote {
+    @apply mt-6 border-l-2 pl-6 italic;
+  }
+  .lux-inline-code {
+    @apply relative rounded bg-muted px-[0.3rem] py-[0.2rem] font-mono text-sm font-semibold;
+  }
+  .lux-list {
+    @apply my-6 ml-6 list-disc [&>li]:mt-2;
+  }
+
+  /* === NOVA === */
+  .style-nova .lux-h1 {
+    @apply scroll-m-20 text-4xl font-bold tracking-tight;
+  }
+  .style-nova .lux-h2 {
+    @apply scroll-m-20 text-3xl font-semibold tracking-tight;
+  }
+  .style-nova .lux-h3 {
+    @apply scroll-m-20 text-2xl font-semibold tracking-tight;
+  }
+  .style-nova .lux-h4 {
+    @apply scroll-m-20 text-xl font-semibold tracking-tight;
+  }
+  .style-nova .lux-p {
+    @apply leading-7;
+  }
+  .style-nova .lux-lead {
+    @apply text-xl text-muted-foreground;
+  }
+  .style-nova .lux-large {
+    @apply text-lg font-semibold;
+  }
+  .style-nova .lux-small {
+    @apply text-sm font-medium leading-none;
+  }
+  .style-nova .lux-muted {
+    @apply text-sm text-muted-foreground;
+  }
+  .style-nova .lux-blockquote {
+    @apply mt-6 border-l-2 pl-6 italic;
+  }
+  .style-nova .lux-inline-code {
+    @apply relative rounded bg-muted px-[0.3rem] py-[0.2rem] font-mono text-sm font-semibold;
+  }
+  .style-nova .lux-list {
+    @apply my-6 ml-6 list-disc [&>li]:mt-2;
+  }
+
+  /* === VEGA === */
+  .style-vega .lux-h1 {
+    @apply scroll-m-20 text-4xl font-bold tracking-tight;
+  }
+  .style-vega .lux-h2 {
+    @apply scroll-m-20 text-3xl font-semibold tracking-tight;
+  }
+  .style-vega .lux-h3 {
+    @apply scroll-m-20 text-2xl font-semibold tracking-tight;
+  }
+  .style-vega .lux-h4 {
+    @apply scroll-m-20 text-xl font-semibold tracking-tight;
+  }
+  .style-vega .lux-p {
+    @apply leading-7;
+  }
+  .style-vega .lux-lead {
+    @apply text-xl text-muted-foreground;
+  }
+  .style-vega .lux-large {
+    @apply text-lg font-semibold;
+  }
+  .style-vega .lux-small {
+    @apply text-sm font-medium leading-none;
+  }
+  .style-vega .lux-muted {
+    @apply text-sm text-muted-foreground;
+  }
+  .style-vega .lux-blockquote {
+    @apply mt-6 border-l-2 pl-6 italic;
+  }
+  .style-vega .lux-inline-code {
+    @apply relative rounded bg-muted px-[0.3rem] py-[0.2rem] font-mono text-sm font-semibold;
+  }
+  .style-vega .lux-list {
+    @apply my-6 ml-6 list-disc [&>li]:mt-2;
+  }
+
+  /* === MAIA === */
+  .style-maia .lux-h1 {
+    @apply scroll-m-20 text-5xl font-bold tracking-normal;
+  }
+  .style-maia .lux-h2 {
+    @apply scroll-m-20 text-4xl font-semibold tracking-tight;
+  }
+  .style-maia .lux-h3 {
+    @apply scroll-m-20 text-3xl font-semibold tracking-tight;
+  }
+  .style-maia .lux-h4 {
+    @apply scroll-m-20 text-2xl font-semibold tracking-tight;
+  }
+  .style-maia .lux-p {
+    @apply leading-8;
+  }
+  .style-maia .lux-lead {
+    @apply text-2xl text-muted-foreground;
+  }
+  .style-maia .lux-large {
+    @apply text-xl font-semibold;
+  }
+  .style-maia .lux-small {
+    @apply text-sm font-medium leading-none;
+  }
+  .style-maia .lux-muted {
+    @apply text-sm text-muted-foreground;
+  }
+  .style-maia .lux-blockquote {
+    @apply mt-6 border-l-2 pl-8 italic text-lg;
+  }
+  .style-maia .lux-inline-code {
+    @apply relative rounded-lg bg-muted/60 px-2 py-1 font-mono text-sm font-semibold;
+  }
+  .style-maia .lux-list {
+    @apply my-8 ml-8 list-disc [&>li]:mt-3;
+  }
+
+  /* === LYRA === */
+  .style-lyra .lux-h1 {
+    @apply scroll-m-20 text-3xl font-bold tracking-widest font-mono uppercase;
+  }
+  .style-lyra .lux-h2 {
+    @apply scroll-m-20 text-2xl font-semibold tracking-widest font-mono uppercase;
+  }
+  .style-lyra .lux-h3 {
+    @apply scroll-m-20 text-xl font-semibold tracking-wide font-mono uppercase;
+  }
+  .style-lyra .lux-h4 {
+    @apply scroll-m-20 text-lg font-semibold tracking-wide font-mono uppercase;
+  }
+  .style-lyra .lux-p {
+    @apply leading-7 font-mono;
+  }
+  .style-lyra .lux-lead {
+    @apply text-lg text-muted-foreground font-mono;
+  }
+  .style-lyra .lux-large {
+    @apply text-base font-semibold font-mono;
+  }
+  .style-lyra .lux-small {
+    @apply text-xs font-medium leading-none font-mono;
+  }
+  .style-lyra .lux-muted {
+    @apply text-xs text-muted-foreground font-mono;
+  }
+  .style-lyra .lux-blockquote {
+    @apply mt-6 border-l-4 pl-6 italic font-mono;
+  }
+  .style-lyra .lux-inline-code {
+    @apply relative rounded-none bg-muted px-[0.3rem] py-[0.2rem] font-mono text-sm font-semibold border border-border;
+  }
+  .style-lyra .lux-list {
+    @apply my-6 ml-6 list-disc [&>li]:mt-2 font-mono;
+  }
+
+  /* === MIRA === */
+  .style-mira .lux-h1 {
+    @apply scroll-m-20 text-3xl font-bold tracking-tight;
+  }
+  .style-mira .lux-h2 {
+    @apply scroll-m-20 text-2xl font-semibold tracking-tight;
+  }
+  .style-mira .lux-h3 {
+    @apply scroll-m-20 text-xl font-semibold tracking-tight;
+  }
+  .style-mira .lux-h4 {
+    @apply scroll-m-20 text-lg font-semibold tracking-tight;
+  }
+  .style-mira .lux-p {
+    @apply text-sm leading-6;
+  }
+  .style-mira .lux-lead {
+    @apply text-base text-muted-foreground;
+  }
+  .style-mira .lux-large {
+    @apply text-base font-semibold;
+  }
+  .style-mira .lux-small {
+    @apply text-xs font-medium leading-none;
+  }
+  .style-mira .lux-muted {
+    @apply text-xs text-muted-foreground;
+  }
+  .style-mira .lux-blockquote {
+    @apply mt-4 border-l-2 pl-4 italic;
+  }
+  .style-mira .lux-inline-code {
+    @apply relative rounded-sm bg-muted px-1 py-0.5 font-mono text-xs font-semibold;
+  }
+  .style-mira .lux-list {
+    @apply my-4 ml-4 list-disc [&>li]:mt-1;
+  }
+}

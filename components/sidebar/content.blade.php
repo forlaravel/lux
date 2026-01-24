@@ -7,12 +7,9 @@
 ])
 
 @php
-    $classes = 'lux-sidebar-content flex-1 overflow-y-auto p-4 w-64';
-    if ($fixed) {
-        $classes .= ' max-h-[calc(100vh-theme(spacing.32))]';
-    }
+    $fixedClass = $fixed ? 'lux-sidebar-content-fixed' : '';
 @endphp
 
-<{{ $tag }} {{ $attributes->mergeTailwind(['class' => $classes]) }}>
+<{{ $tag }} {{ $attributes->mergeTailwind(['class' => "lux-sidebar-content $fixedClass"]) }}>
     {{ $slot }}
 </{{ $tag }}>

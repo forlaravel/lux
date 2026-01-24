@@ -1,0 +1,70 @@
+@layer components {
+  /* === DEFAULT === */
+  .lux-carousel {
+    @apply relative overflow-hidden rounded-lg;
+  }
+  .lux-carousel-content {
+    @apply flex;
+  }
+  .lux-carousel-item {
+    @apply min-w-0 shrink-0 grow-0;
+  }
+  .lux-carousel-previous,
+  .lux-carousel-next {
+    @apply absolute top-1/2 -translate-y-1/2 cursor-pointer;
+    @apply inline-flex items-center justify-center rounded-full border bg-background p-2 shadow-sm;
+    @apply hover:bg-accent hover:text-accent-foreground;
+    @apply disabled:pointer-events-none disabled:opacity-50;
+  }
+  .lux-carousel-previous {
+    @apply left-2;
+  }
+  .lux-carousel-next {
+    @apply right-2;
+  }
+
+  /* === NOVA === */
+  .style-nova .lux-carousel {
+    @apply rounded-lg;
+  }
+  .style-nova .lux-carousel-previous,
+  .style-nova .lux-carousel-next {
+    @apply border-0 ring-1 ring-border shadow-lg;
+  }
+
+  /* === VEGA === */
+  .style-vega .lux-carousel {
+    @apply rounded-lg;
+  }
+  .style-vega .lux-carousel-previous,
+  .style-vega .lux-carousel-next {
+    @apply border-0 ring-1 ring-border shadow-lg;
+  }
+
+  /* === MAIA === */
+  .style-maia .lux-carousel {
+    @apply rounded-2xl;
+  }
+  .style-maia .lux-carousel-previous,
+  .style-maia .lux-carousel-next {
+    @apply rounded-full border-border/50 p-3 shadow-sm;
+  }
+
+  /* === LYRA === */
+  .style-lyra .lux-carousel {
+    @apply rounded-none;
+  }
+  .style-lyra .lux-carousel-previous,
+  .style-lyra .lux-carousel-next {
+    @apply rounded-none border-2 shadow-none font-mono;
+  }
+
+  /* === MIRA === */
+  .style-mira .lux-carousel {
+    @apply rounded-lg;
+  }
+  .style-mira .lux-carousel-previous,
+  .style-mira .lux-carousel-next {
+    @apply rounded-sm p-2 text-xs shadow-none;
+  }
+}

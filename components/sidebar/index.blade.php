@@ -8,25 +8,13 @@
 ])
 
 @php
-    if ($fixed) {
-        $baseClasses = 'fixed inset-y-0 z-40 flex flex-col bg-sidebar transition-transform duration-300 ease-in-out w-64';
-        if ($side === 'left') {
-            $baseClasses .= ' left-0 border-r';
-        } else {
-            $baseClasses .= ' right-0 border-l';
-        }
-    } else {
-        $baseClasses = 'relative flex flex-col bg-sidebar transition-all duration-300 ease-in-out';
-        if ($side === 'left') {
-            $baseClasses .= ' order-first border-r';
-        } else {
-            $baseClasses .= ' order-last border-l';
-        }
-    }
+    $positionClass = $fixed
+        ? 'lux-sidebar-fixed ' . ($side === 'left' ? 'lux-sidebar-fixed-left' : 'lux-sidebar-fixed-right')
+        : 'lux-sidebar-relative ' . ($side === 'left' ? 'lux-sidebar-relative-left' : 'lux-sidebar-relative-right');
 @endphp
 
 <{{ $tag }}
-    {{ $attributes->mergeTailwind(['class' => "lux-sidebar $baseClasses"]) }}
+    {{ $attributes->mergeTailwind(['class' => "lux-sidebar $positionClass"]) }}
     data-lux="sidebar"
     x-bind:class="{
         @if($fixed)

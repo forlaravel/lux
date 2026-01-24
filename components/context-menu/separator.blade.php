@@ -1,1 +1,1 @@
-<hr {{ $attributes->mergeTailwind(['class' => 'lux-context-menu-separator border-t border-gray-200 my-1']) }} />
+<hr {{ $attributes->mergeTailwind(['class' => 'lux-context-menu-separator']) }} />

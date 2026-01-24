@@ -1,0 +1,35 @@
+@layer components {
+  /* === DEFAULT === */
+  .lux-popover {
+  }
+  .lux-popover-trigger {
+  }
+  .lux-popover-content {
+    @apply absolute z-50 w-80 bg-popover text-popover-foreground rounded-xl p-4 ring-1 ring-border shadow-lg outline-none;
+  }
+
+  /* === NOVA === */
+  .style-nova .lux-popover-content {
+    @apply bg-popover text-popover-foreground rounded-xl p-4 ring-1 ring-border shadow-lg;
+  }
+
+  /* === VEGA === */
+  .style-vega .lux-popover-content {
+    @apply bg-popover rounded-xl p-4 shadow-lg ring-1 ring-border;
+  }
+
+  /* === MAIA === */
+  .style-maia .lux-popover-content {
+    @apply bg-popover rounded-2xl p-5 ring-1 ring-border;
+  }
+
+  /* === LYRA === */
+  .style-lyra .lux-popover-content {
+    @apply bg-popover rounded-none p-4 ring-1 ring-border;
+  }
+
+  /* === MIRA === */
+  .style-mira .lux-popover-content {
+    @apply bg-popover rounded-xl p-3 ring-1 ring-border shadow-md;
+  }
+}

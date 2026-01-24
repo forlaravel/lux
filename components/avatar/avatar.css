@@ -1,0 +1,31 @@
+@layer components {
+  /* === DEFAULT === */
+  .lux-avatar {
+    @apply relative flex size-8 shrink-0 overflow-hidden rounded-full;
+  }
+
+  /* === NOVA === */
+  .style-nova .lux-avatar {
+    @apply size-8 rounded-full;
+  }
+
+  /* === VEGA === */
+  .style-vega .lux-avatar {
+    @apply size-8 rounded-full;
+  }
+
+  /* === MAIA === */
+  .style-maia .lux-avatar {
+    @apply size-8 rounded-full;
+  }
+
+  /* === LYRA === */
+  .style-lyra .lux-avatar {
+    @apply size-8 rounded-full;
+  }
+
+  /* === MIRA === */
+  .style-mira .lux-avatar {
+    @apply size-8 rounded-full;
+  }
+}

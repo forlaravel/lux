@@ -6,7 +6,7 @@
 ])
 
 <{{ $tag }}
-    {{ $attributes->mergeTailwind(['class' => 'lux-sidebar-provider relative flex min-h-screen w-full overflow-hidden']) }}
+    {{ $attributes->mergeTailwind(['class' => 'lux-sidebar-provider']) }}
     x-cloak
     x-data="{
         sidebarOpen: @wireOr($open, handlePersist: true),

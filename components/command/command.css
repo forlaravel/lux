@@ -1,0 +1,135 @@
+@layer components {
+  /* === DEFAULT === */
+  .lux-command {
+    @apply flex h-full w-full flex-col bg-popover text-popover-foreground rounded-xl ring-1 ring-border overflow-hidden;
+  }
+  .lux-command-input {
+    @apply flex w-full h-9 border-b border-border bg-transparent px-3 text-sm outline-none;
+    @apply placeholder:text-muted-foreground;
+    @apply disabled:cursor-not-allowed disabled:opacity-50;
+  }
+  .lux-command-input-wrapper {
+    @apply flex items-center;
+  }
+  .lux-command-list {
+    @apply max-h-[300px] overflow-y-auto overflow-x-hidden p-1;
+  }
+  .lux-command-empty {
+    @apply py-6 text-center text-sm;
+  }
+  .lux-command-group {
+    @apply overflow-hidden text-foreground;
+  }
+  .lux-command-group-heading {
+    @apply px-2 py-1.5 text-xs text-muted-foreground font-medium;
+  }
+  .lux-command-item {
+    @apply relative flex cursor-default select-none items-center outline-none rounded-md px-2 py-1.5 text-sm cursor-pointer;
+    @apply hover:bg-accent hover:text-accent-foreground;
+    @apply data-[active=true]:bg-accent data-[active=true]:text-accent-foreground;
+    @apply aria-selected:bg-accent aria-selected:text-accent-foreground;
+  }
+  .lux-command-separator {
+    @apply -mx-1 h-px bg-border;
+  }
+  .lux-command-shortcut {
+    @apply ml-auto text-xs tracking-widest text-muted-foreground;
+  }
+  .lux-command-dialog {
+    @apply overflow-hidden p-0 shadow-lg;
+  }
+
+  /* === NOVA === */
+  .style-nova .lux-command {
+    @apply bg-popover text-popover-foreground rounded-xl ring-1 ring-border overflow-hidden;
+  }
+  .style-nova .lux-command-input {
+    @apply h-9 border-b border-border bg-transparent px-3 text-sm;
+  }
+  .style-nova .lux-command-list {
+    @apply max-h-[300px] overflow-y-auto p-1;
+  }
+  .style-nova .lux-command-item {
+    @apply rounded-md px-2 py-1.5 text-sm cursor-pointer;
+  }
+  .style-nova .lux-command-group-heading {
+    @apply px-2 py-1.5 text-xs text-muted-foreground font-medium;
+  }
+
+  /* === VEGA === */
+  .style-vega .lux-command {
+    @apply rounded-xl ring-1 ring-border shadow-xs overflow-hidden;
+  }
+  .style-vega .lux-command-input {
+    @apply h-9 border-b border-border bg-transparent px-3 text-sm;
+  }
+  .style-vega .lux-command-list {
+    @apply max-h-[300px] overflow-y-auto p-1;
+  }
+  .style-vega .lux-command-item {
+    @apply rounded-md px-2 py-1.5 text-sm cursor-pointer;
+  }
+  .style-vega .lux-command-group-heading {
+    @apply px-2 py-1.5 text-xs text-muted-foreground font-medium;
+  }
+
+  /* === MAIA === */
+  .style-maia .lux-command {
+    @apply rounded-2xl ring-1 ring-border;
+  }
+  .style-maia .lux-command-input {
+    @apply h-9 border-b border-border bg-transparent px-3 text-sm;
+  }
+  .style-maia .lux-command-list {
+    @apply max-h-[300px] overflow-y-auto p-2;
+  }
+  .style-maia .lux-command-item {
+    @apply rounded-xl px-3 py-2 text-sm;
+  }
+  .style-maia .lux-command-group-heading {
+    @apply px-3 py-2 text-xs text-muted-foreground font-medium;
+  }
+  .style-maia .lux-command-separator {
+    @apply bg-border/50;
+  }
+
+  /* === LYRA === */
+  .style-lyra .lux-command {
+    @apply rounded-none ring-1 ring-border overflow-hidden;
+  }
+  .style-lyra .lux-command-input {
+    @apply h-9 border-b border-border bg-transparent px-3 text-xs;
+  }
+  .style-lyra .lux-command-list {
+    @apply max-h-[300px] overflow-y-auto p-1;
+  }
+  .style-lyra .lux-command-item {
+    @apply rounded-none px-2 py-1.5 text-xs cursor-pointer;
+  }
+  .style-lyra .lux-command-group-heading {
+    @apply px-2 py-1.5 text-xs text-muted-foreground font-medium;
+  }
+  .style-lyra .lux-command-separator {
+    @apply h-0.5 bg-border;
+  }
+
+  /* === MIRA === */
+  .style-mira .lux-command {
+    @apply rounded-lg ring-1 ring-border shadow-md overflow-hidden;
+  }
+  .style-mira .lux-command-input {
+    @apply h-9 border-b border-border bg-transparent px-3 text-xs;
+  }
+  .style-mira .lux-command-list {
+    @apply max-h-[300px] overflow-y-auto p-0.5;
+  }
+  .style-mira .lux-command-item {
+    @apply rounded-sm px-1.5 py-1 text-xs cursor-pointer;
+  }
+  .style-mira .lux-command-group-heading {
+    @apply px-1.5 py-1 text-xs text-muted-foreground font-medium;
+  }
+  .style-mira .lux-command-shortcut {
+    @apply text-[10px];
+  }
+}

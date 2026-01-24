@@ -1,3 +1,3 @@
-<div {{ $attributes->mergeTailwind(['class' => 'lux-card-content p-6 ']) }}>
+<div {{ $attributes->mergeTailwind(['class' => 'lux-card-content']) }}>
     {{ $slot }}
 </div>

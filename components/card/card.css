@@ -1,0 +1,106 @@
+@layer components {
+  /* === DEFAULT === */
+  .lux-card {
+    @apply bg-card text-card-foreground gap-4 overflow-hidden rounded-xl py-4 text-sm ring-1 ring-border;
+  }
+  .lux-card-header {
+    @apply gap-1 px-4;
+  }
+  .lux-card-title {
+    @apply text-base leading-snug font-medium;
+  }
+  .lux-card-description {
+    @apply text-muted-foreground text-sm;
+  }
+  .lux-card-content {
+    @apply px-4;
+  }
+  .lux-card-footer {
+    @apply bg-muted/50 rounded-b-xl border-t p-4;
+  }
+
+  /* === NOVA === */
+  .style-nova .lux-card {
+    @apply bg-card text-card-foreground gap-4 overflow-hidden rounded-xl py-4 text-sm ring-1 ring-border;
+  }
+  .style-nova .lux-card-header {
+    @apply gap-1 px-4;
+  }
+  .style-nova .lux-card-title {
+    @apply text-base leading-snug font-medium;
+  }
+  .style-nova .lux-card-description {
+    @apply text-muted-foreground text-sm;
+  }
+  .style-nova .lux-card-content {
+    @apply px-4;
+  }
+  .style-nova .lux-card-footer {
+    @apply bg-muted/50 rounded-b-xl border-t p-4;
+  }
+
+  /* === VEGA === */
+  .style-vega .lux-card {
+    @apply bg-card text-card-foreground gap-6 overflow-hidden rounded-xl py-6 text-sm shadow-xs ring-1 ring-border;
+  }
+  .style-vega .lux-card-header {
+    @apply gap-1 px-6;
+  }
+  .style-vega .lux-card-title {
+    @apply text-base leading-normal font-medium;
+  }
+  .style-vega .lux-card-content {
+    @apply px-6;
+  }
+  .style-vega .lux-card-footer {
+    @apply px-6;
+  }
+
+  /* === MAIA === */
+  .style-maia .lux-card {
+    @apply bg-card text-card-foreground gap-6 overflow-hidden rounded-2xl py-6 text-sm ring-1 ring-border;
+  }
+  .style-maia .lux-card-header {
+    @apply gap-2 px-6;
+  }
+  .style-maia .lux-card-content {
+    @apply px-6;
+  }
+  .style-maia .lux-card-footer {
+    @apply px-6;
+  }
+
+  /* === LYRA === */
+  .style-lyra .lux-card {
+    @apply bg-card text-card-foreground gap-4 overflow-hidden rounded-none py-4 text-xs ring-1 ring-border;
+  }
+  .style-lyra .lux-card-header {
+    @apply gap-1 px-4;
+  }
+  .style-lyra .lux-card-title {
+    @apply text-sm font-medium;
+  }
+  .style-lyra .lux-card-description {
+    @apply text-muted-foreground text-xs;
+  }
+  .style-lyra .lux-card-footer {
+    @apply border-t p-4;
+  }
+
+  /* === MIRA === */
+  .style-mira .lux-card {
+    @apply bg-card text-card-foreground gap-4 overflow-hidden rounded-lg py-4 text-xs ring-1 ring-border;
+  }
+  .style-mira .lux-card-header {
+    @apply gap-1 px-4;
+  }
+  .style-mira .lux-card-title {
+    @apply text-sm font-medium;
+  }
+  .style-mira .lux-card-description {
+    @apply text-muted-foreground text-xs;
+  }
+  .style-mira .lux-card-content {
+    @apply px-4;
+  }
+}

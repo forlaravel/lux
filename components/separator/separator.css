@@ -1,0 +1,37 @@
+@layer components {
+  /* === DEFAULT === */
+  .lux-separator {
+    @apply shrink-0 bg-border;
+  }
+  .lux-separator-horizontal {
+    @apply h-[1px] w-full;
+  }
+  .lux-separator-vertical {
+    @apply h-full w-[1px];
+  }
+
+  /* === NOVA === */
+  .style-nova .lux-separator {
+    @apply bg-border;
+  }
+
+  /* === VEGA === */
+  .style-vega .lux-separator {
+    @apply bg-border;
+  }
+
+  /* === MAIA === */
+  .style-maia .lux-separator {
+    @apply bg-border;
+  }
+
+  /* === LYRA === */
+  .style-lyra .lux-separator {
+    @apply bg-border;
+  }
+
+  /* === MIRA === */
+  .style-mira .lux-separator {
+    @apply bg-border;
+  }
+}

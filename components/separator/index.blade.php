@@ -3,12 +3,12 @@
     'tag' => 'div',
 ])
 
+@php
+$orientationClass = $orientation === 'vertical' ? 'lux-separator-vertical' : 'lux-separator-horizontal';
+@endphp
+
 <{{ $tag }}
     role="none"
     data-orientation="{{ $orientation }}"
-    {{ $attributes->classTailwind([
-        'lux-separator shrink-0 bg-border',
-        'h-full w-[1px]' => $orientation === 'vertical',
-        'h-[1px] w-full my-4' => $orientation === 'horizontal',
-    ]) }}
+    {{ $attributes->mergeTailwind(['class' => "lux-separator $orientationClass"]) }}
 ></{{ $tag }}>

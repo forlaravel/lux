@@ -1,0 +1,103 @@
+@layer components {
+  /* === DEFAULT === */
+  .lux-badge {
+    @apply inline-flex items-center h-5 gap-1 rounded-4xl border border-transparent px-2 py-0.5 text-xs font-medium;
+  }
+  .lux-badge-variant-default {
+    @apply bg-primary text-primary-foreground;
+  }
+  .lux-badge-variant-secondary {
+    @apply bg-secondary text-secondary-foreground;
+  }
+  .lux-badge-variant-outline {
+    @apply border-border text-foreground;
+  }
+  .lux-badge-variant-destructive {
+    @apply bg-destructive/10 text-destructive dark:bg-destructive/20;
+  }
+
+  /* === NOVA === */
+  .style-nova .lux-badge {
+    @apply h-5 gap-1 rounded-4xl border border-transparent px-2 py-0.5 text-xs font-medium;
+  }
+  .style-nova .lux-badge-variant-default {
+    @apply bg-primary text-primary-foreground;
+  }
+  .style-nova .lux-badge-variant-secondary {
+    @apply bg-secondary text-secondary-foreground;
+  }
+  .style-nova .lux-badge-variant-outline {
+    @apply border-border text-foreground;
+  }
+  .style-nova .lux-badge-variant-destructive {
+    @apply bg-destructive/10 text-destructive dark:bg-destructive/20;
+  }
+
+  /* === VEGA === */
+  .style-vega .lux-badge {
+    @apply h-5 gap-1 rounded-md border border-transparent px-2 py-0.5 text-xs font-medium;
+  }
+  .style-vega .lux-badge-variant-default {
+    @apply bg-primary text-primary-foreground;
+  }
+  .style-vega .lux-badge-variant-secondary {
+    @apply bg-secondary text-secondary-foreground;
+  }
+  .style-vega .lux-badge-variant-outline {
+    @apply border-border text-foreground;
+  }
+  .style-vega .lux-badge-variant-destructive {
+    @apply bg-destructive/10 text-destructive dark:bg-destructive/20;
+  }
+
+  /* === MAIA === */
+  .style-maia .lux-badge {
+    @apply h-5 gap-1 rounded-4xl border border-transparent px-2.5 py-0.5 text-xs font-medium;
+  }
+  .style-maia .lux-badge-variant-default {
+    @apply bg-primary text-primary-foreground;
+  }
+  .style-maia .lux-badge-variant-secondary {
+    @apply bg-secondary text-secondary-foreground;
+  }
+  .style-maia .lux-badge-variant-outline {
+    @apply border-border text-foreground;
+  }
+  .style-maia .lux-badge-variant-destructive {
+    @apply bg-destructive/10 text-destructive dark:bg-destructive/20;
+  }
+
+  /* === LYRA === */
+  .style-lyra .lux-badge {
+    @apply rounded-none border border-transparent px-2 py-0.5 text-xs font-medium;
+  }
+  .style-lyra .lux-badge-variant-default {
+    @apply bg-primary text-primary-foreground;
+  }
+  .style-lyra .lux-badge-variant-secondary {
+    @apply bg-secondary text-secondary-foreground;
+  }
+  .style-lyra .lux-badge-variant-outline {
+    @apply border-border text-foreground;
+  }
+  .style-lyra .lux-badge-variant-destructive {
+    @apply bg-destructive/10 text-destructive dark:bg-destructive/20;
+  }
+
+  /* === MIRA === */
+  .style-mira .lux-badge {
+    @apply h-5 gap-1 rounded-full border border-transparent px-2 py-0.5 text-[0.625rem] font-medium;
+  }
+  .style-mira .lux-badge-variant-default {
+    @apply bg-primary text-primary-foreground;
+  }
+  .style-mira .lux-badge-variant-secondary {
+    @apply bg-secondary text-secondary-foreground;
+  }
+  .style-mira .lux-badge-variant-outline {
+    @apply border-border text-foreground;
+  }
+  .style-mira .lux-badge-variant-destructive {
+    @apply bg-destructive/10 text-destructive dark:bg-destructive/20;
+  }
+}

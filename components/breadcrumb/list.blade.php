@@ -1,3 +1,3 @@
-<ol {{ $attributes->mergeTailwind(['class' => 'lux-breadcrumb-list flex flex-wrap items-center break-words text-sm text-muted-foreground gap-2']) }}>
+<ol {{ $attributes->mergeTailwind(['class' => 'lux-breadcrumb-list']) }}>
     {{ $slot }}
 </ol>

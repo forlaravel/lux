@@ -3,10 +3,9 @@
     .map(x => (x.content?.textContent ?? '').toLowerCase())
     .some(x => x.includes(search.toLowerCase()))">
     <div 
-        {{-- x-show="Array.from($el.children).filter(x => x.tagName != 'TEMPLATE').length > 1" --}}
-        {{ $attributes->mergeTailwind(['class' => 'lux-command-group overflow-hidden p-1 text-foreground']) }}
+        {{ $attributes->mergeTailwind(['class' => 'lux-command-group']) }}
     >
-        <div class="px-2 py-1.5 text-xs font-medium text-muted-foreground">
+        <div class="lux-command-group-heading">
             {{ $heading }}
         </div>
         {{ $slot }}

@@ -28,6 +28,6 @@
     scrollToSlide() {
         this.slides[this.currentIndex].scrollIntoView({ behavior: 'smooth', inline: 'start' });
     }
-}" class="lux-carousel relative {{ $orientation === 'vertical' ? 'flex-col' : '' }} {{ $class ?? '' }}" {{ $attributes }}>
+}" class="lux-carousel {{ $orientation === 'vertical' ? 'flex-col' : '' }} {{ $class ?? '' }}" {{ $attributes }}>
     {{ $slot }}
 </div>

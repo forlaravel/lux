@@ -1,0 +1,113 @@
+@layer components {
+  /* === DEFAULT === */
+  .lux-select {
+  }
+  .lux-select-trigger {
+    @apply border-input dark:bg-input/30 flex w-full items-center justify-between focus-visible:border-ring focus-visible:ring-ring/50 h-8 rounded-lg border bg-transparent px-2.5 text-sm focus-visible:ring-[3px];
+    @apply placeholder:text-muted-foreground;
+    @apply disabled:cursor-not-allowed disabled:opacity-50;
+  }
+  .lux-select-trigger-searchable {
+    @apply cursor-text;
+  }
+  .lux-select-trigger-default {
+    @apply cursor-pointer;
+  }
+  .lux-select-trigger-icon {
+    @apply h-4 w-4 opacity-50 shrink-0 grow-0;
+  }
+  .lux-select-content {
+    @apply absolute top-0 left-0 z-50 max-h-72 min-w-[8rem] overflow-x-hidden overflow-y-auto bg-popover text-popover-foreground rounded-xl p-1 ring-1 ring-border shadow-lg;
+  }
+  .lux-select-item {
+    @apply relative flex w-full cursor-default select-none items-center pl-8 pr-2 outline-none rounded-md px-2 py-1.5 text-sm cursor-pointer;
+    @apply hover:bg-accent hover:text-accent-foreground;
+    @apply data-[cursor=true]:bg-accent data-[cursor=true]:text-accent-foreground;
+    @apply data-[disabled=true]:pointer-events-none data-[disabled=true]:opacity-50;
+  }
+  .lux-select-label {
+    @apply block py-1.5 pl-8 pr-2 text-sm font-semibold;
+  }
+  .lux-select-separator {
+    @apply -mx-1 my-1 h-px bg-muted;
+  }
+  .lux-select-value {
+    @apply flex w-full self-start flex-wrap;
+  }
+  .lux-select-value-multiple {
+    @apply gap-1.5;
+  }
+
+  /* === NOVA === */
+  .style-nova .lux-select-trigger {
+    @apply border-input dark:bg-input/30 focus-visible:border-ring focus-visible:ring-ring/50 h-8 rounded-lg border bg-transparent px-2.5 text-sm focus-visible:ring-[3px];
+  }
+  .style-nova .lux-select-content {
+    @apply bg-popover text-popover-foreground rounded-xl p-1 ring-1 ring-border shadow-lg;
+  }
+  .style-nova .lux-select-item {
+    @apply rounded-md px-2 py-1.5 text-sm cursor-pointer hover:bg-accent hover:text-accent-foreground;
+  }
+
+  /* === VEGA === */
+  .style-vega .lux-select-trigger {
+    @apply h-9 rounded-md shadow-xs;
+  }
+  .style-vega .lux-select-content {
+    @apply rounded-xl p-1 shadow-lg ring-1 ring-border;
+  }
+  .style-vega .lux-select-item {
+    @apply rounded-md px-2 py-1.5 text-sm cursor-pointer hover:bg-accent hover:text-accent-foreground;
+  }
+
+  /* === MAIA === */
+  .style-maia .lux-select-trigger {
+    @apply h-9 rounded-4xl px-3;
+  }
+  .style-maia .lux-select-content {
+    @apply rounded-2xl p-2 ring-1 ring-border;
+  }
+  .style-maia .lux-select-item {
+    @apply rounded-xl px-3 py-2 text-sm;
+  }
+  .style-maia .lux-select-label {
+    @apply py-2 pl-9 pr-3;
+  }
+  .style-maia .lux-select-separator {
+    @apply my-2 bg-border/50;
+  }
+
+  /* === LYRA === */
+  .style-lyra .lux-select-trigger {
+    @apply h-8 rounded-none text-xs focus-visible:ring-1;
+  }
+  .style-lyra .lux-select-content {
+    @apply rounded-none p-1 ring-1 ring-border;
+  }
+  .style-lyra .lux-select-item {
+    @apply rounded-none px-2 py-1.5 text-xs;
+  }
+  .style-lyra .lux-select-label {
+    @apply font-bold;
+  }
+  .style-lyra .lux-select-separator {
+    @apply my-1 h-0.5 bg-border;
+  }
+
+  /* === MIRA === */
+  .style-mira .lux-select-trigger {
+    @apply h-7 rounded-md px-2 text-xs focus-visible:ring-[2px];
+  }
+  .style-mira .lux-select-content {
+    @apply rounded-lg p-0.5 ring-1 ring-border shadow-md;
+  }
+  .style-mira .lux-select-item {
+    @apply rounded-sm px-1.5 py-1 text-xs;
+  }
+  .style-mira .lux-select-label {
+    @apply py-1 pl-6 pr-1.5 text-xs;
+  }
+  .style-mira .lux-select-separator {
+    @apply my-0.5;
+  }
+}

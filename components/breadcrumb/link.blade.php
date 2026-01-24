@@ -1,3 +1,3 @@
-<a {{ $attributes->mergeTailwind(['class' => 'lux-breadcrumb-link transition-colors hover:text-foreground']) }}>
+<a {{ $attributes->mergeTailwind(['class' => 'lux-breadcrumb-link']) }}>
     {{ $slot }}
 </a>

@@ -7,7 +7,7 @@
     :id="$id('accordion-item')"
     :aria-labelledby="$id('accordion-trigger')"
     role="region"
-    {{ $attributes->mergeTailwind(['class' => 'lux-accordion-item border-b']) }}
+    {{ $attributes->mergeTailwind(['class' => 'lux-accordion-item']) }}
 >
     {{ $slot }}
 </{{ $tag }}>

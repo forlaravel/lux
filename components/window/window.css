@@ -1,0 +1,67 @@
+@layer components {
+  /* === DEFAULT === */
+  .lux-window {
+    @apply rounded-xl ring-1 ring-border bg-card shadow-lg overflow-hidden;
+  }
+  .lux-window-title {
+    @apply flex items-center gap-2 px-4 py-2 bg-muted/50 border-b text-sm font-medium text-muted-foreground;
+  }
+  .lux-window-content {
+    @apply p-4;
+  }
+
+  /* === NOVA === */
+  .style-nova .lux-window {
+    @apply rounded-xl ring-1 ring-border bg-card shadow-lg;
+  }
+  .style-nova .lux-window-title {
+    @apply px-4 py-2 bg-muted/30 border-border/60;
+  }
+  .style-nova .lux-window-content {
+    @apply p-4;
+  }
+
+  /* === VEGA === */
+  .style-vega .lux-window {
+    @apply rounded-xl ring-1 ring-border bg-card shadow-lg;
+  }
+  .style-vega .lux-window-title {
+    @apply px-4 py-2 bg-muted/30 border-border/60;
+  }
+  .style-vega .lux-window-content {
+    @apply p-4;
+  }
+
+  /* === MAIA === */
+  .style-maia .lux-window {
+    @apply rounded-2xl ring-1 ring-border bg-card shadow-lg;
+  }
+  .style-maia .lux-window-title {
+    @apply px-8 py-4 border-border/50;
+  }
+  .style-maia .lux-window-content {
+    @apply p-8;
+  }
+
+  /* === LYRA === */
+  .style-lyra .lux-window {
+    @apply rounded-none ring-1 ring-border bg-card;
+  }
+  .style-lyra .lux-window-title {
+    @apply px-4 py-2 font-mono border-b-2;
+  }
+  .style-lyra .lux-window-content {
+    @apply p-4 font-mono;
+  }
+
+  /* === MIRA === */
+  .style-mira .lux-window {
+    @apply rounded-lg ring-1 ring-border bg-card shadow-md;
+  }
+  .style-mira .lux-window-title {
+    @apply px-3 py-1.5 text-xs;
+  }
+  .style-mira .lux-window-content {
+    @apply p-3 text-sm;
+  }
+}
