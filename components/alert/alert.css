@@ -1,7 +1,7 @@
 @layer components {
   /* === DEFAULT === */
   .lux-alert {
-    @apply rounded-lg border px-2.5 py-2 text-sm;
+    @apply flex items-start gap-3 rounded-lg border px-2.5 py-2 text-sm [&>svg]:shrink-0 [&>svg]:mt-0.5;
   }
   .lux-alert-variant-default {
     @apply bg-card text-card-foreground;

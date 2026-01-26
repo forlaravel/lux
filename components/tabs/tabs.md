@@ -42,7 +42,7 @@ A component used to create tabbed navigation interfaces, allowing users to switc
 </x-tabs>
 <br>
 
-<x-tabs variant="simple" persist="tabs2">
+<x-tabs variant="underline" persist="tabs2">
     <x-tabs.list>
         <x-tabs.trigger value="tab1">Tab 1</x-tabs.trigger>
         <x-tabs.trigger value="tab2">Tab 2</x-tabs.trigger>
@@ -99,7 +99,7 @@ php artisan lux:publish tabs
 | Prop            | Description                                                   | Type     | Default   |
 |-----------------|---------------------------------------------------------------|----------|-----------|
 | `value` | The value of the tab to be active by default.                  | `string` | `null`    |
-| `variant`       | Determines the styling of the tab component, can be `switch`, `underline`, or `simple` | `string` | `switch`  |
+| `variant`       | Determines the styling of the tab component: `default` (underline indicator), `switch` (pill/background), or `underline` (text-only) | `string` | `default`  |
 | `persist`       | If set, the active tab will be saved in local storage with this key, allowing the tab state to persist across page reloads. | `string` | `null`    |
 
 ### tabs.list

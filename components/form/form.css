@@ -3,7 +3,7 @@
   .lux-form {
   }
   .lux-form-item {
-    @apply space-y-2;
+    @apply grid gap-1.5;
   }
   .lux-form-label {
     @apply text-sm font-medium;

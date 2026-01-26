@@ -3,7 +3,7 @@
 ])
 
 @aware([
-    'variant' => 'switch',
+    'variant' => 'default',
 ])
 
 <{{ $tag }}

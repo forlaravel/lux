@@ -1,7 +1,7 @@
 @props([
     'tag' => 'div',
     'value' => null,
-    'variant' => 'switch',
+    'variant' => 'default',
 ])
 
 <{{ $tag }}

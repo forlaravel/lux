@@ -50,6 +50,9 @@ php artisan lux:publish select
 | `placeholder`  | The placeholder text.                                                       | `string`            | `Select an option` |
 | `clientSearch` | Whether to search on the client side.                                       | `boolean`           | `true`             |
 
+### trigger
+The trigger element displays a focus ring when focused or when the searchable input within it receives focus.
+
 ### content
 | Prop           | Description                                                                 | Type                | Default            |
 |----------------|-----------------------------------------------------------------------------|---------------------|--------------------|

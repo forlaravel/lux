@@ -18,6 +18,12 @@
   .lux-dropdown-menu-label {
     @apply block px-2 py-1.5 text-xs font-semibold;
   }
+  .lux-dropdown-menu-sub-trigger {
+    @apply w-full flex outline-none rounded-md px-2 py-1.5 text-sm cursor-pointer hover:bg-accent hover:text-accent-foreground;
+  }
+  .lux-dropdown-menu-sub-content {
+    @apply absolute z-50 min-w-[8rem] bg-popover text-popover-foreground rounded-xl p-1 ring-1 ring-border shadow-lg;
+  }
 
 }
 

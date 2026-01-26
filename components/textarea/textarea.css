@@ -7,6 +7,9 @@
     @apply focus-visible:outline-none;
     @apply transition-[box-shadow,border-color] duration-200;
   }
+  .lux-textarea-autogrow {
+    @apply overflow-hidden resize-none;
+  }
 
 }
 

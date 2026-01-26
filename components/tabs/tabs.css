@@ -4,12 +4,30 @@
     @apply relative;
   }
   .lux-tabs-list {
-    @apply inline-flex items-center justify-center rounded-lg bg-muted p-[3px] text-muted-foreground;
+    @apply inline-flex items-center justify-center text-muted-foreground;
+  }
+  .lux-tabs-list-variant-default {
+    @apply bg-transparent p-0 border-b border-border rounded-none;
+  }
+  .lux-tabs-list-variant-switch {
+    @apply bg-muted p-[3px] rounded-lg;
+  }
+  .lux-tabs-list-variant-underline {
+    @apply bg-transparent p-0 rounded-none;
   }
   .lux-tabs-trigger {
-    @apply cursor-pointer inline-flex items-center justify-center whitespace-nowrap gap-1.5 rounded-md border border-transparent px-1.5 py-0.5 text-sm font-medium transition-all;
+    @apply cursor-pointer inline-flex items-center justify-center whitespace-nowrap gap-1.5 px-2.5 py-1.5 text-sm font-medium transition-all;
     @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring;
     @apply disabled:pointer-events-none disabled:opacity-50;
+  }
+  .lux-tabs-trigger-variant-default {
+    @apply rounded-none border-b-[3px] border-b-border -mb-px;
+  }
+  .lux-tabs-trigger-variant-switch {
+    @apply rounded-md border border-transparent;
+  }
+  .lux-tabs-trigger-variant-underline {
+    @apply rounded-none;
   }
   .lux-tabs-content {
     @apply mt-2 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring;

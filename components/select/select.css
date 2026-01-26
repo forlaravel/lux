@@ -3,7 +3,7 @@
   .lux-select {
   }
   .lux-select-trigger {
-    @apply border-input dark:bg-input/30 flex w-full items-center justify-between focus-visible:border-ring focus-visible:ring-ring/50 h-8 rounded-lg border bg-transparent px-2.5 text-sm focus-visible:ring-[3px];
+    @apply border-input dark:bg-input/30 flex w-full items-center justify-between focus-visible:border-ring focus-visible:ring-ring/50 focus-within:border-ring focus-within:ring-ring/50 focus-within:ring-[3px] h-8 rounded-lg border bg-transparent px-2.5 text-sm focus-visible:ring-[3px];
     @apply placeholder:text-muted-foreground;
     @apply disabled:cursor-not-allowed disabled:opacity-50;
     @apply transition-[box-shadow,border-color] duration-200;
@@ -33,10 +33,15 @@
     @apply -mx-1 my-1 h-px bg-muted;
   }
   .lux-select-value {
-    @apply flex w-full self-start flex-wrap;
+    @apply flex w-full items-center flex-wrap;
   }
   .lux-select-value-multiple {
     @apply gap-1.5;
+  }
+  .lux-select-native {
+    @apply border-input focus-visible:border-ring focus-visible:ring-ring/50 h-8 w-full cursor-pointer rounded-lg border bg-transparent px-2.5 text-sm focus-visible:ring-[3px];
+    @apply focus-visible:outline-none;
+    @apply transition-[box-shadow,border-color] duration-200;
   }
 
 }

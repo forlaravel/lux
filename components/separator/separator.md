@@ -9,7 +9,7 @@ A versatile component used to separate sections of content, with options for hor
         <p class="text-sm text-muted-foreground">Separate sections of content with ease.</p>
     </div>
 
-    <x-separator orientation="horizontal"></x-separator>
+    <x-separator orientation="horizontal" class="my-4"></x-separator>
 
     <div class="flex h-5 items-center space-x-4 text-sm">
         <div>Blog</div>

@@ -16,7 +16,7 @@
     @apply px-4;
   }
   .lux-card-footer {
-    @apply bg-muted/50 rounded-b-xl border-t p-4;
+    @apply bg-muted/50 rounded-b-xl border-t p-4 -mx-4 -mb-4;
   }
 
 }

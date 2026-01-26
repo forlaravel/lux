@@ -144,6 +144,7 @@ function handleRoot(el, Alpine, extraConfig) {
                         })
                     },
                     isValid(value) {
+                        if (this.multiple && this.labelValueCache.find(item => item.value === value)) return true;
                         return this.activeItemsLabelValue.map(item => item.value).includes(value);
                     },
                     isSelected(value) {
