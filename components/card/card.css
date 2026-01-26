@@ -1,22 +1,23 @@
 @layer components {
   /* === DEFAULT === */
   .lux-card {
-    @apply bg-card text-card-foreground gap-4 overflow-hidden rounded-xl py-4 text-sm ring-1 ring-border;
+    @apply bg-card text-card-foreground gap-4 overflow-hidden rounded-xl p-5 text-sm ring-1 ring-border;
+    @apply flex flex-col;
   }
   .lux-card-header {
-    @apply gap-1 px-4;
+    @apply gap-2;
   }
   .lux-card-title {
-    @apply text-base leading-snug font-medium;
+    @apply text-lg leading-snug font-medium;
   }
   .lux-card-description {
     @apply text-muted-foreground text-sm;
   }
   .lux-card-content {
-    @apply px-4;
   }
   .lux-card-footer {
-    @apply bg-muted/50 rounded-b-xl border-t p-4 -mx-4 -mb-4;
+    @apply bg-muted/50 rounded-b-xl border-t p-5 -mx-5 -mb-5 mt-auto;
+    @apply justify-self-end;
   }
 
 }

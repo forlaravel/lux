@@ -4,7 +4,7 @@
     @apply relative;
   }
   .lux-tabs-list {
-    @apply inline-flex items-center justify-center text-muted-foreground;
+    @apply inline-flex items-center justify-center text-muted-foreground mb-4;
   }
   .lux-tabs-list-variant-default {
     @apply bg-transparent p-0 border-b border-border rounded-none;
