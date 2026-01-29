@@ -17,7 +17,12 @@
             this.updateBodyClasses();
 
             requestAnimationFrame(() => {
-                this.$el.setAttribute('data-initialized', 'true');
+                requestAnimationFrame(() => {
+                    this.$el.setAttribute('data-initialized', 'true');
+                    if (this.sidebarFixed) {
+                        document.body.classList.add('transition-all', 'duration-300', 'ease-in-out');
+                    }
+                });
             });
 
             this.$el.addEventListener('click', (event) => this.handleBackdropClick(event));
@@ -46,7 +51,6 @@
         },
         updateBodyClasses() {
             if (this.sidebarFixed) {
-                document.body.classList.add('transition-all', 'duration-300', 'ease-in-out');
                 if (this.sidebarOpen) {
                     if (this.sidebarSide === 'left') {
                         document.body.classList.add('md:ml-64');

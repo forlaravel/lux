@@ -1,0 +1,195 @@
+@layer components {
+  /* === CONTAINER === */
+  .lux-sonner {
+    @apply fixed z-[999] pointer-events-none flex flex-col p-0 m-0 list-none outline-none;
+    --sonner-offset: 32px;
+    --sonner-gap: 14px;
+    --sonner-toast-width: 356px;
+    gap: var(--sonner-gap);
+  }
+
+  /* Stacked mode: relative container for absolute children */
+  .lux-sonner-stacked {
+    @apply relative;
+    width: var(--sonner-toast-width);
+    transition: height 300ms ease;
+    gap: 0;
+  }
+
+  /* === POSITION VARIANTS === */
+  .lux-sonner-position-top-left {
+    @apply top-[var(--sonner-offset)] left-[var(--sonner-offset)] items-start;
+  }
+  .lux-sonner-position-top-center {
+    @apply top-[var(--sonner-offset)] left-1/2 -translate-x-1/2 items-center;
+  }
+  .lux-sonner-position-top-right {
+    @apply top-[var(--sonner-offset)] right-[var(--sonner-offset)] items-end;
+  }
+  .lux-sonner-position-bottom-left {
+    @apply bottom-[var(--sonner-offset)] left-[var(--sonner-offset)] items-start;
+  }
+  .lux-sonner-position-bottom-center {
+    @apply bottom-[var(--sonner-offset)] left-1/2 -translate-x-1/2 items-center;
+  }
+  .lux-sonner-position-bottom-right {
+    @apply bottom-[var(--sonner-offset)] right-[var(--sonner-offset)] items-end;
+  }
+
+  /* === TOAST === */
+  .lux-sonner-toast {
+    @apply pointer-events-auto rounded-lg border bg-background text-foreground shadow-lg p-4;
+    @apply flex items-start gap-3;
+    @apply transition-[opacity,transform] duration-300 ease-out;
+    @apply opacity-0 scale-95;
+    width: var(--sonner-toast-width);
+  }
+
+  /* Bottom positions: slide up */
+  .lux-sonner-position-bottom-left .lux-sonner-toast,
+  .lux-sonner-position-bottom-center .lux-sonner-toast,
+  .lux-sonner-position-bottom-right .lux-sonner-toast {
+    @apply translate-y-2;
+  }
+
+  /* Top positions: slide down */
+  .lux-sonner-position-top-left .lux-sonner-toast,
+  .lux-sonner-position-top-center .lux-sonner-toast,
+  .lux-sonner-position-top-right .lux-sonner-toast {
+    @apply -translate-y-2;
+  }
+
+  /* Open state — non-stacked uses CSS translate reset */
+  .lux-sonner:not(.lux-sonner-stacked) .lux-sonner-toast[data-state="open"] {
+    @apply opacity-100 scale-100 translate-y-0;
+  }
+
+  /* Open state — stacked uses JS-computed transforms, only control opacity here */
+  .lux-sonner-stacked .lux-sonner-toast[data-state="open"] {
+    @apply opacity-100;
+  }
+
+  /* Closed state (exit animation) */
+  .lux-sonner-toast[data-state="closed"] {
+    @apply opacity-0 scale-95;
+  }
+
+  .lux-sonner:not(.lux-sonner-stacked) .lux-sonner-position-bottom-left .lux-sonner-toast[data-state="closed"],
+  .lux-sonner:not(.lux-sonner-stacked) .lux-sonner-position-bottom-center .lux-sonner-toast[data-state="closed"],
+  .lux-sonner:not(.lux-sonner-stacked) .lux-sonner-position-bottom-right .lux-sonner-toast[data-state="closed"] {
+    @apply translate-y-2;
+  }
+
+  .lux-sonner:not(.lux-sonner-stacked) .lux-sonner-position-top-left .lux-sonner-toast[data-state="closed"],
+  .lux-sonner:not(.lux-sonner-stacked) .lux-sonner-position-top-center .lux-sonner-toast[data-state="closed"],
+  .lux-sonner:not(.lux-sonner-stacked) .lux-sonner-position-top-right .lux-sonner-toast[data-state="closed"] {
+    @apply -translate-y-2;
+  }
+
+  /* === ICON === */
+  .lux-sonner-icon {
+    @apply shrink-0 mt-0.5;
+  }
+
+  .lux-sonner-icon svg {
+    @apply size-4;
+  }
+
+  /* === CONTENT === */
+  .lux-sonner-content {
+    @apply flex-1 min-w-0;
+  }
+
+  .lux-sonner-message {
+    @apply text-sm font-medium leading-snug;
+  }
+
+  .lux-sonner-description {
+    @apply text-sm text-muted-foreground mt-1 leading-snug;
+  }
+
+  /* === CLOSE BUTTON === */
+  .lux-sonner-close {
+    @apply shrink-0 -m-1 p-1 rounded-md opacity-50 transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring;
+  }
+
+  .lux-sonner-close svg {
+    @apply size-3.5;
+  }
+
+  /* === ACTION BUTTONS === */
+  .lux-sonner-actions {
+    @apply flex items-center gap-2 mt-2;
+  }
+
+  .lux-sonner-action {
+    @apply inline-flex items-center justify-center rounded-md text-xs font-medium h-7 px-2.5;
+    @apply bg-primary text-primary-foreground hover:bg-primary/80;
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring;
+  }
+
+  .lux-sonner-cancel {
+    @apply inline-flex items-center justify-center rounded-md text-xs font-medium h-7 px-2.5;
+    @apply bg-muted text-muted-foreground hover:bg-muted/80;
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring;
+  }
+
+  /* === TYPE VARIANTS (default styling) === */
+  .lux-sonner-toast-success .lux-sonner-icon {
+    @apply text-emerald-600 dark:text-emerald-500;
+  }
+
+  .lux-sonner-toast-error .lux-sonner-icon {
+    @apply text-destructive;
+  }
+
+  .lux-sonner-toast-warning .lux-sonner-icon {
+    @apply text-amber-500 dark:text-amber-400;
+  }
+
+  .lux-sonner-toast-info .lux-sonner-icon {
+    @apply text-blue-500 dark:text-blue-400;
+  }
+
+  .lux-sonner-toast-loading .lux-sonner-icon {
+    @apply text-muted-foreground;
+  }
+
+  /* === RICH COLORS === */
+  .lux-sonner-rich .lux-sonner-toast-success {
+    @apply bg-emerald-50 border-emerald-200 text-emerald-900;
+    @apply dark:bg-emerald-950 dark:border-emerald-800 dark:text-emerald-100;
+  }
+  .lux-sonner-rich .lux-sonner-toast-success .lux-sonner-description {
+    @apply text-emerald-700 dark:text-emerald-300;
+  }
+
+  .lux-sonner-rich .lux-sonner-toast-error {
+    @apply bg-red-50 border-red-200 text-red-900;
+    @apply dark:bg-red-950 dark:border-red-800 dark:text-red-100;
+  }
+  .lux-sonner-rich .lux-sonner-toast-error .lux-sonner-description {
+    @apply text-red-700 dark:text-red-300;
+  }
+
+  .lux-sonner-rich .lux-sonner-toast-warning {
+    @apply bg-amber-50 border-amber-200 text-amber-900;
+    @apply dark:bg-amber-950 dark:border-amber-800 dark:text-amber-100;
+  }
+  .lux-sonner-rich .lux-sonner-toast-warning .lux-sonner-description {
+    @apply text-amber-700 dark:text-amber-300;
+  }
+
+  .lux-sonner-rich .lux-sonner-toast-info {
+    @apply bg-blue-50 border-blue-200 text-blue-900;
+    @apply dark:bg-blue-950 dark:border-blue-800 dark:text-blue-100;
+  }
+  .lux-sonner-rich .lux-sonner-toast-info .lux-sonner-description {
+    @apply text-blue-700 dark:text-blue-300;
+  }
+
+  /* === LOADING SPINNER === */
+  .lux-sonner-spinner {
+    @apply size-4 rounded-full border-2 border-current border-t-transparent animate-spin;
+  }
+}

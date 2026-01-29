@@ -4,7 +4,10 @@
     @apply relative flex min-h-screen w-full overflow-hidden;
   }
   .lux-sidebar {
-    @apply flex flex-col bg-sidebar text-sm transition-all duration-300 ease-in-out;
+    @apply flex flex-col bg-sidebar text-sm;
+  }
+  .lux-sidebar-provider[data-initialized="true"] .lux-sidebar {
+    @apply transition-all duration-300 ease-in-out;
   }
   .lux-sidebar-fixed {
     @apply fixed inset-y-0 z-40 w-64;
