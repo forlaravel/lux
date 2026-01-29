@@ -1,4 +1,5 @@
 @blaze
+
 @props([
     'tag' => 'form',
 ])

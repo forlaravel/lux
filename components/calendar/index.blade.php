@@ -1,4 +1,3 @@
-@blaze
 @props([
     'inline' => false,
     'value' => [],

@@ -1,4 +1,3 @@
-@blaze
 @props([
     'tag' => 'select',
     'size' => 'md',
