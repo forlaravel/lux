@@ -1,4 +1,3 @@
-@blaze
 @aware([
     'combobox' => false,
 ])

@@ -1,4 +1,3 @@
-@blaze
 @props([
     'tag' => 'button',
     'value'
