@@ -163,6 +163,7 @@ class PublishCommand extends Command
                 }
             }
 
+            $this->fs->ensureDirectoryExists(dirname($targetPath));
             $this->fs->copy($file->getPathname(), $targetPath);
         }
 
