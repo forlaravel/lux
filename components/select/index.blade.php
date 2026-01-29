@@ -9,6 +9,7 @@
     'searchable' => false,
     'placeholder' => 'Select an option',
     'clientSearch' => true,
+    'size' => 'md',
 ])
 
 @php

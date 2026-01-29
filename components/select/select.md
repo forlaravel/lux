@@ -26,6 +26,49 @@ like searchability, multiple selections, and seamless integration with Livewire 
 </x-select>
 ```
 
+## Example
+### Sizes
+```html
+<div class="grid w-full max-w-sm gap-2">
+    <x-select size="sm" placeholder="Size sm">
+        <x-select.trigger>
+            <x-select.value/>
+        </x-select.trigger>
+        <x-select.content>
+            <x-select.item value="a">Option A</x-select.item>
+            <x-select.item value="b">Option B</x-select.item>
+        </x-select.content>
+    </x-select>
+    <x-select size="md" placeholder="Size md">
+        <x-select.trigger>
+            <x-select.value/>
+        </x-select.trigger>
+        <x-select.content>
+            <x-select.item value="a">Option A</x-select.item>
+            <x-select.item value="b">Option B</x-select.item>
+        </x-select.content>
+    </x-select>
+    <x-select size="lg" placeholder="Size lg">
+        <x-select.trigger>
+            <x-select.value/>
+        </x-select.trigger>
+        <x-select.content>
+            <x-select.item value="a">Option A</x-select.item>
+            <x-select.item value="b">Option B</x-select.item>
+        </x-select.content>
+    </x-select>
+    <x-select size="xl" placeholder="Size xl">
+        <x-select.trigger>
+            <x-select.value/>
+        </x-select.trigger>
+        <x-select.content>
+            <x-select.item value="a">Option A</x-select.item>
+            <x-select.item value="b">Option B</x-select.item>
+        </x-select.content>
+    </x-select>
+</div>
+```
+
 ## Installation
 
 1. Run the following command:
@@ -49,6 +92,7 @@ php artisan lux:publish select
 | `searchable`   | Whether the dropdown is searchable.                                         | `boolean`           | `false`            |
 | `placeholder`  | The placeholder text.                                                       | `string`            | `Select an option` |
 | `clientSearch` | Whether to search on the client side.                                       | `boolean`           | `true`             |
+| `size`         | Specifies the size of the select trigger, can be `sm`, `md`, `lg`, `xl`     | `string`            | `md`               |
 
 ### trigger
 The trigger element displays a focus ring when focused or when the searchable input within it receives focus.

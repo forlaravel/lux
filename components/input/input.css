@@ -1,13 +1,18 @@
 @layer components {
   /* === DEFAULT === */
   .lux-input {
-    @apply border-input focus-visible:border-ring focus-visible:ring-ring/50 min-h-8 w-full rounded-lg border bg-transparent px-2.5 py-1.5 text-sm focus-visible:ring-[3px];
+    @apply border-input focus-visible:border-ring focus-visible:ring-ring/50 w-full rounded-lg border bg-transparent focus-visible:ring-[3px];
     @apply placeholder:text-muted-foreground;
-    @apply file:border-0 file:bg-transparent file:text-sm file:font-medium file:mr-2;
+    @apply file:border-0 file:bg-transparent file:font-medium file:mr-2;
     @apply disabled:cursor-not-allowed disabled:opacity-50;
     @apply focus-visible:outline-none;
     @apply transition-[box-shadow,border-color] duration-200;
   }
+
+  .lux-input-size-sm { @apply h-7 px-2 text-xs file:text-xs; }
+  .lux-input-size-md { @apply h-9 px-2.5 text-sm file:text-sm; }
+  .lux-input-size-lg { @apply h-11 px-3 text-lg file:text-lg; }
+  .lux-input-size-xl { @apply h-13 px-3.5 text-xl file:text-xl; }
 
 }
 

@@ -3,6 +3,7 @@
     'tag' => 'textarea',
     'type' => 'text',
     'autogrow' => false,
+    'size' => 'md',
 ])
 
 <{{ $tag }}
@@ -14,5 +15,5 @@
     x-init="$nextTick(() => { $el.style.height = 'auto'; $el.style.height = $el.scrollHeight + 'px' })"
     x-on:input="$el.style.height = 'auto'; $el.style.height = $el.scrollHeight + 'px'"
     @endif
-    {{ $attributes->mergeTailwind(['class' => 'lux-textarea' . ($autogrow ? ' lux-textarea-autogrow' : '')]) }}
+    {{ $attributes->mergeTailwind(['class' => "lux-textarea lux-textarea-size-{$size}" . ($autogrow ? ' lux-textarea-autogrow' : '')]) }}
 >{{ $slot }}</{{ $tag }}>

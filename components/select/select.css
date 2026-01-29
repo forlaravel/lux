@@ -3,7 +3,7 @@
   .lux-select {
   }
   .lux-select-trigger {
-    @apply border-input dark:bg-input/30 flex w-full items-center justify-between focus-visible:border-ring focus-visible:ring-ring/50 focus-within:border-ring focus-within:ring-ring/50 focus-within:ring-[3px] h-8 rounded-lg border bg-transparent px-2.5 text-sm focus-visible:ring-[3px];
+    @apply border-input dark:bg-input/30 flex w-full items-center justify-between focus-visible:border-ring focus-visible:ring-ring/50 focus-within:border-ring focus-within:ring-ring/50 focus-within:ring-[3px] rounded-lg border bg-transparent focus-visible:ring-[3px];
     @apply placeholder:text-muted-foreground;
     @apply disabled:cursor-not-allowed disabled:opacity-50;
     @apply transition-[box-shadow,border-color] duration-200;
@@ -39,10 +39,20 @@
     @apply gap-1.5;
   }
   .lux-select-native {
-    @apply border-input focus-visible:border-ring focus-visible:ring-ring/50 h-8 w-full cursor-pointer rounded-lg border bg-transparent px-2.5 text-sm focus-visible:ring-[3px];
+    @apply border-input focus-visible:border-ring focus-visible:ring-ring/50 w-full cursor-pointer rounded-lg border bg-transparent focus-visible:ring-[3px];
     @apply focus-visible:outline-none;
     @apply transition-[box-shadow,border-color] duration-200;
   }
+
+  .lux-select-trigger-size-sm { @apply h-7 px-2 text-xs; }
+  .lux-select-trigger-size-md { @apply h-9 px-2.5 text-sm; }
+  .lux-select-trigger-size-lg { @apply h-11 px-3 text-lg; }
+  .lux-select-trigger-size-xl { @apply h-13 px-3.5 text-xl; }
+
+  .lux-select-native-size-sm { @apply h-7 px-2 text-xs; }
+  .lux-select-native-size-md { @apply h-9 px-2.5 text-sm; }
+  .lux-select-native-size-lg { @apply h-11 px-3 text-lg; }
+  .lux-select-native-size-xl { @apply h-13 px-3.5 text-xl; }
 
 }
 

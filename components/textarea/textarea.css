@@ -1,7 +1,7 @@
 @layer components {
   /* === DEFAULT === */
   .lux-textarea {
-    @apply border-input focus-visible:border-ring focus-visible:ring-ring/50 w-full min-h-[80px] rounded-lg border bg-transparent px-2.5 py-2 text-sm focus-visible:ring-[3px];
+    @apply border-input focus-visible:border-ring focus-visible:ring-ring/50 w-full min-h-[80px] rounded-lg border bg-transparent focus-visible:ring-[3px];
     @apply placeholder:text-muted-foreground;
     @apply disabled:cursor-not-allowed disabled:opacity-50;
     @apply focus-visible:outline-none;
@@ -10,6 +10,11 @@
   .lux-textarea-autogrow {
     @apply overflow-hidden resize-none;
   }
+
+  .lux-textarea-size-sm { @apply px-2 py-1.5 text-xs; }
+  .lux-textarea-size-md { @apply px-2.5 py-2 text-sm; }
+  .lux-textarea-size-lg { @apply px-3 py-2.5 text-lg; }
+  .lux-textarea-size-xl { @apply px-3.5 py-3 text-xl; }
 
 }
 

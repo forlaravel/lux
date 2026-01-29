@@ -4,6 +4,7 @@
     'type' => 'text',
     'mask' => null,
     'value' => null,
+    'size' => 'md',
 ])
 
 <{{ $tag }}
@@ -18,5 +19,5 @@
     @if($mask)
     x-mask="{{ $mask }}"
     @endif
-    {{ $attributes->mergeTailwind(['class' => 'lux-input']) }}
+    {{ $attributes->mergeTailwind(['class' => "lux-input lux-input-size-{$size}"]) }}
 />

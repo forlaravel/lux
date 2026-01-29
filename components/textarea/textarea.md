@@ -9,6 +9,17 @@ A component used to create a customizable textarea input field with various styl
 ```
 
 ## Example
+### Sizes
+```html
+<div class="grid w-full max-w-sm gap-2">
+    <x-textarea size="sm" placeholder="Size sm"></x-textarea>
+    <x-textarea size="md" placeholder="Size md"></x-textarea>
+    <x-textarea size="lg" placeholder="Size lg"></x-textarea>
+    <x-textarea size="xl" placeholder="Size xl"></x-textarea>
+</div>
+```
+
+## Example
 ### Auto-grow
 The textarea automatically grows and shrinks as you type.
 ```html
@@ -33,3 +44,4 @@ php artisan lux:publish textarea
 | `tag`     | The HTML tag to render                 | `string` | `textarea` |
 | `type`    | Determines the type of the textarea input. | `string` | `text`    |
 | `autogrow`| Whether the textarea automatically grows with content. | `boolean` | `false`   |
+| `size`    | Specifies the size of the textarea, can be `sm`, `md`, `lg`, `xl` | `string` | `md` |

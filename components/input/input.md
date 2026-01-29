@@ -45,6 +45,17 @@ A component used to create various types of input fields with consistent styling
 ```
 
 ## Example
+### Sizes
+```html
+<div class="grid w-full max-w-sm gap-2">
+    <x-input size="sm" placeholder="Size sm" />
+    <x-input size="md" placeholder="Size md" />
+    <x-input size="lg" placeholder="Size lg" />
+    <x-input size="xl" placeholder="Size xl" />
+</div>
+```
+
+## Example
 ### Search
 ```html
  <div class="relative w-full max-w-sm items-center">
@@ -73,3 +84,4 @@ php artisan lux:publish input
 | `type` | The type attribute for the input | `string` | `text` |
 | `mask` | The mask pattern to apply to the input. See https://alpinejs.dev/plugins/mask | `string` | `null` |
 | `value` | The value attribute for the input | `string` | `null` |
+| `size` | Specifies the size of the input, can be `sm`, `md`, `lg`, `xl` | `string` | `md` |

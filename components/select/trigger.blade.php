@@ -2,6 +2,7 @@
 
 @aware([
     'searchable' => false,
+    'size' => 'md',
 ])
 
 @props([
@@ -22,7 +23,7 @@ $cursorClass = $searchable ? 'lux-select-trigger-searchable' : 'lux-select-trigg
     :id="$id('select-trigger')"
     :aria-expanded="open"
     :aria-pressed="open || hasInputFocus"
-    class="lux-select-trigger {{ $cursorClass }}"
+    class="lux-select-trigger lux-select-trigger-size-{{ $size }} {{ $cursorClass }}"
     {{ $attributes }}
 >
     {{ $slot }}
