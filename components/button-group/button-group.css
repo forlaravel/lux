@@ -1,0 +1,10 @@
+@layer components {
+  .lux-button-group {
+    @apply flex w-fit items-stretch;
+  }
+  .lux-button-group > *:not(:first-child) { @apply rounded-l-none border-l-0; }
+  .lux-button-group > *:not(:last-child) { @apply rounded-r-none; }
+  .lux-button-group-vertical { @apply flex-col; }
+  .lux-button-group-vertical > *:not(:first-child) { @apply rounded-t-none border-t-0 rounded-l-lg; }
+  .lux-button-group-vertical > *:not(:last-child) { @apply rounded-b-none rounded-r-lg; }
+}

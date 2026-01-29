@@ -1,0 +1,7 @@
+@layer components {
+  .lux-toggle-group {
+    @apply flex w-fit items-center rounded-md;
+  }
+  .lux-toggle-group .lux-toggle { @apply rounded-none shadow-none first:rounded-l-md last:rounded-r-md; }
+  .lux-toggle-group .lux-toggle-variant-outline + .lux-toggle-variant-outline { @apply border-l-0; }
+}

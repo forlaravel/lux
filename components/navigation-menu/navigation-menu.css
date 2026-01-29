@@ -1,0 +1,22 @@
+@layer components {
+  .lux-navigation-menu { @apply relative flex max-w-max flex-1 items-center justify-center; }
+  .lux-navigation-menu-list { @apply flex flex-1 list-none items-center justify-center gap-1; }
+  .lux-navigation-menu-item { @apply relative; }
+  .lux-navigation-menu-trigger {
+    @apply inline-flex h-9 w-max items-center justify-center gap-1 rounded-md bg-background px-4 py-2 text-sm font-medium;
+    @apply hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground;
+    @apply disabled:pointer-events-none disabled:opacity-50;
+    @apply focus-visible:ring-ring/50 outline-none transition-[color,box-shadow] focus-visible:ring-[3px];
+  }
+  .lux-navigation-menu-chevron {
+    @apply relative top-px ml-1 size-3 transition-transform duration-200;
+  }
+  .lux-navigation-menu-content {
+    @apply absolute left-0 top-full z-50 mt-1.5 w-auto min-w-[12rem] overflow-hidden rounded-md border bg-popover text-popover-foreground p-2 shadow-md;
+  }
+  .lux-navigation-menu-link {
+    @apply flex flex-col gap-1 rounded-sm p-2 text-sm transition-all outline-none;
+    @apply hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground;
+    @apply focus-visible:ring-ring/50 focus-visible:ring-[3px];
+  }
+}

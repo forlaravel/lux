@@ -1,0 +1,18 @@
+@layer components {
+  .lux-combobox { @apply relative; }
+  .lux-combobox-trigger { }
+  .lux-combobox-content {
+    @apply bg-popover text-popover-foreground absolute z-50 mt-1 w-[200px] overflow-hidden rounded-md shadow-md ring-1 ring-foreground/10;
+  }
+  .lux-combobox-list { @apply max-h-60 overflow-y-auto p-1; }
+  .lux-combobox-item {
+    @apply relative flex w-full cursor-default items-center gap-2 rounded-sm py-1.5 pr-2 pl-8 text-sm outline-hidden select-none;
+    @apply hover:bg-accent hover:text-accent-foreground;
+    @apply data-[highlighted]:bg-accent data-[highlighted]:text-accent-foreground;
+    @apply data-[disabled]:pointer-events-none data-[disabled]:opacity-50;
+  }
+  .lux-combobox-item svg:first-child { @apply absolute left-2 size-4; }
+  .lux-combobox-empty { @apply text-muted-foreground py-6 text-center text-sm; }
+  .lux-combobox-separator { @apply bg-border -mx-1 my-1 h-px; }
+  .lux-combobox-label { @apply text-muted-foreground px-2 py-1.5 text-xs font-medium; }
+}

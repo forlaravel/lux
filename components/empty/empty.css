@@ -1,0 +1,8 @@
+@layer components {
+  .lux-empty { @apply flex min-w-0 flex-1 flex-col items-center justify-center gap-6 rounded-lg border border-dashed p-6 text-center text-balance md:p-12; }
+  .lux-empty-header { @apply flex max-w-sm flex-col items-center gap-2 text-center; }
+  .lux-empty-media { @apply flex shrink-0 items-center justify-center mb-2 [&_svg]:pointer-events-none [&_svg]:shrink-0; }
+  .lux-empty-title { @apply text-lg font-medium tracking-tight; }
+  .lux-empty-description { @apply text-muted-foreground text-sm/relaxed [&>a]:underline [&>a]:underline-offset-4; }
+  .lux-empty-content { @apply flex w-full max-w-sm min-w-0 flex-col items-center gap-4 text-sm text-balance; }
+}

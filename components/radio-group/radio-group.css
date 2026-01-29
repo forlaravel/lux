@@ -1,0 +1,15 @@
+@layer components {
+  .lux-radio-group { @apply grid gap-3; }
+  .lux-radio-group-item {
+    @apply border-input text-primary focus-visible:border-ring focus-visible:ring-ring/50 dark:bg-input/30 aspect-square size-4 shrink-0 rounded-full border shadow-xs transition-[color,box-shadow] outline-none focus-visible:ring-[3px];
+    @apply disabled:cursor-not-allowed disabled:opacity-50;
+    @apply flex items-center justify-center;
+  }
+  .lux-radio-group-item[data-checked="true"] { @apply border-primary; }
+  .lux-radio-group-indicator {
+    @apply flex items-center justify-center;
+  }
+  .lux-radio-group-indicator-dot {
+    @apply size-2.5 fill-primary;
+  }
+}

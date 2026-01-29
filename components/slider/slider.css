@@ -1,0 +1,13 @@
+@layer components {
+  .lux-slider {
+    @apply relative flex w-full touch-none items-center select-none;
+  }
+  .lux-slider[data-disabled] { @apply opacity-50 pointer-events-none; }
+  .lux-slider-track { @apply bg-muted relative grow cursor-pointer overflow-hidden rounded-full h-1.5 w-full; }
+  .lux-slider-range { @apply bg-primary absolute h-full; }
+  .lux-slider-thumb {
+    @apply border-primary ring-ring/50 block size-4 shrink-0 rounded-full border bg-background shadow-sm transition-[color,box-shadow] cursor-grab;
+    @apply hover:ring-4 focus-visible:ring-4 focus-visible:outline-hidden;
+    @apply disabled:pointer-events-none disabled:opacity-50;
+  }
+}

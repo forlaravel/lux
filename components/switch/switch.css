@@ -1,0 +1,18 @@
+@layer components {
+  .lux-switch {
+    @apply inline-flex shrink-0 cursor-pointer items-center rounded-full border border-transparent shadow-xs transition-all outline-none;
+    @apply bg-input dark:bg-input/80;
+    @apply focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px];
+    @apply disabled:cursor-not-allowed disabled:opacity-50;
+  }
+  .lux-switch[data-checked="true"] { @apply bg-primary; }
+  .lux-switch-size-sm { @apply h-3.5 w-6; }
+  .lux-switch-size-md { @apply h-[1.15rem] w-8; }
+  .lux-switch-thumb {
+    @apply bg-background pointer-events-none block rounded-full ring-0 transition-transform;
+  }
+  .lux-switch-size-sm .lux-switch-thumb { @apply size-2.5 translate-x-0.5; }
+  .lux-switch-size-sm .lux-switch-thumb-checked { @apply translate-x-[calc(1.5rem-0.75rem-2px)]; }
+  .lux-switch-size-md .lux-switch-thumb { @apply size-3.5 translate-x-0.5; }
+  .lux-switch-size-md .lux-switch-thumb-checked { @apply translate-x-[calc(2rem-1rem-2px)]; }
+}

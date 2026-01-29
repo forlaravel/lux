@@ -1,0 +1,22 @@
+@layer components {
+  .lux-resizable-panel-group {
+    @apply flex h-full w-full;
+  }
+  .lux-resizable-panel-group[data-panel-group-direction="vertical"] { @apply flex-col; }
+  .lux-resizable-panel {
+    @apply flex-1 overflow-auto;
+  }
+  .lux-resizable-handle {
+    @apply bg-border relative flex w-px shrink-0 items-center justify-center;
+    @apply focus-visible:ring-ring focus-visible:ring-1 focus-visible:ring-offset-1 focus-visible:outline-hidden;
+    @apply after:absolute after:inset-y-0 after:left-1/2 after:w-1 after:-translate-x-1/2;
+    @apply cursor-col-resize;
+  }
+  .lux-resizable-panel-group[data-panel-group-direction="vertical"] .lux-resizable-handle {
+    @apply h-px w-full cursor-row-resize;
+    @apply after:inset-x-0 after:top-1/2 after:h-1 after:w-full after:-translate-y-1/2 after:left-0;
+  }
+  .lux-resizable-handle-icon {
+    @apply bg-border z-10 flex h-4 w-3 items-center justify-center rounded-xs border;
+  }
+}

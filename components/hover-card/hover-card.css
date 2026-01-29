@@ -1,0 +1,7 @@
+@layer components {
+  .lux-hover-card { @apply relative inline-flex; }
+  .lux-hover-card-trigger { @apply inline-flex; }
+  .lux-hover-card-content {
+    @apply z-50 w-64 rounded-xl border bg-popover p-4 text-popover-foreground shadow-md;
+  }
+}

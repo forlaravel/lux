@@ -1,0 +1,12 @@
+@layer components {
+  .lux-spinner { @apply inline-flex items-center justify-center; }
+  .lux-spinner-icon { @apply animate-spin; }
+  .lux-spinner-size-sm { @apply size-4; }
+  .lux-spinner-size-sm .lux-spinner-icon { @apply size-4; }
+  .lux-spinner-size-md { @apply size-6; }
+  .lux-spinner-size-md .lux-spinner-icon { @apply size-6; }
+  .lux-spinner-size-lg { @apply size-8; }
+  .lux-spinner-size-lg .lux-spinner-icon { @apply size-8; }
+  .lux-spinner-size-xl { @apply size-12; }
+  .lux-spinner-size-xl .lux-spinner-icon { @apply size-12; }
+}

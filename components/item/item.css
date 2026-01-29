@@ -1,0 +1,23 @@
+@layer components {
+  .lux-item {
+    @apply flex items-center border border-transparent text-sm rounded-md transition-colors duration-100;
+    @apply outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px];
+  }
+  .lux-item-variant-default { @apply bg-transparent; }
+  .lux-item-variant-outline { @apply border-border; }
+  .lux-item-variant-muted { @apply bg-muted/50; }
+  .lux-item-size-default { @apply p-4 gap-4; }
+  .lux-item-size-sm { @apply py-3 px-4 gap-2.5; }
+  .lux-item-media {
+    @apply flex shrink-0 items-center justify-center gap-2;
+    @apply [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4;
+  }
+  .lux-item-content { @apply flex flex-1 flex-col gap-1; }
+  .lux-item-title { @apply flex w-fit items-center gap-2 text-sm leading-snug font-medium; }
+  .lux-item-description { @apply text-muted-foreground line-clamp-2 text-sm leading-normal font-normal text-balance; }
+  .lux-item-actions { @apply flex items-center gap-2; }
+  .lux-item-header { @apply flex basis-full items-center justify-between gap-2; }
+  .lux-item-footer { @apply flex basis-full items-center justify-between gap-2; }
+  .lux-item-group { @apply flex flex-col; }
+  .lux-item-separator { @apply my-0; }
+}

@@ -1,0 +1,7 @@
+@layer components {
+  .lux-tooltip { @apply relative inline-flex; }
+  .lux-tooltip-trigger { @apply inline-flex; }
+  .lux-tooltip-content {
+    @apply bg-foreground text-background z-50 w-fit rounded-md px-3 py-1.5 text-xs text-balance shadow-md;
+  }
+}

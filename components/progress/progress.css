@@ -1,0 +1,4 @@
+@layer components {
+  .lux-progress { @apply relative h-2 w-full overflow-hidden rounded-full bg-primary/20; }
+  .lux-progress-indicator { @apply h-full rounded-full bg-primary transition-all duration-300; }
+}

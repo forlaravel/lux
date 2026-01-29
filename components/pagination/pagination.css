@@ -1,0 +1,18 @@
+@layer components {
+  .lux-pagination { @apply mx-auto flex w-full justify-center; }
+  .lux-pagination-content { @apply flex flex-row items-center gap-1; }
+  .lux-pagination-item { }
+  .lux-pagination-link {
+    @apply inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium size-9;
+    @apply hover:bg-accent hover:text-accent-foreground;
+    @apply focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] outline-none transition-[color,box-shadow];
+  }
+  .lux-pagination-link-active { @apply border border-input bg-background shadow-xs; }
+  .lux-pagination-previous,
+  .lux-pagination-next {
+    @apply inline-flex items-center justify-center gap-1 whitespace-nowrap rounded-md text-sm font-medium h-9 px-3;
+    @apply hover:bg-accent hover:text-accent-foreground;
+    @apply focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] outline-none transition-[color,box-shadow];
+  }
+  .lux-pagination-ellipsis { @apply flex size-9 items-center justify-center; }
+}

@@ -1,6 +1,11 @@
 @layer components {
-  /* === CONTAINER === */
+  /* === CONTAINER (data wrapper, no positioning) === */
   .lux-sonner {
+    @apply contents;
+  }
+
+  /* === VIEWPORT (one fixed container per position group) === */
+  .lux-sonner-viewport {
     @apply fixed z-[999] pointer-events-none flex flex-col p-0 m-0 list-none outline-none;
     --sonner-offset: 32px;
     --sonner-gap: 14px;
@@ -8,12 +13,12 @@
     gap: var(--sonner-gap);
   }
 
-  /* Stacked mode: relative container for absolute children */
+  /* Stacked mode: absolute children, animated height */
   .lux-sonner-stacked {
-    @apply relative;
     width: var(--sonner-toast-width);
-    transition: height 300ms ease;
+    transition: height 400ms ease;
     gap: 0;
+    pointer-events: auto;
   }
 
   /* === POSITION VARIANTS === */
@@ -40,7 +45,7 @@
   .lux-sonner-toast {
     @apply pointer-events-auto rounded-lg border bg-background text-foreground shadow-lg p-4;
     @apply flex items-start gap-3;
-    @apply transition-[opacity,transform] duration-300 ease-out;
+    @apply transition-[opacity,transform] duration-[400ms] ease-out;
     @apply opacity-0 scale-95;
     width: var(--sonner-toast-width);
   }
@@ -59,31 +64,57 @@
     @apply -translate-y-2;
   }
 
-  /* Open state — non-stacked uses CSS translate reset */
-  .lux-sonner:not(.lux-sonner-stacked) .lux-sonner-toast[data-state="open"] {
+  /* === STACKED MODE: neutralize individual CSS transforms, JS transform controls all === */
+  .lux-sonner-stacked .lux-sonner-toast {
+    @apply scale-100 translate-y-0;
+    transition: opacity 400ms ease, transform 400ms ease, height 400ms ease;
+  }
+
+  /* === OPEN STATE === */
+  /* Non-stacked: reset all individual transforms */
+  .lux-sonner-viewport:not(.lux-sonner-stacked) .lux-sonner-toast[data-state="open"] {
     @apply opacity-100 scale-100 translate-y-0;
   }
 
-  /* Open state — stacked uses JS-computed transforms, only control opacity here */
+  /* Stacked: only opacity (JS controls positioning), explicitly keep transforms neutral */
   .lux-sonner-stacked .lux-sonner-toast[data-state="open"] {
-    @apply opacity-100;
+    @apply opacity-100 scale-100 translate-y-0;
   }
 
-  /* Closed state (exit animation) */
+  /* === CLOSED STATE === */
+  /* Non-stacked: scale down + slide */
   .lux-sonner-toast[data-state="closed"] {
     @apply opacity-0 scale-95;
   }
 
-  .lux-sonner:not(.lux-sonner-stacked) .lux-sonner-position-bottom-left .lux-sonner-toast[data-state="closed"],
-  .lux-sonner:not(.lux-sonner-stacked) .lux-sonner-position-bottom-center .lux-sonner-toast[data-state="closed"],
-  .lux-sonner:not(.lux-sonner-stacked) .lux-sonner-position-bottom-right .lux-sonner-toast[data-state="closed"] {
+  .lux-sonner-viewport:not(.lux-sonner-stacked).lux-sonner-position-bottom-left .lux-sonner-toast[data-state="closed"],
+  .lux-sonner-viewport:not(.lux-sonner-stacked).lux-sonner-position-bottom-center .lux-sonner-toast[data-state="closed"],
+  .lux-sonner-viewport:not(.lux-sonner-stacked).lux-sonner-position-bottom-right .lux-sonner-toast[data-state="closed"] {
     @apply translate-y-2;
   }
 
-  .lux-sonner:not(.lux-sonner-stacked) .lux-sonner-position-top-left .lux-sonner-toast[data-state="closed"],
-  .lux-sonner:not(.lux-sonner-stacked) .lux-sonner-position-top-center .lux-sonner-toast[data-state="closed"],
-  .lux-sonner:not(.lux-sonner-stacked) .lux-sonner-position-top-right .lux-sonner-toast[data-state="closed"] {
+  .lux-sonner-viewport:not(.lux-sonner-stacked).lux-sonner-position-top-left .lux-sonner-toast[data-state="closed"],
+  .lux-sonner-viewport:not(.lux-sonner-stacked).lux-sonner-position-top-center .lux-sonner-toast[data-state="closed"],
+  .lux-sonner-viewport:not(.lux-sonner-stacked).lux-sonner-position-top-right .lux-sonner-toast[data-state="closed"] {
     @apply -translate-y-2;
+  }
+
+  /* Stacked closed: only fade out, keep transforms neutral so JS handles positioning */
+  .lux-sonner-stacked .lux-sonner-toast[data-state="closed"] {
+    @apply opacity-0 scale-100 translate-y-0;
+  }
+
+  /* === STACKED: BACK TOAST CONTENT HIDING === */
+  /* Hide content of non-front toasts when stack is collapsed */
+  .lux-sonner-stacked .lux-sonner-toast[data-front="false"]:not([data-expanded="true"]) > * {
+    @apply opacity-0;
+    transition: opacity 400ms ease;
+  }
+
+  /* Reveal content when stack is expanded on hover */
+  .lux-sonner-stacked .lux-sonner-toast[data-expanded="true"] > * {
+    @apply opacity-100;
+    transition: opacity 400ms ease;
   }
 
   /* === ICON === */

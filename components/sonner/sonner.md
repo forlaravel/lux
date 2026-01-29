@@ -92,7 +92,7 @@ toast('Message', { ...options });
 | `cancel` | object | `null` | `{ label: string, onClick: function }` |
 | `id` | string | auto | Custom toast identifier |
 | `position` | string | `'bottom-right'` | `top-left`, `top-center`, `top-right`, `bottom-left`, `bottom-center`, `bottom-right` |
-| `stacked` | boolean | `true` | Collapse toasts into a deck; expands on hover |
+| `stacked` | boolean | `true` | Per-toast: collapse into a deck; expands on hover |
 | `richColors` | boolean | `false` | Colorful backgrounds for typed toasts |
 | `visibleToasts` | number | `3` | Maximum visible toasts |
 | `gap` | number | `14` | Gap between toasts in px |

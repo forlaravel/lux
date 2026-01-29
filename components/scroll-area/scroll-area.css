@@ -1,0 +1,17 @@
+@layer components {
+  .lux-scroll-area { @apply relative overflow-hidden; }
+  .lux-scroll-area-viewport {
+    @apply size-full overflow-auto rounded-[inherit];
+    @apply focus-visible:ring-ring/50 transition-[color,box-shadow] outline-none focus-visible:ring-[3px] focus-visible:outline-1;
+    /* Hide native scrollbar */
+    scrollbar-width: none;
+  }
+  .lux-scroll-area-viewport::-webkit-scrollbar { display: none; }
+  .lux-scroll-area-scrollbar {
+    @apply flex touch-none p-px transition-colors select-none;
+    @apply absolute;
+  }
+  .lux-scroll-area-scrollbar-vertical { @apply right-0 top-0 h-full w-2.5 border-l border-l-transparent; }
+  .lux-scroll-area-scrollbar-horizontal { @apply bottom-0 left-0 h-2.5 w-full flex-col border-t border-t-transparent; }
+  .lux-scroll-area-thumb { @apply bg-border relative flex-1 rounded-full; }
+}

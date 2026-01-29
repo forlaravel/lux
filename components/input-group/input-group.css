@@ -1,0 +1,16 @@
+@layer components {
+  .lux-input-group {
+    @apply border-input dark:bg-input/30 relative flex w-full items-center rounded-md border shadow-xs transition-[color,box-shadow] outline-none;
+    @apply focus-within:border-ring focus-within:ring-ring/50 focus-within:ring-[3px];
+    @apply h-9 min-w-0;
+  }
+  .lux-input-group-addon {
+    @apply text-muted-foreground flex h-auto shrink-0 items-center justify-center gap-2 py-1.5 text-sm font-medium select-none;
+    @apply [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4;
+  }
+  .lux-input-group-addon-start { @apply order-first pl-3; }
+  .lux-input-group-addon-end { @apply order-last pr-3; }
+  .lux-input-group .lux-input {
+    @apply flex-1 rounded-none border-0 bg-transparent shadow-none focus-visible:ring-0 dark:bg-transparent;
+  }
+}

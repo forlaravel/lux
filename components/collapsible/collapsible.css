@@ -1,0 +1,5 @@
+@layer components {
+  .lux-collapsible { }
+  .lux-collapsible-trigger { @apply focus-visible:outline-none; }
+  .lux-collapsible-content { @apply overflow-hidden; }
+}

@@ -33,27 +33,19 @@ export default function (Alpine) {
 }
 
 function handleRoot(el, Alpine, extraConfig) {
-    const containerKeys = [
-        "position",
-        "richColors",
-        "stacked",
-        "visibleToasts",
-        "gap",
-        "offset",
-    ];
+    const globalKeys = ["richColors", "visibleToasts", "gap", "offset"];
 
     Alpine.bind(el, () => {
         return {
             "x-data"() {
                 return {
                     toasts: [],
-                    position: "bottom-right",
                     richColors: false,
                     stacked: true,
-                    hovered: false,
                     visibleToasts: 3,
                     gap: 14,
                     offset: 32,
+                    _hoveredPosition: null,
                     _onSonner: null,
                     _onDismiss: null,
 
@@ -72,6 +64,27 @@ function handleRoot(el, Alpine, extraConfig) {
                             "sonner-dismiss",
                             this._onDismiss
                         );
+
+                        // Pause/resume all timers in a position group on hover
+                        this.$watch("_hoveredPosition", (pos, oldPos) => {
+                            if (oldPos) {
+                                this.toasts
+                                    .filter(
+                                        (t) =>
+                                            !t.exiting &&
+                                            t.position === oldPos
+                                    )
+                                    .forEach((t) => this.resumeTimer(t.id));
+                            }
+                            if (pos) {
+                                this.toasts
+                                    .filter(
+                                        (t) =>
+                                            !t.exiting && t.position === pos
+                                    )
+                                    .forEach((t) => this.pauseTimer(t.id));
+                            }
+                        });
                     },
 
                     destroy() {
@@ -83,8 +96,7 @@ function handleRoot(el, Alpine, extraConfig) {
                     },
 
                     add(options = {}) {
-                        // Apply container-level options
-                        for (const key of containerKeys) {
+                        for (const key of globalKeys) {
                             if (options[key] !== undefined) {
                                 this[key] = options[key];
                             }
@@ -97,6 +109,7 @@ function handleRoot(el, Alpine, extraConfig) {
                         const duration = options.duration ?? 4000;
                         const toast = {
                             id,
+                            position: options.position || "bottom-right",
                             message: options.message || "",
                             description: options.description || "",
                             type: options.type || "default",
@@ -105,6 +118,7 @@ function handleRoot(el, Alpine, extraConfig) {
                             action: options.action || null,
                             cancel: options.cancel || null,
                             closeButton: options.closeButton ?? false,
+                            stacked: options.stacked ?? this.stacked,
                             exiting: false,
                             _remaining: duration,
                             _timeout: null,
@@ -113,38 +127,40 @@ function handleRoot(el, Alpine, extraConfig) {
 
                         this.toasts.push(toast);
 
-                        // Return id to caller
                         if (typeof options._resolve === "function") {
                             options._resolve(id);
                         }
 
-                        // Trigger enter animation + measure height
-                        requestAnimationFrame(() => {
+                        this.$nextTick(() => {
                             const toastEl = this.$el.querySelector(
                                 `[data-sonner-id="${id}"]`
                             );
                             if (toastEl) {
-                                toast._height = toastEl.offsetHeight;
-                                requestAnimationFrame(() => {
-                                    toastEl.setAttribute(
-                                        "data-state",
-                                        "open"
-                                    );
-                                });
+                                // Measure via reactive proxy so layout recomputes before paint
+                                const t = this.toasts.find(
+                                    (t) => t.id === id
+                                );
+                                if (t) t._height = toastEl.offsetHeight;
                             }
+                            requestAnimationFrame(() => {
+                                const el = this.$el.querySelector(
+                                    `[data-sonner-id="${id}"]`
+                                );
+                                if (el) {
+                                    el.setAttribute("data-state", "open");
+                                }
+                            });
                         });
 
-                        // Auto-dismiss
                         this._startTimer(toast);
 
-                        // Evict oldest toasts beyond the visible limit
-                        while (
-                            this.toasts.filter((t) => !t.exiting).length >
-                            this.visibleToasts
-                        ) {
-                            const oldest = this.toasts.find(
-                                (t) => !t.exiting
-                            );
+                        // Evict oldest per position
+                        const posActive = this.toasts.filter(
+                            (t) =>
+                                !t.exiting && t.position === toast.position
+                        );
+                        while (posActive.length > this.visibleToasts) {
+                            const oldest = posActive.shift();
                             if (oldest) this.dismiss(oldest.id);
                         }
 
@@ -169,7 +185,7 @@ function handleRoot(el, Alpine, extraConfig) {
                             this.toasts = this.toasts.filter(
                                 (t) => t.id !== id
                             );
-                        }, 300);
+                        }, 400);
                     },
 
                     dismissAll() {
@@ -211,84 +227,112 @@ function handleRoot(el, Alpine, extraConfig) {
                         }
                     },
 
-                    // --- Stacked layout ---
+                    // --- Layout helpers ---
 
-                    containerStyle() {
-                        if (!this.stacked) return {};
+                    positions() {
+                        return [
+                            ...new Set(this.toasts.map((t) => t.position)),
+                        ];
+                    },
 
-                        const active = this.toasts.filter(
-                            (t) => !t.exiting
+                    toastsAt(pos) {
+                        return this.toasts.filter(
+                            (t) => t.position === pos
                         );
-                        if (!active.length) return {};
+                    },
 
-                        const front = active[active.length - 1];
+                    _activeAt(pos) {
+                        return this.toasts.filter(
+                            (t) => !t.exiting && t.position === pos
+                        );
+                    },
+
+                    _stackedAt(pos) {
+                        return this.toasts.filter(
+                            (t) =>
+                                !t.exiting &&
+                                t.position === pos &&
+                                t.stacked
+                        );
+                    },
+
+                    hasStackedAt(pos) {
+                        return this._stackedAt(pos).length > 0;
+                    },
+
+                    viewportStyle(pos) {
+                        const stacked = this._stackedAt(pos);
+                        if (!stacked.length) return {};
+
+                        const front = stacked[stacked.length - 1];
+                        if (!front._height) return {};
+
+                        const expanded = this._hoveredPosition === pos;
                         const peekCount = Math.min(
-                            active.length - 1,
+                            stacked.length - 1,
                             this.visibleToasts - 1
                         );
 
-                        if (this.hovered) {
+                        if (expanded) {
                             let total = 0;
-                            active.forEach((t) => (total += t._height || 0));
+                            stacked.forEach(
+                                (t) => (total += t._height || 0)
+                            );
                             total +=
-                                Math.max(0, active.length - 1) * this.gap;
+                                Math.max(0, stacked.length - 1) * this.gap;
                             return { height: total + "px" };
                         }
 
-                        const peekSize = 8;
                         return {
                             height:
                                 (front._height || 0) +
-                                peekCount * peekSize +
+                                peekCount * this.gap +
                                 "px",
                         };
                     },
 
                     toastStyle(id) {
-                        if (!this.stacked) return {};
-
-                        const active = this.toasts.filter(
-                            (t) => !t.exiting
+                        const toast = this.toasts.find(
+                            (t) => t.id === id
                         );
-                        const idx = active.findIndex((t) => t.id === id);
+                        if (!toast || !toast.stacked) return {};
+
+                        const stacked = this._stackedAt(toast.position);
+                        const idx = stacked.findIndex(
+                            (t) => t.id === id
+                        );
                         if (idx === -1) return {};
 
-                        // 0 = front (newest), higher = further behind
-                        const stackIndex = active.length - 1 - idx;
+                        const stackIndex = stacked.length - 1 - idx;
                         const isBottom =
-                            this.position.startsWith("bottom");
-
-                        const peekSize = 8;
-                        const scaleStep = 0.05;
-                        const expanded = this.hovered;
+                            toast.position.startsWith("bottom");
+                        const expanded =
+                            this._hoveredPosition === toast.position;
+                        const front = stacked[stacked.length - 1];
 
                         let y = 0;
 
                         if (expanded) {
-                            // Sum heights of all toasts in front of this one
                             for (
                                 let i = idx + 1;
-                                i < active.length;
+                                i < stacked.length;
                                 i++
                             ) {
                                 y +=
-                                    (active[i]._height || 0) + this.gap;
+                                    (stacked[i]._height || 0) + this.gap;
                             }
                         } else {
-                            y = stackIndex * peekSize;
+                            y = stackIndex * this.gap;
                         }
 
                         const scale = expanded
                             ? 1
-                            : Math.max(1 - stackIndex * scaleStep, 0.8);
+                            : Math.max(1 - stackIndex * 0.05, 0.8);
                         const visible =
                             expanded || stackIndex < this.visibleToasts;
-
-                        // Bottom: anchor at bottom, grow upward (negative Y)
-                        // Top: anchor at top, grow downward (positive Y)
                         const direction = isBottom ? -1 : 1;
 
-                        return {
+                        const style = {
                             position: "absolute",
                             [isBottom ? "bottom" : "top"]: "0",
                             width: "var(--sonner-toast-width)",
@@ -297,9 +341,44 @@ function handleRoot(el, Alpine, extraConfig) {
                                 ? "bottom center"
                                 : "top center",
                             zIndex: 100 - stackIndex,
-                            opacity: visible ? "1" : "0",
                             pointerEvents: visible ? "auto" : "none",
                         };
+
+                        // Only force-hide overflow toasts; CSS handles enter/exit opacity
+                        if (!visible) {
+                            style.opacity = "0";
+                        }
+
+                        // Back toasts: lock to front toast height so peek is uniform
+                        if (!expanded && stackIndex > 0 && front._height) {
+                            style.height = front._height + "px";
+                            style.overflow = "hidden";
+                        }
+
+                        return style;
+                    },
+
+                    isFront(id) {
+                        const toast = this.toasts.find(
+                            (t) => t.id === id
+                        );
+                        if (!toast || !toast.stacked) return true;
+                        const stacked = this._stackedAt(toast.position);
+                        return (
+                            stacked.length === 0 ||
+                            stacked[stacked.length - 1].id === id
+                        );
+                    },
+
+                    isExpanded(id) {
+                        const toast = this.toasts.find(
+                            (t) => t.id === id
+                        );
+                        if (!toast) return false;
+                        if (!toast.stacked) return true;
+                        return (
+                            this._hoveredPosition === toast.position
+                        );
                     },
 
                     ...extraConfig,

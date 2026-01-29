@@ -1,0 +1,14 @@
+@layer components {
+  .lux-field { @apply flex w-full gap-3; }
+  .lux-field-vertical { @apply flex-col [&>*]:w-full; }
+  .lux-field-horizontal { @apply flex-row items-center; }
+  .lux-field-label {
+    @apply flex w-fit gap-2 text-sm leading-snug font-medium;
+  }
+  .lux-field-content { @apply flex flex-1 flex-col gap-1.5 leading-snug; }
+  .lux-field-description { @apply text-muted-foreground text-sm leading-normal font-normal; }
+  .lux-field-error { @apply text-destructive text-sm font-normal; }
+  .lux-field-group { @apply flex w-full flex-col gap-7; }
+  .lux-field-set { @apply flex flex-col gap-6; }
+  .lux-field-legend { @apply mb-3 font-medium text-base; }
+}
