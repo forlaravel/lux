@@ -1,3 +1,4 @@
+@blaze
 @props([
     'show' => false,
 ])

@@ -1,3 +1,4 @@
+@blaze
 <div x-data="{ 
     search: '',
     resultCount: 1,

@@ -1,3 +1,4 @@
+@blaze
 @props(['name'])
 
 <div {{ $attributes->mergeTailwind(['class' => 'lux-context-menu-radio-group']) }}>

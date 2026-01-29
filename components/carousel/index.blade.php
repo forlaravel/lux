@@ -1,3 +1,4 @@
+@blaze
 @props(['orientation' => 'horizontal', 'opts' => '{}'])
 
 <div x-data="{

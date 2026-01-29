@@ -1,3 +1,4 @@
+@blaze
 <div 
     x-ref="trigger" 
     @contextmenu.prevent="onContextMenu" 

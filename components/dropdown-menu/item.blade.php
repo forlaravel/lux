@@ -1,3 +1,4 @@
+@blaze
 <button 
     {{ $attributes->mergeTailwind(['class' => 'lux-dropdown-menu-item']) }}
     type="button"

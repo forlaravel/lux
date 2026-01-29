@@ -1,3 +1,4 @@
+@blaze
 @props([
     'name' => '',
     'tag' => 'div',

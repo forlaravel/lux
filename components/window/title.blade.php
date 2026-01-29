@@ -1,3 +1,4 @@
+@blaze
 @inject('lux', 'lux')
 
 <div 

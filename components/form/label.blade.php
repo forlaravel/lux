@@ -1,3 +1,4 @@
+@blaze
 @inject('lux', 'lux')
 
 <x-dynamic-component :component="$lux->componentPath('label')"

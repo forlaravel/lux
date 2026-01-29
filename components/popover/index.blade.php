@@ -1,3 +1,4 @@
+@blaze
 @props([
     'teleport',
     'open' => false,

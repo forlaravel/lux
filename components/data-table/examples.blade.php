@@ -1,3 +1,4 @@
+@blaze
 <x-data-table>
     <x-data-table.actions />
     <x-data-table.header>

@@ -1,3 +1,4 @@
+@blaze
 <template x-if="search.length == 0 || 
     Array.from($el.content.firstElementChild.children)
     .map(x => (x.content?.textContent ?? '').toLowerCase())

@@ -1,3 +1,4 @@
+@blaze
 <div x-show="openSub" x-transition x-cloak
     x-ref="sub-content"
     {{-- x-trap="openSub" --}}

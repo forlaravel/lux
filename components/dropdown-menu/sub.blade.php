@@ -1,3 +1,4 @@
+@blaze
 <div
     {{ $attributes->mergeTailwind(['class' => 'lux-dropdown-menu-sub relative']) }}
     x-data="{ openSub: false }" 

@@ -1,3 +1,4 @@
+@blaze
 <x-context-menu>
     <x-context-menu.trigger class="flex h-[150px] w-[300px] items-center justify-center rounded-md border border-dashed text-sm">
         Right click here

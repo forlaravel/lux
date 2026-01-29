@@ -1,3 +1,4 @@
+@blaze
 <template x-teleport="body">
 <div 
     x-show="open" 

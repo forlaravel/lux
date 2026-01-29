@@ -1,3 +1,4 @@
+@blaze
 @props(['text'])
 
 @inject('lux', 'lux')

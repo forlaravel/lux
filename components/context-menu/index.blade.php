@@ -1,3 +1,4 @@
+@blaze
 <div 
     x-data="{ 
         open: false,

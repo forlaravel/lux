@@ -1,3 +1,4 @@
+@blaze
 <div 
     x-data="{ openSub: false }" 
     @keydown.right.prevent="openSub = true;"

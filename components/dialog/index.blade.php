@@ -1,3 +1,4 @@
+@blaze
 @props([
     'tag' => 'div',
     'open' => false,

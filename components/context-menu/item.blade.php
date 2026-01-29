@@ -1,3 +1,4 @@
+@blaze
 <div 
     role="menuitem" 
     @click="open = false"

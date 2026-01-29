@@ -1,3 +1,4 @@
+@blaze
 <template x-teleport="body" >
 <div 
     {{ $attributes->mergeTailwind(['class' => 'lux-dropdown-menu-content']) }}

@@ -1,3 +1,4 @@
+@blaze
 <button @click="openSub = !openSub"
     x-ref="sub-trigger"
     x-on:mouseover="$el.focus()"
