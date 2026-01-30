@@ -1,6 +1,6 @@
 @layer components {
   .lux-toggle {
-    @apply inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium transition-colors;
+    @apply inline-flex cursor-pointer items-center justify-center gap-2 rounded-md text-sm font-medium transition-colors;
     @apply hover:bg-muted hover:text-muted-foreground;
     @apply focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] outline-none;
     @apply disabled:pointer-events-none disabled:opacity-50;

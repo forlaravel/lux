@@ -22,7 +22,9 @@
             const pos = this.direction === 'horizontal' ? event.clientX : event.clientY;
             const delta = pos - this.startPos;
             const total = this.startSizes[this.dragIndex] + this.startSizes[this.dragIndex + 1];
-            const newSize1 = Math.max(50, Math.min(total - 50, this.startSizes[this.dragIndex] + delta));
+            const min1 = this.panels[this.dragIndex].minSize || 50;
+            const min2 = this.panels[this.dragIndex + 1].minSize || 50;
+            const newSize1 = Math.max(min1, Math.min(total - min2, this.startSizes[this.dragIndex] + delta));
             const newSize2 = total - newSize1;
             const container = this.$el.getBoundingClientRect()[this.direction === 'horizontal' ? 'width' : 'height'];
             this.panels[this.dragIndex].size = (newSize1 / container) * 100;

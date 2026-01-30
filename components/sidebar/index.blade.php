@@ -25,8 +25,8 @@
                 'translate-x-full': !sidebarOpen,
             @endif
         @else
-            'w-64 opacity-100': sidebarOpen,
-            'w-0 overflow-hidden border-0 opacity-0': !sidebarOpen,
+            'w-64': sidebarOpen,
+            'w-0 opacity-0 overflow-hidden': !sidebarOpen,
         @endif
     }"
 >

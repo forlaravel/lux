@@ -9,11 +9,13 @@ Displays an indicator showing the completion progress of a task.
 ## Example
 ### Different Values
 ```html
-<x-progress value="0" />
-<x-progress value="25" />
-<x-progress value="50" />
-<x-progress value="75" />
-<x-progress value="100" />
+<div class="space-y-4">
+    <x-progress value="0" />
+    <x-progress value="25" />
+    <x-progress value="50" />
+    <x-progress value="75" />
+    <x-progress value="100" />
+</div>
 ```
 
 ## Example

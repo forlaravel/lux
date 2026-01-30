@@ -46,7 +46,7 @@
             });
         },
     }"
-    x-modalable="value"
+    x-modelable="value"
     wire:ignore
     {{ $attributes->only('class')->class('lux-calendar w-full') }}
 >

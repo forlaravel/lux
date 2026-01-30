@@ -25,7 +25,7 @@
             </button>
         </x-popover.trigger>
         <x-popover.content class="w-auto p-0">
-            <x-calendar x-model="value" />
+            <x-calendar x-model="value" :inline="true" />
         </x-popover.content>
     </x-popover>
     @if($name)

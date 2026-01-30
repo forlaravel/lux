@@ -16,7 +16,7 @@
         init() {
             this.updateBodyClasses();
 
-            requestAnimationFrame(() => {
+            this.$nextTick(() => {
                 requestAnimationFrame(() => {
                     this.$el.setAttribute('data-initialized', 'true');
                     if (this.sidebarFixed) {

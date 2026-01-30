@@ -1,5 +1,8 @@
 @blaze
-@props(['tag' => 'div'])
+@props(['tag' => 'div', 'teleport' => false])
+@if($teleport)
+<template x-teleport="{{ $teleport === true ? 'body' : $teleport }}">
+@endif
 <{{ $tag }}
     x-show="show"
     x-cloak
@@ -14,3 +17,6 @@
     x-on:mouseleave="close()"
     {{ $attributes->mergeTailwind(['class' => 'lux-hover-card-content']) }}
 >{{ $slot }}</{{ $tag }}>
+@if($teleport)
+</template>
+@endif

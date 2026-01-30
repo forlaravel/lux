@@ -1,5 +1,8 @@
 @blaze
-@props(['tag' => 'div'])
+@props(['tag' => 'div', 'teleport' => false])
+@if($teleport)
+<template x-teleport="{{ $teleport === true ? 'body' : $teleport }}">
+@endif
 <{{ $tag }}
     x-show="activeItem === itemId"
     x-cloak
@@ -11,3 +14,6 @@
     x-transition:leave-end="opacity-0 -translate-y-1"
     {{ $attributes->mergeTailwind(['class' => 'lux-navigation-menu-content']) }}
 >{{ $slot }}</{{ $tag }}>
+@if($teleport)
+</template>
+@endif

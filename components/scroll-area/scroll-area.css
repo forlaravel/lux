@@ -8,10 +8,12 @@
   }
   .lux-scroll-area-viewport::-webkit-scrollbar { display: none; }
   .lux-scroll-area-scrollbar {
-    @apply flex touch-none p-px transition-colors select-none;
+    @apply touch-none p-px select-none;
     @apply absolute;
   }
   .lux-scroll-area-scrollbar-vertical { @apply right-0 top-0 h-full w-2.5 border-l border-l-transparent; }
-  .lux-scroll-area-scrollbar-horizontal { @apply bottom-0 left-0 h-2.5 w-full flex-col border-t border-t-transparent; }
-  .lux-scroll-area-thumb { @apply bg-border relative flex-1 rounded-full; }
+  .lux-scroll-area-scrollbar-vertical .lux-scroll-area-thumb { @apply w-full; }
+  .lux-scroll-area-scrollbar-horizontal { @apply bottom-0 left-0 h-2.5 w-full border-t border-t-transparent; }
+  .lux-scroll-area-scrollbar-horizontal .lux-scroll-area-thumb { @apply h-full; }
+  .lux-scroll-area-thumb { @apply bg-border absolute rounded-full; }
 }

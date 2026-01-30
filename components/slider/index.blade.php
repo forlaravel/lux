@@ -8,7 +8,8 @@
         step: {{ $step }},
         dragging: false,
         get percentage() {
-            return ((this.value - this.min) / (this.max - this.min)) * 100;
+            if (this.max === this.min) return 0;
+            return Math.min(100, Math.max(0, ((this.value - this.min) / (this.max - this.min)) * 100));
         },
         updateFromEvent(e) {
             const rect = this.$refs.track.getBoundingClientRect();
@@ -22,6 +23,10 @@
     :aria-valuenow="value"
     aria-valuemin="{{ $min }}"
     aria-valuemax="{{ $max }}"
+    @mousemove.window="if(dragging) updateFromEvent($event)"
+    @mouseup.window="dragging = false"
+    @touchmove.window="if(dragging) updateFromEvent($event.touches[0])"
+    @touchend.window="dragging = false"
     :data-disabled="@js($disabled) || undefined"
     {{ $attributes->mergeTailwind(['class' => 'lux-slider']) }}
     @if($disabled) data-disabled @endif

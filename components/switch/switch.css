@@ -15,4 +15,7 @@
   .lux-switch-size-sm .lux-switch-thumb-checked { @apply translate-x-[calc(1.5rem-0.75rem-2px)]; }
   .lux-switch-size-md .lux-switch-thumb { @apply size-3.5 translate-x-0.5; }
   .lux-switch-size-md .lux-switch-thumb-checked { @apply translate-x-[calc(2rem-1rem-2px)]; }
+  .lux-switch-size-lg { @apply h-6 w-11; }
+  .lux-switch-size-lg .lux-switch-thumb { @apply size-5 translate-x-0.5; }
+  .lux-switch-size-lg .lux-switch-thumb-checked { @apply translate-x-[calc(2.75rem-1.375rem-2px)]; }
 }

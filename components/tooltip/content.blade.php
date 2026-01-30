@@ -1,5 +1,8 @@
 @blaze
-@props(['tag' => 'div'])
+@props(['tag' => 'div', 'teleport' => false])
+@if($teleport)
+<template x-teleport="{{ $teleport === true ? 'body' : $teleport }}">
+@endif
 <{{ $tag }}
     x-show="show"
     x-cloak
@@ -13,3 +16,6 @@
     role="tooltip"
     {{ $attributes->mergeTailwind(['class' => 'lux-tooltip-content']) }}
 >{{ $slot }}</{{ $tag }}>
+@if($teleport)
+</template>
+@endif
