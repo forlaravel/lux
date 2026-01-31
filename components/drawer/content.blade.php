@@ -20,11 +20,14 @@
             $refs.drawerContent.style.visibility = open ? 'visible' : 'hidden';
         }
     "
+    style="visibility: hidden"
     x-init="
-        $refs.drawerContent.style.transition = 'transform 300ms ease-out, visibility 300ms';
         const transforms = { bottom: 'translateY(100%)', top: 'translateY(-100%)', right: 'translateX(100%)', left: 'translateX(-100%)' };
         $refs.drawerContent.style.transform = transforms[direction];
         $refs.drawerContent.style.visibility = 'hidden';
+        $nextTick(() => {
+            $refs.drawerContent.style.transition = 'transform 300ms ease-out, visibility 300ms';
+        });
     "
     {{ $attributes->except(['showHandle', 'showCloseButton']) }}
 >
