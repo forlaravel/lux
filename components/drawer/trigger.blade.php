@@ -1,6 +1,4 @@
-
-@props(['tag' => 'div'])
-<{{ $tag }}
+<div
     x-on:click="show()"
-    {{ $attributes->mergeTailwind(['class' => 'lux-drawer-trigger']) }}
->{{ $slot }}</{{ $tag }}>
+    {{ $attributes->merge(['class' => 'lux-drawer-trigger']) }}
+>{{ $slot }}</div>

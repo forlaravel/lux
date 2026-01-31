@@ -53,3 +53,4 @@ php artisan lux:publish tooltip
 | Prop | Description | Type | Default |
 | --- | --- | --- | --- |
 | `tag` | HTML tag to render | `string` | `div` |
+| `teleport` | Teleport to a target element to avoid overflow clipping | `string\|boolean` | `false` |

@@ -2,10 +2,9 @@
   .lux-button-group {
     @apply flex w-fit items-stretch;
   }
-  .lux-button-group > *:not(:first-child) { @apply rounded-l-none border-l-0; }
-  .lux-button-group > *:not(:last-child) { @apply rounded-r-none; }
+  .lux-button-group:not(.lux-button-group-vertical) > *:not(:first-child) { @apply rounded-l-none border-l-0; }
+  .lux-button-group:not(.lux-button-group-vertical) > *:not(:last-child) { @apply rounded-r-none; }
   .lux-button-group-vertical { @apply flex-col; }
-  .lux-button-group-vertical > * { @apply rounded-l-[inherit] rounded-r-[inherit] border-l-[inherit]; }
   .lux-button-group-vertical > *:not(:first-child) { @apply rounded-tl-none rounded-tr-none border-t-0; }
   .lux-button-group-vertical > *:not(:last-child) { @apply rounded-bl-none rounded-br-none; }
 }

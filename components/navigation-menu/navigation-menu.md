@@ -85,6 +85,7 @@ php artisan lux:publish navigation-menu
 | Prop | Description | Type | Default |
 | --- | --- | --- | --- |
 | `tag` | HTML tag to render | `string` | `div` |
+| `teleport` | Teleport to a target element to avoid overflow clipping | `string\|boolean` | `false` |
 
 ### navigation-menu.link
 | Prop | Description | Type | Default |

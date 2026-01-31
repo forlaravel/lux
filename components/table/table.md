@@ -36,6 +36,62 @@ A responsive table component with styled sub-components.
 </x-table>
 ```
 
+## Example
+### Striped Rows
+Add the `lux-table-striped` class to the table for alternating row backgrounds.
+```html
+<x-table class="lux-table-striped">
+    <x-table.header>
+        <x-table.row>
+            <x-table.head>Name</x-table.head>
+            <x-table.head>Email</x-table.head>
+        </x-table.row>
+    </x-table.header>
+    <x-table.body>
+        <x-table.row>
+            <x-table.cell>Alice</x-table.cell>
+            <x-table.cell>alice@example.com</x-table.cell>
+        </x-table.row>
+        <x-table.row>
+            <x-table.cell>Bob</x-table.cell>
+            <x-table.cell>bob@example.com</x-table.cell>
+        </x-table.row>
+        <x-table.row>
+            <x-table.cell>Charlie</x-table.cell>
+            <x-table.cell>charlie@example.com</x-table.cell>
+        </x-table.row>
+        <x-table.row>
+            <x-table.cell>Diana</x-table.cell>
+            <x-table.cell>diana@example.com</x-table.cell>
+        </x-table.row>
+    </x-table.body>
+</x-table>
+```
+
+## Example
+### Sticky Header
+Add the `lux-table-header-sticky` class to the header for a sticky header that stays visible when scrolling.
+```html
+<div class="h-48 overflow-auto rounded-md border">
+    <x-table>
+        <x-table.header class="lux-table-header-sticky">
+            <x-table.row>
+                <x-table.head>Name</x-table.head>
+                <x-table.head>Role</x-table.head>
+            </x-table.row>
+        </x-table.header>
+        <x-table.body>
+            @foreach(range(1, 20) as $i)
+            <x-table.row>
+                <x-table.cell>User {{ $i }}</x-table.cell>
+                <x-table.cell>Role {{ $i }}</x-table.cell>
+            </x-table.row>
+            @endforeach
+        </x-table.body>
+    </x-table>
+</div>
+```
+
 ## Installation
 
 1. Run the following command:

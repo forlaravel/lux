@@ -2,6 +2,7 @@
 @props(['tag' => 'button'])
 <{{ $tag }}
     type="button"
+    x-ref="trigger"
     :data-state="activeItem === itemId ? 'open' : 'closed'"
     :aria-expanded="(activeItem === itemId)?.toString()"
     {{ $attributes->mergeTailwind(['class' => 'lux-navigation-menu-trigger']) }}

@@ -1,0 +1,45 @@
+@layer components {
+  .lux-rating {
+    @apply inline-flex items-center gap-0.5;
+  }
+
+  .lux-rating-star {
+    @apply cursor-pointer rounded-sm p-0.5;
+    @apply transition-colors duration-150;
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring;
+  }
+
+  .lux-rating-star-filled {
+    @apply text-amber-400;
+  }
+
+  .lux-rating-star-empty {
+    @apply text-muted-foreground/30;
+  }
+
+  .lux-rating-star:hover {
+    @apply scale-110;
+    @apply transition-transform duration-100;
+  }
+
+  /* Sizes */
+  .lux-rating-size-xs .lux-rating-star svg { @apply size-3; }
+  .lux-rating-size-sm .lux-rating-star svg { @apply size-4; }
+  .lux-rating-size-md .lux-rating-star svg { @apply size-5; }
+  .lux-rating-size-lg .lux-rating-star svg { @apply size-7; }
+  .lux-rating-size-xl .lux-rating-star svg { @apply size-9; }
+
+  /* Disabled */
+  .lux-rating[data-disabled] .lux-rating-star {
+    @apply pointer-events-none opacity-50 cursor-default;
+  }
+
+  /* Readonly */
+  .lux-rating[data-readonly] .lux-rating-star {
+    @apply cursor-default;
+  }
+
+  .lux-rating[data-readonly] .lux-rating-star:hover {
+    @apply scale-100;
+  }
+}

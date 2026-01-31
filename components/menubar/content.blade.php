@@ -1,8 +1,14 @@
 @blaze
-@props(['tag' => 'div'])
+@props(['tag' => 'div', 'teleport' => false])
+@if($teleport)
+<template x-teleport="{{ $teleport === true ? 'body' : $teleport }}">
+@endif
 <{{ $tag }}
     x-show="activeMenu === menuId"
     x-cloak
+    @if($teleport)
+    x-anchor.bottom-start.offset.4="$refs.trigger"
+    @endif
     x-on:click.outside="activeMenu = null"
     x-transition:enter="transition ease-out duration-100"
     x-transition:enter-start="opacity-0 scale-95"
@@ -13,3 +19,6 @@
     role="menu"
     {{ $attributes->mergeTailwind(['class' => 'lux-menubar-content']) }}
 >{{ $slot }}</{{ $tag }}>
+@if($teleport)
+</template>
+@endif

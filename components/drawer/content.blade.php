@@ -1,31 +1,49 @@
+@php
+    $showHandle = $showHandle ?? true;
+    $showCloseButton = $showCloseButton ?? false;
+@endphp
 
-@aware(['direction' => 'bottom'])
-@props(['tag' => 'div', 'showHandle' => true])
-<template x-teleport="body">
-    <div x-show="open" class="lux-drawer-overlay" x-on:click="close()" x-transition.opacity x-cloak></div>
-    @php
-        $transitions = match($direction) {
-            'top' => ['-translate-y-full', 'translate-y-0'],
-            'right' => ['translate-x-full', 'translate-x-0'],
-            'left' => ['-translate-x-full', 'translate-x-0'],
-            default => ['translate-y-full', 'translate-y-0'],
-        };
-    @endphp
-    <{{ $tag }}
-        x-show="open"
-        x-cloak
-        x-trap.noscroll="open"
-        x-transition:enter="transition ease-out duration-300"
-        x-transition:enter-start="{{ $transitions[0] }}"
-        x-transition:enter-end="{{ $transitions[1] }}"
-        x-transition:leave="transition ease-in duration-200"
-        x-transition:leave-start="{{ $transitions[1] }}"
-        x-transition:leave-end="{{ $transitions[0] }}"
-        {{ $attributes->mergeTailwind(['class' => "lux-drawer-content lux-drawer-content-{$direction}"]) }}
-    >
-        @if($showHandle && in_array($direction, ['top', 'bottom']))
+<div
+    x-show="open"
+    x-on:click="close()"
+    x-transition.opacity.duration.300ms
+    x-cloak
+    class="lux-drawer-overlay"
+></div>
+<div
+    x-ref="drawerContent"
+    x-bind:class="'lux-drawer-content lux-drawer-content-' + direction"
+    x-effect="
+        if (!dragging) {
+            const transforms = { bottom: 'translateY(100%)', top: 'translateY(-100%)', right: 'translateX(100%)', left: 'translateX(-100%)' };
+            $refs.drawerContent.style.transform = open ? 'translate(0,0)' : transforms[direction];
+            $refs.drawerContent.style.visibility = open ? 'visible' : 'hidden';
+        }
+    "
+    x-init="
+        $refs.drawerContent.style.transition = 'transform 300ms ease-out, visibility 300ms';
+        const transforms = { bottom: 'translateY(100%)', top: 'translateY(-100%)', right: 'translateX(100%)', left: 'translateX(-100%)' };
+        $refs.drawerContent.style.transform = transforms[direction];
+        $refs.drawerContent.style.visibility = 'hidden';
+    "
+    {{ $attributes->except(['showHandle', 'showCloseButton']) }}
+>
+    <template x-if="{{ json_encode($showHandle) }} && (direction === 'top' || direction === 'bottom')">
+        <div
+            class="lux-drawer-handle-area"
+            x-on:mousedown.prevent="onDragStart($event)"
+            x-on:touchstart.passive="onDragStart($event)"
+        >
             <div class="lux-drawer-handle"></div>
-        @endif
-        {{ $slot }}
-    </{{ $tag }}>
-</template>
+        </div>
+    </template>
+
+    @if($showCloseButton)
+        <button class="lux-drawer-close-button" x-on:click="close()" type="button">
+            <svg xmlns="http://www.w3.org/2000/svg" class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+            <span class="sr-only">Close</span>
+        </button>
+    @endif
+
+    {{ $slot }}
+</div>

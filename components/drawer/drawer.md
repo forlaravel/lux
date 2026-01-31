@@ -1,5 +1,5 @@
 # Drawer
-A bottom (or side) drawer panel with optional drag handle.
+A slide-in panel with drag-to-dismiss support. Ideal for mobile action sheets, settings panels, and navigation menus.
 
 ## Example
 ```html
@@ -13,7 +13,7 @@ A bottom (or side) drawer panel with optional drag handle.
             <x-drawer.description>Set your daily activity goal.</x-drawer.description>
         </x-drawer.header>
         <div class="p-4">
-            <p>Drawer content here.</p>
+            <p>Drawer content here. Drag the handle down to dismiss.</p>
         </div>
         <x-drawer.footer>
             <x-button>Submit</x-button>
@@ -26,18 +26,55 @@ A bottom (or side) drawer panel with optional drag handle.
 ```
 
 ## Example
-### Right Drawer
+Right drawer with close button:
 ```html
 <x-drawer direction="right">
     <x-drawer.trigger>
         <x-button variant="outline">Open Right</x-button>
     </x-drawer.trigger>
-    <x-drawer.content>
+    <x-drawer.content :showCloseButton="true">
         <x-drawer.header>
             <x-drawer.title>Settings</x-drawer.title>
+            <x-drawer.description>Manage your preferences.</x-drawer.description>
         </x-drawer.header>
         <div class="p-4">
             <p>Settings content here.</p>
+        </div>
+    </x-drawer.content>
+</x-drawer>
+```
+
+## Example
+Left drawer:
+```html
+<x-drawer direction="left">
+    <x-drawer.trigger>
+        <x-button variant="outline">Open Left</x-button>
+    </x-drawer.trigger>
+    <x-drawer.content :showCloseButton="true">
+        <x-drawer.header>
+            <x-drawer.title>Navigation</x-drawer.title>
+        </x-drawer.header>
+        <div class="p-4">
+            <p>Navigation content here.</p>
+        </div>
+    </x-drawer.content>
+</x-drawer>
+```
+
+## Example
+Top drawer:
+```html
+<x-drawer direction="top">
+    <x-drawer.trigger>
+        <x-button variant="outline">Open Top</x-button>
+    </x-drawer.trigger>
+    <x-drawer.content>
+        <x-drawer.header>
+            <x-drawer.title>Notifications</x-drawer.title>
+        </x-drawer.header>
+        <div class="p-4">
+            <p>Notification content here.</p>
         </div>
     </x-drawer.content>
 </x-drawer>
@@ -56,42 +93,22 @@ php artisan lux:publish drawer
 ### drawer
 | Prop | Description | Type | Default |
 | --- | --- | --- | --- |
-| `tag` | HTML tag to render | `string` | `div` |
 | `open` | Whether the drawer is open | `boolean` | `false` |
-| `direction` | Direction to slide from | `string` | `bottom` |
-
-### drawer.trigger
-| Prop | Description | Type | Default |
-| --- | --- | --- | --- |
-| `tag` | HTML tag to render | `string` | `div` |
+| `direction` | Direction to slide from: `bottom`, `top`, `right`, `left` | `string` | `bottom` |
 
 ### drawer.content
 | Prop | Description | Type | Default |
 | --- | --- | --- | --- |
-| `tag` | HTML tag to render | `string` | `div` |
-| `showHandle` | Show drag handle | `boolean` | `true` |
+| `showHandle` | Show drag handle (top/bottom only) | `boolean` | `true` |
+| `showCloseButton` | Show X close button (useful for left/right) | `boolean` | `false` |
 
-### drawer.header
-| Prop | Description | Type | Default |
-| --- | --- | --- | --- |
-| `tag` | HTML tag to render | `string` | `div` |
+### drawer.header, drawer.title, drawer.description, drawer.footer, drawer.close
+Simple wrapper components with no required props.
 
-### drawer.title
-| Prop | Description | Type | Default |
-| --- | --- | --- | --- |
-| `tag` | HTML tag to render | `string` | `h2` |
+### Features
 
-### drawer.description
-| Prop | Description | Type | Default |
-| --- | --- | --- | --- |
-| `tag` | HTML tag to render | `string` | `p` |
-
-### drawer.footer
-| Prop | Description | Type | Default |
-| --- | --- | --- | --- |
-| `tag` | HTML tag to render | `string` | `div` |
-
-### drawer.close
-| Prop | Description | Type | Default |
-| --- | --- | --- | --- |
-| `tag` | HTML tag to render | `string` | `button` |
+- **Drag to dismiss** -- drag the handle (or swipe on mobile) to close
+- **4 directions** -- bottom, top, right, left
+- **Close button** -- optional X button for side drawers
+- **Backdrop click** -- click outside to close
+- **Livewire compatible** -- use `wire:model` to bind open state

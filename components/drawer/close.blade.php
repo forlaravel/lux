@@ -1,6 +1,4 @@
-
-@props(['tag' => 'button'])
-<{{ $tag }}
+<div
     x-on:click="close()"
-    {{ $attributes->mergeTailwind(['class' => 'lux-drawer-close']) }}
->{{ $slot }}</{{ $tag }}>
+    {{ $attributes->merge(['class' => 'lux-drawer-close']) }}
+>{{ $slot }}</div>

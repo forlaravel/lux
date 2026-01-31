@@ -1,0 +1,110 @@
+@layer components {
+  .lux-file-upload {
+    @apply w-full;
+  }
+
+  .lux-file-upload-zone {
+    @apply flex flex-col items-center justify-center gap-2;
+    @apply w-full rounded-lg border-2 border-dashed border-border;
+    @apply px-6 py-10 cursor-pointer;
+    @apply transition-[border-color,background-color] duration-200;
+    @apply hover:border-primary/50 hover:bg-accent/50;
+    @apply focus-within:outline-none focus-within:ring-2 focus-within:ring-ring/50 focus-within:border-primary;
+  }
+
+  .lux-file-upload-zone-dragging {
+    @apply border-primary bg-accent/50;
+  }
+
+  .lux-file-upload-zone-disabled {
+    @apply opacity-50 cursor-not-allowed pointer-events-none;
+  }
+
+  .lux-file-upload-icon {
+    @apply flex items-center justify-center;
+    @apply w-10 h-10 rounded-full bg-muted;
+    @apply text-muted-foreground;
+    @apply [&>svg]:size-5;
+  }
+
+  .lux-file-upload-text {
+    @apply flex flex-col sm:flex-row items-center gap-1 text-sm;
+  }
+
+  .lux-file-upload-text-primary {
+    @apply font-medium text-foreground underline underline-offset-4;
+  }
+
+  .lux-file-upload-text-secondary {
+    @apply text-muted-foreground;
+  }
+
+  .lux-file-upload-hint {
+    @apply text-xs text-muted-foreground mt-1;
+  }
+
+  /* Progress bar */
+  .lux-file-upload-progress {
+    @apply w-full h-1.5 rounded-full bg-muted mt-3 overflow-hidden;
+  }
+
+  .lux-file-upload-progress-bar {
+    @apply h-full rounded-full bg-primary;
+    @apply transition-[width] duration-300 ease-out;
+  }
+
+  /* File list */
+  .lux-file-upload-files {
+    @apply mt-3 space-y-2;
+  }
+
+  .lux-file-upload-file {
+    @apply flex items-center gap-3;
+    @apply rounded-lg border border-border px-3 py-2.5;
+  }
+
+  .lux-file-upload-file-icon {
+    @apply size-4 shrink-0 text-muted-foreground;
+  }
+
+  .lux-file-upload-file-preview {
+    @apply size-10 shrink-0 rounded-md object-cover;
+  }
+
+  .lux-file-upload-file-info {
+    @apply flex flex-col min-w-0 flex-1;
+  }
+
+  .lux-file-upload-file-name {
+    @apply text-sm font-medium text-foreground truncate;
+  }
+
+  .lux-file-upload-file-size {
+    @apply text-xs text-muted-foreground;
+  }
+
+  .lux-file-upload-file-remove {
+    @apply shrink-0 p-1 rounded-md cursor-pointer;
+    @apply text-muted-foreground hover:text-foreground hover:bg-accent;
+    @apply transition-colors duration-150;
+    @apply [&>svg]:size-4;
+  }
+
+  /* Error */
+  .lux-file-upload-error {
+    @apply text-sm text-destructive mt-2;
+  }
+
+  /* Footer */
+  .lux-file-upload-footer {
+    @apply flex items-center gap-2 pt-1;
+  }
+
+  .lux-file-upload-footer-count {
+    @apply text-sm text-muted-foreground;
+  }
+
+  .lux-file-upload-footer-hint {
+    @apply text-sm text-muted-foreground;
+  }
+}

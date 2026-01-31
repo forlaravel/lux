@@ -24,8 +24,11 @@ A toggle switch control for boolean values.
 ## Example
 ### Sizes
 ```html
-<x-switch size="sm" />
-<x-switch size="md" />
+<div class="flex items-center gap-4">
+    <x-switch size="sm" />
+    <x-switch size="md" />
+    <x-switch size="lg" />
+</div>
 ```
 
 ## Example

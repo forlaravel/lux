@@ -1,16 +1,25 @@
 @layer components {
   .lux-drawer { @apply relative; }
-  .lux-drawer-trigger { @apply focus-visible:outline-none; }
+  .lux-drawer-trigger { @apply cursor-pointer focus-visible:outline-none; }
   .lux-drawer-overlay { @apply fixed inset-0 z-50 bg-black/50; }
   .lux-drawer-content {
     @apply bg-background fixed z-50 flex h-auto flex-col;
   }
-  .lux-drawer-content-bottom { @apply inset-x-0 bottom-0 mt-24 max-h-[80vh] rounded-t-lg border-t; }
-  .lux-drawer-content-top { @apply inset-x-0 top-0 mb-24 max-h-[80vh] rounded-b-lg border-b; }
+  .lux-drawer-content-bottom { @apply inset-x-0 bottom-0 mt-24 max-h-[80vh] rounded-t-xl border-t; }
+  .lux-drawer-content-top { @apply inset-x-0 top-0 mb-24 max-h-[80vh] rounded-b-xl border-b; }
   .lux-drawer-content-right { @apply inset-y-0 right-0 w-3/4 border-l sm:max-w-sm; }
   .lux-drawer-content-left { @apply inset-y-0 left-0 w-3/4 border-r sm:max-w-sm; }
-  .lux-drawer-handle { @apply bg-muted mx-auto mt-4 h-2 w-[100px] shrink-0 rounded-full; }
-  .lux-drawer-header { @apply flex flex-col gap-0.5 p-4 text-center; }
+
+  .lux-drawer-handle-area {
+    @apply flex items-center justify-center py-3 cursor-grab active:cursor-grabbing;
+    touch-action: none;
+  }
+  .lux-drawer-handle { @apply bg-muted-foreground/20 h-1.5 w-12 shrink-0 rounded-full; }
+  .lux-drawer-close-button {
+    @apply absolute right-4 top-4 rounded-sm opacity-70 transition-opacity hover:opacity-100;
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring;
+  }
+  .lux-drawer-header { @apply flex flex-col gap-1 p-4 text-center; }
   .lux-drawer-title { @apply text-foreground font-semibold; }
   .lux-drawer-description { @apply text-muted-foreground text-sm; }
   .lux-drawer-footer { @apply mt-auto flex flex-col gap-2 p-4; }

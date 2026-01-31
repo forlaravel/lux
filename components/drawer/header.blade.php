@@ -1,3 +1,1 @@
-
-@props(['tag' => 'div'])
-<{{ $tag }} {{ $attributes->mergeTailwind(['class' => 'lux-drawer-header']) }}>{{ $slot }}</{{ $tag }}>
+<div {{ $attributes->merge(['class' => 'lux-drawer-header']) }}>{{ $slot }}</div>

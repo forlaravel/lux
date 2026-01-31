@@ -42,7 +42,7 @@
         wire:ignore
         class="bg-transparent text-text focus:outline-none grow w-0 placeholder:text-muted-foreground   text-sm leading-none border-none py-0.5 px-0 focus:ring-0"
         @focus="hasInputFocus = true"
-        @blur="hasInputFocus = false; close()"
+        @blur="hasInputFocus = false; setTimeout(() => { if (!$refs.content?.contains(document.activeElement)) close() }, 150)"
         @keydown.backspace="inputText.length === 0 ? reset() : null"
         :placeholder="(isEmpty) ? '{{ $placeholder }}' : null"
         x-model="inputText"

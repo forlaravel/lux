@@ -5,7 +5,7 @@ An expandable/collapsible section of content.
 ```html
 <x-collapsible>
     <div class="flex items-center justify-between space-x-4 px-4">
-        <h4 class="text-sm font-semibold">@peduarte starred 3 repositories</h4>
+        <h4 class="text-sm font-semibold">Starred repositories</h4>
         <x-collapsible.trigger>
             <x-button variant="ghost" size="icon">
                 <svg xmlns="http://www.w3.org/2000/svg" class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m7 15 5 5 5-5"/><path d="m7 9 5-5 5 5"/></svg>
@@ -13,18 +13,18 @@ An expandable/collapsible section of content.
             </x-button>
         </x-collapsible.trigger>
     </div>
-    <div class="rounded-md border px-4 py-2 font-mono text-sm shadow-xs">@radix-ui/primitives</div>
+    <div class="rounded-md border px-4 py-2 font-mono text-sm shadow-xs">primitives</div>
     <x-collapsible.content>
         <div class="space-y-2 pt-2">
-            <div class="rounded-md border px-4 py-2 font-mono text-sm shadow-xs">@radix-ui/colors</div>
-            <div class="rounded-md border px-4 py-2 font-mono text-sm shadow-xs">@stitches/react</div>
+            <div class="rounded-md border px-4 py-2 font-mono text-sm shadow-xs">colors</div>
+            <div class="rounded-md border px-4 py-2 font-mono text-sm shadow-xs">react</div>
         </div>
     </x-collapsible.content>
 </x-collapsible>
 ```
 
 ## Example
-### Open by Default
+Open by default:
 ```html
 <x-collapsible open>
     <x-collapsible.trigger>
@@ -55,7 +55,7 @@ php artisan lux:publish collapsible
 ### collapsible.trigger
 | Prop | Description | Type | Default |
 | --- | --- | --- | --- |
-| `tag` | HTML tag to render | `string` | `button` |
+| `tag` | HTML tag to render | `string` | `div` |
 
 ### collapsible.content
 | Prop | Description | Type | Default |

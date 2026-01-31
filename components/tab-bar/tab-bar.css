@@ -1,0 +1,35 @@
+@layer components {
+  .lux-tab-bar-wrapper {
+    @apply relative flex flex-col min-h-full;
+  }
+  .lux-tab-bar {
+    @apply mt-auto;
+    @apply flex items-center justify-around;
+    @apply w-full border-t border-border;
+    @apply bg-background/80 backdrop-blur-lg;
+    @apply px-2 pb-[env(safe-area-inset-bottom)] pt-2;
+  }
+  .lux-tab-bar-content {
+    @apply w-full flex-1;
+  }
+  .lux-tab-bar-item {
+    @apply flex flex-1 flex-col items-center justify-center gap-1;
+    @apply cursor-pointer py-2 px-1;
+    @apply transition-colors duration-200;
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:rounded-md;
+    @apply disabled:pointer-events-none disabled:opacity-50;
+  }
+  .lux-tab-bar-item-active {
+    @apply text-primary;
+  }
+  .lux-tab-bar-item-inactive {
+    @apply text-muted-foreground;
+  }
+  .lux-tab-bar-item-icon {
+    @apply flex items-center justify-center;
+    @apply [&>svg]:size-6;
+  }
+  .lux-tab-bar-item-label {
+    @apply text-[0.65rem] font-medium leading-tight;
+  }
+}
