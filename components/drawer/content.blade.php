@@ -20,7 +20,7 @@
             $refs.drawerContent.style.visibility = open ? 'visible' : 'hidden';
         }
     "
-    style="visibility: hidden"
+    x-cloak
     x-init="
         const transforms = { bottom: 'translateY(100%)', top: 'translateY(-100%)', right: 'translateX(100%)', left: 'translateX(-100%)' };
         $refs.drawerContent.style.transform = transforms[direction];

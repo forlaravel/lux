@@ -1,4 +1,5 @@
 @layer components {
+  .lux-drawer [x-cloak] { display: none !important; }
   .lux-drawer { @apply relative; }
   .lux-drawer-trigger { @apply cursor-pointer focus-visible:outline-none; }
   .lux-drawer-overlay { @apply fixed inset-0 z-50 bg-black/50; }
