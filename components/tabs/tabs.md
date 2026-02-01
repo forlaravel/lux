@@ -99,6 +99,7 @@ php artisan lux:publish tabs
 | Prop            | Description                                                   | Type     | Default   |
 |-----------------|---------------------------------------------------------------|----------|-----------|
 | `value` | The value of the tab to be active by default.                  | `string` | `null`    |
+| `wire:model` | Bind the active tab to a Livewire property (takes precedence over `value`). | `string` | `null`    |
 | `variant`       | Determines the styling of the tab component: `default` (underline indicator), `switch` (pill/background), or `underline` (text-only) | `string` | `default`  |
 | `persist`       | If set, the active tab will be saved in local storage with this key, allowing the tab state to persist across page reloads. | `string` | `null`    |
 
@@ -114,3 +115,18 @@ Defines the container for the tab triggers. The styling of this container can ch
 | Prop    | Description                                              | Type     |
 |---------|----------------------------------------------------------|----------|
 | `value` | The value associated with this content section. It should match the value of a `x-tabs.trigger`. | `string` |
+
+## Livewire
+
+Use `wire:model` to bind the active tab to a Livewire property:
+
+```html
+<x-tabs wire:model="activeTab">
+    <x-tabs.list>
+        <x-tabs.trigger value="tab1">Tab 1</x-tabs.trigger>
+        <x-tabs.trigger value="tab2">Tab 2</x-tabs.trigger>
+    </x-tabs.list>
+    <x-tabs.content value="tab1">...</x-tabs.content>
+    <x-tabs.content value="tab2">...</x-tabs.content>
+</x-tabs>
+```

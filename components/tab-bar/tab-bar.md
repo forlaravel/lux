@@ -65,6 +65,16 @@ Container for the tab bar items. Renders the actual bottom navigation bar.
 |---------|------------------------------------------------------------------------------------|----------|----------|
 | `value` | The value associated with this content panel. Should match a `tab-bar.item` value. | `string` | required |
 
+## Livewire
+
+Use `wire:model` to bind the active tab to a Livewire property:
+
+```html
+<x-tab-bar wire:model="activeTab">
+    ...
+</x-tab-bar>
+```
+
 ## Accessibility
 
 - When using icon-only tab items (no `label` prop), provide an `aria-label` on the `<x-tab-bar.item>` so screen readers can announce the tab's purpose.

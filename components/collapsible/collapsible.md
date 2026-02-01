@@ -51,6 +51,7 @@ php artisan lux:publish collapsible
 | --- | --- | --- | --- |
 | `tag` | HTML tag to render | `string` | `div` |
 | `open` | Whether the content is expanded | `boolean` | `false` |
+| `wire:model` | Bind expanded state to a Livewire property (takes precedence over `open`). | `boolean` | `null` |
 
 ### collapsible.trigger
 | Prop | Description | Type | Default |
@@ -63,6 +64,29 @@ php artisan lux:publish collapsible
 | Prop | Description | Type | Default |
 | --- | --- | --- | --- |
 | `tag` | HTML tag to render | `string` | `div` |
+
+## Livewire
+
+Use `wire:model` to bind the collapsible's open state to a Livewire property:
+
+```html
+<x-collapsible wire:model="showDetails">
+    <x-collapsible.trigger tag="span">
+        <x-button variant="outline">Show Details</x-button>
+    </x-collapsible.trigger>
+    <x-collapsible.content>
+        ...
+    </x-collapsible.content>
+</x-collapsible>
+```
+
+Use the `.live` modifier to sync the state on every change:
+
+```html
+<x-collapsible wire:model.live="showDetails">
+    ...
+</x-collapsible>
+```
 
 ## Accessibility
 

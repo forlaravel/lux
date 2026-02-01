@@ -86,6 +86,7 @@ php artisan lux:publish dialog
 |-----------------|--------------------------------------------------------------|-----------|---------|
 | `tag`           | The HTML tag to use for the dialog container element.        | `string`  | `div`   |
 | `open`          | Determines if the dialog is open on initial render.          | `boolean` | `false` |
+| `wire:model`    | Bind open state to a Livewire property (takes precedence over `open`). | `boolean` | `null`  |
 
 ### dialog.header
 | Prop            | Description                                                  | Type      | Default |
@@ -124,6 +125,29 @@ php artisan lux:publish dialog
 | `tag`  | The HTML tag to use for the trigger element.       | `string` | `button` |
 
 > **Note:** When placing an `<x-button>` inside the trigger, set `tag="span"` on the trigger to avoid nesting a `<button>` inside a `<button>` (invalid HTML that breaks click handling).
+
+## Livewire
+
+Use `wire:model` to bind the dialog's open state to a Livewire property:
+
+```html
+<x-dialog wire:model="showEditDialog">
+    <x-dialog.trigger tag="span">
+        <x-button>Edit Profile</x-button>
+    </x-dialog.trigger>
+    <x-dialog.content>
+        ...
+    </x-dialog.content>
+</x-dialog>
+```
+
+Use the `.live` modifier to sync the state on every change:
+
+```html
+<x-dialog wire:model.live="showEditDialog">
+    ...
+</x-dialog>
+```
 
 ## Accessibility
 

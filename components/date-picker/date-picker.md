@@ -44,6 +44,21 @@ php artisan lux:publish date-picker
 | `format` | Date format | `string` | `Y-m-d` |
 | `placeholder` | Placeholder text | `string` | `Pick a date` |
 | `name` | Form input name | `string\|null` | `null` |
+| `wire:model` | Bind the selected date to a Livewire property (takes precedence over `value`). | `string` | `null` |
+
+## Livewire
+
+Use `wire:model` to bind the selected date to a Livewire property:
+
+```html
+<x-date-picker wire:model="startDate" placeholder="Select start date" />
+```
+
+Use the `.live` modifier to sync the value on every change:
+
+```html
+<x-date-picker wire:model.live="startDate" />
+```
 
 ## Accessibility
 

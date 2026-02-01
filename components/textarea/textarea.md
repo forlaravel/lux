@@ -46,6 +46,14 @@ php artisan lux:publish textarea
 | `autogrow`| Whether the textarea automatically grows with content. | `boolean` | `false`   |
 | `size`    | Specifies the size of the textarea, can be `sm`, `md`, `lg`, `xl` | `string` | `md` |
 
+## Livewire
+
+Use `wire:model` to bind the textarea value to a Livewire property:
+
+```html
+<x-textarea wire:model="message" placeholder="Type your message..." />
+```
+
 ## Accessibility
 
 - Always associate a visible `<label>` with the textarea using matching `id`/`for` attributes, or provide an `aria-label` attribute directly on the component.

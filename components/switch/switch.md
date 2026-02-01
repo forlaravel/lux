@@ -54,6 +54,21 @@ php artisan lux:publish switch
 | `checked` | Whether the switch is on | `boolean` | `false` |
 | `name` | Form input name | `string\|null` | `null` |
 | `size` | Size of the switch | `string` | `md` |
+| `wire:model` | Bind checked state to a Livewire property (takes precedence over `checked`). | `boolean` | `null` |
+
+## Livewire
+
+Use `wire:model` to bind the switch state to a Livewire property:
+
+```html
+<x-switch wire:model="notifications" />
+```
+
+Use the `.live` modifier to sync the state on every change:
+
+```html
+<x-switch wire:model.live="notifications" />
+```
 
 ## Accessibility
 

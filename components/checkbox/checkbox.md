@@ -28,6 +28,15 @@ php artisan lux:publish checkbox
 | `name`    | The name attribute (on form submission) | `string`  | `null`  |
 | `value`   | The value attribute for form submission  | `string`  | `null`  |
 
+## Livewire
+
+Use `wire:model` to bind the checked state to a Livewire property:
+
+```html
+<x-checkbox wire:model="acceptTerms" id="terms" />
+<x-label for="terms">Accept terms and conditions</x-label>
+```
+
 ## Accessibility
 
 - Always provide a visible `<label>` associated with the checkbox using matching `id`/`for` attributes (e.g., `<x-checkbox id="terms" /> <x-label for="terms">Accept terms</x-label>`).

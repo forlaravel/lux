@@ -51,6 +51,16 @@ php artisan lux:publish toggle
 | `size` | Size of the toggle | `string` | `md` |
 | `pressed` | Whether toggle is pressed | `boolean` | `false` |
 
+## Livewire
+
+Use `wire:model` to bind the pressed state to a Livewire property:
+
+```html
+<x-toggle wire:model="isBold" aria-label="Toggle bold">
+    B
+</x-toggle>
+```
+
 ## Accessibility
 
 - When the toggle contains only an icon, add an `aria-label` to describe its function (e.g., `<x-toggle aria-label="Toggle bold">`).

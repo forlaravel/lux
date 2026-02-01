@@ -77,6 +77,7 @@ php artisan lux:publish sidebar
 |------|-------------|------|---------|
 | `tag` | HTML tag for the provider wrapper | `string` | `div` |
 | `open` | Initial open state of the sidebar | `boolean` | `true` |
+| `wire:model` | Bind sidebar open state to a Livewire property (takes precedence over `open`). | `boolean` | `null` |
 | `fixed` | Whether the sidebar uses fixed positioning | `boolean` | `true` |
 | `side` | Position of the sidebar: `left`, `right` | `string` | `left` |
 
@@ -103,6 +104,27 @@ php artisan lux:publish sidebar
 - `x-sidebar.header` - Sticky header section at the top of the sidebar
 - `x-sidebar.content` - Scrollable main content area
 - `x-sidebar.footer` - Sticky footer section at the bottom of the sidebar
+
+## Livewire
+
+Use `wire:model` on the provider to bind the sidebar's open state to a Livewire property:
+
+```html
+<x-sidebar.provider wire:model="sidebarOpen">
+    <x-sidebar>
+        ...
+    </x-sidebar>
+    <main>...</main>
+</x-sidebar.provider>
+```
+
+Use the `.live` modifier to sync the state on every change:
+
+```html
+<x-sidebar.provider wire:model.live="sidebarOpen">
+    ...
+</x-sidebar.provider>
+```
 
 ## Accessibility
 

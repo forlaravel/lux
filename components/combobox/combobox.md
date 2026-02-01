@@ -59,6 +59,7 @@ php artisan lux:publish combobox
 | `name` | Form input name | `string\|null` | `null` |
 | `placeholder` | Placeholder text | `string` | `Select an option` |
 | `searchPlaceholder` | Search input placeholder | `string` | `Search...` |
+| `wire:model` | Bind selected value to a Livewire property (takes precedence over `value`). | `string` | `null` |
 
 ### combobox.trigger
 | Prop | Description | Type | Default |
@@ -87,3 +88,25 @@ php artisan lux:publish combobox
 | Prop | Description | Type | Default |
 | --- | --- | --- | --- |
 | `tag` | HTML tag to render | `string` | `div` |
+
+## Livewire
+
+Use `wire:model` to bind the selected value to a Livewire property:
+
+```html
+<x-combobox wire:model="framework" placeholder="Select framework...">
+    <x-combobox.trigger />
+    <x-combobox.content>
+        <x-combobox.item value="laravel" label="Laravel">Laravel</x-combobox.item>
+        <x-combobox.item value="rails" label="Ruby on Rails">Ruby on Rails</x-combobox.item>
+    </x-combobox.content>
+</x-combobox>
+```
+
+Use the `.live` modifier to sync the value on every change:
+
+```html
+<x-combobox wire:model.live="framework">
+    ...
+</x-combobox>
+```

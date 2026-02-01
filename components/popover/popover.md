@@ -58,6 +58,7 @@ php artisan lux:publish popover
 |-------------|----------------------------------------------------|-----------|---------|
 | `teleport`  | A CSS selector to teleport the popover to          | `string`  | -       |
 | `open`      | Whether the popover is open by default             | `boolean` | `false` |
+| `wire:model` | Bind open state to a Livewire property (takes precedence over `open`). | `boolean` | `null` |
 
 ### popover.trigger
 The component responsible for toggling the visibility of the popover content.
@@ -73,6 +74,29 @@ The component responsible for toggling the visibility of the popover content.
 |-------------|----------------------------------------------------|-----------|---------|
 | `tag`       | The HTML tag to use for the content container      | `string`  | `div`   |
 | `teleport`  | A CSS selector to teleport the content to          | `boolean\|string` | `false` |
+
+## Livewire
+
+Use `wire:model` to bind the popover's open state to a Livewire property:
+
+```html
+<x-popover wire:model="showPopover">
+    <x-popover.trigger tag="span">
+        <x-button variant="outline">Settings</x-button>
+    </x-popover.trigger>
+    <x-popover.content>
+        ...
+    </x-popover.content>
+</x-popover>
+```
+
+Use the `.live` modifier to sync the state on every change:
+
+```html
+<x-popover wire:model.live="showPopover">
+    ...
+</x-popover>
+```
 
 ## Accessibility
 

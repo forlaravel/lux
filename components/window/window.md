@@ -28,6 +28,17 @@ php artisan lux:publish window
 |--------|------------------------------|-----------|---------|
 | `show` | Whether the window is visible | `boolean` | `false` |
 
+## Livewire
+
+Use `wire:model` to bind the window's visibility to a Livewire property:
+
+```html
+<x-window wire:model="showWindow">
+    <x-window.title>My Window</x-window.title>
+    <x-window.content>...</x-window.content>
+</x-window>
+```
+
 ## Accessibility
 
 - Add `role="dialog"` and `aria-label` (or `aria-labelledby` pointing to the title element) to the `<x-window>` to identify it as a dialog for screen readers.

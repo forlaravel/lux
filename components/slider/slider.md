@@ -47,6 +47,21 @@ php artisan lux:publish slider
 | `step` | Step increment | `number` | `1` |
 | `name` | Form input name | `string\|null` | `null` |
 | `disabled` | Whether slider is disabled | `boolean` | `false` |
+| `wire:model` | Bind slider value to a Livewire property (takes precedence over `value`). | `number` | `null` |
+
+## Livewire
+
+Use `wire:model` to bind the slider value to a Livewire property:
+
+```html
+<x-slider wire:model="brightness" />
+```
+
+Use the `.live` modifier to sync the value on every change:
+
+```html
+<x-slider wire:model.live="brightness" />
+```
 
 ## Accessibility
 

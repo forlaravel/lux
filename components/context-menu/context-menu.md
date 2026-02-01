@@ -60,6 +60,30 @@ A component used to create context menus that appear when users right-click on a
 php artisan lux:publish context-menu
 ```
 
+## Livewire
+
+The `checkbox-item` and `radio-item` sub-components support `wire:model` to bind their checked state to a Livewire property:
+
+```html
+<x-context-menu.checkbox-item wire:model="showBookmarks">
+    Show Bookmarks Bar
+</x-context-menu.checkbox-item>
+```
+
+```html
+<x-context-menu.radio-item wire:model="selectedPerson" name="people" value="pedro">
+    Pedro Duarte
+</x-context-menu.radio-item>
+```
+
+Use the `.live` modifier to sync the state on every change:
+
+```html
+<x-context-menu.checkbox-item wire:model.live="showBookmarks">
+    Show Bookmarks Bar
+</x-context-menu.checkbox-item>
+```
+
 ## Accessibility
 
 - Context menus are triggered by right-click, which is not available to keyboard-only or screen reader users. Provide an alternative way to access the same actions (e.g., a visible menu button) for full accessibility.

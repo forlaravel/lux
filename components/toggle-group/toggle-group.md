@@ -62,6 +62,20 @@ php artisan lux:publish toggle-group
 | `tag` | HTML tag to render | `string` | `button` |
 | `value` | Value of this toggle | `string` | *required* |
 
+## Livewire
+
+Use `wire:model` to bind the selected value to a Livewire property:
+
+```html
+<x-toggle-group wire:model="alignment" type="single">
+    <x-toggle-group.item value="left">Left</x-toggle-group.item>
+    <x-toggle-group.item value="center">Center</x-toggle-group.item>
+    <x-toggle-group.item value="right">Right</x-toggle-group.item>
+</x-toggle-group>
+```
+
+For `type="multiple"`, the Livewire property should be an array.
+
 ## Accessibility
 
 - Add an `aria-label` to the `<x-toggle-group>` to describe the group's purpose (e.g., `aria-label="Text alignment"`).

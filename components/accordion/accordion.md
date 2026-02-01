@@ -68,3 +68,20 @@ php artisan lux:publish accordion
 | `animated` | Whether the accordion items should be animated. | `bool` | `true`
 
 </div>
+
+## Livewire
+
+Use `wire:model` to bind the selected accordion item to a Livewire property:
+
+```html
+<x-accordion wire:model="openItem">
+    <x-accordion.item>
+        <x-accordion.trigger>Section 1</x-accordion.trigger>
+        <x-accordion.content>Content 1</x-accordion.content>
+    </x-accordion.item>
+    <x-accordion.item>
+        <x-accordion.trigger>Section 2</x-accordion.trigger>
+        <x-accordion.content>Content 2</x-accordion.content>
+    </x-accordion.item>
+</x-accordion>
+```

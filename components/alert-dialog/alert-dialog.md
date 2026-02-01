@@ -37,6 +37,7 @@ php artisan lux:publish alert-dialog
 | --- | --- | --- | --- |
 | `tag` | HTML tag to render | `string` | `div` |
 | `open` | Whether the dialog is open | `boolean` | `false` |
+| `wire:model` | Bind open state to a Livewire property (takes precedence over `open`). | `boolean` | `null` |
 
 ### alert-dialog.trigger
 | Prop | Description | Type | Default |
@@ -79,6 +80,24 @@ php artisan lux:publish alert-dialog
 | Prop | Description | Type | Default |
 | --- | --- | --- | --- |
 | `tag` | HTML tag to render | `string` | `button` |
+
+## Livewire
+
+Use `wire:model` to bind the dialog's open state to a Livewire property:
+
+```html
+<x-alert-dialog wire:model="showDeleteConfirm">
+    ...
+</x-alert-dialog>
+```
+
+Use the `.live` modifier to sync the state on every change:
+
+```html
+<x-alert-dialog wire:model.live="showDeleteConfirm">
+    ...
+</x-alert-dialog>
+```
 
 ## Accessibility
 

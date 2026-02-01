@@ -49,6 +49,7 @@ php artisan lux:publish radio-group
 | --- | --- | --- | --- |
 | `tag` | HTML tag to render | `string` | `div` |
 | `value` | Currently selected value | `string\|null` | `null` |
+| `wire:model` | Bind selected value to a Livewire property (takes precedence over `value`). | `string` | `null` |
 | `name` | Form input name | `string\|null` | `null` |
 
 ### radio-group.item
@@ -58,6 +59,31 @@ php artisan lux:publish radio-group
 | `value` | Value of this radio option | `string` | *required* |
 | `id` | Element ID | `string\|null` | `null` |
 | `disabled` | Whether the option is disabled | `boolean` | `false` |
+
+## Livewire
+
+Use `wire:model` to bind the selected value to a Livewire property:
+
+```html
+<x-radio-group wire:model="plan">
+    <div class="flex items-center gap-2">
+        <x-radio-group.item value="free" id="plan-free" />
+        <x-label for="plan-free">Free</x-label>
+    </div>
+    <div class="flex items-center gap-2">
+        <x-radio-group.item value="pro" id="plan-pro" />
+        <x-label for="plan-pro">Pro</x-label>
+    </div>
+</x-radio-group>
+```
+
+Use the `.live` modifier to sync the value on every change:
+
+```html
+<x-radio-group wire:model.live="plan">
+    ...
+</x-radio-group>
+```
 
 ## Accessibility
 
