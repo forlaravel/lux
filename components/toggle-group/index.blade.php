@@ -1,5 +1,5 @@
 
-@props(['tag' => 'div', 'type' => 'single', 'value' => null, 'variant' => 'default', 'size' => 'md'])
+@props(['tag' => 'div', 'type' => 'single', 'value' => null, 'variant' => 'default', 'size' => 'md', 'name' => null])
 <{{ $tag }}
     x-data="{
         value: @wireOr($type === 'multiple' ? ($value ?? []) : $value, handlePersist: true),
@@ -19,4 +19,9 @@
     x-modelable="value"
     role="group"
     {{ $attributes->merge(['class' => 'lux-toggle-group']) }}
->{{ $slot }}</{{ $tag }}>
+>
+    @if($name)
+        <input type="hidden" name="{{ $name }}" x-model="value" wire:ignore>
+    @endif
+    {{ $slot }}
+</{{ $tag }}>

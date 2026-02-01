@@ -1,5 +1,8 @@
 @blaze
-<template x-teleport="body">
+@props(['teleport' => 'body'])
+@if($teleport)
+<template x-teleport="{{ $teleport }}">
+@endif
 <div
     x-show="open"
     x-ref="content"
@@ -14,4 +17,6 @@
     x-cloak>
     {{ $slot }}
 </div>
+@if($teleport)
 </template>
+@endif

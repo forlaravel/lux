@@ -3,7 +3,7 @@
 
 @props([
     'tag' => 'div',
-    'teleport' => false,
+    'teleport' => 'body',
 ])
 
 @if($teleport)

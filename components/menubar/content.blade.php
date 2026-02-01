@@ -1,5 +1,5 @@
 @blaze
-@props(['tag' => 'div', 'teleport' => false])
+@props(['tag' => 'div', 'teleport' => 'body'])
 @if($teleport)
 <template x-teleport="{{ $teleport === true ? 'body' : $teleport }}">
 @endif

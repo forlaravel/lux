@@ -1,5 +1,8 @@
 @blaze
-<template x-teleport="body" >
+@props(['teleport' => 'body'])
+@if($teleport)
+<template x-teleport="{{ $teleport }}">
+@endif
 <div
     {{ $attributes->merge(['class' => 'lux-dropdown-menu-content']) }}
     x-show="open"
@@ -16,4 +19,6 @@
     >
     {{ $slot }}
 </div>
+@if($teleport)
 </template>
+@endif

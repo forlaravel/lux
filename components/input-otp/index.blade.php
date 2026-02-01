@@ -56,6 +56,6 @@
 >
     {{ $slot }}
     @if($name)
-        <input type="hidden" name="{{ $name }}" :value="value" wire:ignore>
+        <input type="hidden" name="{{ $name }}" x-model="value" wire:ignore>
     @endif
 </{{ $tag }}>
