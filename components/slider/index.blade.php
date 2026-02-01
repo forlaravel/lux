@@ -1,5 +1,5 @@
 @blaze
-@props(['tag' => 'div', 'value' => 0, 'min' => 0, 'max' => 100, 'step' => 1, 'name' => null, 'disabled' => false])
+@props(['tag' => 'div', 'value' => 0, 'min' => 0, 'max' => 100, 'step' => 1, 'name' => null, 'disabled' => false, 'label' => null])
 <{{ $tag }}
     x-data="{
         value: @wireOr($value, handlePersist: true),
@@ -36,6 +36,7 @@
         <span class="lux-slider-thumb"
             tabindex="0"
             role="slider"
+            @if($label) aria-label="{{ $label }}" @endif
             :aria-valuenow="value"
             aria-valuemin="{{ $min }}"
             aria-valuemax="{{ $max }}"

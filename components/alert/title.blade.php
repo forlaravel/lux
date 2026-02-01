@@ -1,6 +1,6 @@
 @blaze
 @props([
-    'tag' => 'h5',
+    'tag' => 'div',
 ])
 
 <{{ $tag }}

@@ -2,6 +2,7 @@
 @props(['tag' => 'button'])
 <{{ $tag }}
     type="button"
+    role="menuitem"
     x-ref="trigger"
     aria-haspopup="menu"
     :aria-expanded="activeMenu === menuId"

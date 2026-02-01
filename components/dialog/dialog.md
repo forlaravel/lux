@@ -6,8 +6,8 @@ Welcome to the fantastical world of the Dialog component! This little buddy is h
 
 ```html
 <x-dialog>
-    <x-dialog.trigger>
-        <x-button tag="span">Open Dialog</x-button>    
+    <x-dialog.trigger tag="span">
+        <x-button>Open Dialog</x-button>
     </x-dialog.trigger>
 
     <x-dialog.content>
@@ -19,8 +19,8 @@ Welcome to the fantastical world of the Dialog component! This little buddy is h
         </x-dialog.body>
 
         <x-dialog.footer>
-            <x-dialog.close>
-                <x-button tag="span" variant="ghost">Close</x-button>    
+            <x-dialog.close tag="span">
+                <x-button variant="ghost">Close</x-button>
             </x-dialog.close>
             <x-button>Save Changes</x-button>
         </x-dialog.footer>
@@ -28,8 +28,8 @@ Welcome to the fantastical world of the Dialog component! This little buddy is h
 </x-dialog>
 <br>
 <x-dialog>
-    <x-dialog.trigger>
-        <x-button variant="outline" tag="span">Open FAQ</x-button>    
+    <x-dialog.trigger tag="span">
+        <x-button variant="outline">Open FAQ</x-button>
     </x-dialog.trigger>
 
     <x-dialog.content>
@@ -62,8 +62,8 @@ Welcome to the fantastical world of the Dialog component! This little buddy is h
         </x-dialog.body>
 
         <x-dialog.footer>
-            <x-dialog.close>
-                <x-button tag="span" variant="ghost">Close</x-button>    
+            <x-dialog.close tag="span">
+                <x-button variant="ghost">Close</x-button>
             </x-dialog.close>
             <x-button>Save Changes</x-button>
         </x-dialog.footer>
@@ -123,4 +123,4 @@ php artisan lux:publish dialog
 |--------|----------------------------------------------------|----------|---------|
 | `tag`  | The HTML tag to use for the trigger element.       | `string` | `button` |
 
-And there you have it! The merry-making, always-flexible Dialog component. Enjoy crafting modals that are as dynamic as your creativity allows! 🎉
+> **Note:** When placing an `<x-button>` inside the trigger, set `tag="span"` on the trigger to avoid nesting a `<button>` inside a `<button>` (invalid HTML that breaks click handling).

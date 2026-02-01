@@ -4,7 +4,7 @@ A dropdown component that provides a flexible and customizable UI element. It su
 ## Example
 ```html
         <x-dropdown-menu>
-            <x-dropdown-menu.trigger>
+            <x-dropdown-menu.trigger tag="span">
                 <x-button variant="outline">Open</x-button>
             </x-dropdown-menu.trigger>
 
@@ -111,6 +111,12 @@ The container for the dropdown component.
 
 ### dropdown.trigger
 Represents the clickable element to open/close the dropdown.
+
+| Prop | Description | Type | Default |
+|------|-------------|------|---------|
+| `tag` | HTML tag to render | `string` | `button` |
+
+> **Note:** When placing an `<x-button>` inside the trigger, set `tag="span"` on the trigger to avoid nesting a `<button>` inside a `<button>` (invalid HTML that breaks click handling).
 
 ### dropdown.content
 The container that holds the dropdown items.

@@ -6,7 +6,7 @@ An expandable/collapsible section of content.
 <x-collapsible>
     <div class="flex items-center justify-between space-x-4 px-4">
         <h4 class="text-sm font-semibold">Starred repositories</h4>
-        <x-collapsible.trigger>
+        <x-collapsible.trigger tag="span">
             <x-button variant="ghost" size="icon">
                 <svg xmlns="http://www.w3.org/2000/svg" class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m7 15 5 5 5-5"/><path d="m7 9 5-5 5 5"/></svg>
                 <span class="sr-only">Toggle</span>
@@ -27,7 +27,7 @@ An expandable/collapsible section of content.
 Open by default:
 ```html
 <x-collapsible open>
-    <x-collapsible.trigger>
+    <x-collapsible.trigger tag="span">
         <x-button variant="outline">Show Details</x-button>
     </x-collapsible.trigger>
     <x-collapsible.content>
@@ -55,7 +55,9 @@ php artisan lux:publish collapsible
 ### collapsible.trigger
 | Prop | Description | Type | Default |
 | --- | --- | --- | --- |
-| `tag` | HTML tag to render | `string` | `div` |
+| `tag` | HTML tag to render | `string` | `button` |
+
+> **Note:** When placing an `<x-button>` inside the trigger, set `tag="span"` on the trigger to avoid nesting a `<button>` inside a `<button>` (invalid HTML that breaks click handling).
 
 ### collapsible.content
 | Prop | Description | Type | Default |

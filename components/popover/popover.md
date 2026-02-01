@@ -6,7 +6,7 @@ A component used to display a popover menu in your application. It includes a ma
 ### Basic Usage
 ```html
 <x-popover>
-    <x-popover.trigger>
+    <x-popover.trigger tag="span">
         <x-button variant="outline">Open popover</x-button>
     </x-popover.trigger>
 
@@ -60,7 +60,13 @@ php artisan lux:publish popover
 | `open`      | Whether the popover is open by default             | `boolean` | `false` |
 
 ### popover.trigger
-The component responsible for toggling the visibility of the popover content. No additional props.
+The component responsible for toggling the visibility of the popover content.
+
+| Prop | Description | Type | Default |
+|------|-------------|------|---------|
+| `tag` | HTML tag to render | `string` | `button` |
+
+> **Note:** When placing an `<x-button>` inside the trigger, set `tag="span"` on the trigger to avoid nesting a `<button>` inside a `<button>` (invalid HTML that breaks click handling).
 
 ### popover.content
 | Prop        | Description                                        | Type      | Default |

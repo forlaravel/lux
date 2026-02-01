@@ -19,10 +19,10 @@ $cursorClass = $searchable ? 'lux-select-trigger-searchable' : 'lux-select-trigg
     @endif
     @click="onTrigger"
     x-ref="trigger"
+    role="combobox"
     aria-haspopup="listbox"
     :id="$id('select-trigger')"
     :aria-expanded="open"
-    :aria-pressed="open || hasInputFocus"
     class="lux-select-trigger lux-select-trigger-size-{{ $size }} {{ $cursorClass }}"
     {{ $attributes }}
 >

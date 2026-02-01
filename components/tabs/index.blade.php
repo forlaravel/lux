@@ -7,7 +7,9 @@
 
 <{{ $tag }}
     {{ $attributes->mergeTailwind(['class' => 'lux-tabs']) }}
+    x-id="['tabs']"
     x-data="{
+        tabsId: $id('tabs'),
         activeTab: @wireOr($value, handlePersist: true),
         init() {
             if (!this.activeTab) {

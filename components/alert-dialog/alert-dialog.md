@@ -4,7 +4,7 @@ A modal dialog that interrupts the user with important content and expects a res
 ## Example
 ```html
 <x-alert-dialog>
-    <x-alert-dialog.trigger>
+    <x-alert-dialog.trigger tag="span">
         <x-button variant="outline">Delete Account</x-button>
     </x-alert-dialog.trigger>
     <x-alert-dialog.content>
@@ -41,7 +41,9 @@ php artisan lux:publish alert-dialog
 ### alert-dialog.trigger
 | Prop | Description | Type | Default |
 | --- | --- | --- | --- |
-| `tag` | HTML tag to render | `string` | `div` |
+| `tag` | HTML tag to render | `string` | `button` |
+
+> **Note:** When placing an `<x-button>` inside the trigger, set `tag="span"` on the trigger to avoid nesting a `<button>` inside a `<button>` (invalid HTML that breaks click handling).
 
 ### alert-dialog.content
 | Prop | Description | Type | Default |

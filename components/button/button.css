@@ -36,8 +36,8 @@
     @apply hover:bg-muted hover:text-foreground dark:hover:bg-muted/50;
   }
   .lux-button-variant-destructive {
-    --_c: var(--color-destructive);
-    @apply bg-destructive/10 hover:bg-destructive/20 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 dark:bg-destructive/20 text-destructive;
+    --_c: var(--color-destructive-foreground);
+    @apply bg-destructive text-destructive-foreground hover:bg-destructive/90 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40;
   }
   .lux-button-variant-link {
     --_c: var(--color-primary);

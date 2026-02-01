@@ -4,7 +4,7 @@ A popup that displays information on hover or focus.
 ## Example
 ```html
 <x-tooltip>
-    <x-tooltip.trigger>
+    <x-tooltip.trigger tag="span">
         <x-button variant="outline">Hover Me</x-button>
     </x-tooltip.trigger>
     <x-tooltip.content>
@@ -17,7 +17,7 @@ A popup that displays information on hover or focus.
 ### With Icon Button
 ```html
 <x-tooltip>
-    <x-tooltip.trigger>
+    <x-tooltip.trigger tag="span">
         <x-button variant="ghost" size="icon">
             <svg xmlns="http://www.w3.org/2000/svg" class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
         </x-button>
@@ -47,7 +47,9 @@ php artisan lux:publish tooltip
 ### tooltip.trigger
 | Prop | Description | Type | Default |
 | --- | --- | --- | --- |
-| `tag` | HTML tag to render | `string` | `div` |
+| `tag` | HTML tag to render | `string` | `button` |
+
+> **Note:** When placing an `<x-button>` inside the trigger, set `tag="span"` on the trigger to avoid nesting a `<button>` inside a `<button>` (invalid HTML that breaks click handling).
 
 ### tooltip.content
 | Prop | Description | Type | Default |

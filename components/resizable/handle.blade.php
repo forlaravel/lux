@@ -4,6 +4,9 @@
     x-on:mousedown.prevent="startResize(panels.indexOf(panels.find(p => p.el === $el.previousElementSibling)), $event)"
     x-on:touchstart.prevent="startResize(panels.indexOf(panels.find(p => p.el === $el.previousElementSibling)), $event.touches[0])"
     role="separator"
+    aria-valuenow="50"
+    aria-valuemin="0"
+    aria-valuemax="100"
     tabindex="0"
     :data-panel-group-direction="direction"
     {{ $attributes->mergeTailwind(['class' => 'lux-resizable-handle']) }}

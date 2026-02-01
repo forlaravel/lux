@@ -10,10 +10,10 @@
     {{ $attributes->mergeTailwind(['class' => "lux-tabs-trigger lux-tabs-trigger-variant-{$variant}"]) }}
     data-tab="{{ $value }}"
     role="tab"
-    :aria-selected="(activeTab === '{{ $value }}').toString()"
+    :aria-selected="activeTab === '{{ $value }}' ? 'true' : 'false'"
     :tabindex="activeTab === '{{ $value }}' ? '0' : '-1'"
-    :id="$id('tab-{{ $value }}')"
-    :aria-controls="$id('tabpanel-{{ $value }}')"
+    :id="tabsId + '-tab-{{ $value }}'"
+    :aria-controls="tabsId + '-tabpanel-{{ $value }}'"
     x-on:click="activeTab = '{{ $value }}'"
     @if($variant === 'switch')
     x-bind:class="{ 'bg-background text-foreground shadow-sm': activeTab === '{{ $value }}', 'text-muted-foreground': activeTab !== '{{ $value }}' }"

@@ -1,6 +1,7 @@
 @blaze
-<button
-    type="button"
+@props(['tag' => 'button'])
+<{{ $tag }}
+    @if($tag === 'button') type="button" @endif
     x-ref="trigger"
     @click="open = !open"
     aria-haspopup="menu"
@@ -8,4 +9,4 @@
     {{ $attributes->mergeTailwind(['class' => 'lux-dropdown-menu-trigger']) }}
 >
     {{ $slot }}
-</button>
+</{{ $tag }}>

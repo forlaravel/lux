@@ -4,7 +4,7 @@ A slide-in panel with drag-to-dismiss support. Ideal for mobile action sheets, s
 ## Example
 ```html
 <x-drawer>
-    <x-drawer.trigger>
+    <x-drawer.trigger tag="span">
         <x-button variant="outline">Open Drawer</x-button>
     </x-drawer.trigger>
     <x-drawer.content>
@@ -29,7 +29,7 @@ A slide-in panel with drag-to-dismiss support. Ideal for mobile action sheets, s
 Right drawer with close button:
 ```html
 <x-drawer direction="right">
-    <x-drawer.trigger>
+    <x-drawer.trigger tag="span">
         <x-button variant="outline">Open Right</x-button>
     </x-drawer.trigger>
     <x-drawer.content :showCloseButton="true">
@@ -48,7 +48,7 @@ Right drawer with close button:
 Left drawer:
 ```html
 <x-drawer direction="left">
-    <x-drawer.trigger>
+    <x-drawer.trigger tag="span">
         <x-button variant="outline">Open Left</x-button>
     </x-drawer.trigger>
     <x-drawer.content :showCloseButton="true">
@@ -66,7 +66,7 @@ Left drawer:
 Top drawer:
 ```html
 <x-drawer direction="top">
-    <x-drawer.trigger>
+    <x-drawer.trigger tag="span">
         <x-button variant="outline">Open Top</x-button>
     </x-drawer.trigger>
     <x-drawer.content>
@@ -101,6 +101,13 @@ php artisan lux:publish drawer
 | --- | --- | --- | --- |
 | `showHandle` | Show drag handle (top/bottom only) | `boolean` | `true` |
 | `showCloseButton` | Show X close button (useful for left/right) | `boolean` | `false` |
+
+### drawer.trigger
+| Prop | Description | Type | Default |
+| --- | --- | --- | --- |
+| `tag` | HTML tag to render | `string` | `button` |
+
+> **Note:** When placing an `<x-button>` inside the trigger, set `tag="span"` on the trigger to avoid nesting a `<button>` inside a `<button>` (invalid HTML that breaks click handling).
 
 ### drawer.header, drawer.title, drawer.description, drawer.footer, drawer.close
 Simple wrapper components with no required props.

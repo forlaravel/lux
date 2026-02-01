@@ -8,8 +8,8 @@
     {{ $attributes->mergeTailwind(['class' => 'lux-tabs-content']) }}
     data-tab="{{ $value }}"
     role="tabpanel"
-    :id="$id('tabpanel-{{ $value }}')"
-    :aria-labelledby="$id('tab-{{ $value }}')"
+    :id="tabsId + '-tabpanel-{{ $value }}'"
+    :aria-labelledby="tabsId + '-tab-{{ $value }}'"
     tabindex="0"
     x-show="activeTab === '{{ $value }}'"
     x-cloak

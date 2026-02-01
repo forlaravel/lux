@@ -97,6 +97,8 @@ php artisan lux:publish sidebar
 |------|-------------|------|---------|
 | `tag` | HTML tag for the trigger element | `string` | `button` |
 
+> **Note:** When placing an `<x-button>` inside the trigger, set `tag="span"` on the trigger to avoid nesting a `<button>` inside a `<button>` (invalid HTML that breaks click handling).
+
 ### Other Components
 - `x-sidebar.header` - Sticky header section at the top of the sidebar
 - `x-sidebar.content` - Scrollable main content area
