@@ -3,6 +3,6 @@
 @php $menuId = $value ?? uniqid('menu-'); @endphp
 <{{ $tag }}
     x-data="{ menuId: @js($menuId) }"
-    class="relative"
+    class="lux-menubar-menu"
     @mouseenter="if(activeMenu && activeMenu !== menuId) activeMenu = menuId"
 >{{ $slot }}</{{ $tag }}>

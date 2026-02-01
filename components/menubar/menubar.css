@@ -1,5 +1,6 @@
 @layer components {
   .lux-menubar { @apply bg-background flex h-9 items-center gap-1 rounded-md border p-1 shadow-xs; }
+  .lux-menubar-menu { @apply relative; }
   .lux-menubar-trigger {
     @apply flex cursor-default items-center rounded-sm px-2 py-1 text-sm font-medium outline-hidden select-none;
     @apply focus:bg-accent focus:text-accent-foreground;

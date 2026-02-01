@@ -3,8 +3,14 @@
 <{{ $tag }}
     type="button"
     x-ref="trigger"
+    aria-haspopup="true"
     :data-state="activeItem === itemId ? 'open' : 'closed'"
     :aria-expanded="(activeItem === itemId)?.toString()"
+    x-on:click="toggleItem(itemId)"
+    @keydown.arrow-right.prevent="focusTrigger(1)"
+    @keydown.arrow-left.prevent="focusTrigger(-1)"
+    @keydown.arrow-down.prevent="focusFirstLink(itemId)"
+    @keydown.escape.prevent="activeItem=null"
     {{ $attributes->mergeTailwind(['class' => 'lux-navigation-menu-trigger']) }}
 >
     {{ $slot }}

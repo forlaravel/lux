@@ -17,6 +17,14 @@
     x-transition:leave-start="opacity-100 scale-100"
     x-transition:leave-end="opacity-0 scale-95"
     role="menu"
+    aria-orientation="vertical"
+    data-menubar-content
+    :data-menu-id="menuId"
+    @keydown.arrow-down.prevent="contentNav($el,'down')"
+    @keydown.arrow-up.prevent="contentNav($el,'up')"
+    @keydown.home.prevent="contentHome($el)"
+    @keydown.end.prevent="contentEnd($el)"
+    @keydown.escape.prevent="contentEscape()"
     {{ $attributes->mergeTailwind(['class' => 'lux-menubar-content']) }}
 >{{ $slot }}</{{ $tag }}>
 @if($teleport)

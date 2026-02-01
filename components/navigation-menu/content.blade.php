@@ -6,6 +6,7 @@
 <{{ $tag }}
     x-show="activeItem === itemId"
     x-cloak
+    x-trap="activeItem === itemId"
     @if($teleport)
     x-anchor.bottom-start.offset.8="$refs.trigger"
     @mouseenter="showItem(itemId)"
@@ -17,6 +18,11 @@
     x-transition:leave="transition ease-in duration-150"
     x-transition:leave-start="opacity-100 translate-y-0"
     x-transition:leave-end="opacity-0 -translate-y-1"
+    data-navmenu-content
+    :data-item-id="itemId"
+    @keydown.arrow-down.prevent="contentNav($el,'down')"
+    @keydown.arrow-up.prevent="contentNav($el,'up')"
+    @keydown.escape.prevent="contentEscape()"
     {{ $attributes->mergeTailwind(['class' => 'lux-navigation-menu-content']) }}
 >{{ $slot }}</{{ $tag }}>
 @if($teleport)
