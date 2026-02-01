@@ -3,20 +3,22 @@
     'show' => false,
 ])
 
-<div 
-{{ $attributes->whereDoesntStartWith(['wire:model'])->class([
-    'lux-window flex flex-col gap-4 z-10 fixed'
+<div
+{{ $attributes->whereDoesntStartWith(['wire:model'])->mergeTailwind([
+    'class' => 'lux-window flex flex-col gap-4 z-10 fixed'
 ]) }}
 x-window="{
     show: @wireOr($show),
     persist: @js($attributes->getWithModifiers('persist'))
-}" 
+}"
 x-data
-x-trap="show"
 x-modelable="show"
 x-show="show"
 x-cloak
-wire:ignore.self 
+@keydown.escape.window="if (show) close()"
+wire:ignore.self
+role="dialog"
+aria-label="Window"
 style="width: 300px; height: 200px;"
 >
     <div class="resize-handle top-left" style="cursor: nwse-resize; width: 10px; height: 10px; position: absolute; left: 0; top: 0;"></div>

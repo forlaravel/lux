@@ -1,22 +1,25 @@
 @blaze
-<div x-data="{ 
+<div x-data="{
     search: '',
     resultCount: 1,
     init() {
         this.$watch('search', value => {
-            this.resultCount = this.items().length
+            this.$nextTick(() => {
+                this.resultCount = this.items().filter(item => item.offsetParent !== null).length;
+            });
         });
     },
     items() {
         return Array.from(this.$refs.list.querySelectorAll('.command-item'))
     },
-    selected() {
-        return this.items().find(item => document.activeElement === item)
+    activateSelected() {
+        const focused = this.items().find(item => document.activeElement === item);
+        if (focused) focused.click();
     }
 }"
     @keydown.up.prevent="$focus.wrap().previous()"
     @keydown.down.prevent="$focus.wrap().next()"
-    x-trap="selected()"
+    @keydown.enter.prevent="activateSelected()"
     {{ $attributes->mergeTailwind(['class' => 'lux-command']) }}
     >
     {{ $slot }}

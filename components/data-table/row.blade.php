@@ -1,4 +1,5 @@
 @blaze
-<tr class="lux-data-table-row" :class="{ 'bg-gray-100': selectedRows.includes({{ $rowId }}) }" @click="toggleRow({{ $rowId }})" x-data="{ selected: false }">
+@props(['rowId' => null])
+<tr class="lux-data-table-row" {{ $rowId !== null ? ':class="{ \'bg-muted/50\': isSelected(' . $rowId . ') }"' : '' }} data-row-id="{{ $rowId }}">
     {{ $slot }}
 </tr>

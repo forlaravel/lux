@@ -5,11 +5,11 @@
     role="menuitemcheckbox"
     :aria-checked="checked?.toString()"
     tabindex="0"
-    {{ $attributes->mergeTailwind(['class' => 'lux-context-menu-checkbox-item relative flex items-center rounded-sm py-1.5 pl-8 pr-2 text-sm focus:bg-accent focus:text-accent-foreground cursor-default select-none']) }}
-    @click="open = false"
+    {{ $attributes->mergeTailwind(['class' => 'lux-context-menu-checkbox-item']) }}
+    @click="checked = !checked; open = false"
     x-data="{ checked: @wireOr($checked) }"
-    @keydown.enter.prevent="open = false"
-    @keydown.space.prevent="open = false"
+    @keydown.enter.prevent="checked = !checked; open = false"
+    @keydown.space.prevent="checked = !checked; open = false"
     x-on:mouseover="$el.dataset.focusSource = 'mouse'; $el.focus()"
     x-on:mouseleave="if ($el.dataset.focusSource === 'mouse') $el.blur()">
     <span class="absolute left-2 flex h-3.5 w-3.5 items-center justify-center">

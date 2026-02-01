@@ -6,8 +6,14 @@
   .lux-carousel-content {
     @apply flex;
   }
+  .lux-carousel-content-inner {
+    @apply flex transition-transform;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
   .lux-carousel-item {
     @apply min-w-0 shrink-0 grow-0;
+    scroll-snap-align: start;
   }
   .lux-carousel-previous,
   .lux-carousel-next {
@@ -24,4 +30,3 @@
   }
 
 }
-

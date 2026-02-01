@@ -1,11 +1,12 @@
 @blaze
 <template x-teleport="body">
-<div 
-    x-show="open" 
+<div
+    x-show="open"
     x-ref="content"
     x-trap="open"
-    @keydown.up.prevent="$focus.focusPrev()"
-    @keydown.down.prevent="$focus.focusNext()"
+    x-transition
+    @keydown.up.prevent="$focus.wrap().previous()"
+    @keydown.down.prevent="$focus.wrap().next()"
     @click.outside="open = false"
     {{ $attributes->mergeTailwind(['class' => 'lux-context-menu-content']) }}
     role="menu"

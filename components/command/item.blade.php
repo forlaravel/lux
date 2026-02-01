@@ -2,10 +2,10 @@
 @props([
     'disabled' => false,
 ])
-<template x-if="$el.content.textContent.toLowerCase().includes(search.toLowerCase())">
 <button
     type="button"
     role="option"
+    x-show="$el.textContent.toLowerCase().includes(search.toLowerCase())"
     aria-disabled="{{ $disabled ? 'true' : 'false' }}"
     data-disabled="{{ $disabled ? 'true' : 'false' }}"
     x-on:mouseover="$el.dataset.focusSource = 'mouse'; $el.focus()"
@@ -14,4 +14,3 @@
 >
     {{ $slot }}
 </button>
-</template>

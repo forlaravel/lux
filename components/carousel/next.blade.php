@@ -1,7 +1,8 @@
 @blaze
-<button @click="scrollNext" :disabled="!canScrollNext"
-    class="lux-carousel-next">
-    <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+<button type="button" @click="scrollNext" :disabled="!canScrollNext"
+    aria-label="Next slide"
+    {{ $attributes->mergeTailwind(['class' => 'lux-carousel-next']) }}>
+    <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
     </svg>
     <span class="sr-only">Next slide</span>

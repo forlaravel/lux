@@ -1,9 +1,7 @@
 @blaze
-@props([
-    'orientation' => 'horizontal',
-])
+@aware(['orientation' => 'horizontal'])
 <div role="group" aria-roledescription="slide" {{ $attributes->mergeTailwind([
-    'class' => 'lux-carousel-item flex flex-col justify-center items-center' . ($orientation === 'vertical' ? ' h-48' : ' h-full')
+    'class' => 'lux-carousel-item basis-full flex flex-col justify-center items-center' . ($orientation === 'vertical' ? ' h-48' : ' h-full')
 ])}}>
     {{ $slot }}
 </div>

@@ -1,8 +1,8 @@
 @blaze
-<template x-if="resultCount === 0">
-<div 
+<div
+    x-show="resultCount === 0"
+    x-cloak
     {{ $attributes->mergeTailwind(['class' => 'lux-command-empty']) }}
 >
     {{ $slot }}
 </div>
-</template>
