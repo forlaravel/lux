@@ -1,11 +1,18 @@
 
 @aware(['searchPlaceholder' => 'Search...'])
-@props(['tag' => 'div'])
+@props(['tag' => 'div', 'teleport' => 'body'])
+
+@if($teleport)
+<template x-teleport="{{ $teleport === true ? 'body' : $teleport }}">
+@endif
 <{{ $tag }}
     x-show="open"
     x-cloak
     x-on:click.outside="open = false; search = ''"
     x-trap="open"
+    @if($teleport)
+    x-anchor.bottom-start.offset.4="$refs.trigger"
+    @endif
     x-transition:enter="transition ease-out duration-100"
     x-transition:enter-start="opacity-0 scale-95"
     x-transition:enter-end="opacity-100 scale-100"
@@ -25,3 +32,6 @@
         </template>
     </div>
 </{{ $tag }}>
+@if($teleport)
+</template>
+@endif

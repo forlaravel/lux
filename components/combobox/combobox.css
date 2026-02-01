@@ -2,7 +2,7 @@
   .lux-combobox { @apply relative; }
   .lux-combobox-trigger { }
   .lux-combobox-content {
-    @apply bg-popover text-popover-foreground absolute z-50 mt-1 w-[200px] overflow-hidden rounded-md shadow-md ring-1 ring-foreground/10;
+    @apply bg-popover text-popover-foreground z-50 w-[200px] overflow-hidden rounded-md shadow-md ring-1 ring-foreground/10;
   }
   .lux-combobox-list { @apply max-h-60 overflow-y-auto p-1; }
   .lux-combobox-item {

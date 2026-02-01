@@ -24,8 +24,8 @@
                 <span x-text="formattedDate || '{{ $placeholder }}'">{{ $placeholder }}</span>
             </button>
         </x-popover.trigger>
-        <x-popover.content class="w-auto p-0">
-            <x-calendar x-model="value" :inline="true" />
+        <x-popover.content class="w-auto p-0 ring-0 shadow-none">
+            <x-calendar x-model="value" :inline="true" date-format="Y-m-d" />
         </x-popover.content>
     </x-popover>
     @if($name)

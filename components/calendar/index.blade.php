@@ -48,7 +48,7 @@
     }"
     x-modelable="value"
     wire:ignore
-    {{ $attributes->only('class')->class('lux-calendar w-full') }}
+    {{ $attributes->only(['class', 'x-model'])->merge(['class' => 'lux-calendar w-full']) }}
 >
     <x-lux
         component="input"

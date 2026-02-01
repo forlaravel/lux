@@ -3,7 +3,7 @@
 @php $itemId = $value ?? uniqid('nav-'); @endphp
 <{{ $tag }}
     x-data="{ itemId: @js($itemId) }"
-    @mouseenter="activeItem = itemId"
-    @mouseleave="activeItem = null"
+    @mouseenter="showItem(itemId)"
+    @mouseleave="hideItem()"
     {{ $attributes->mergeTailwind(['class' => 'lux-navigation-menu-item']) }}
 >{{ $slot }}</{{ $tag }}>

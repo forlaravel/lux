@@ -36,18 +36,17 @@
         @touchstart.prevent="dragging = true; updateFromEvent($event.touches[0])"
     >
         <span class="lux-slider-range" :style="'width:' + percentage + '%'"></span>
+        <span class="lux-slider-thumb"
+            tabindex="0"
+            :style="'left:' + percentage + '%'"
+            @mousedown.prevent="dragging = true"
+            @touchstart.prevent="dragging = true"
+            @keydown.right.prevent="value = Math.min(max, value + step)"
+            @keydown.left.prevent="value = Math.max(min, value - step)"
+            @keydown.up.prevent="value = Math.min(max, value + step)"
+            @keydown.down.prevent="value = Math.max(min, value - step)"
+        ></span>
     </span>
-    <span class="lux-slider-thumb"
-        tabindex="0"
-        :style="'left:' + percentage + '%'"
-        style="position:absolute; transform: translateX(-50%);"
-        @mousedown.prevent="dragging = true"
-        @touchstart.prevent="dragging = true"
-        @keydown.right.prevent="value = Math.min(max, value + step)"
-        @keydown.left.prevent="value = Math.max(min, value - step)"
-        @keydown.up.prevent="value = Math.min(max, value + step)"
-        @keydown.down.prevent="value = Math.max(min, value - step)"
-    ></span>
     @if($name)
         <input type="hidden" name="{{ $name }}" x-model="value" wire:ignore>
     @endif

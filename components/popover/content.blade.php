@@ -16,10 +16,9 @@
         :data-side="false && $refs.trigger.offsetTop < $anchor.y ? 'bottom' : 'top'"
         x-cloak
         @click.outside="open = false"
-        class="lux-popover-content"
         role="dialog"
         aria-modal="false"
-        {{ $attributes }}
+        {{ $attributes->mergeTailwind(['class' => 'lux-popover-content']) }}
     >
         {{ $slot }}
     </{{ $tag }}>

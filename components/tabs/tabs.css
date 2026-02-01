@@ -17,20 +17,23 @@
   }
   .lux-tabs-trigger {
     @apply cursor-pointer inline-flex items-center justify-center whitespace-nowrap gap-1.5 px-2.5 py-1.5 text-sm font-medium transition-all;
-    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring;
+    @apply focus-visible:outline-none;
     @apply disabled:pointer-events-none disabled:opacity-50;
   }
   .lux-tabs-trigger-variant-default {
     @apply rounded-none border-b-[3px] border-b-border -mb-px;
+    @apply focus-visible:ring-2 focus-visible:ring-border focus-visible:rounded-t-md;
   }
   .lux-tabs-trigger-variant-switch {
     @apply rounded-md border border-transparent;
+    @apply focus-visible:ring-2 focus-visible:ring-border;
   }
   .lux-tabs-trigger-variant-underline {
     @apply rounded-none;
+    @apply focus-visible:ring-2 focus-visible:ring-border focus-visible:rounded-t-md;
   }
   .lux-tabs-content {
-    @apply mt-2 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring;
+    @apply mt-2 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-border;
   }
 
 }

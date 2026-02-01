@@ -3,6 +3,7 @@
 @props(['tag' => 'button'])
 <{{ $tag }}
     type="button"
+    x-ref="trigger"
     x-on:click="open = !open"
     :aria-expanded="open?.toString()"
     role="combobox"
