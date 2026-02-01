@@ -9,7 +9,7 @@
     @keydown.up.prevent="$focus.wrap().previous()"
     @keydown.down.prevent="$focus.wrap().next()"
     @click.outside="open = false"
-    x-anchor.bottom-start="$refs.trigger"
+    x-anchor.bottom-start.offset.4="$refs.trigger"
     x-cloak
     :data-state="open ? 'open' : 'closed'"
     :data-side="$refs.trigger.offsetTop < $anchor.y ? 'bottom' : 'top'"

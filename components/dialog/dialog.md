@@ -1,6 +1,5 @@
 # Dialog
-
-Welcome to the fantastical world of the Dialog component! This little buddy is here to help you create beautiful, interactive dialog modals with ease. Perfect for when you need to show off some content and want to keep your users engaged. 🪄
+A modal overlay that displays content and requires user interaction.
 
 ## Example
 

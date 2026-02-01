@@ -1,5 +1,5 @@
 # Separator
-A versatile component used to separate sections of content, with options for horizontal or vertical orientation.
+A visual divider between sections of content, available in horizontal or vertical orientation.
 
 ## Example
 ```html

@@ -11,7 +11,7 @@ A small, adaptable component for displaying statuses, labels, or counts.
 
 ## Installation
 
-1. Run the following command to publish the badge component:
+1. Run the following command:
 
 ```bash
 php artisan lux:publish badge

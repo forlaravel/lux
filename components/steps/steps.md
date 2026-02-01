@@ -1,5 +1,5 @@
 # Steps
-A component used to display a series of steps or instructions in a visual hierarchy.
+Displays a series of steps or instructions in a visual hierarchy.
 
 ## Example
 ```html

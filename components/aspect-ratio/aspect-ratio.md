@@ -1,5 +1,5 @@
 # Aspect Ratio
-A component used to maintain a consistent width-to-height ratio for its content.
+Maintains a consistent width-to-height ratio for its content.
 
 ## Example
 ```html

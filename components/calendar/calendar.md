@@ -1,5 +1,5 @@
 # Calendar
-A date picker component powered by Flatpickr that allows users to select a single date or a range of dates, with optional inline display and custom formatting.
+A date picker powered by Flatpickr. Supports single, multiple, and range selection with inline or dropdown display.
 
 ## Example
 ```html
@@ -15,14 +15,14 @@ A date picker component powered by Flatpickr that allows users to select a singl
 ```
 
 ## Example
-### Mutliple date selection
+### Multiple date selection
 ```html
 <x-calendar mode="multiple" :inline="true" dateFormat="d-m-Y" :value="['05-10-2022', '06-10-2022']" />
 ```
 
 ## Installation
 
-1. Run the following command to publish the calendar component:
+1. Run the following command:
 
 ```bash
 php artisan lux:publish calendar
@@ -39,10 +39,7 @@ npm i flatpickr --save
 Add the Flatpickr CSS to the top of your `app.css` stylesheet:
 ```css
 @import '../../vendor/forlaravel/lux/resources/css/flatpicker.css';
-
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 ...
 ```
 

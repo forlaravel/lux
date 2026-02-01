@@ -1,5 +1,5 @@
 # Input
-A component used to create various types of input fields with consistent styling.
+A styled input field with support for masks, sizes, and various input types.
 
 ## Example
 ```html

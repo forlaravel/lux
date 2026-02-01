@@ -26,13 +26,11 @@ A navigation component that helps users understand their location within a websi
 
 ## Installation
 
-1. Run the following command to publish the breadcrumb component:
+1. Run the following command:
 
 ```bash
 php artisan lux:publish breadcrumb
 ```
-
-2. Ensure your Tailwind CSS configuration supports utility classes for layout, typography, and icons.
 
 ## Properties
 This component and its sub-components do not define custom blade properties. Use standard HTML attributes via the component tag.

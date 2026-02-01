@@ -1,5 +1,5 @@
 # Alert
-A component used to display important messages to the user, with various styling options based on the alert type.
+Displays important messages or feedback to the user.
 
 ## Example
 ```html

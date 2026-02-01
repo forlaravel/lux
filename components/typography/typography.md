@@ -1,5 +1,5 @@
 # Typography
-A set of sub-components for styling text elements in your application, providing consistent and readable typographic hierarchy.
+Sub-components for consistent typographic hierarchy.
 
 ## Example
 ```html

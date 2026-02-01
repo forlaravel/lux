@@ -1,5 +1,5 @@
 # Avatar
-A component used to display a user's profile image, with a fallback option if the image is not available.
+Displays a user's profile image with a fallback when the image is unavailable.
 
 ## Example
 ```html
@@ -25,7 +25,7 @@ A component used to display a user's profile image, with a fallback option if th
 
 ## Installation
 
-1. Run the following command to publish the avatar component:
+1. Run the following command:
 
 ```bash
 php artisan lux:publish avatar

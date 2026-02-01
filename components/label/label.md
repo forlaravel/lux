@@ -1,5 +1,5 @@
 # Label
-A component used to display labels for form elements, with support for custom classes and `for` attribute.
+A label for form elements.
 
 ## Example
 ```html

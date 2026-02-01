@@ -1,5 +1,5 @@
 # Card
-A versatile container component used for grouping related content, such as forms, text, or media.
+A container for grouping related content such as forms, text, or media.
 
 ## Example
 ```html
@@ -46,7 +46,7 @@ A versatile container component used for grouping related content, such as forms
 
 ## Installation
 
-1. Run the following command to publish the card component:
+1. Run the following command:
 
 ```bash
 php artisan lux:publish card

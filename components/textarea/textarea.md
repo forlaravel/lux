@@ -1,5 +1,5 @@
 # Textarea
-A component used to create a customizable textarea input field with various styling options.
+A multi-line text input with size variants and optional auto-grow.
 
 ## Example
 ```html

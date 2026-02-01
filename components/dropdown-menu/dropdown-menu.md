@@ -1,5 +1,5 @@
 # Dropdown Menu
-A dropdown component that provides a flexible and customizable UI element. It supports various items like checkbox, radio buttons, and standard clickable items.
+A menu triggered by a button, supporting items, checkboxes, radio buttons, sub-menus, and keyboard shortcuts.
 
 ## Example
 ```html
@@ -88,20 +88,6 @@ A dropdown component that provides a flexible and customizable UI element. It su
 
 ```bash
 php artisan lux:publish dropdown
-```
-
-2. Update `tailwind.config.js`
-Ensure your Tailwind configuration file includes the necessary styles:
-
-```js
-/** @type {import('tailwindcss').Config} */
-module.exports = {
-  theme: {
-    extend: {
-      // You can extend your theme here if needed
-    },
-  },
-}
 ```
 
 ## Components

@@ -1,5 +1,5 @@
 # Checkbox
-A component used to display a checkbox which can be toggled on and off, with support for `wire:model` and customizable properties such as `id` and `checked`.
+A toggle control for boolean values, with form and Livewire support.
 
 ## Example
 ```html

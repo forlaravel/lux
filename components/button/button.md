@@ -1,5 +1,5 @@
 # Button
-A versatile button component that supports multiple variants and sizes, suitable for various actions within an application.
+A button with multiple variants and sizes.
 
 ## Example
 ```html

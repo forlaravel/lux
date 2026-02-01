@@ -1,7 +1,5 @@
 # Select
-The `x-select` component is a versatile and accessible dropdown element. It supports features 
-like searchability, multiple selections, and seamless integration with Livewire for dynamic
- data binding and search capabilities.
+An accessible dropdown for selecting one or more options. Supports search, multiple selections, and Livewire integration.
 
 
 ## Example
@@ -77,7 +75,7 @@ like searchability, multiple selections, and seamless integration with Livewire 
 php artisan lux:publish select
 ```
 
-## Components and Their Properties
+## Properties
 
 ### select
 
@@ -94,10 +92,10 @@ php artisan lux:publish select
 | `clientSearch` | Whether to search on the client side.                                       | `boolean`           | `true`             |
 | `size`         | Specifies the size of the select trigger, can be `sm`, `md`, `lg`, `xl`     | `string`            | `md`               |
 
-### trigger
-The trigger element displays a focus ring when focused or when the searchable input within it receives focus.
+### select.trigger
+Displays a focus ring when focused or when the searchable input within it receives focus.
 
-### content
+### select.content
 | Prop           | Description                                                                 | Type                | Default            |
 |----------------|-----------------------------------------------------------------------------|---------------------|--------------------|
 | `teleport`     | Teleport dropdown to target. Does not work with dynamic Livewire data.      | `string` e.g `'body'`| `null`             |

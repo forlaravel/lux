@@ -1,5 +1,5 @@
 # Window
-The `x-window` component is a simple window component that can be used to display content in a window.
+A draggable, floating window for displaying content.
 
 ## Example
 ```html

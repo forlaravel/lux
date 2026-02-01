@@ -1,35 +1,32 @@
 # Installation
-To get started with Lux, you can install it via Composer by running the following command in your terminal:
+Install Lux via Composer:
 
 ```bash
 composer require forlaravel/lux
 ```
 ## Node Dependencies
-You can install the required Alpine.js plugins and Tailwind CSS v4 by running the following command:
+Install the required Alpine.js plugins and Tailwind CSS v4:
 
 ```bash
 npm install @alpinejs/anchor @alpinejs/collapse @alpinejs/focus @alpinejs/persist @alpinejs/mask
 npm install glob @tailwindcss/vite
 ```
 
-Note: Lux is designed to work with Tailwind CSS v4. Make sure you have `@tailwindcss/vite` installed for optimal performance.
-
+Note: Lux requires Tailwind CSS v4 with `@tailwindcss/vite`.
 
 ## Publishing Components
-Once Lux is installed, you can publish components to your Laravel project by running the following command:
+Publish components to your project:
 
 ```bash
 php artisan lux:publish {name?}
 ```
 
-This will copy the necessary files to your project, allowing you to start using Lux components right away.
+## Integrate JS/CSS Resources
+Lux keeps `.js` and `.css` files close to the components. For example, the `button` component has a `button.css` file in the same folder as the blade file in `resources/views/components/button`.
 
-## Integrate js/css resources
-Lux keeps ``.js`` and ``.css`` files closely the the components. For example the ``button`` component has a ``button.css`` file in the same folder as the blade file in ```resources/views/components/button```. 
+To integrate the required resources dynamically into your project, follow these steps:
 
-To integrate the required javascript and css resources dynamically into your project you can use the following steps:
-
-## Integrate the javascript into your project
+### Integrate the JavaScript
 ```javascript
 import { Livewire, Alpine } from '../../vendor/livewire/livewire/dist/livewire.esm';
 ...
@@ -40,8 +37,8 @@ for (const path in modules) {
 }
 ```
 
-## Integrate the css into your project
-Add this to your vite.condig.js:
+### Integrate the CSS
+Add this to your `vite.config.js`:
 ```javascript
 ...
 import { globSync } from "glob";
@@ -57,7 +54,7 @@ fs.writeFileSync(
 ...
 export default defineConfig(...)
 ```
-This wil create a lux.css file in your resources/css folder that you can import in your app.css file.
+This will create a `lux.css` file in your `resources/css` folder that you can import in your `app.css` file.
 
 Add to the top of your app.css file:
 ```css
@@ -142,13 +139,9 @@ Add to the top of your app.css file:
 @import './lux.css';
 ```
 
-Note: In Tailwind CSS v4, you import Tailwind using `@import "tailwindcss"` instead of the traditional `@tailwind` directives.
-
-
 ## Configuration
-Lux provides a configuration file that allows you to customize the behavior of the package. You can publish the configuration file by running the following command:
+Publish the configuration file to customize Lux behavior:
 
 ```bash
 php artisan vendor:publish --tag=lux-config
 ```
-

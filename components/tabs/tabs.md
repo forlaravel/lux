@@ -1,5 +1,5 @@
 # Tabs
-A component used to create tabbed navigation interfaces, allowing users to switch between different content sections.
+Tabbed navigation for switching between content sections.
 
 ## Example
 ```html

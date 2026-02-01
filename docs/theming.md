@@ -4,40 +4,39 @@ Lux uses Tailwind CSS v4's new `@theme` block syntax for theming. This allows yo
 
 ## Basic Theme Configuration
 
-In your main CSS file (typically `app.css`), you can define your theme using the `@theme` block:
+In your main CSS file (typically `app.css`), define your theme using the `@theme` block:
 
 ```css
 @import "tailwindcss";
 
 @theme {
-  --color-primary: hsl(240 5.9% 10%);
-  --color-primary-foreground: hsl(0 0% 98%);
-  --color-secondary: hsl(240 4.8% 95.9%);
-  --color-secondary-foreground: hsl(240 5.9% 10%);
-  --color-background: hsl(0 0% 100%);
-  --color-foreground: hsl(240 10% 3.9%);
-  --color-border: hsl(240 5.9% 90%);
-  --color-ring: hsl(240 5.9% 10%);
-  
-  --radius: 0.75rem;
+  --color-primary: oklch(0.205 0 0);
+  --color-primary-foreground: oklch(0.985 0 0);
+  --color-secondary: oklch(0.97 0 0);
+  --color-secondary-foreground: oklch(0.205 0 0);
+  --color-background: oklch(1 0 0);
+  --color-foreground: oklch(0.145 0 0);
+  --color-border: oklch(0.922 0 0);
+  --color-ring: oklch(0.708 0 0);
+
+  --radius: 0.65rem;
 }
 ```
 
 ## Dark Mode Theming
 
-For dark mode support, define your dark theme colors outside the `@theme` block using the `.dark` selector:
+For dark mode, define overrides outside the `@theme` block using the `.dark` selector:
 
 ```css
-/* Dark mode variables */
 .dark {
-  --color-background: hsl(240 10% 3.9%);
-  --color-foreground: hsl(0 0% 98%);
-  --color-primary: hsl(0 0% 98%);
-  --color-primary-foreground: hsl(240 5.9% 10%);
-  --color-secondary: hsl(240 3.7% 15.9%);
-  --color-secondary-foreground: hsl(0 0% 98%);
-  --color-border: hsl(240 3.7% 15.9%);
-  --color-ring: hsl(240 4.9% 83.9%);
+  --color-background: oklch(0.145 0 0);
+  --color-foreground: oklch(0.985 0 0);
+  --color-primary: oklch(0.922 0 0);
+  --color-primary-foreground: oklch(0.205 0 0);
+  --color-secondary: oklch(0.269 0 0);
+  --color-secondary-foreground: oklch(0.985 0 0);
+  --color-border: oklch(1 0 0 / 10%);
+  --color-ring: oklch(0.556 0 0);
 }
 ```
 
@@ -53,34 +52,25 @@ Once defined, you can use these variables in your Lux components. The components
 
 ## Customizing Component Colors
 
-You can extend the theme with custom colors for specific use cases:
+Extend the theme with additional semantic color tokens:
 
 ```css
 @theme {
-  --color-accent: hsl(210 40% 95%);
-  --color-accent-foreground: hsl(210 40% 15%);
-  --color-destructive: hsl(0 84.2% 60.2%);
-  --color-destructive-foreground: hsl(0 0% 98%);
-  --color-muted: hsl(210 40% 95%);
-  --color-muted-foreground: hsl(215.4 16.3% 46.9%);
+  --color-accent: oklch(0.97 0 0);
+  --color-accent-foreground: oklch(0.205 0 0);
+  --color-destructive: oklch(0.577 0.245 27.325);
+  --color-destructive-foreground: oklch(0.985 0 0);
+  --color-muted: oklch(0.97 0 0);
+  --color-muted-foreground: oklch(0.556 0 0);
 }
 ```
 
-## Migration from Tailwind CSS v3
-
-If you're upgrading from Tailwind CSS v3, note these key changes:
-
-1. **No `tailwind.config.js`**: Configuration is now done in CSS using `@theme` blocks
-2. **No PostCSS configuration**: Tailwind v4 includes built-in CSS processing
-3. **New import syntax**: Use `@import "tailwindcss"` instead of `@tailwind` directives
-4. **Automatic content detection**: No need to configure content paths
-
 ## Best Practices
 
-- Keep all theme variables in the `@theme` block for light mode
-- Use the `.dark` selector for dark mode overrides
-- Use semantic color names that describe their purpose rather than their appearance
+- Define all base theme variables in the `@theme` block
+- Use the `.dark` selector for dark mode overrides only
+- Use semantic color names (e.g., `primary`, `destructive`) rather than appearance-based names
 - Test your theme in both light and dark modes
-- Consider accessibility when choosing color combinations
+- Consider contrast ratios for accessibility
 
-For more information about Tailwind CSS v4 theming, visit the [official Tailwind CSS documentation](https://tailwindcss.com/docs).
+For more on Tailwind CSS v4 theming, see the [official Tailwind CSS documentation](https://tailwindcss.com/docs).

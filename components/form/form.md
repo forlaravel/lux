@@ -1,8 +1,5 @@
 # Form
-
-Create clear and functional forms using our component set. Integrate labels, descriptions, and error messages to improve user experience and clarity. Ideal for building interactive and accessible forms efficiently.
-
-- [View on GitHub](https://github.com/forlaravel/lux)
+A form wrapper with built-in support for labels, descriptions, error messages, and validation.
 
 ## Example
 
