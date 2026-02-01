@@ -2,7 +2,9 @@
 @props(['tag' => 'button'])
 <{{ $tag }}
     x-on:click="open = !open"
+    @if($tag === 'button')
     :aria-expanded="open?.toString()"
     :aria-controls="$id('collapsible-content')"
+    @endif
     {{ $attributes->mergeTailwind(['class' => 'lux-collapsible-trigger']) }}
 >{{ $slot }}</{{ $tag }}>

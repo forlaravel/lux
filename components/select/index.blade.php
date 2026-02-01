@@ -23,10 +23,8 @@ $value = $value === null && $multiple ? [] : $value;
         clientSearch: @js($clientSearch),
         selected: @wireOr($value, handlePersist: true)
     }"
-    role="listbox"
     x-modelable="selected"
-    x-id="['select-trigger']"
-    :aria-labelledby="$id('select-trigger')"
+    x-id="['select-trigger', 'select-content']"
     x-data
 >
     {{ $slot }}

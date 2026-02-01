@@ -22,7 +22,9 @@ $cursorClass = $searchable ? 'lux-select-trigger-searchable' : 'lux-select-trigg
     role="combobox"
     aria-haspopup="listbox"
     :id="$id('select-trigger')"
+    :aria-controls="$id('select-content')"
     :aria-expanded="open"
+    :aria-activedescendant="cursor ? $id('select-content') + '-' + cursor : null"
     class="lux-select-trigger lux-select-trigger-size-{{ $size }} {{ $cursorClass }}"
     {{ $attributes }}
 >

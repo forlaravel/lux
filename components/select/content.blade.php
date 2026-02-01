@@ -13,6 +13,8 @@
         x-select:content
         x-ref="content"
         x-cloak
+        role="listbox"
+        :id="$id('select-content')"
         {{ $attributes->mergeTailwind(['class' => 'lux-select-content']) }}
     >
         {{ $slot }}

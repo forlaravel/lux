@@ -14,6 +14,7 @@
     aria-disabled="{{ $disabled ? 'true' : 'false' }}"
     data-disabled="{{ $disabled ? 'true' : 'false' }}"
     role="option"
+    :id="$id('select-content') + '-' + @js($value)"
     :aria-selected="isSelected(@js($value))"
     :data-cursor="cursor === @js($value)"
     :data-value="@js($value)"
