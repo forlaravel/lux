@@ -22,5 +22,5 @@
     x-on:focus.capture="open()"
     x-on:blur.capture="close()"
     @keydown.escape="show = false"
-    {{ $attributes->mergeTailwind(['class' => 'lux-hover-card']) }}
+    {{ $attributes->merge(['class' => 'lux-hover-card']) }}
 >{{ $slot }}</{{ $tag }}>

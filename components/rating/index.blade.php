@@ -25,7 +25,7 @@
     x-modelable="value"
     role="radiogroup"
     aria-label="Rating"
-    {{ $attributes->mergeTailwind(['class' => "lux-rating lux-rating-size-{$size}"]) }}
+    {{ $attributes->merge(['class' => "lux-rating lux-rating-size-{$size}"]) }}
     @if($disabled) data-disabled @endif
     @if($readonly) data-readonly @endif
 >

@@ -37,6 +37,9 @@
     @apply flex w-full items-center rounded-md px-2 py-1.5 text-sm outline-none cursor-default select-none;
     @apply focus:bg-accent focus:text-accent-foreground;
   }
+  .lux-context-menu-sub-trigger-inset {
+    @apply pl-8;
+  }
   .lux-context-menu-sub-content {
     @apply absolute left-full top-0 z-50 min-w-[8rem] rounded-md bg-popover p-1 text-popover-foreground ring-1 ring-border shadow-md;
   }

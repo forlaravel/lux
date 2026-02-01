@@ -11,7 +11,7 @@
 ])
 
 @if($searchable)
-<div x-ref="input" {{ $attributes->classTailwind(["lux-select-value flex w-full items-center flex-wrap", "gap-1.5" => $multiple]) }}>
+<div x-ref="input" {{ $attributes->class(["lux-select-value", "lux-select-value-multiple" => $multiple]) }}>
 @endif
     <{{ $tag }}
         wire:ignore

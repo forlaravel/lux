@@ -9,7 +9,7 @@
     aria-valuemax="100"
     tabindex="0"
     :data-panel-group-direction="direction"
-    {{ $attributes->mergeTailwind(['class' => 'lux-resizable-handle']) }}
+    {{ $attributes->merge(['class' => 'lux-resizable-handle']) }}
 >
     @if($withHandle)
         <div class="lux-resizable-handle-icon">

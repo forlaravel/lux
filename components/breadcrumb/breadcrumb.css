@@ -17,6 +17,9 @@
   .lux-breadcrumb-page {
     @apply text-foreground font-normal;
   }
+  .lux-breadcrumb-ellipsis {
+    @apply h-4 w-4;
+  }
 
 }
 

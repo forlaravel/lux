@@ -25,7 +25,7 @@
     @keydown.home.prevent="contentHome($el)"
     @keydown.end.prevent="contentEnd($el)"
     @keydown.escape.prevent="contentEscape()"
-    {{ $attributes->mergeTailwind(['class' => 'lux-menubar-content']) }}
+    {{ $attributes->merge(['class' => 'lux-menubar-content']) }}
 >{{ $slot }}</{{ $tag }}>
 @if($teleport)
 </template>

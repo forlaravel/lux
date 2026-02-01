@@ -16,7 +16,7 @@
     x-on:mouseenter="clearTimeout(_closeTimeout)"
     x-on:mouseleave="close()"
     :id="$id('hover-card')"
-    {{ $attributes->mergeTailwind(['class' => 'lux-hover-card-content']) }}
+    {{ $attributes->merge(['class' => 'lux-hover-card-content']) }}
 >{{ $slot }}</{{ $tag }}>
 @if($teleport)
 </template>

@@ -8,5 +8,5 @@
     x-on:focus.capture="show = true"
     x-on:blur.capture="show = false"
     @keydown.escape="show = false"
-    {{ $attributes->mergeTailwind(['class' => 'lux-tooltip']) }}
+    {{ $attributes->merge(['class' => 'lux-tooltip']) }}
 >{{ $slot }}</{{ $tag }}>

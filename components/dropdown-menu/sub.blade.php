@@ -1,6 +1,6 @@
 @blaze
 <div
-    {{ $attributes->mergeTailwind(['class' => 'lux-dropdown-menu-sub relative']) }}
+    {{ $attributes->merge(['class' => 'lux-dropdown-menu-sub']) }}
     x-data="{ openSub: false }" 
     @keydown.right.prevent="openSub = true; $nextTick(() => $refs['sub-content'].querySelector('button')?.focus());" 
     @keydown.left.prevent="openSub = false; $nextTick(() => $refs['sub-trigger'].focus());"

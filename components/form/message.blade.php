@@ -8,7 +8,7 @@
 @error($name)
     <{{ $tag }}
         x-form:message.assertive
-        {{ $attributes->mergeTailwind(['class' => 'lux-form-message']) }}
+        {{ $attributes->merge(['class' => 'lux-form-message']) }}
     >
         {{ $message }}
     </{{ $tag }}>

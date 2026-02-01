@@ -5,7 +5,7 @@
 ])
 
 <{{ $tag }}
-    {{ $attributes->mergeTailwind(['class' => 'lux-tabs-content']) }}
+    {{ $attributes->merge(['class' => 'lux-tabs-content']) }}
     data-tab="{{ $value }}"
     role="tabpanel"
     :id="tabsId + '-tabpanel-{{ $value }}'"

@@ -1,6 +1,7 @@
 @layer components {
   /* === DEFAULT === */
   .lux-form {
+    @apply space-y-8;
   }
   .lux-form-item {
     @apply grid gap-1.5;

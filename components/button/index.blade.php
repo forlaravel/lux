@@ -5,6 +5,6 @@
     'size' => 'md'
 ])
 
-<{{ $tag }} {{ $attributes->mergeTailwind(['class' => "lux-button lux-button-variant-{$variant} lux-button-size-{$size}"]) }}>
+<{{ $tag }} {{ $attributes->merge(['class' => "lux-button lux-button-variant-{$variant} lux-button-size-{$size}"]) }}>
     {{ $slot }}
 </{{ $tag }}>

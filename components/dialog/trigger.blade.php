@@ -4,7 +4,7 @@
 ])
 
 <{{ $tag }}
-    {{ $attributes->mergeTailwind(['class' => 'lux-dialog-trigger']) }}
+    {{ $attributes->merge(['class' => 'lux-dialog-trigger']) }}
     @click.stop="show()"
 >
     {{ $slot }}

@@ -2,7 +2,7 @@
 @props(['tag' => 'dialog'])
 
 <{{ $tag }}
-    {{ $attributes->mergeTailwind(['class' => 'lux-alert-dialog-content']) }}
+    {{ $attributes->merge(['class' => 'lux-alert-dialog-content']) }}
     x-ref="dialog"
     x-trap.noscroll="open"
     role="alertdialog"

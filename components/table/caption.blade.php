@@ -1,3 +1,3 @@
 @blaze
 @props(['tag' => 'caption'])
-<{{ $tag }} {{ $attributes->mergeTailwind(['class' => 'lux-table-caption']) }}>{{ $slot }}</{{ $tag }}>
+<{{ $tag }} {{ $attributes->merge(['class' => 'lux-table-caption']) }}>{{ $slot }}</{{ $tag }}>

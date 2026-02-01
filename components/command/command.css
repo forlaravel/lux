@@ -4,18 +4,18 @@
     @apply flex h-full w-full flex-col bg-popover text-popover-foreground rounded-xl ring-1 ring-border overflow-hidden;
   }
   .lux-command-input {
-    @apply flex w-full h-9 border-b border-border bg-transparent px-3 text-sm outline-none;
+    @apply flex w-full h-12 bg-transparent py-3 text-sm outline-none;
     @apply placeholder:text-muted-foreground;
     @apply disabled:cursor-not-allowed disabled:opacity-50;
   }
   .lux-command-input-wrapper {
-    @apply flex items-center;
+    @apply flex items-center border-b border-border px-3;
   }
   .lux-command-list {
-    @apply max-h-[300px] overflow-y-auto overflow-x-hidden p-1;
+    @apply min-h-[300px] max-h-[300px] overflow-y-auto overflow-x-hidden p-1;
   }
   .lux-command-empty {
-    @apply py-6 text-center text-sm;
+    @apply py-6 text-center text-sm text-muted-foreground;
   }
   .lux-command-group {
     @apply overflow-hidden text-foreground;
@@ -24,10 +24,10 @@
     @apply px-2 py-1.5 text-xs text-muted-foreground font-medium;
   }
   .lux-command-item {
-    @apply relative flex cursor-default select-none items-center outline-none rounded-md px-2 py-1.5 text-sm cursor-pointer;
+    @apply relative flex w-full cursor-default gap-2 select-none items-center outline-none rounded-md px-2 py-1.5 text-sm cursor-pointer;
     @apply hover:bg-accent hover:text-accent-foreground;
-    @apply data-[active=true]:bg-accent data-[active=true]:text-accent-foreground;
-    @apply aria-selected:bg-accent aria-selected:text-accent-foreground;
+    @apply focus:bg-accent focus:text-accent-foreground;
+    @apply data-[disabled=true]:pointer-events-none data-[disabled=true]:opacity-50;
   }
   .lux-command-separator {
     @apply -mx-1 h-px bg-border;
@@ -36,8 +36,7 @@
     @apply ml-auto text-xs tracking-widest text-muted-foreground;
   }
   .lux-command-dialog {
-    @apply overflow-hidden p-0 shadow-lg;
+    @apply shadow-2xl;
   }
 
 }
-

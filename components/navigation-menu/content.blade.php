@@ -23,7 +23,7 @@
     @keydown.arrow-down.prevent="contentNav($el,'down')"
     @keydown.arrow-up.prevent="contentNav($el,'up')"
     @keydown.escape.prevent="contentEscape()"
-    {{ $attributes->mergeTailwind(['class' => 'lux-navigation-menu-content']) }}
+    {{ $attributes->merge(['class' => 'lux-navigation-menu-content']) }}
 >{{ $slot }}</{{ $tag }}>
 @if($teleport)
 </template>

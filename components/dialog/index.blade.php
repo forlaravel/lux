@@ -5,7 +5,7 @@
 ])
 
 <{{ $tag }}
-    {{ $attributes->mergeTailwind(['class' => 'lux-dialog']) }}
+    {{ $attributes->merge(['class' => 'lux-dialog']) }}
     x-id="['dialog-title', 'dialog-description']"
     x-data="{
         open: @wireOr($open, handlePersist: true),

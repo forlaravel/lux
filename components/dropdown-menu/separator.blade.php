@@ -1,2 +1,2 @@
 @blaze
-<hr {{ $attributes->mergeTailwind(['class' => 'lux-dropdown-menu-separator']) }} />
+<hr {{ $attributes->merge(['class' => 'lux-dropdown-menu-separator']) }} />

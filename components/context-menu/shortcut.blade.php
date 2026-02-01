@@ -1,4 +1,4 @@
 @blaze
-<span {{ $attributes->mergeTailwind(['class' => 'lux-context-menu-shortcut']) }}>
+<span {{ $attributes->merge(['class' => 'lux-context-menu-shortcut']) }}>
     {{ $slot }}
 </span>

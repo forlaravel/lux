@@ -5,7 +5,7 @@
 ])
 
 <{{ $tag }}
-    {{ $attributes->mergeTailwind(['class' => 'lux-tab-bar-item']) }}
+    {{ $attributes->merge(['class' => 'lux-tab-bar-item']) }}
     data-tab="{{ $value }}"
     role="tab"
     :aria-selected="(activeTab === '{{ $value }}').toString()"

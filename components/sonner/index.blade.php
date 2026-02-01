@@ -3,7 +3,7 @@
 @blaze
 
 <div
-    {{ $attributes->mergeTailwind(['class' => 'lux-sonner']) }}
+    {{ $attributes->merge(['class' => 'lux-sonner']) }}
     x-sonner
     x-data
     :class="richColors ? 'lux-sonner-rich' : ''"

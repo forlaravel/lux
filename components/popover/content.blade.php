@@ -15,7 +15,7 @@
         x-cloak
         @click.outside="open = false"
         role="dialog"
-        {{ $attributes->mergeTailwind(['class' => 'lux-popover-content']) }}
+        {{ $attributes->merge(['class' => 'lux-popover-content']) }}
     >
         {{ $slot }}
     </{{ $tag }}>

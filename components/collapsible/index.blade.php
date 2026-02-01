@@ -4,5 +4,5 @@
     x-data="{ open: @wireOr($open, handlePersist: true) }"
     x-modelable="open"
     x-id="['collapsible-content']"
-    {{ $attributes->mergeTailwind(['class' => 'lux-collapsible']) }}
+    {{ $attributes->merge(['class' => 'lux-collapsible']) }}
 >{{ $slot }}</{{ $tag }}>

@@ -1,6 +1,6 @@
 @blaze
 @props(['tag' => 'div'])
 
-<{{ $tag }} {{ $attributes->mergeTailwind(['class' => 'lux-card-title']) }}>
+<{{ $tag }} {{ $attributes->merge(['class' => 'lux-card-title']) }}>
     {{ $slot }}
 </{{ $tag }}>

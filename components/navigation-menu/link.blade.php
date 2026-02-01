@@ -6,5 +6,5 @@
     @keydown.arrow-right.prevent="openAndFocusFirst(1)"
     @keydown.arrow-left.prevent="openAndFocusFirst(-1)"
     @keydown.escape.prevent="contentEscape()"
-    {{ $attributes->mergeTailwind(['class' => 'lux-navigation-menu-link']) }}
+    {{ $attributes->merge(['class' => 'lux-navigation-menu-link']) }}
 >{{ $slot }}</{{ $tag }}>

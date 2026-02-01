@@ -40,5 +40,5 @@
     x-on:touchmove.window="onResize($event.touches[0])"
     x-on:touchend.window="stopResize()"
     data-panel-group-direction="{{ $direction }}"
-    {{ $attributes->mergeTailwind(['class' => 'lux-resizable-panel-group']) }}
+    {{ $attributes->merge(['class' => 'lux-resizable-panel-group']) }}
 >{{ $slot }}</{{ $tag }}>

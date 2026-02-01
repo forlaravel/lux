@@ -23,5 +23,5 @@
         }
     }"
     x-init="$nextTick(() => updateThumb())"
-    {{ $attributes->mergeTailwind(['class' => 'lux-scroll-area']) }}
+    {{ $attributes->merge(['class' => 'lux-scroll-area']) }}
 >{{ $slot }}</{{ $tag }}>

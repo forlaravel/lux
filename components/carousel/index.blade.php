@@ -64,7 +64,7 @@
     @keydown.arrow-down.prevent="orientation === 'vertical' && scrollNext()"
     @touchstart="handleTouchStart"
     @touchend="handleTouchEnd"
-    {{ $attributes->mergeTailwind(['class' => 'lux-carousel' . ($orientation === 'vertical' ? ' flex-col' : '')]) }}
+    {{ $attributes->merge(['class' => 'lux-carousel' . ($orientation === 'vertical' ? ' flex-col' : '')]) }}
     tabindex="0">
     <div class="sr-only" aria-live="polite" x-text="'Slide ' + (currentIndex + 1) + ' of ' + slides.length"></div>
     {{ $slot }}

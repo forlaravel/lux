@@ -5,7 +5,7 @@
     role="menuitemcheckbox"
     :aria-checked="checked?.toString()"
     tabindex="0"
-    {{ $attributes->mergeTailwind(['class' => 'lux-context-menu-checkbox-item']) }}
+    {{ $attributes->merge(['class' => 'lux-context-menu-checkbox-item']) }}
     @click="checked = !checked; open = false"
     x-data="{ checked: @wireOr($checked) }"
     @keydown.enter.prevent="checked = !checked; open = false"

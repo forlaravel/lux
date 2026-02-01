@@ -1,5 +1,5 @@
 @blaze
-<div {{ $attributes->mergeTailwind(['class' => 'lux-data-table']) }} x-data="{
+<div {{ $attributes->merge(['class' => 'lux-data-table']) }} x-data="{
     filter: '',
     sort: '',
     selectedRows: [],

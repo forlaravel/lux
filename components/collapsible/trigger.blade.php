@@ -6,5 +6,5 @@
     :aria-expanded="open?.toString()"
     :aria-controls="$id('collapsible-content')"
     @endif
-    {{ $attributes->mergeTailwind(['class' => 'lux-collapsible-trigger']) }}
+    {{ $attributes->merge(['class' => 'lux-collapsible-trigger']) }}
 >{{ $slot }}</{{ $tag }}>

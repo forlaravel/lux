@@ -5,7 +5,7 @@
 ])
 
 <{{ $tag }}
-    {{ $attributes->mergeTailwind(['class' => 'lux-dialog-content']) }}
+    {{ $attributes->merge(['class' => 'lux-dialog-content']) }}
     x-ref="dialog"
     x-trap.noscroll="open"
     :aria-labelledby="$id('dialog-title')"

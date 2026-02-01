@@ -17,7 +17,7 @@
     class="lux-accordion-content"
     role="region"
 >
-    <div {{ $attributes->mergeTailwind(['class' => 'lux-accordion-content-inner']) }}>
+    <div {{ $attributes->merge(['class' => 'lux-accordion-content-inner']) }}>
         {{ $slot }}
     </div>
 </{{ $tag }}>

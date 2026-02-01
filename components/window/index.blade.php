@@ -4,7 +4,7 @@
 ])
 
 <div
-{{ $attributes->whereDoesntStartWith(['wire:model'])->mergeTailwind([
+{{ $attributes->whereDoesntStartWith(['wire:model'])->merge([
     'class' => 'lux-window flex flex-col gap-4 z-10 fixed'
 ]) }}
 x-window="{

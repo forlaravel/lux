@@ -7,6 +7,6 @@
     role="menu"
     @keydown.up.prevent="$focus.wrap().previous()"
     @keydown.down.prevent="$focus.wrap().next()"
-    {{ $attributes->mergeTailwind(['class' => 'lux-context-menu-sub-content']) }}>
+    {{ $attributes->merge(['class' => 'lux-context-menu-sub-content']) }}>
     {{ $slot }}
 </div>

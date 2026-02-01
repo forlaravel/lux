@@ -1,3 +1,3 @@
 
 @props(['tag' => 'div'])
-<{{ $tag }} {{ $attributes->mergeTailwind(['class' => 'lux-combobox-separator']) }}></{{ $tag }}>
+<{{ $tag }} {{ $attributes->merge(['class' => 'lux-combobox-separator']) }}></{{ $tag }}>

@@ -1,3 +1,3 @@
 @blaze
 @props(['tag' => 'div'])
-<{{ $tag }} role="separator" {{ $attributes->mergeTailwind(['class' => 'lux-menubar-separator']) }}></{{ $tag }}>
+<{{ $tag }} role="separator" {{ $attributes->merge(['class' => 'lux-menubar-separator']) }}></{{ $tag }}>

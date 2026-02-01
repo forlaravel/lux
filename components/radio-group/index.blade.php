@@ -19,7 +19,7 @@
     @keydown.arrow-right.prevent="focusRadio(1)"
     @keydown.arrow-up.prevent="focusRadio(-1)"
     @keydown.arrow-left.prevent="focusRadio(-1)"
-    {{ $attributes->mergeTailwind(['class' => 'lux-radio-group']) }}
+    {{ $attributes->merge(['class' => 'lux-radio-group']) }}
 >
     {{ $slot }}
     @if($name)

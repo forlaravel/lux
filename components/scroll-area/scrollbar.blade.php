@@ -4,7 +4,7 @@
 <{{ $tag }}
     x-show="showScrollbar"
     x-cloak
-    {{ $attributes->mergeTailwind(['class' => "lux-scroll-area-scrollbar lux-scroll-area-scrollbar-{$orientation}"]) }}
+    {{ $attributes->merge(['class' => "lux-scroll-area-scrollbar lux-scroll-area-scrollbar-{$orientation}"]) }}
 >
     <div
         class="lux-scroll-area-thumb"

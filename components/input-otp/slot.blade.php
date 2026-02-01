@@ -1,7 +1,7 @@
 @props(['tag' => 'div', 'index'])
 <{{ $tag }}
     :class="activeIndex === {{ $index }} && 'lux-input-otp-slot-active'"
-    {{ $attributes->mergeTailwind(['class' => 'lux-input-otp-slot']) }}
+    {{ $attributes->merge(['class' => 'lux-input-otp-slot']) }}
     @click="focus({{ $index }})"
 >
     <input

@@ -5,5 +5,5 @@
     x-data="{ itemId: @js($itemId) }"
     @mouseenter="showItem(itemId)"
     @mouseleave="hideItem()"
-    {{ $attributes->mergeTailwind(['class' => 'lux-navigation-menu-item']) }}
+    {{ $attributes->merge(['class' => 'lux-navigation-menu-item']) }}
 >{{ $slot }}</{{ $tag }}>

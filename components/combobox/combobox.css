@@ -1,6 +1,6 @@
 @layer components {
   .lux-combobox { @apply relative; }
-  .lux-combobox-trigger { }
+  .lux-combobox-trigger { @apply w-[200px] justify-between; }
   .lux-combobox-content {
     @apply bg-popover text-popover-foreground z-50 w-[200px] overflow-hidden rounded-md shadow-md ring-1 ring-foreground/10;
   }

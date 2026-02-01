@@ -7,7 +7,7 @@
 ])
 
 <{{ $tag }}
-    {{ $attributes->mergeTailwind(['class' => 'lux-accordion-trigger']) }}
+    {{ $attributes->merge(['class' => 'lux-accordion-trigger']) }}
     :aria-expanded="selected == $id('accordion-item')"
     @if($tag !== 'button') role="button" tabindex="0" @endif
     :aria-controls="$id('accordion-content')"

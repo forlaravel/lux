@@ -1,3 +1,3 @@
 @blaze
 @props(['tag' => 'span'])
-<{{ $tag }} {{ $attributes->mergeTailwind(['class' => 'lux-menubar-shortcut']) }}>{{ $slot }}</{{ $tag }}>
+<{{ $tag }} {{ $attributes->merge(['class' => 'lux-menubar-shortcut']) }}>{{ $slot }}</{{ $tag }}>

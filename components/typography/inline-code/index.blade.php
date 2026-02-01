@@ -3,4 +3,4 @@
     'tag' => 'code',
 ])
 
-<{{ $tag }} {{ $attributes->mergeTailwind(['class' => 'lux-inline-code']) }}>{{ $slot }}</{{ $tag }}>
+<{{ $tag }} {{ $attributes->merge(['class' => 'lux-inline-code']) }}>{{ $slot }}</{{ $tag }}>

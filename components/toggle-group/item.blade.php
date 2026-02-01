@@ -6,5 +6,5 @@
     x-on:click="toggle(@js($value))"
     :aria-pressed="isPressed(@js($value))?.toString()"
     :data-pressed="isPressed(@js($value))?.toString()"
-    {{ $attributes->mergeTailwind(['class' => "lux-toggle lux-toggle-variant-{$variant} lux-toggle-size-{$size}"]) }}
+    {{ $attributes->merge(['class' => "lux-toggle lux-toggle-variant-{$variant} lux-toggle-size-{$size}"]) }}
 >{{ $slot }}</{{ $tag }}>

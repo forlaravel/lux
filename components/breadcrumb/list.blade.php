@@ -1,4 +1,4 @@
 @blaze
-<ol {{ $attributes->mergeTailwind(['class' => 'lux-breadcrumb-list']) }}>
+<ol {{ $attributes->merge(['class' => 'lux-breadcrumb-list']) }}>
     {{ $slot }}
 </ol>

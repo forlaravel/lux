@@ -2,7 +2,7 @@
 @inject('lux', 'lux')
 
 <div
-{{ $attributes->mergeTailwind(['class' => "lux-window-title topbar flex justify-between items-center cursor-move border-b p-5 py-3 select-none"]) }}
+{{ $attributes->merge(['class' => "lux-window-title topbar"]) }}
 >
     {{ $slot }}
     <x-dynamic-component :component="$lux->componentPath('button')" variant="ghost" x-on:click="close()" size="icon" aria-label="Close">

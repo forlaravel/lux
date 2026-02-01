@@ -4,7 +4,7 @@
 ])
 
 <{{ $tag }}
-    {{ $attributes->mergeTailwind(['class' => 'lux-avatar']) }}
+    {{ $attributes->merge(['class' => 'lux-avatar']) }}
 >
     {{ $slot }}
 </{{ $tag }}>

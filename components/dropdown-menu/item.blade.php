@@ -1,6 +1,6 @@
 @blaze
 <button
-    {{ $attributes->mergeTailwind(['class' => 'lux-dropdown-menu-item']) }}
+    {{ $attributes->merge(['class' => 'lux-dropdown-menu-item']) }}
     type="button"
     role="menuitem"
     @click="open = false"

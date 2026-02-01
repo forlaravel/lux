@@ -8,7 +8,7 @@
     @endif
     x-ref="trigger"
     @click="open = !open"
-    {{ $attributes->mergeTailwind(['class' => 'lux-dropdown-menu-trigger']) }}
+    {{ $attributes->merge(['class' => 'lux-dropdown-menu-trigger']) }}
 >
     {{ $slot }}
 </{{ $tag }}>

@@ -22,7 +22,19 @@
     @apply w-full flex outline-none rounded-md px-2 py-1.5 text-sm cursor-pointer hover:bg-accent hover:text-accent-foreground;
   }
   .lux-dropdown-menu-sub-content {
-    @apply absolute z-50 min-w-[8rem] bg-popover text-popover-foreground rounded-xl p-1 ring-1 ring-border shadow-lg;
+    @apply absolute z-50 min-w-[8rem] bg-popover text-popover-foreground rounded-xl p-1 ring-1 ring-border shadow-lg left-full top-0 mt-[-1px] w-48;
+  }
+  .lux-dropdown-menu-sub {
+    @apply relative;
+  }
+  .lux-dropdown-menu-checkbox-item {
+    @apply relative flex items-center px-4 py-2 text-sm text-gray-700 cursor-pointer hover:bg-gray-100;
+  }
+  .lux-dropdown-menu-radio-item {
+    @apply relative flex items-center px-4 py-2 text-sm text-gray-700 cursor-pointer hover:bg-gray-100;
+  }
+  .lux-dropdown-menu-shortcut {
+    @apply ml-auto pl-8 text-xs tracking-widest opacity-60;
   }
 
 }

@@ -7,7 +7,7 @@
     x-modelable="checked"
     :aria-checked="checked?.toString()"
     :data-checked="checked?.toString()"
-    {{ $attributes->mergeTailwind(['class' => "lux-switch lux-switch-size-{$size}"]) }}
+    {{ $attributes->merge(['class' => "lux-switch lux-switch-size-{$size}"]) }}
 >
     @if($name)
         <input type="checkbox" class="opacity-0 absolute" name="{{ $name }}" x-model="checked" wire:ignore tabindex="-1">

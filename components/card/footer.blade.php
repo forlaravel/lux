@@ -1,4 +1,4 @@
 @blaze
-<div {{ $attributes->mergeTailwind(['class' => 'lux-card-footer']) }}>
+<div {{ $attributes->merge(['class' => 'lux-card-footer']) }}>
     {{ $slot }}
 </div>

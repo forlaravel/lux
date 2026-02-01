@@ -6,7 +6,7 @@
 
 <{{ $tag }}
     x-form:description
-    {{ $attributes->mergeTailwind(['class' => 'lux-form-description']) }}
+    {{ $attributes->merge(['class' => 'lux-form-description']) }}
 >
     {{ $slot }}
 </{{ $tag }}>

@@ -15,7 +15,7 @@
     x-transition:leave-end="opacity-0 scale-95"
     role="tooltip"
     :id="$id('tooltip')"
-    {{ $attributes->mergeTailwind(['class' => 'lux-tooltip-content']) }}
+    {{ $attributes->merge(['class' => 'lux-tooltip-content']) }}
 >{{ $slot }}</{{ $tag }}>
 @if($teleport)
 </template>

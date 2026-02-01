@@ -1,4 +1,4 @@
 @blaze
-<span role="link" aria-disabled="true" aria-current="page" {{ $attributes->mergeTailwind(['class' => 'lux-breadcrumb-page']) }}>
+<span role="link" aria-disabled="true" aria-current="page" {{ $attributes->merge(['class' => 'lux-breadcrumb-page']) }}>
     {{ $slot }}
 </span>

@@ -14,7 +14,7 @@
 @endphp
 
 <{{ $tag }}
-    {{ $attributes->mergeTailwind(['class' => "lux-sidebar $positionClass"]) }}
+    {{ $attributes->merge(['class' => "lux-sidebar $positionClass"]) }}
     data-lux="sidebar"
     id="lux-sidebar"
     aria-label="Sidebar"

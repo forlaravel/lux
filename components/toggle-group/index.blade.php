@@ -18,5 +18,5 @@
     }"
     x-modelable="value"
     role="group"
-    {{ $attributes->mergeTailwind(['class' => 'lux-toggle-group']) }}
+    {{ $attributes->merge(['class' => 'lux-toggle-group']) }}
 >{{ $slot }}</{{ $tag }}>

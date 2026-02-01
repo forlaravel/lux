@@ -10,7 +10,7 @@
     @keydown.space.prevent="open = false"
     x-on:mouseover="$el.dataset.focusSource = 'mouse'; $el.focus()"
     x-on:mouseleave="if ($el.dataset.focusSource === 'mouse') $el.blur()"
-    {{ $attributes->mergeTailwind(['class' => 'lux-dropdown-menu-checkbox-item relative flex items-center px-4 py-2 text-sm text-gray-700 cursor-pointer hover:bg-gray-100']) }}
+    {{ $attributes->merge(['class' => 'lux-dropdown-menu-checkbox-item']) }}
 >
     <span class="absolute left-2 flex h-3.5 w-3.5 items-center justify-center">
         @if($checked)

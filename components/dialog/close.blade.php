@@ -4,7 +4,7 @@
 ])
 
 <{{ $tag }}
-    {{ $attributes->mergeTailwind(['class' => 'lux-dialog-close']) }}
+    {{ $attributes->merge(['class' => 'lux-dialog-close']) }}
     @click="close()"
 >
     {{ $slot }}

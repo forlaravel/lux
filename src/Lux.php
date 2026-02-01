@@ -4,7 +4,6 @@ namespace Lux;
 
 use Illuminate\View\ComponentAttributeBag;
 use Illuminate\Support\Facades\Blade;
-use TailwindMerge\TailwindMerge;
 use Illuminate\Support\ServiceProvider;
 
 class Lux
@@ -45,27 +44,6 @@ class Lux
     }
 
     public function bootComponentAttributeBagMacros() {
-        ComponentAttributeBag::macro('mergeTailwind', function (...$args) {
-            $tw = TailwindMerge::factory()
-                ->withCache(app('cache')->store())
-                ->make();
-
-            $mergedAttributes = $this->merge(...$args);
-            $mergedAttributes['class'] = $tw->merge($mergedAttributes->get('class'));
-
-            return $mergedAttributes;
-        });
-        ComponentAttributeBag::macro('classTailwind', function ($class) {
-            $tw = TailwindMerge::factory()
-                ->withCache(app('cache')->store())
-                ->make();
-
-            $mergedAttributes = $this->class($class);
-            $mergedAttributes['class'] = $tw->merge($mergedAttributes->get('class'));
-
-            return $mergedAttributes;
-        });
-        
         ComponentAttributeBag::macro('getWithModifiers', function ($tag) {
             $tags = $this->whereStartsWith($tag)->getAttributes();
             $firstKey = array_key_first($tags);

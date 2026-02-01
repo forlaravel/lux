@@ -1,7 +1,7 @@
 @blaze
 <template x-teleport="body" >
 <div
-    {{ $attributes->mergeTailwind(['class' => 'lux-dropdown-menu-content']) }}
+    {{ $attributes->merge(['class' => 'lux-dropdown-menu-content']) }}
     x-show="open"
     x-ref="content"
     x-trap="open"

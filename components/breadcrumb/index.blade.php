@@ -1,4 +1,4 @@
 @blaze
-<nav aria-label="breadcrumb" {{ $attributes->mergeTailwind(['class' => 'lux-breadcrumb']) }}>
+<nav aria-label="breadcrumb" {{ $attributes->merge(['class' => 'lux-breadcrumb']) }}>
     {{ $slot }}
 </nav>

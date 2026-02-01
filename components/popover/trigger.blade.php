@@ -7,7 +7,7 @@
     :aria-expanded="open.toString()"
     aria-haspopup="dialog"
     @endif
-    {{ $attributes->mergeTailwind(['class' => 'lux-popover-trigger']) }}
+    {{ $attributes->merge(['class' => 'lux-popover-trigger']) }}
 >
     {{ $slot }}
 </{{ $tag }}>

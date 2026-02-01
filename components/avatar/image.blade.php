@@ -4,5 +4,5 @@
 ])
 
 <{{ $tag }}
-    {{ $attributes->mergeTailwind(['class' => 'lux-avatar-image aspect-square h-full w-full']) }}
+    {{ $attributes->merge(['class' => 'lux-avatar-image']) }}
 />

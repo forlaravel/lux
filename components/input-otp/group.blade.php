@@ -1,2 +1,2 @@
 @props(['tag' => 'div'])
-<{{ $tag }} {{ $attributes->mergeTailwind(['class' => 'lux-input-otp-group']) }}>{{ $slot }}</{{ $tag }}>
+<{{ $tag }} {{ $attributes->merge(['class' => 'lux-input-otp-group']) }}>{{ $slot }}</{{ $tag }}>

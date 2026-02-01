@@ -6,7 +6,7 @@
 ])
 
 <{{ $tag }}
-    {{ $attributes->mergeTailwind(['class' => 'lux-tabs']) }}
+    {{ $attributes->merge(['class' => 'lux-tabs']) }}
     x-id="['tabs']"
     x-data="{
         tabsId: $id('tabs'),

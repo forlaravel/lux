@@ -10,6 +10,6 @@
     $fixedClass = $fixed ? 'lux-sidebar-content-fixed' : '';
 @endphp
 
-<{{ $tag }} {{ $attributes->mergeTailwind(['class' => "lux-sidebar-content $fixedClass"]) }}>
+<{{ $tag }} {{ $attributes->merge(['class' => "lux-sidebar-content $fixedClass"]) }}>
     {{ $slot }}
 </{{ $tag }}>

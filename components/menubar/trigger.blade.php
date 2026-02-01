@@ -15,5 +15,5 @@
     @keydown.escape.prevent="activeMenu=null"
     @keydown.home.prevent="if(activeMenu===menuId)focusFirstItem()"
     @keydown.end.prevent="if(activeMenu===menuId)focusLastItem()"
-    {{ $attributes->mergeTailwind(['class' => 'lux-menubar-trigger']) }}
+    {{ $attributes->merge(['class' => 'lux-menubar-trigger']) }}
 >{{ $slot }}</{{ $tag }}>

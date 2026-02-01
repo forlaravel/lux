@@ -8,7 +8,7 @@
     :tabindex="selected === @js($value) ? '0' : '-1'"
     @if($id) id="{{ $id }}" @endif
     @disabled($disabled)
-    {{ $attributes->mergeTailwind(['class' => 'lux-radio-group-item']) }}
+    {{ $attributes->merge(['class' => 'lux-radio-group-item']) }}
 >
     <span class="lux-radio-group-indicator" x-show="selected === @js($value)" x-cloak>
         <svg class="lux-radio-group-indicator-dot" viewBox="0 0 8 8" aria-hidden="true"><circle cx="4" cy="4" r="4" fill="currentColor"/></svg>

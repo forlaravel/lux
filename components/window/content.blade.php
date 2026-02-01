@@ -1,4 +1,4 @@
 @blaze
-<div x-ref="inner" {{ $attributes->mergeTailwind(['class' => "lux-window-content overflow-y-auto"]) }}>
+<div x-ref="inner" {{ $attributes->merge(['class' => "lux-window-content"]) }}>
     {{ $slot }}
 </div>

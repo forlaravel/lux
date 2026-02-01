@@ -1,4 +1,4 @@
 @blaze
-<td {{ $attributes->mergeTailwind(['class' => 'lux-data-table-cell']) }}>
+<td {{ $attributes->merge(['class' => 'lux-data-table-cell']) }}>
     {{ $slot }}
 </td>

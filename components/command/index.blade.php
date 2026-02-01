@@ -20,7 +20,7 @@
     @keydown.up.prevent="$focus.wrap().previous()"
     @keydown.down.prevent="$focus.wrap().next()"
     @keydown.enter.prevent="activateSelected()"
-    {{ $attributes->mergeTailwind(['class' => 'lux-command']) }}
+    {{ $attributes->merge(['class' => 'lux-command']) }}
     >
     {{ $slot }}
 </div>

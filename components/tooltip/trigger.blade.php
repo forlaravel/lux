@@ -3,5 +3,5 @@
 <{{ $tag }}
     x-ref="trigger"
     :aria-describedby="show ? $id('tooltip') : null"
-    {{ $attributes->mergeTailwind(['class' => 'lux-tooltip-trigger']) }}
+    {{ $attributes->merge(['class' => 'lux-tooltip-trigger']) }}
 >{{ $slot }}</{{ $tag }}>

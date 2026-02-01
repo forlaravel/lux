@@ -7,5 +7,5 @@
     x-modelable="pressed"
     :aria-pressed="pressed?.toString()"
     :data-pressed="pressed?.toString()"
-    {{ $attributes->mergeTailwind(['class' => "lux-toggle lux-toggle-variant-{$variant} lux-toggle-size-{$size}"]) }}
+    {{ $attributes->merge(['class' => "lux-toggle lux-toggle-variant-{$variant} lux-toggle-size-{$size}"]) }}
 >{{ $slot }}</{{ $tag }}>

@@ -26,7 +26,7 @@
         }
     }"
     x-modelable="selected"
-    {{ $attributes->mergeTailwind(['class' => 'lux-combobox']) }}
+    {{ $attributes->merge(['class' => 'lux-combobox']) }}
 >
     {{ $slot }}
     @if($name)

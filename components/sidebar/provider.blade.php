@@ -7,7 +7,7 @@
 ])
 
 <{{ $tag }}
-    {{ $attributes->mergeTailwind(['class' => 'lux-sidebar-provider']) }}
+    {{ $attributes->merge(['class' => 'lux-sidebar-provider']) }}
     x-cloak
     x-data="{
         sidebarOpen: @wireOr($open, handlePersist: true),

@@ -19,7 +19,7 @@
         }
     }"
     x-modelable="value"
-    {{ $attributes->mergeTailwind(['class' => 'lux-date-picker']) }}
+    {{ $attributes->merge(['class' => 'lux-date-picker']) }}
 >   
     <x-dynamic-component :component="$lux->componentPath('popover')">
          <x-dynamic-component :component="$lux->componentPath('popover.trigger')" tag="span">

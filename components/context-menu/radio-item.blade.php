@@ -5,7 +5,7 @@
     role="menuitemradio"
     :aria-checked="(selectedValue === '{{ $value }}').toString()"
     tabindex="0"
-    {{ $attributes->mergeTailwind(['class' => 'lux-context-menu-radio-item']) }}
+    {{ $attributes->merge(['class' => 'lux-context-menu-radio-item']) }}
     @click="$dispatch('radio-select', { value: '{{ $value }}' }); open = false"
     @keydown.enter.prevent="$dispatch('radio-select', { value: '{{ $value }}' }); open = false"
     @keydown.space.prevent="$dispatch('radio-select', { value: '{{ $value }}' }); open = false"

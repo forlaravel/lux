@@ -4,7 +4,7 @@
 ])
 
 <{{ $tag }}
-    {{ $attributes->mergeTailwind(['class' => 'lux-alert-title']) }}
+    {{ $attributes->merge(['class' => 'lux-alert-title']) }}
 >
     {{ $slot }}
 </{{ $tag }}>

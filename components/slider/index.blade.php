@@ -25,7 +25,7 @@
     @touchend.window="dragging = false"
     :data-disabled="@js($disabled) || undefined"
     :aria-disabled="@js($disabled) ? 'true' : null"
-    {{ $attributes->mergeTailwind(['class' => 'lux-slider']) }}
+    {{ $attributes->merge(['class' => 'lux-slider']) }}
     @if($disabled) data-disabled @endif
 >
     <span class="lux-slider-track" x-ref="track"

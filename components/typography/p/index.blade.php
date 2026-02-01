@@ -3,6 +3,6 @@
     'tag' => 'p',
 ])
 
-<{{ $tag }} {{ $attributes->mergeTailwind(['class' => 'lux-p']) }}>
+<{{ $tag }} {{ $attributes->merge(['class' => 'lux-p']) }}>
     {{ $slot }}
 </{{ $tag }}>

@@ -16,7 +16,7 @@ $value = $value === null && $multiple ? [] : $value;
 @endphp
 
 <{{$tag}} 
-    {{ $attributes->whereDoesntStartWith(['required', 'wire:model', 'wire:search'])->mergeTailwind(['class' => 'lux-select']) }}
+    {{ $attributes->whereDoesntStartWith(['required', 'wire:model', 'wire:search'])->merge(['class' => 'lux-select']) }}
     x-select="{
         multiple: @js($multiple),
         inputText: @wireOr('', 'wire:search'),

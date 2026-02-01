@@ -1,7 +1,7 @@
 @layer components {
   /* === DEFAULT === */
   .lux-code-block {
-    @apply relative rounded-lg overflow-hidden;
+    @apply relative bg-accent text-accent-foreground rounded-md overflow-hidden;
   }
 
 }

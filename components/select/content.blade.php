@@ -15,7 +15,7 @@
         x-cloak
         role="listbox"
         :id="$id('select-content')"
-        {{ $attributes->mergeTailwind(['class' => 'lux-select-content']) }}
+        {{ $attributes->merge(['class' => 'lux-select-content']) }}
     >
         {{ $slot }}
     </{{ $tag }}>

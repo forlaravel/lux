@@ -5,7 +5,7 @@
 ])
 
 <{{ $tag }}
-    {{ $attributes->mergeTailwind(['class' => 'lux-select-label']) }}
+    {{ $attributes->merge(['class' => 'lux-select-label']) }}
 >
     {{ $slot }}
 </{{ $tag }}>

@@ -9,5 +9,5 @@
     @keydown.escape.prevent="contentEscape()"
     @disabled($disabled)
     :data-disabled="@js($disabled) || undefined"
-    {{ $attributes->mergeTailwind(['class' => 'lux-menubar-item']) }}
+    {{ $attributes->merge(['class' => 'lux-menubar-item']) }}
 >{{ $slot }}</{{ $tag }}>

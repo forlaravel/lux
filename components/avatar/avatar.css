@@ -3,6 +3,12 @@
   .lux-avatar {
     @apply relative flex size-8 shrink-0 overflow-hidden rounded-full;
   }
+  .lux-avatar-fallback {
+    @apply flex h-full w-full items-center justify-center rounded-full bg-accent text-accent-foreground;
+  }
+  .lux-avatar-image {
+    @apply aspect-square h-full w-full;
+  }
 
 }
 

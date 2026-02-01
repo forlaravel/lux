@@ -5,5 +5,5 @@
     x-collapse
     x-cloak
     :id="$id('collapsible-content')"
-    {{ $attributes->mergeTailwind(['class' => 'lux-collapsible-content']) }}
+    {{ $attributes->merge(['class' => 'lux-collapsible-content']) }}
 >{{ $slot }}</{{ $tag }}>

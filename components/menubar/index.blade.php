@@ -3,5 +3,5 @@
 <{{ $tag }}
     x-data="menubar"
     role="menubar"
-    {{ $attributes->mergeTailwind(['class' => 'lux-menubar']) }}
+    {{ $attributes->merge(['class' => 'lux-menubar']) }}
 >{{ $slot }}</{{ $tag }}>

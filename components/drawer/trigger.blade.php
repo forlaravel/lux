@@ -3,5 +3,5 @@
 
 <{{ $tag }}
     x-on:click="show()"
-    {{ $attributes->mergeTailwind(['class' => 'lux-drawer-trigger']) }}
+    {{ $attributes->merge(['class' => 'lux-drawer-trigger']) }}
 >{{ $slot }}</{{ $tag }}>

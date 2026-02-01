@@ -3,6 +3,6 @@
     'tag' => 'div',
 ])
 
-<div {{ $attributes->mergeTailwind(['class' => 'lux-dialog-body']) }}>
+<div {{ $attributes->merge(['class' => 'lux-dialog-body']) }}>
     {{ $slot }}
 </div>

@@ -13,5 +13,5 @@ $orientationClass = $orientation === 'vertical' ? 'lux-separator-vertical' : 'lu
     role="{{ $decorative ? 'none' : 'separator' }}"
     @if(!$decorative) aria-orientation="{{ $orientation }}" @endif
     data-orientation="{{ $orientation }}"
-    {{ $attributes->mergeTailwind(['class' => "lux-separator $orientationClass"]) }}
+    {{ $attributes->merge(['class' => "lux-separator $orientationClass"]) }}
 ></{{ $tag }}>

@@ -1,3 +1,3 @@
 @blaze
 @props(['tag' => 'fieldset'])
-<{{ $tag }} {{ $attributes->mergeTailwind(['class' => 'lux-field-set']) }}>{{ $slot }}</{{ $tag }}>
+<{{ $tag }} {{ $attributes->merge(['class' => 'lux-field-set']) }}>{{ $slot }}</{{ $tag }}>
