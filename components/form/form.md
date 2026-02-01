@@ -106,3 +106,8 @@ php artisan lux:publish form
     <x-button type="submit">Update profile</x-button>
 </x-form>
 ```
+
+## Accessibility
+
+- Add the `x-form:control` attribute to each form control (input, select, textarea, etc.) inside `<x-form.item>`. This is required for the automatic label association, `aria-describedby`, `aria-invalid`, and `aria-errormessage` bindings to work.
+- Provide the `name` prop on `<x-form.item>` to enable automatic server-side error display via `<x-form.message>`.

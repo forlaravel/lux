@@ -85,3 +85,9 @@ php artisan lux:publish chart
 | `type` | Chart.js chart type (`bar`, `line`, `pie`, `doughnut`, `radar`, etc.) | `string` | `bar` |
 | `data` | Chart.js data configuration (labels + datasets) | `array` | `[]` |
 | `options` | Chart.js options (merged over the built-in defaults) | `array` | `[]` |
+
+## Accessibility
+
+- The `<canvas>` element is not accessible to screen readers. Add `aria-label` to the component with a summary of the data being visualized (e.g., `aria-label="Bar chart showing monthly revenue from January to December"`).
+- Add `role="img"` to treat the chart as an image for assistive technology.
+- For detailed data access, consider providing a visually hidden `<table>` or a text summary alongside the chart.

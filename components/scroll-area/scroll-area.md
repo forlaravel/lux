@@ -55,3 +55,9 @@ php artisan lux:publish scroll-area
 | Prop | Description | Type | Default |
 | --- | --- | --- | --- |
 | `tag` | HTML tag to render | `string` | `div` |
+
+## Accessibility
+
+- The viewport is keyboard-focusable by default (`tabindex="0"`), allowing keyboard scrolling.
+- If the scroll area contains a distinct content region (e.g., a list of tags or a gallery), add an `aria-label` to the viewport to describe its contents: `<x-scroll-area.viewport aria-label="Tag list">`.
+- The custom scrollbar is decorative and hidden from screen readers automatically.

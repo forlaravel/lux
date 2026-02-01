@@ -124,3 +124,9 @@ php artisan lux:publish dialog
 | `tag`  | The HTML tag to use for the trigger element.       | `string` | `button` |
 
 > **Note:** When placing an `<x-button>` inside the trigger, set `tag="span"` on the trigger to avoid nesting a `<button>` inside a `<button>` (invalid HTML that breaks click handling).
+
+## Accessibility
+
+- Always include `<x-dialog.title>` inside `<x-dialog.content>` so the dialog has an accessible name via `aria-labelledby`.
+- Include `<x-dialog.description>` when the dialog needs additional context; the content element references it via `aria-describedby`.
+- If the dialog title should not be visible, use `sr-only` on the title element rather than omitting it.

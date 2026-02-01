@@ -85,3 +85,8 @@ php artisan lux:publish input
 | `mask` | The mask pattern to apply to the input. See https://alpinejs.dev/plugins/mask | `string` | `null` |
 | `value` | The value attribute for the input | `string` | `null` |
 | `size` | Specifies the size of the input, can be `sm`, `md`, `lg`, `xl` | `string` | `md` |
+
+## Accessibility
+
+- Every `<x-input>` must have an accessible label. Use a `<x-label for="...">` with a matching `id`, or provide an `aria-label` attribute directly on the input.
+- When using decorative icons alongside the input (e.g., a search icon), add `aria-hidden="true"` to the SVG.

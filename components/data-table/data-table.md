@@ -81,3 +81,11 @@ php artisan lux:publish data-table
 | `trigger` | Triggers the display of columns which can be toggled on or off.             | `object` | `{}`    |
 
 Embrace the power of organized data with ease using these nifty Data Table actions!
+
+## Accessibility
+
+- Wrap `<x-data-table.header>` and `<x-data-table.body>` inside a `<table>` element. The library does not render a `<table>` tag automatically.
+- Use `<th scope="col">` elements instead of `<td>` for column headers so screen readers identify them as headings.
+- Add a `<label>` or `aria-label` to the filter input so it has an accessible name.
+- Icon-only buttons (sort toggles, row action menus) must have an `aria-label` or `sr-only` text describing their purpose.
+- Add `aria-sort` attributes to sortable column headers to convey the current sort direction.

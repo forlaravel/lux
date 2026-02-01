@@ -102,3 +102,7 @@ php artisan lux:publish menubar
 | Prop | Description | Type | Default |
 | --- | --- | --- | --- |
 | `tag` | HTML tag to render | `string` | `span` |
+
+## Accessibility
+
+- If the page contains more than one menubar, add a unique `aria-label` to each `<x-menubar>` so screen readers can distinguish them (e.g., `aria-label="File operations"`).

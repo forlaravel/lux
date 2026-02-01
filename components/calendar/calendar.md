@@ -71,3 +71,8 @@ window.flatpickr = flatpickr;
 | `name` | Input name attribute | `string` | `null` |
 | `placeholder` | Placeholder text for the input field | `string` | `Select a date` |
 | `config` | Additional Flatpickr configuration options | `array` | `[]` |
+
+## Accessibility
+
+- Always pair the calendar with a visible `<label>` element. Use matching `for`/`id` attributes to associate the label with the input (e.g., `<x-label for="date">Date</x-label> <x-calendar id="date" />`).
+- When using the inline variant, provide an `aria-label` on the component if there is no visible label nearby.

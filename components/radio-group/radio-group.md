@@ -58,3 +58,8 @@ php artisan lux:publish radio-group
 | `value` | Value of this radio option | `string` | *required* |
 | `id` | Element ID | `string\|null` | `null` |
 | `disabled` | Whether the option is disabled | `boolean` | `false` |
+
+## Accessibility
+
+- Provide an accessible name on `<x-radio-group>` via `aria-label` or `aria-labelledby` to describe the group's purpose (e.g., `<x-radio-group aria-label="Density">`).
+- Each `<x-radio-group.item>` should have a visible `<x-label>` associated via matching `id`/`for` attributes, as shown in the examples above.

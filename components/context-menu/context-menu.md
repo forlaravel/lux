@@ -59,3 +59,8 @@ A component used to create context menus that appear when users right-click on a
 ```bash
 php artisan lux:publish context-menu
 ```
+
+## Accessibility
+
+- Context menus are triggered by right-click, which is not available to keyboard-only or screen reader users. Provide an alternative way to access the same actions (e.g., a visible menu button) for full accessibility.
+- If menu items contain only icons (no visible text), add `sr-only` text inside the item so screen readers can announce its purpose.

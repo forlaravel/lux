@@ -32,3 +32,8 @@ No configurable properties.
 | `step`      | The step number or identifier        | `string` | N/A     |
 | `title`     | Title for the step                   | `string` | N/A     |
 
+## Accessibility
+
+- Consider adding `aria-current="step"` to the active step item to indicate which step the user is on.
+- If steps represent a sequential process, consider wrapping the component with `role="list"` and each item with `role="listitem"` (or use `tag="ol"` / `tag="li"`) so screen readers announce the step count and order.
+

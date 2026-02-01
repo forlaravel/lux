@@ -124,3 +124,9 @@ php artisan lux:publish field
 | Prop | Description | Type | Default |
 | --- | --- | --- | --- |
 | `tag` | HTML tag to render | `string` | `legend` |
+
+## Accessibility
+
+- Provide a matching `for` attribute on `<x-field.label>` and `id` on the input to associate the label with the control (e.g., `<x-field.label for="email">` and `<x-input id="email">`).
+- Add `aria-describedby` on the input pointing to the `id` of `<x-field.description>` or `<x-field.error>` so screen readers announce help text and errors.
+- Add `role="alert"` on `<x-field.error>` when error messages appear dynamically, so they are announced to screen readers.

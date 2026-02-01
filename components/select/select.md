@@ -186,3 +186,9 @@ class SomeComponent extends Livewire\Component
     <option value="pineapple">Pineapple</option>
 </x-select.native>
 ```
+
+## Accessibility
+
+- The trigger defaults to using the `placeholder` text as its `aria-label`. For a more descriptive label, pass `aria-label` or `aria-labelledby` on the trigger: `<x-select.trigger aria-label="Choose a fruit">`.
+- When using `<x-select.native>`, you must associate a `<label>` element with the native select using `for`/`id`, or add an `aria-label` attribute directly.
+- Items with `disabled` are marked with `aria-disabled="true"` automatically.

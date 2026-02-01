@@ -62,6 +62,12 @@ Add `wire:model` to bind the uploaded file(s) to a Livewire property. The compon
 - Listen to `livewire-upload-start`, `livewire-upload-finish`, `livewire-upload-error`, and `livewire-upload-progress` events
 - Display selected file names, sizes, and image previews
 
+## Accessibility
+
+- When used within a form, wrap the component in a `<x-field>` with a `<x-field.label>` or provide a visible label so screen readers can identify the upload field's purpose.
+
+### Livewire Integration
+
 In your Livewire component, use the `WithFileUploads` trait:
 
 ```php

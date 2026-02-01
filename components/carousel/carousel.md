@@ -59,3 +59,8 @@ php artisan lux:publish carousel
 
 ### carousel.previous & x-carousel.next
 No additional props. These provide navigation control to move to the previous and next slides, respectively.
+
+## Accessibility
+
+- Override the default `aria-label="Carousel"` with a descriptive label for your content (e.g., `aria-label="Product photos"`).
+- Add an `aria-label` to each `<x-carousel.item>` describing the slide (e.g., `aria-label="Slide 1 of 3: Product front view"`).

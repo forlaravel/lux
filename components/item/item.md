@@ -109,3 +109,9 @@ php artisan lux:publish item
 | Prop | Description | Type | Default |
 | --- | --- | --- | --- |
 | `tag` | HTML tag to render | `string` | `div` |
+
+## Accessibility
+
+- Icon-only buttons in `<x-item.actions>` must have an accessible label (e.g., `aria-label="More options"`).
+- Decorative SVGs in `<x-item.media>` should include `aria-hidden="true"`. If the icon conveys meaning, provide an `aria-label` on the SVG instead.
+- When rendering a list of items, consider wrapping them in a `<ul>` with `<li>` tags (using the `tag` prop) to provide proper list semantics.

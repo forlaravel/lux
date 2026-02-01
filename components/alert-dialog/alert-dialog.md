@@ -79,3 +79,8 @@ php artisan lux:publish alert-dialog
 | Prop | Description | Type | Default |
 | --- | --- | --- | --- |
 | `tag` | HTML tag to render | `string` | `button` |
+
+## Accessibility
+
+- Always include both `<x-alert-dialog.title>` and `<x-alert-dialog.description>` inside `<x-alert-dialog.content>` so the dialog has a proper accessible name and description.
+- Ensure the action and cancel buttons have clear, descriptive text labels (e.g., "Delete" and "Cancel" rather than just "OK").

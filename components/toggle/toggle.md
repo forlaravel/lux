@@ -50,3 +50,7 @@ php artisan lux:publish toggle
 | `variant` | Visual variant | `string` | `default` |
 | `size` | Size of the toggle | `string` | `md` |
 | `pressed` | Whether toggle is pressed | `boolean` | `false` |
+
+## Accessibility
+
+- When the toggle contains only an icon, add an `aria-label` to describe its function (e.g., `<x-toggle aria-label="Toggle bold">`).

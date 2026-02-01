@@ -54,3 +54,7 @@ php artisan lux:publish switch
 | `checked` | Whether the switch is on | `boolean` | `false` |
 | `name` | Form input name | `string\|null` | `null` |
 | `size` | Size of the switch | `string` | `md` |
+
+## Accessibility
+
+- Always provide an accessible label. Either pair the switch with a `<label>` element using matching `id`/`for` attributes, or add an `aria-label` attribute directly to the switch (e.g., `<x-switch aria-label="Enable notifications" />`).

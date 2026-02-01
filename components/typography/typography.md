@@ -91,3 +91,8 @@ Each sub-component accepts a `tag` prop that allows you to override the rendered
 | Prop  | Description                        | Type     | Default |
 |-------|------------------------------------|----------|---------|
 | `tag` | The HTML element to render         | `string` | `ul`    |
+
+## Accessibility
+
+- Maintain a logical heading hierarchy in your page (h1, then h2, then h3, etc.). Do not skip heading levels.
+- If you override the `tag` prop to a non-semantic element (e.g., `tag="div"` on a heading), ensure you add the appropriate `role` and `aria-level` attributes to preserve semantics for screen readers.

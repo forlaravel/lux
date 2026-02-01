@@ -72,3 +72,7 @@ php artisan lux:publish pagination
 | Prop | Description | Type | Default |
 | --- | --- | --- | --- |
 | `tag` | HTML tag to render | `string` | `span` |
+
+## Accessibility
+
+- Add `aria-current="page"` to the active `<x-pagination.link>` so screen readers announce the current page (e.g., `<x-pagination.link href="#" active aria-current="page">2</x-pagination.link>`).

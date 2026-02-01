@@ -30,3 +30,8 @@ A component used to display a user's profile image, with a fallback option if th
 ```bash
 php artisan lux:publish avatar
 ```
+
+## Accessibility
+
+- Always provide a descriptive `alt` attribute on `<x-avatar.image>` (e.g., the user's name).
+- If the avatar is purely decorative (e.g., next to a visible name), use `alt=""` to hide it from screen readers.

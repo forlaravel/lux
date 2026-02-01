@@ -35,3 +35,7 @@ php artisan lux:publish button-group
 | --- | --- | --- | --- |
 | `tag` | HTML tag to render | `string` | `div` |
 | `orientation` | Layout direction | `string` | `horizontal` |
+
+## Accessibility
+
+- Add `role="group"` and a descriptive `aria-label` to the button group when the grouped buttons represent a related set of actions (e.g., `<x-button-group role="group" aria-label="Text formatting">`).

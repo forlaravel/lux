@@ -58,3 +58,8 @@ php artisan lux:publish empty
 | Prop | Description | Type | Default |
 | --- | --- | --- | --- |
 | `tag` | HTML tag to render | `string` | `div` |
+
+## Accessibility
+
+- Add `aria-hidden="true"` to decorative SVGs or images placed inside `<x-empty.media>`.
+- If the media element conveys meaningful information, provide an `alt` attribute (for images) or `aria-label` (for SVGs) instead.

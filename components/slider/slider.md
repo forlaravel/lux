@@ -47,3 +47,8 @@ php artisan lux:publish slider
 | `step` | Step increment | `number` | `1` |
 | `name` | Form input name | `string\|null` | `null` |
 | `disabled` | Whether slider is disabled | `boolean` | `false` |
+
+## Accessibility
+
+- You **must** provide an accessible name for the slider via the `label` prop: `<x-slider label="Volume" value="50" />`. Without it, screen readers cannot identify the slider's purpose.
+- Keyboard navigation is built-in: arrow keys adjust the value by `step`.

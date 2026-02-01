@@ -54,3 +54,8 @@ php artisan lux:publish card
 
 ## Properties
 This component and its sub-components do not define custom blade properties. Use standard HTML attributes via the component tag.
+
+## Accessibility
+
+- `card.title` renders as an `<h3>` element. Ensure this fits your page's heading hierarchy; if it does not, override the tag or adjust surrounding headings accordingly.
+- When a card contains form controls, ensure each control has a properly associated `<label>`.

@@ -27,3 +27,8 @@ php artisan lux:publish checkbox
 | `wire:model` | Model selected item to Livewire (takes precedence over `checked`). | `string` | `null` |
 | `name`    | The name attribute (on form submission) | `string`  | `null`  |
 | `value`   | The value attribute for form submission  | `string`  | `null`  |
+
+## Accessibility
+
+- Always provide a visible `<label>` associated with the checkbox using matching `id`/`for` attributes (e.g., `<x-checkbox id="terms" /> <x-label for="terms">Accept terms</x-label>`).
+- If a visible label is not possible, add an `aria-label` directly to the checkbox component.

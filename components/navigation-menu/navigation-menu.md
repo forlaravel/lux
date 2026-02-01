@@ -91,3 +91,8 @@ php artisan lux:publish navigation-menu
 | Prop | Description | Type | Default |
 | --- | --- | --- | --- |
 | `tag` | HTML tag to render | `string` | `a` |
+
+## Accessibility
+
+- Provide an `aria-label` on `<x-navigation-menu>` to identify the navigation landmark (e.g., `aria-label="Main navigation"`). This is especially important when the page has multiple `<nav>` elements.
+- Keyboard navigation is built in: arrow keys move between triggers and links, Escape closes open panels.

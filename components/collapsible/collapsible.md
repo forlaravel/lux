@@ -63,3 +63,8 @@ php artisan lux:publish collapsible
 | Prop | Description | Type | Default |
 | --- | --- | --- | --- |
 | `tag` | HTML tag to render | `string` | `div` |
+
+## Accessibility
+
+- When using `tag="span"` on the trigger (to wrap an inner `<x-button>`), the `aria-expanded` and `aria-controls` attributes are not automatically applied. You must manually add these to the inner button.
+- Ensure the trigger has descriptive text or an `aria-label` so screen readers can identify its purpose.

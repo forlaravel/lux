@@ -73,3 +73,8 @@ php artisan lux:publish button
 | `size`   | Specifies the size of the button, can be `sm`, `md`, `lg`, `xl`, `icon`     | `string`  | `md`      |
 | `tag`    | Specifies the HTML tag to be used for the button                            | `string`  | `button`  |
 
+## Accessibility
+
+- For icon-only buttons (`size="icon"`), always provide an accessible label via `aria-label` or include a `<span class="sr-only">` with descriptive text (e.g., `<x-button size="icon" aria-label="Settings">`).
+- When using `tag="a"` to render the button as a link, ensure the `href` attribute is provided.
+

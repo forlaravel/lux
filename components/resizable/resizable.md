@@ -74,3 +74,7 @@ php artisan lux:publish resizable
 | --- | --- | --- | --- |
 | `tag` | HTML tag to render | `string` | `div` |
 | `withHandle` | Show drag handle icon | `boolean` | `false` |
+
+## Accessibility
+
+- Provide an `aria-label` on each `<x-resizable.handle>` to describe the panels it separates (e.g., `<x-resizable.handle aria-label="Resize sidebar and content" withHandle />`).

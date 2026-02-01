@@ -34,3 +34,8 @@ php artisan lux:publish alert
 | Prop      | Description                                     | Type     | Default   |
 |-----------|-------------------------------------------------|----------|-----------|
 | `variant` | Determines the styling of the alert component, can be one of `default` `destructive`  | `string` | `default` |
+
+## Accessibility
+
+- Add `aria-hidden="true"` to any decorative icons placed inside the alert so screen readers skip them.
+- Ensure the alert contains meaningful text content via `<x-alert.title>` and/or `<x-alert.description>`.

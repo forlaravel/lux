@@ -73,3 +73,7 @@ The component responsible for toggling the visibility of the popover content.
 |-------------|----------------------------------------------------|-----------|---------|
 | `tag`       | The HTML tag to use for the content container      | `string`  | `div`   |
 | `teleport`  | A CSS selector to teleport the content to          | `boolean\|string` | `false` |
+
+## Accessibility
+
+- Provide an accessible name on `<x-popover.content>` via `aria-label` or `aria-labelledby`, since the content uses `role="dialog"` (e.g., `<x-popover.content aria-label="Dimensions settings">`).

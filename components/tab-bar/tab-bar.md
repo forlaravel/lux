@@ -64,3 +64,8 @@ Container for the tab bar items. Renders the actual bottom navigation bar.
 | Prop    | Description                                                                        | Type     | Default  |
 |---------|------------------------------------------------------------------------------------|----------|----------|
 | `value` | The value associated with this content panel. Should match a `tab-bar.item` value. | `string` | required |
+
+## Accessibility
+
+- When using icon-only tab items (no `label` prop), provide an `aria-label` on the `<x-tab-bar.item>` so screen readers can announce the tab's purpose.
+- Ensure SVG icons in the `icon` slot include `aria-hidden="true"` to prevent redundant screen reader announcements when a text label is also present.

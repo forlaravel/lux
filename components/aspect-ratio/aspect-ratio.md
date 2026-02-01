@@ -28,3 +28,7 @@ php artisan lux:publish aspect-ratio
 | Prop    | Description                                             | Type     | Default |
 |---------|---------------------------------------------------------|----------|---------|
 | `ratio` | Determines the width-to-height ratio of the component   | `string` | `1/1`   |
+
+## Accessibility
+
+- Ensure any images placed inside the component have descriptive `alt` text.

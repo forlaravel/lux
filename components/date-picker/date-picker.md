@@ -44,3 +44,8 @@ php artisan lux:publish date-picker
 | `format` | Date format | `string` | `Y-m-d` |
 | `placeholder` | Placeholder text | `string` | `Pick a date` |
 | `name` | Form input name | `string\|null` | `null` |
+
+## Accessibility
+
+- Provide a visible `<label>` next to or above the date picker so users understand what date is being requested. The component does not render a label automatically.
+- If you use multiple date pickers on one page, ensure each has a distinct label so screen readers can differentiate them.

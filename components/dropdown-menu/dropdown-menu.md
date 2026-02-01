@@ -166,3 +166,8 @@ The content of a sub-dropdown.
 |-----------|--------------------------|-----------|---------|
 | `name`    | Name for radio grouping  | `string`  | `null`  |
 | `checked` | Determines if checked    | `boolean` | `false` |
+
+## Accessibility
+
+- When using `tag="span"` on the trigger (e.g., wrapping an `<x-button>`), the ARIA attributes `aria-haspopup` and `aria-expanded` are only applied when `tag="button"`. Ensure the inner interactive element provides these attributes, or use the default `tag="button"`.
+- If a menu item contains only an icon and no visible text, add an `aria-label` to describe its action.

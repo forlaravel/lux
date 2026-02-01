@@ -71,3 +71,7 @@ php artisan lux:publish rating
 - **Livewire compatible** — use `wire:model` to bind the rating value
 - **Form support** — optional `name` prop adds a hidden input for form submission
 - **Sizes** — five sizes: `xs`, `sm`, `md`, `lg`, `xl`
+
+## Accessibility
+
+- The component defaults to `aria-label="Rating"`. If your page has multiple rating components, override it with a specific label (e.g., `<x-rating aria-label="Food quality rating" />`).

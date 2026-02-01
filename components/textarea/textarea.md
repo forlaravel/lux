@@ -45,3 +45,8 @@ php artisan lux:publish textarea
 | `type`    | Determines the type of the textarea input. | `string` | `text`    |
 | `autogrow`| Whether the textarea automatically grows with content. | `boolean` | `false`   |
 | `size`    | Specifies the size of the textarea, can be `sm`, `md`, `lg`, `xl` | `string` | `md` |
+
+## Accessibility
+
+- Always associate a visible `<label>` with the textarea using matching `id`/`for` attributes, or provide an `aria-label` attribute directly on the component.
+- If the textarea has validation requirements, use `aria-describedby` to link it to any helper or error message text.

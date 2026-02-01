@@ -3,6 +3,7 @@
 @aware([
     'searchable' => false,
     'size' => 'md',
+    'placeholder' => 'Select an option',
 ])
 
 @props([
@@ -25,6 +26,9 @@ $cursorClass = $searchable ? 'lux-select-trigger-searchable' : 'lux-select-trigg
     :aria-controls="$id('select-content')"
     :aria-expanded="open"
     :aria-activedescendant="cursor ? $id('select-content') + '-' + cursor : null"
+    @if(!$attributes->has('aria-label') && !$attributes->has('aria-labelledby'))
+    aria-label="{{ $placeholder }}"
+    @endif
     class="lux-select-trigger lux-select-trigger-size-{{ $size }} {{ $cursorClass }}"
     {{ $attributes }}
 >

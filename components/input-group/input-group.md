@@ -56,3 +56,8 @@ php artisan lux:publish input-group
 | Prop | Description | Type | Default |
 | --- | --- | --- | --- |
 | `tag` | HTML tag to render | `string` | `div` |
+
+## Accessibility
+
+- Ensure the `<x-input>` inside the group has an associated `<x-label>` (via matching `for`/`id` attributes) or an `aria-label`.
+- Decorative icons placed in `<x-input-group.prefix>` or `<x-input-group.suffix>` should include `aria-hidden="true"` so screen readers ignore them.

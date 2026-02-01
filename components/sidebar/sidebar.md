@@ -103,3 +103,9 @@ php artisan lux:publish sidebar
 - `x-sidebar.header` - Sticky header section at the top of the sidebar
 - `x-sidebar.content` - Scrollable main content area
 - `x-sidebar.footer` - Sticky footer section at the bottom of the sidebar
+
+## Accessibility
+
+- The sidebar renders as an `<aside>` with `aria-label="Sidebar"` by default. If your page has multiple sidebars, override the `aria-label` to be unique: `<x-sidebar aria-label="Settings sidebar">`.
+- The trigger includes `aria-expanded` and `aria-controls` automatically when using the default `tag="button"`. When wrapping an `<x-button>` inside the trigger (with `tag="span"`), ensure the inner button conveys the toggle purpose (e.g., include sr-only text or an `aria-label`).
+- Use `<nav>` elements or `role="navigation"` inside the sidebar content to identify navigation regions for screen readers.

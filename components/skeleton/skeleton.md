@@ -32,3 +32,8 @@ php artisan lux:publish skeleton
 | Prop | Description | Type | Default |
 | --- | --- | --- | --- |
 | `tag` | HTML tag to render | `string` | `div` |
+
+## Accessibility
+
+- Skeletons are visual placeholders and convey no meaning to screen readers by default. Add `aria-hidden="true"` to skeleton elements and provide a separate screen-reader-only loading indicator, e.g.: `<span class="sr-only">Loading...</span>`.
+- Alternatively, wrap the skeleton group in a container with `role="status"` and `aria-label="Loading"` so assistive technology announces the loading state.

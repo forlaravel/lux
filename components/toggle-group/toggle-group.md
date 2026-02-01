@@ -61,3 +61,8 @@ php artisan lux:publish toggle-group
 | --- | --- | --- | --- |
 | `tag` | HTML tag to render | `string` | `button` |
 | `value` | Value of this toggle | `string` | *required* |
+
+## Accessibility
+
+- Add an `aria-label` to the `<x-toggle-group>` to describe the group's purpose (e.g., `aria-label="Text alignment"`).
+- When toggle items contain only icons, add an `aria-label` to each `<x-toggle-group.item>` so screen readers announce the button's function (e.g., `aria-label="Align left"`).

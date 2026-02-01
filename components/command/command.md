@@ -62,3 +62,9 @@ php artisan lux:publish command
 | Prop | Description | Type | Default |
 | --- | --- | --- | --- |
 | `heading` | The heading text for the command group | `string` | `""` |
+
+## Accessibility
+
+- Always provide a `placeholder` or `aria-label` on `<x-command.input>` so the search field is announced to screen readers.
+- When using `<x-command>` standalone (not inside `<x-command.dialog>`), consider adding `aria-label` to the root element to give it an accessible name.
+- If command items contain only icons (no visible text), add `sr-only` text inside the item so screen readers can announce its purpose.

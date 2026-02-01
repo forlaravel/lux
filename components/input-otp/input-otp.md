@@ -79,3 +79,7 @@ php artisan lux:publish input-otp
 | Prop | Description | Type | Default |
 | --- | --- | --- | --- |
 | `tag` | HTML tag to render | `string` | `div` |
+
+## Accessibility
+
+- The component defaults to `aria-label="One-time password"`. Override this via the `aria-label` attribute if a more specific label is appropriate (e.g., `aria-label="Verification code"`).

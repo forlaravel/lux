@@ -141,3 +141,8 @@ php artisan lux:publish table
 | Prop | Description | Type | Default |
 | --- | --- | --- | --- |
 | `tag` | HTML tag to render | `string` | `tfoot` |
+
+## Accessibility
+
+- Use `<x-table.caption>` to provide a visible or screen-reader-accessible description of the table's purpose.
+- The `<x-table.head>` component defaults to `scope="col"`. If you use a `<th>` as a row header, override it with `scope="row"` (e.g., `<x-table.head scope="row">`).

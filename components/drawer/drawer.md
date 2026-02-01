@@ -119,3 +119,9 @@ Simple wrapper components with no required props.
 - **Close button** -- optional X button for side drawers
 - **Backdrop click** -- click outside to close
 - **Livewire compatible** -- use `wire:model` to bind open state
+
+## Accessibility
+
+- Always include `<x-drawer.title>` inside `<x-drawer.content>` so the drawer has an accessible name via `aria-labelledby`.
+- Include `<x-drawer.description>` when the drawer needs additional context; the content element references it via `aria-describedby`.
+- If the drawer title should not be visible, use `sr-only` on the title element rather than omitting it.

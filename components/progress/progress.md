@@ -40,3 +40,8 @@ php artisan lux:publish progress
 | `tag` | HTML tag to render | `string` | `div` |
 | `value` | Current progress value | `number` | `0` |
 | `max` | Maximum progress value | `number` | `100` |
+| `label` | Accessible label for the progress bar | `string` | `null` |
+
+## Accessibility
+
+- Provide the `label` prop to give the progress bar an accessible name (e.g., `<x-progress value="33" label="Upload progress" />`). Without it, screen readers will announce the value but not what it represents.

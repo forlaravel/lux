@@ -48,3 +48,8 @@ php artisan lux:publish hover-card
 | --- | --- | --- | --- |
 | `tag` | HTML tag to render | `string` | `div` |
 | `teleport` | Teleport to a target element to avoid overflow clipping | `string\|boolean` | `false` |
+
+## Accessibility
+
+- Ensure the trigger contains a focusable element (e.g., a link or button) so keyboard and screen reader users can access the hover card content. The default `tag="div"` is not focusable on its own.
+- Do not place essential content exclusively in the hover card. The information should be supplemental, since hover-triggered UI is difficult for some users to access.
