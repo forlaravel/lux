@@ -1,10 +1,10 @@
 @blaze
-<div 
-    role="menuitem" 
+<button
+    type="button"
+    role="menuitem"
     @click="open = false"
-    @mouseover="$el.focus()"
-    @mouseleave="$el.blur()"
-    tabindex="0"
+    x-on:mouseover="$el.dataset.focusSource = 'mouse'; $el.focus()"
+    x-on:mouseleave="if ($el.dataset.focusSource === 'mouse') $el.blur()"
     {{ $attributes->mergeTailwind(['class' => 'lux-context-menu-item']) }}>
     {{ $slot }}
-</div>
+</button>

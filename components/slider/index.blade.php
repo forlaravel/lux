@@ -19,15 +19,12 @@
         }
     }"
     x-modelable="value"
-    role="slider"
-    :aria-valuenow="value"
-    aria-valuemin="{{ $min }}"
-    aria-valuemax="{{ $max }}"
     @mousemove.window="if(dragging) updateFromEvent($event)"
     @mouseup.window="dragging = false"
     @touchmove.window="if(dragging) updateFromEvent($event.touches[0])"
     @touchend.window="dragging = false"
     :data-disabled="@js($disabled) || undefined"
+    :aria-disabled="@js($disabled) ? 'true' : null"
     {{ $attributes->mergeTailwind(['class' => 'lux-slider']) }}
     @if($disabled) data-disabled @endif
 >
@@ -38,6 +35,10 @@
         <span class="lux-slider-range" :style="'width:' + percentage + '%'"></span>
         <span class="lux-slider-thumb"
             tabindex="0"
+            role="slider"
+            :aria-valuenow="value"
+            aria-valuemin="{{ $min }}"
+            aria-valuemax="{{ $max }}"
             :style="'left:' + percentage + '%'"
             @mousedown.prevent="dragging = true"
             @touchstart.prevent="dragging = true"

@@ -7,6 +7,8 @@
     x-on:click="open = !open"
     :aria-expanded="open?.toString()"
     role="combobox"
+    aria-autocomplete="list"
+    aria-haspopup="listbox"
     {{ $attributes->mergeTailwind(['class' => 'lux-combobox-trigger lux-button lux-button-variant-outline lux-button-size-md w-[200px] justify-between']) }}
 >
     <span x-text="selectedLabel || '{{ $placeholder }}'" :class="!selectedLabel && 'text-muted-foreground'" class="truncate"></span>

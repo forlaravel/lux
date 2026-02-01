@@ -1,4 +1,4 @@
 @blaze
 @props(['tag' => 'p'])
 
-<{{ $tag }} {{ $attributes->mergeTailwind(['class' => 'lux-alert-dialog-description']) }}>{{ $slot }}</{{ $tag }}>
+<{{ $tag }} :id="$id('alert-dialog-description')" {{ $attributes->mergeTailwind(['class' => 'lux-alert-dialog-description']) }}>{{ $slot }}</{{ $tag }}>

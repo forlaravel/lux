@@ -7,6 +7,11 @@
 <{{ $tag }}
     {{ $attributes->mergeTailwind(['class' => 'lux-tab-bar-item']) }}
     data-tab="{{ $value }}"
+    role="tab"
+    :aria-selected="(activeTab === '{{ $value }}').toString()"
+    :tabindex="activeTab === '{{ $value }}' ? '0' : '-1'"
+    :id="$id('tab-{{ $value }}')"
+    :aria-controls="$id('tabpanel-{{ $value }}')"
     x-on:click="activeTab = '{{ $value }}'"
     x-bind:class="{
         'lux-tab-bar-item-active': activeTab === '{{ $value }}',

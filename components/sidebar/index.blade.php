@@ -16,6 +16,8 @@
 <{{ $tag }}
     {{ $attributes->mergeTailwind(['class' => "lux-sidebar $positionClass"]) }}
     data-lux="sidebar"
+    id="lux-sidebar"
+    aria-label="Sidebar"
     x-bind:class="{
         @if($fixed)
             'translate-x-0': sidebarOpen,

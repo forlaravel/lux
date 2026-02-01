@@ -8,7 +8,6 @@
     @keydown.down.prevent="$focus.focusNext()"
     @click.outside="open = false"
     {{ $attributes->mergeTailwind(['class' => 'lux-context-menu-content']) }}
-    :aria-expanded="open.toString()"
     role="menu"
     :style="{ top: `${anchor.y}px`, left: `${anchor.x}px` }"
     x-cloak>

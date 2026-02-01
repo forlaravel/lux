@@ -1,1 +1,4 @@
-<h2 {{ $attributes->merge(['class' => 'lux-drawer-title']) }}>{{ $slot }}</h2>
+@blaze
+@props(['tag' => 'h2'])
+
+<{{ $tag }} :id="$id('drawer-title')" {{ $attributes->mergeTailwind(['class' => 'lux-drawer-title']) }}>{{ $slot }}</{{ $tag }}>

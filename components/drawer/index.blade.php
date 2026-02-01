@@ -6,6 +6,8 @@
 <div
     {{ $attributes->except(['open', 'direction'])->merge(['class' => 'lux-drawer']) }}
     data-direction="{{ $direction }}"
+    x-id="['drawer-title', 'drawer-description']"
+    @keydown.escape.window="close()"
     x-data="{
         open: {{ $open ? 'true' : 'false' }},
         direction: '{{ $direction }}',

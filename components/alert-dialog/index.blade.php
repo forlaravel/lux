@@ -6,6 +6,7 @@
 
 <{{ $tag }}
     {{ $attributes->mergeTailwind(['class' => 'lux-alert-dialog']) }}
+    x-id="['alert-dialog-title', 'alert-dialog-description']"
     x-data="{
         open: @wireOr($open, handlePersist: true),
         show() {

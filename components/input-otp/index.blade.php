@@ -50,6 +50,8 @@
     }"
     x-modelable="value"
     {{ $attributes->mergeTailwind(['class' => 'lux-input-otp']) }}
+    role="group"
+    aria-label="One-time password"
     @paste="handlePaste($event)"
 >
     {{ $slot }}

@@ -16,7 +16,7 @@
             @mouseleave="hasStackedAt(pos) && (_hoveredPosition = null)"
             role="region"
             aria-label="Notifications"
-            tabindex="-1"
+            tabindex="0"
         >
             <template x-for="t in toastsAt(pos)" :key="t.id">
                 <li

@@ -8,7 +8,6 @@
 <template x-teleport="{{ $teleport }}">
 @endif
     <{{ $tag }}
-        x-trap="open"
         x-show="open"
         x-ref="content"
         x-anchor.bottom-start="$refs.trigger"
@@ -17,7 +16,6 @@
         x-cloak
         @click.outside="open = false"
         role="dialog"
-        aria-modal="false"
         {{ $attributes->mergeTailwind(['class' => 'lux-popover-content']) }}
     >
         {{ $slot }}

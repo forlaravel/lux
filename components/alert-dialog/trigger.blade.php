@@ -1,5 +1,5 @@
 @blaze
-@props(['tag' => 'div'])
+@props(['tag' => 'button'])
 
 <{{ $tag }}
     x-on:click="show()"

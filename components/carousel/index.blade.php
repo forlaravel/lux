@@ -29,6 +29,13 @@
     scrollToSlide() {
         this.slides[this.currentIndex].scrollIntoView({ behavior: 'smooth', inline: 'start' });
     }
-}" class="lux-carousel {{ $orientation === 'vertical' ? 'flex-col' : '' }} {{ $class ?? '' }}" {{ $attributes }}>
+}"
+    role="region"
+    aria-roledescription="carousel"
+    aria-label="Carousel"
+    @keydown.arrow-left.prevent="scrollPrev()"
+    @keydown.arrow-right.prevent="scrollNext()"
+    class="lux-carousel {{ $orientation === 'vertical' ? 'flex-col' : '' }} {{ $class ?? '' }}" {{ $attributes }}>
+    <div class="sr-only" aria-live="polite" x-text="'Slide ' + (currentIndex + 1) + ' of ' + slides.length"></div>
     {{ $slot }}
 </div>

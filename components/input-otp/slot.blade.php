@@ -8,6 +8,7 @@
         type="text"
         inputmode="numeric"
         maxlength="1"
+        aria-label="Digit {{ $index + 1 }} of {{ $length ?? 6 }}"
         class="absolute inset-0 w-full h-full text-center bg-transparent border-none outline-none text-sm"
         x-ref="slot-{{ $index }}"
         :value="digits[{{ $index }}]"

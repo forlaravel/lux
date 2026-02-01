@@ -3,6 +3,6 @@
     'tag' => 'h2',
 ])
 
-<{{ $tag }} {{ $attributes->mergeTailwind(['class' => 'lux-dialog-title']) }}>
+<{{ $tag }} :id="$id('dialog-title')" {{ $attributes->mergeTailwind(['class' => 'lux-dialog-title']) }}>
     {{ $slot }}
 </{{ $tag }}>

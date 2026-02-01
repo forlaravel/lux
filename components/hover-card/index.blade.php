@@ -16,9 +16,11 @@
             this._closeTimeout = setTimeout(() => { this.show = false; }, this.closeDelay);
         }
     }"
+    x-id="['hover-card']"
     x-on:mouseenter="open()"
     x-on:mouseleave="close()"
     x-on:focus.capture="open()"
     x-on:blur.capture="close()"
+    @keydown.escape="show = false"
     {{ $attributes->mergeTailwind(['class' => 'lux-hover-card']) }}
 >{{ $slot }}</{{ $tag }}>

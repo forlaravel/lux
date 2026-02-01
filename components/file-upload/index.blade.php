@@ -111,6 +111,7 @@
 >
     <label
         class="lux-file-upload-zone"
+        aria-label="Upload files by clicking or dragging and dropping"
         x-bind:class="{
             'lux-file-upload-zone-dragging': dragging,
             'lux-file-upload-zone-disabled': {{ $disabled ? 'true' : 'false' }},
@@ -146,7 +147,7 @@
     </label>
 
     <template x-for="error in errors" :key="error">
-        <p class="lux-file-upload-error" x-text="error"></p>
+        <p class="lux-file-upload-error" role="alert" aria-live="assertive" x-text="error"></p>
     </template>
 
     <div x-show="uploading" x-cloak class="lux-file-upload-progress">

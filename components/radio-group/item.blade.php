@@ -5,6 +5,7 @@
     x-on:click="selected = @js($value)"
     :aria-checked="(selected === @js($value)).toString()"
     :data-checked="(selected === @js($value)).toString()"
+    :tabindex="selected === @js($value) ? '0' : '-1'"
     @if($id) id="{{ $id }}" @endif
     @disabled($disabled)
     {{ $attributes->mergeTailwind(['class' => 'lux-radio-group-item']) }}

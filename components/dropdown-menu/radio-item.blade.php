@@ -1,7 +1,23 @@
 @blaze
 @props(['name', 'checked' => false])
 
-<div @click="open = false" {{ $attributes->mergeTailwind(['class' => 'lux-dropdown-menu-radio-item relative flex items-center px-4 py-2 text-sm text-gray-700 cursor-pointer hover:bg-gray-100']) }}>
-    <input type="radio" name="{{ $name }}" {{ $checked ? 'checked' : '' }} class="mr-2 rounded-full text-blue-600 border-gray-300 focus:ring-blue-500" />
+<div
+    role="menuitemradio"
+    :aria-checked="(@js($checked)).toString()"
+    tabindex="0"
+    @click="open = false"
+    @keydown.enter.prevent="open = false"
+    @keydown.space.prevent="open = false"
+    x-on:mouseover="$el.dataset.focusSource = 'mouse'; $el.focus()"
+    x-on:mouseleave="if ($el.dataset.focusSource === 'mouse') $el.blur()"
+    {{ $attributes->mergeTailwind(['class' => 'lux-dropdown-menu-radio-item relative flex items-center px-4 py-2 text-sm text-gray-700 cursor-pointer hover:bg-gray-100']) }}
+>
+    <span class="absolute left-2 flex h-3.5 w-3.5 items-center justify-center">
+        @if($checked)
+        <svg class="h-2 w-2 fill-current" aria-hidden="true" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="6" />
+        </svg>
+        @endif
+    </span>
     {{ $slot }}
 </div>
