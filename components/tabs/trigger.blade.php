@@ -11,7 +11,7 @@
     data-tab="{{ $value }}"
     role="tab"
     :aria-selected="activeTab === '{{ $value }}' ? 'true' : 'false'"
-    :tabindex="activeTab === '{{ $value }}' ? '0' : '-1'"
+    tabindex="0"
     :id="tabsId + '-tab-{{ $value }}'"
     :aria-controls="tabsId + '-tabpanel-{{ $value }}'"
     x-on:click="activeTab = '{{ $value }}'"

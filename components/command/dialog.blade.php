@@ -1,8 +1,10 @@
 @blaze
-<x-dialog {{ $attributes->merge(['class' => 'lux-command-dialog']) }}>
-    <x-dialog-content class="lux-command-dialog">
-        <x-command>
+@inject('lux', 'lux')
+
+<x-dynamic-component :component="$lux->componentPath('dialog')" {{ $attributes->merge(['class' => 'lux-command-dialog']) }}>
+    <x-dynamic-component :component="$lux->componentPath('dialog.content')" class="lux-command-dialog">
+        <x-dynamic-component :component="$lux->componentPath('command')">
             {{ $slot }}
-        </x-command>
-    </x-dialog-content>
-</x-dialog>
+        </x-dynamic-component>
+    </x-dynamic-component>
+</x-dynamic-component>

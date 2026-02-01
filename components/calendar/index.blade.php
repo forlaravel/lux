@@ -50,8 +50,8 @@
     wire:ignore
     {{ $attributes->only(['class', 'x-model'])->merge(['class' => 'lux-calendar w-full']) }}
 >
-    <x-lux
-        component="input"
+    <x-dynamic-component
+        :component="$lux->componentPath('input')"
         class="{{ $inline ? 'hidden' : '' }}"
         x-ref="picker"
         mask="{{ $mask }}"

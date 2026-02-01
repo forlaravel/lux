@@ -7,7 +7,7 @@
     tabindex="0"
     {{ $attributes->mergeTailwind(['class' => 'lux-context-menu-checkbox-item relative flex items-center rounded-sm py-1.5 pl-8 pr-2 text-sm focus:bg-accent focus:text-accent-foreground cursor-default select-none']) }}
     @click="open = false"
-    x-data="{ checked: @entangle('checked') }"
+    x-data="{ checked: @wireOr($checked) }"
     @keydown.enter.prevent="open = false"
     @keydown.space.prevent="open = false"
     x-on:mouseover="$el.dataset.focusSource = 'mouse'; $el.focus()"

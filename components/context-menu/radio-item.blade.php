@@ -1,5 +1,5 @@
 @blaze
-@props(['name', 'value'])
+@props(['name', 'value', 'checked' => false])
 
 <div
     role="menuitemradio"
@@ -11,7 +11,7 @@
     @keydown.space.prevent="$dispatch('change', {name: '{{ $name }}', value: '{{ $value }}'})"
     x-on:mouseover="$el.dataset.focusSource = 'mouse'; $el.focus()"
     x-on:mouseleave="if ($el.dataset.focusSource === 'mouse') $el.blur()"
-    x-data="{ checked: @entangle('checked') }">
+    x-data="{ checked: @wireOr($checked) }">
     <span class="absolute left-2 flex h-3.5 w-3.5 items-center justify-center">
         <input type="radio" x-model="checked" name="{{ $name }}" value="{{ $value }}" class="hidden" />
         <template x-if="checked">
