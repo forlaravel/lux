@@ -27,6 +27,8 @@ Lux keeps `.js` and `.css` files close to the components. For example, the `butt
 To integrate the required resources dynamically into your project, follow these steps:
 
 ### Integrate the JavaScript
+Add this to `app.js`:
+
 ```javascript
 import { Livewire, Alpine } from '../../vendor/livewire/livewire/dist/livewire.esm';
 ...
@@ -61,6 +63,16 @@ Add to the top of your app.css file:
 @import "tailwindcss";
 
 @custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-border, currentColor);
+  }
+}
 
 @theme {
    --radius: 0.65rem;
