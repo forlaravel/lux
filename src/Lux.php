@@ -36,8 +36,8 @@ class Lux
             $handlePersist = $persist ? '->handlePersist()' : '';
 
             // parse the $expression
-            // <?php echo app('lux')->wireOr($__data['attributes'], $open)->handlePersist()
-            $result = "<?php echo app('lux')->wireOr(\$__data['attributes'], $expression)$handlePersist ?>";
+            // <?php echo app('lux')->wireOr($attributes, $open)->handlePersist()
+            $result = "<?php echo app('lux')->wireOr(\$attributes, $expression)$handlePersist ?>";
 
             return $result;
         });

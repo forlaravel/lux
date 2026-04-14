@@ -13,7 +13,7 @@
     "keywords": ["lux", "laravel", "livewire", "blade", "components", "ui", "shadcn", "forlaravel"],
     "require": {
         "illuminate/contracts": "^9.0||^10.0||^11.0||^12.0",
-        "livewire/blaze": "^1.0.0-beta.1"
+        "livewire/blaze": "^1.0"
     },
     "autoload": {
         "psr-4": {
